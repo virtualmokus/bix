@@ -1,7 +1,5 @@
-// FIGYELEM: az OWNER/REPO helyére a tényleges GitHub-útvonal kerül, amint a
-// repó létrejön. A BIX üzemeltetője ezen az URL-en tud utánanézni, ki kéri le
-// az oldalt — hamis vagy kitöltetlen cím rossz modor.
-export const USER_AGENT = 'bix-dashboard/1.0 (+https://github.com/OWNER/REPO)';
+// A BIX üzemeltetője ezen az URL-en tud utánanézni, ki kéri le az oldalt.
+export const USER_AGENT = 'bix-dashboard/1.0 (+https://github.com/virtualmokus/bix)';
 
 export async function fetchText(url, { timeoutMs = 20000, retries = 2 } = {}) {
   let lastError;
