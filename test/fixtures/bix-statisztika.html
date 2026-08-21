@@ -1,0 +1,2978 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<base href="https://www.bix.hu/" />
+<meta charset="utf-8" />
+<title>BIX forgalmi statisztikák | Budapest Internet Exchange</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic,300,300italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="/css/bs.min.css" rel="stylesheet" type="text/css" />
+<link href="/css/lbg.css" rel="stylesheet" type="text/css" />
+<link href="/css/dds-rwd.css" rel="stylesheet" type="text/css" />
+<link href="/css/site-rwd.css" rel="stylesheet" type="text/css" />
+<link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/dds.js"></script>
+<script type="text/javascript" src="/js/ajax_api.js"></script>
+<script type="text/javascript" src="/js/modernizr.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery-2.1.4.min.js"><\/script>')</script>
+<script type="text/javascript" src="/js/bs.min.js"></script>
+<script type="text/javascript" src="/js/site.js"></script>
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="/js/selectivizr103b.js"></script>
+	<script type="text/javascript" src="/js/respond.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body><!-- Honlapkészítés: (c) DDS  http://www.dds.hu/ -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-77250815-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+<div id="ax_0"><div id="ax_36"><div class="fixheaddiv">
+	<div class="fixhead">
+<div id="ax_37">	<div class="header">
+		<div class="container">
+			<div class="col-ms-12 col-xs-4 col-sm-6 col-md-6">
+				<div class="logo"><a href="/"><img src="/images/bix_logo.png" alt="ISZT - BUDAPEST INTERNET EXCHANGE" /></a></div>
+				<div class="name hidden-ms">Budapest Internet Exchange</div>
+			</div>
+			<div class="col-ms-12 col-xs-8 col-sm-6 col-md-6">
+				<div class="flags">
+					<a href="/redirect.php?url=/index.php%3Fp%3Dstat" data-ablock="none"><span class="flaghu ht" title="magyar">magyar</span></a>
+					<a href="/redirect.php?url=/en/index.php%3Fp%3Dstat" data-ablock="none"><span class="flagen ht" title="english">english</span></a>
+				</div>				
+				<div class="toploginbox">
+					<a href="https://ixpman.bix.hu/login" target="_blank"><span class="btn btn-info"><i class="fa fa-user"></i> Members login</span></a>
+				</div>								
+				<div class="topsocial hidden-xs hidden-sm hidden-md">
+					<a href="https://www.linkedin.com/company/budapest-internet-exchange"><span class="fa fa-linkedin-square"></span> </a>
+				</div>
+			</div>
+		</div>
+	</div></div>
+<div id="ax_38">	<div id="ddsrespmenu">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">	
+					<div class="navbar navbar-invert" role="navigation" >
+						<div class="navbar-header">
+							<a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" href="javascript:void(0);">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							 </a>
+							<div class="collapse navbar-collapse">
+							<ul class="nav navbar-nav">
+								<li class="home"><a href="/bemutatkozas"><span>Bemutatkozás</span></a></li>
+								<li><a href="/hirek"><span>Hírek</span></a></li>
+								<li><a href="index.php?p=services"><span>Szolgáltatások</span></a></li>
+								<li><a href="index.php?p=tech"><span>Technológia</span></a></li>
+								<li><a href="/dokumentumok/peering"><span>Peering</span></a></li>
+																
+								<li><a href="/tagok"><span>Tagok</span></a></li>
+																								
+								<li><a href="/dokumentumok"><span>Dokumentumok</span></a></li>
+								<li><a href="/kapcsolat"><span>Kapcsolat</span></a></li>								
+													
+							</ul>
+							</div>
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+	</div>
+	
+</div>
+	</div>
+</div>
+<div id="ax_39">	<div class="slider inner"></div></div>
+
+<div class="container maincont">
+	<div class="row">
+		<div class="col-xs-12 left">
+			<div id="ax_40"><ol class="breadcrumb">
+	<li><a href="/"><span class="fa fa-home"></span>Főoldal</a></li> 
+	<li><span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/statisztika" itemprop="url"><span itemprop="title">BIX forgalmi statisztikák</span></a></span></li>
+</ol></div>
+			<div id="ax_1"><div id="ax_45"><h1>BIX forgalmi statisztikák</h1>
+
+<div class="statmenu form-inline">
+	<div class="row">
+		<div class="col-xs-12">
+			<h3>Statisztika</h3>
+			<div>
+				<div class="item">
+					<a href="/statisztika/osszesitett"><span class="btn btn-info">Összesített forgalom</span></a>
+				</div>
+				<div class="item">		
+					<span>BIX node
+						<select class="form-control" name="nodeid" onchange="update_stat('index.php?p=stat'+((this.value) ? '&nodeid='+this.value : ''),null,null,1);">
+						<option value="">Összes</option>
+						
+							<optgroup label="Budapest">
+							
+							<option value="1">VH</option>
+							
+							<option value="8">T-Systems Cloud & Datacenter (Dataplex)</option>
+							
+							<option value="9">2Connect DC10</option>
+							
+							</optgroup>
+						
+							<optgroup label="Frankfurt">
+							
+							<option value="11">Digital Realty FRA8</option>
+							
+							<option value="12">Equinix FR4</option>
+							
+							</optgroup>
+						
+							<optgroup label="Vienna">
+							
+							<option value="10">Digital Realty (InterXion VIE1)</option>
+							
+							</optgroup>
+						
+						</select>
+					</span>
+				</div>			
+				<div class="item">		
+					<span>BIX tag
+						<select class="form-control" name="member" onchange="update_stat('index.php?p=stat'+((this.value) ? '&memberid='+this.value : ''),null,null,1);">
+							<option value="">Összes</option>
+							
+							<option value="112">23VNet</option>
+							
+							<option value="3">3C Telecom</option>
+							
+							<option value="151">42NET</option>
+							
+							<option value="181">A1 Telekom Austria AG</option>
+							
+							<option value="108">ActivCom</option>
+							
+							<option value="168">Akamai Technologies</option>
+							
+							<option value="209">Alibaba Cloud CDN</option>
+							
+							<option value="176">Alwyzon (Hohl IT e.U.)</option>
+							
+							<option value="145">ANEXIA</option>
+							
+							<option value="2">Antenna Hungária</option>
+							
+							<option value="162">AT&T EMEA</option>
+							
+							<option value="171">Aut O Mattic Ltd. (WordPress.com)</option>
+							
+							<option value="189">AWS - Amazon Web Services</option>
+							
+							<option value="105">BH Telecom</option>
+							
+							<option value="203">Birintech Solutions</option>
+							
+							<option value="4">BT Global Europe</option>
+							
+							<option value="182">ByteDance Inc. (TikTok)</option>
+							
+							<option value="197">CETIN Hungary</option>
+							
+							<option value="184">CETIN Serbia</option>
+							
+							<option value="114">Cloudflare</option>
+							
+							<option value="169">Colt Technology Services GmbH</option>
+							
+							<option value="204">Core-Backbone GmbH</option>
+							
+							<option value="201">DarkSystems</option>
+							
+							<option value="152">DC Hosting</option>
+							
+							<option value="58">DIGI</option>
+							
+							<option value="38">Drávanet</option>
+							
+							<option value="120">DuoDecad</option>
+							
+							<option value="134">ELIN.hu</option>
+							
+							<option value="177">Fastly, Inc.</option>
+							
+							<option value="202">Fiberwave</option>
+							
+							<option value="187">Finovy Cloud</option>
+							
+							<option value="172">FriendFinder Networks Inc</option>
+							
+							<option value="141">G-Core</option>
+							
+							<option value="126">GEANT</option>
+							
+							<option value="76">Giganet</option>
+							
+							<option value="93">Google</option>
+							
+							<option value="190">HFC Technics </option>
+							
+							<option value="128">HMX</option>
+							
+							<option value="192">HostingBazis</option>
+							
+							<option value="97">Hurricane Electric</option>
+							
+							<option value="157">i3D.net</option>
+							
+							<option value="89">iNES Group</option>
+							
+							<option value="52">Infotechna</option>
+							
+							<option value="127">Integrity</option>
+							
+							<option value="81">IntelliHome</option>
+							
+							<option value="73">Internet CZ</option>
+							
+							<option value="167">Internet4U</option>
+							
+							<option value="27">Invitech</option>
+							
+							<option value="200">IoT Zrt</option>
+							
+							<option value="155">ISIS-COM</option>
+							
+							<option value="43">ISZT</option>
+							
+							<option value="149">JZT Informatikai Kft</option>
+							
+							<option value="206">KeviWLAN</option>
+							
+							<option value="100">M247 Networks</option>
+							
+							<option value="164">Macronet</option>
+							
+							<option value="208">Magenta Telekom</option>
+							
+							<option value="19">Magyar Telekom</option>
+							
+							<option value="117">MátraCOMP</option>
+							
+							<option value="138">MediaCenter Hungary</option>
+							
+							<option value="183">Meta (facebook)</option>
+							
+							<option value="104">Microsoft</option>
+							
+							<option value="136">Microsystem-Kecskemét</option>
+							
+							<option value="137">Mikroháló</option>
+							
+							<option value="210">Mobillan-Sat</option>
+							
+							<option value="78">MVM Informatika</option>
+							
+							<option value="84">MVM NET</option>
+							
+							<option value="193">Nessus GmbH</option>
+							
+							<option value="211">Netfone</option>
+							
+							<option value="79">NETregator</option>
+							
+							<option value="116">Nexum</option>
+							
+							<option value="95">NMHH</option>
+							
+							<option value="131">NTS Workspace</option>
+							
+							<option value="121">Omonia</option>
+							
+							<option value="50">One</option>
+							
+							<option value="56">OPC Networks</option>
+							
+							<option value="153">Opennet</option>
+							
+							<option value="154">Orange</option>
+							
+							<option value="194">OVHcloud</option>
+							
+							<option value="195">Packet Clearing House (PCH)</option>
+							
+							<option value="196">Packet Clearing House (PCH)</option>
+							
+							<option value="133">PeakFactory</option>
+							
+							<option value="107">PickUp</option>
+							
+							<option value="69">PR-Telecom</option>
+							
+							<option value="12">Pro-M/NIIF</option>
+							
+							<option value="101">RackForest</option>
+							
+							<option value="191">Rackhost</option>
+							
+							<option value="118">Rendszerinformatika</option>
+							
+							<option value="86">RETN</option>
+							
+							<option value="175">Riot Games</option>
+							
+							<option value="82">RLAN</option>
+							
+							<option value="205">ROMARG</option>
+							
+							<option value="83">Romtelecom</option>
+							
+							<option value="173">S3 Company Ltd.</option>
+							
+							<option value="161">SAT-TRAKT</option>
+							
+							<option value="165">ServerAstra</option>
+							
+							<option value="68">Servergarden</option>
+							
+							<option value="174">SETCOR ICT</option>
+							
+							<option value="180">Sweet TV</option>
+							
+							<option value="163">Swisscom</option>
+							
+							<option value="148">Sybell Informatika</option>
+							
+							<option value="143">Szerverplex</option>
+							
+							<option value="123">T-2 d.o.o.</option>
+							
+							<option value="178">TamaNET</option>
+							
+							<option value="139">Tárhely.Eu</option>
+							
+							<option value="72">Tarr</option>
+							
+							<option value="199">Telehouse AD</option>
+							
+							<option value="188">Telekom Srbija a.d. Belgrade</option>
+							
+							<option value="160">Trans-Pack </option>
+							
+							<option value="94">Türk Telekom</option>
+							
+							<option value="111">UGNI (ex. SBB)</option>
+							
+							<option value="119">United Telecom</option>
+							
+							<option value="185">Valve Corporation</option>
+							
+							<option value="159">ViNetwork</option>
+							
+							<option value="122">VIVAcom</option>
+							
+							<option value="110">VNET</option>
+							
+							<option value="198">Warner Bros. Discovery</option>
+							
+							<option value="124">WaveCom</option>
+							
+							<option value="207">Websupport</option>
+							
+							<option value="186">WEDOS Internet, a.s.</option>
+							
+							<option value="87">Zalaszám</option>
+							
+						</select>				
+					</span>
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<h3>Szűrő</h3>
+			<div>
+				<div class="item">	
+					<span class="btn btn-info" onclick="update_stat('index.php?p=stat&group=1',null,null,1);">Csoportosítás node szerint</span>
+				</div>
+				<div class="item">	
+					<span>Rendezés
+						<select class="form-control" name="order" onchange="update_stat('index.php?p=stat&order='+this.value,null,null,1);">
+								<option value="name" selected="selected">Tag</option>
+								<option value="as">AS szám</option>
+								<option value="switch">Switch-port</option>
+								<option value="ip">IPv4 cím</option>
+								<option value="ipv6">IPv6 cím</option>
+								<option value="policy">Peering kategória</option>
+							
+						</select>				
+					</span>						
+				</div>
+				<div class="item">	
+					<span class="btn btn-info" onclick="update_stat('index.php?p=stat&more=1',null,null,1);">További részletek</span>			
+				</div>				
+			</div>			
+		</div>			
+	</div>
+</div>
+<script type="text/javascript">function update_stat() {
+	if(arguments[0].indexOf('/')!==0) arguments[0]='/'+arguments[0];
+	DDS.AJAX.loadurl.apply(DDS.AJAX,arguments);
+}</script>
+
+
+	
+<div class="resptbl">
+	<table class="table memberstbl">
+	<thead>
+	<tr>
+		<th>Név</th>
+		<th class="c">AS szám</th>
+		<th class="c">Peering kategória</th>
+		<th class="c">Node</th>
+		
+		<th class="c">Technikai adatok</th>
+		<th class="c">Sávszélesség</th>
+		<th>Megjegyzés</th>
+		<th class="c">Megtekint</th>
+	</tr>
+	</thead>
+	<tbody>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://hostit.hu/" target="_blank">23VNet</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/21629" target="_blank">AS30836</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.63</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:836:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1 Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/23vnet/3ebf42ab0b26c6a0d562210d4a61292a"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.3ctelecom.hu" target="_blank">3C Telecom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS3244</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.18</span>
+						
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">Backup Link</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/3c_telecom/1c93472e613b32c0eaa37f02f65f10cd"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.3ctelecom.hu" target="_blank">3C Telecom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS3244</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.35</span>
+						
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/3c_telecom/42d3fbefd870f8fb15b18b03c73f797f"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://42netmedia.com/" target="_blank">42NET</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/26312" target="_blank">AS62051</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.84</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::6:2051:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/42net/554bcc7d4e980619c8eaeeeeae6773cd"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.a1.net/" target="_blank">A1 Telekom Austria AG</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/1197" target="_blank">AS8447</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.44</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8447:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/a1_telekom_austria_ag/101b6323dcfb2a0428b747057aa37465"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.anexia.com" target="_blank">ANEXIA</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/3241" target="_blank">AS42473</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.68</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:2473:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/anexia/a0529af8cd14d46b5c7c86f6f877a6db"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.att.com" target="_blank">AT&amp;T EMEA</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/670" target="_blank">AS2686</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.86</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2686:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/at_t_emea/4760beaf7c0a911e1d074f9eee88036f"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.activcom.hu/" target="_blank">ActivCom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS60673</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.23</span>
+						
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/activcom/3011663b84a07ebc0dc41506bdbb2c7f"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.akamai.com" target="_blank">Akamai Technologies</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/2" target="_blank">AS20940</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.209</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:0940:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">200G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/akamai_technologies/38b8ab7d08dd58058fdacc510f34a18e"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.alwyzon.net/" target="_blank">Alwyzon (Hohl IT e.U.)</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/24810" target="_blank">AS40994</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.40</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:0994:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/alwyzon_hohl_it_e_u/6f276705966e1a49bd88c754578d610f"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.ahrt.hu" target="_blank">Antenna Hungária</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/22058" target="_blank">AS8990</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.168</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8990:3</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">VH 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/antenna_hungaria/d9fac610a5432403b997589730bb5619"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.ahrt.hu" target="_blank">Antenna Hungária</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/22058" target="_blank">AS8990</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.170</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8990:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">DPX 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/antenna_hungaria/e345a8d1e1829c4e15619d744afd706d"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://automattic.com" target="_blank">Aut O Mattic Ltd. (WordPress.com)</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/6460" target="_blank">AS2635</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.94</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2635:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/aut_o_mattic_ltd_wordpress_com/dad39e75d957fcc86592aa27dc8f9293"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.bhtelecom.ba/" target="_blank">BH Telecom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/9215" target="_blank">AS9146</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.22</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::9146:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">20G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/bh_telecom/a50a8f4e436357f0aeeeda7f4c35dff2"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.bt.net" target="_blank">BT Global Europe</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/118" target="_blank">AS5400</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Restrictive</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.53</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5400:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/british_telecom/ac044aba7c0833ab5e5ea701d69720b5"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://bgn.hu" target="_blank">Birintech Solutions</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/35779" target="_blank">AS215366</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.215</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::21:5366:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1 Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/birintech_solutions/b88fd0b9980594c8e5c74d19bb0b5083"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.bytedance.com/" target="_blank">ByteDance Inc. (TikTok)</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/19428" target="_blank">AS396986</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.98</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::39:6986:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/bytedance_inc/f91e813c5be67971027f7dd03cbdda77"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.cetin.hu" target="_blank">CETIN Hungary</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/3845" target="_blank">AS8448</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">2Connect DC10</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.47</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8448:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/cetin_hungary/6f7eec9ebcd9b5258aeac9756765f2fb"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.cetin.hu" target="_blank">CETIN Hungary</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/3845" target="_blank">AS8448</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.95</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8448:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">200G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/cetin_hungary/d8c49fa03f8dad8744676fd98dbcbcb8"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.cetin.rs/" target="_blank">CETIN Serbia</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/5066" target="_blank">AS15958</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.102</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1:5958:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/cetin_serbia/d27cf53d4b5b7cc9a991214c34e72f5b"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/4224" target="_blank">AS13335</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.27</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1:3335:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/cloudflare/74f95dbe523e82021dbe2d9ace41a134"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.colt.net" target="_blank">Colt Technology Services GmbH</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/91" target="_blank">AS8220</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.82</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8220:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/colt/640441211b10c3d91b24b5e4312b5707"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.core-backbone.com" target="_blank">Core-Backbone GmbH</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/1599" target="_blank">AS33891</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.75</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:3891:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/core_backbone_gmbh/4ee627bc87ede4e6e016d9c59e2979e1"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href=" https://premiumwebtarhely.hu" target="_blank">DC Hosting</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/28162" target="_blank">AS210966</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.138</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::21:0966:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/dc_hosting/d72a3aa5a64974e581492dcdc4e32a9a"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://digi.hu" target="_blank">DIGI</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/2175" target="_blank">AS20845</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.96</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:845:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">300G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/digi/0d50763727d3057dadc1c63d28e67247"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href=" https://darksystems.hu" target="_blank">DarkSystems</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/38191" target="_blank">AS213669</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.29</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::21:3669:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/darksystems/2870e3bcfcc6c72abf166f5ed58b926d"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.dravanet.hu" target="_blank">Drávanet</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS197248</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.104</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::19:7248:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/dravanet/cce18d007ccdcb6562770dd1434b0095"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.dravanet.hu" target="_blank">Drávanet</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS197248</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.77</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::19:7248:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">20G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/dravanet/2a2dcfb8a9017eab978938dcf66508ee"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.doclerholding.com/" target="_blank">DuoDecad</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/1006" target="_blank">AS34655</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.31</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:4655:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/docler_holding/2bb94aebc8b337936fc4a289adb7e262"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://elin.hu" target="_blank">ELIN.hu</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/24706" target="_blank">AS208154</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.65</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:8154:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/elin_hu_kft/9d3586f3ce0a05b4208ff4073cbed238"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.fastly.com" target="_blank">Fastly, Inc.</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/5520" target="_blank">AS54113</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.113</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5:4113:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">200G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.fastly.com" target="_blank">Fastly, Inc.</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/5520" target="_blank">AS54113</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.114</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5:4113:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">200G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://finovy.com/en/" target="_blank">Finovy Cloud</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/34010" target="_blank">AS151358</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Restrictive</td>
+		<td  data-title="Node" class="c clearpad">2Connect DC10</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.155</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::15:1358:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/finovy_cloud/a9c659726796b6055b1b1b419200d4c1"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.geant.org/" target="_blank">GEANT</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/3386" target="_blank">AS21320</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.37</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:1320:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/geant/7ee4adc3b45561a5a0bf9aacdb099beb"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.giganet.hu" target="_blank">Giganet</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/10346" target="_blank">AS42864</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.141</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:2864:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/giganet/f6613b954cceadac28ddf9373cf46f46"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://hostingbazis.hu/" target="_blank">HostingBazis</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/35201" target="_blank">AS215904</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.59</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::21:5904:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/hostingbazis/668c34f6e3907e7309f7fc55d408a7ef"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.he.net" target="_blank">Hurricane Electric</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/291" target="_blank">AS6939</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.175</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::6939:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/hurricane_electric/9022c1a4a0f13243cc40629c5d03a3d4"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.isiscom.hu" target="_blank">ISIS-COM</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/29123" target="_blank">AS200964</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.158</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:0964:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/isis_com/a154728d19b9933aded41b149e358975"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.iszt.hu" target="_blank">ISZT</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS12303</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.10</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1:2303:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">under construction</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/iszt/a1e6436c17804297cf6ea13fcb06fcf6"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.iszt.hu" target="_blank">ISZT</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS12303</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.7</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1:2303:3</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/iszt/f7d3e1b81bfb8a43b675962bd91dc52a"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.iszt.hu" target="_blank">ISZT</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS12303</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.8</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1:2303:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">under construction</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/iszt/96bb4f0e11217cf668a9852b64677d11"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.infotechna.hu" target="_blank">Infotechna</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/16310" target="_blank">AS15566</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.87</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1:5566:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/infotechna/3a8227adedf5b1b65f7439a9e0bf27ea"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.intellihome.hu" target="_blank">IntelliHome</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/23242" target="_blank">AS47116</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.147</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:7116:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/intellihome/5d3f7d45d660bf17b178690358fcf2ab"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.forpsi.com" target="_blank">Internet CZ</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/14682" target="_blank">AS24806</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.140</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:4806:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/internet_cz/b0582d0f7b662f666aa5e01803805395"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://i4u.hu" target="_blank">Internet4U</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/29317" target="_blank">AS20742</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.107</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:0742:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/internet4u/cf1101f5c0445622b9285ca1d94f1210"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.invitech.hu" target="_blank">Invitech</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/1833" target="_blank">AS12301</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">2Connect DC10</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.167</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1:2301:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/invitel/8ed88b83c3970415cd71813a67590ab2"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.invitech.hu" target="_blank">Invitech</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/1833" target="_blank">AS12301</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.42</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1:2301:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/invitel/4743355e010669cf99fe2198cd929561"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://iotzrt.hu/" target="_blank">IoT Zrt</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/32691" target="_blank">AS29657</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.38</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:9657:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1 Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/iot_zrt/3a6327dd650e9cc1f814d626ea116153"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://jztkft.hu/" target="_blank">JZT Informatikai Kft</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/19118" target="_blank">AS39679</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.73</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:9679:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/jzt/be89d5eddfe8a7cfe4240bf5bd228e79"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.keviwlan.hu/" target="_blank">KeviWLAN</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS212707</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.81</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::21:2707:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/keviwlan/d9bb47f23007b59ec9008fbc7ce9d3f1"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.m247.com" target="_blank">M247 Networks</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/601" target="_blank">AS9009</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.176</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::9009:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/m247_networks/95a1b58230febb4573e58eeeef959a43"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://mvm-informatika.hu" target="_blank">MVM Informatika</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/22251" target="_blank">AS43928</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.143</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:3928:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">Backup Link</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/mvm_informatika/f838ea67a8c6b60342febb59f4f36fff"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://mvm-informatika.hu" target="_blank">MVM Informatika</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/22251" target="_blank">AS43928</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.144</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:3928:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/mvm_informatika/8260dd72f9049ce36a891aba2a409e28"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.mvmnet.hu" target="_blank">MVM NET</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/7327" target="_blank">AS47169</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.152</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:7169:4</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/mvmnet/f559e106f2129a3098c5949b00b71490"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.mvmnet.hu" target="_blank">MVM NET</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/7327" target="_blank">AS47169</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.164</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:7169:3</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/mvmnet/ac6f107e3c7be83411e377ffac0d5726"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.macronet.hu" target="_blank">Macronet</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS204745</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.157</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:4745:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/macronet/8092c4c98f05ccec9725e3414fed4028"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href=" https://www.magenta.at" target="_blank">Magenta Telekom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/5982" target="_blank">AS8412</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.88</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8412:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/magenta_telekom/df3d63d309f7c4ece877daa1696796a9"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.telekom.hu" target="_blank">Magyar Telekom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/5025" target="_blank">AS5483</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.12</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5483:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/magyar_telekom/3669abf99e5bf93373a89520b1ba6c3b"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.telekom.hu" target="_blank">Magyar Telekom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/5025" target="_blank">AS5483</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.139</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5483:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">Backup link</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/magyar_telekom/a861b98f5e932a7cce5b3f60d1549883"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://mediacenter.hu/" target="_blank">MediaCenter Hungary</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS44460</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.34</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7f8:35::4:4460:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/mediacenter/2da2b514010b4a5a7100b9004ce93dfa"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.facebook.com/peering" target="_blank">Meta (facebook)</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/979" target="_blank">AS32934</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.193</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:2934:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">200G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/meta/dbcfa043e562b4d63add7b96d537ab9f"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.facebook.com/peering" target="_blank">Meta (facebook)</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/979" target="_blank">AS32934</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.97</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:2934:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">200G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/meta/a06d55a5509bb35bdd9483c8d81071cb"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.microsoft.com/" target="_blank">Microsoft</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/694" target="_blank">AS8075</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.21</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8075:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/microsoft/6f25f07b98015eee9df60cbbaaa2a53d"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.microsoft.com/" target="_blank">Microsoft</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/694" target="_blank">AS8075</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.51</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8075:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">#2</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/microsoft/a1cc3554a4c140c55e23ecad86b2bc1b"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname">Microsystem-Kecskemét</span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/23905" target="_blank">AS197889</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">2Connect DC10</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.92</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::19:7889:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/microsystem_kecskemet/758279c2241771356cd0de861cb61647"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname">Mikroháló</span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS199235</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.56</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::19:9235:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/mikrohalo_kft/a77f59da5ca50240edddcdf7d20c789d"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.mobillan.hu/" target="_blank">Mobillan-Sat</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS203246</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.99</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:3246:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/mobillan_sat/515d4e90cfdb6f272de525cf5252ed00"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.matracomp.hu/" target="_blank">MátraCOMP</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/14774" target="_blank">AS41303</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.30</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:1303:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">Virtual BIX port</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/matracomp/14360555420c654dfc262a9c6e1bc94d"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.iec.hu" target="_blank">NETregator</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/21638" target="_blank">AS44302</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.145</span>
+						
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/netregator/907586d4716d4d9f45a697ec0026a238"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.iec.hu" target="_blank">NETregator</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/21638" target="_blank">AS44302</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.146</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:4302:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">backup</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/netregator/368f185f3cd4671797c3aa5937e7bfa2"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.nmhh.hu" target="_blank">NMHH</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS59649</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.174</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5:9649:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">200G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/nmhh/c2c8bd9ef989beb841b444a6e8b8813b"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.nts.ch" target="_blank">NTS Workspace</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/711" target="_blank">AS15576</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.52</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1:5576:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">Virtual BIX port</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/nts_workspace_ag/845fcd50adec7733571f809f0a3748fe"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.nessus.at/" target="_blank">Nessus GmbH</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/5171" target="_blank">AS47692</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.192</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:7692:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/nessus_gmbh/6da5ba8e638059c94e1bb775e44b361b"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://netfone.hu/" target="_blank">Netfone</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS197862</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.103</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::19:7862:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/netfone/5398c875b849d6e8ad628b284f77b0f9"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.nexum.hu" target="_blank">Nexum</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/15335" target="_blank">AS20510</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.32</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:510:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">3Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/nexum/c3b8fb47d5ba4e18d75b83c55aa2b9e9"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.opcnet.hu/" target="_blank">OPC Networks</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/22229" target="_blank">AS24822</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.90</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:4822:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">backup</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/opc_networks/7d52b4c49bb23175f92d3c12cbc667d2"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.opcnet.hu/" target="_blank">OPC Networks</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/22229" target="_blank">AS24822</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.91</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:4822:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/opticon/bf3f9919aa7a13d74d07a21d7b5c2641"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.ovhcloud.com" target="_blank">OVHcloud</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/1264" target="_blank">AS16276</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.162</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1:6276:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/ovhcloud/029afd0971c1257ccacc814dfb3a735a"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.omonia.hr" target="_blank">Omonia</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/3471" target="_blank">AS44306</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.33</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:4306:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/omonia/ce81fcb47e9a86cf1110d05917d7f690"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.one.hu" target="_blank">One</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS21334</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.179</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:1334:4</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">300G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/vodafone/8695bcfb8bbb9250520f16f48510bff5"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.one.hu" target="_blank">One</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS21334</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.184</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:1334:3</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">300G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/vodafone/ed1a4af7eb3de1c4d8803ca2be1d2b5f"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.opennet.hu" target="_blank">Opennet</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS207349</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.66</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:7349:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/opennet/0dbedd7259827d89b91f9935cb5a3060"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname">Orange</span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/21589" target="_blank">AS328126</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.79</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::32:8126:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/orange/1da8ea6b768f4466142e4246bbe91c09"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.pr.hu/" target="_blank">PR-Telecom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/12801" target="_blank">AS35311</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.135</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:5311:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/pr_telecom/580c3f11d9ac3c3479595f6bbca1ad78"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.pch.net/" target="_blank">Packet Clearing House (PCH)</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/286" target="_blank">AS3856</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.72</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3856:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/packet_clearing_house_pch/fc87c68607912b1f61adc31401375ffe"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.pch.net/" target="_blank">Packet Clearing House (PCH)</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/286" target="_blank">AS42</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.62</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::42:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/packet_clearing_house_pch/cb4595a76d85dcd257a4488fb9e227f1"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname">PeakFactory</span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/9610" target="_blank">AS49206</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.58</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:9206:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">20G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/peakfactory/d285aab8b6e2da627b4dda5cf3812844"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname">PeakFactory</span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/9610" target="_blank">AS49206</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.93</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:9206:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/peakfactory/0486805e659442f2b819a9e1f0576bcb"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.pickup.hu/" target="_blank">PickUp</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS41627</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.161</span>
+						
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/pickup/fd53c043621465552aa55814c23e3215"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.pro-m.hu" target="_blank">Pro-M/NIIF</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/21064" target="_blank">AS1955</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.13</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1955:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/hungarnet/e9b7c64657c49b3e7a66ae1125a5ee37"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.pro-m.hu" target="_blank">Pro-M/NIIF</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/21064" target="_blank">AS1955</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.89</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::1955:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">Backup Link</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/hungarnet/84255228d4ce51b2ebf942adb2fab2f9"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.retn.net" target="_blank">RETN</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/124" target="_blank">AS9002</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.153</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::9002:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/retn/ead63b6c85611b8078a3a4458e0071e1"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.rlan.hu" target="_blank">RLAN</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/22267" target="_blank">AS35263</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.148</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:5263:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/rs_com/6d9e036a55867427ff85e95eb0612b4c"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href=" https://www.romarg.ro" target="_blank">ROMARG</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/26019" target="_blank">AS205275</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.76</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:5275:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">VIP of RETN</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/romarg/7b44f4e0049885a87085ae6cfe8bfcbe"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://rackforest.hu" target="_blank">RackForest</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/11964" target="_blank">AS62214</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.45</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::6:2214:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">20G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">Backup Link</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/rackforest/a334112b4ed22ef2db20b59112007597"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://rackforest.hu" target="_blank">RackForest</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/11964" target="_blank">AS62214</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.46</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::6:2214:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">20G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/rackforest/ad43593ed50db45ef90c79d1f7fbc185"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.rackhost.hu/" target="_blank">Rackhost</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/9642" target="_blank">AS29278</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.121</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:9278:5</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/rackhost_2/88f4d95986d916dc88b8f9958f5cc9e2"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.rackhost.hu/" target="_blank">Rackhost</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/9642" target="_blank">AS29278</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.122</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:9278:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/rackhost_2/f0f7b2fd082461aeb6f7e3f254ef6af9"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://rendszerinformatika.hu/" target="_blank">Rendszerinformatika</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/14864" target="_blank">AS206892</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.48</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:6892:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/rendszerinformatika/3af8bb674922dca79375f4cc5ef5c1e5"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://rendszerinformatika.hu/" target="_blank">Rendszerinformatika</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/14864" target="_blank">AS206892</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.49</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:6892:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/rendszerinformatika/6fdce69d8f05920e261867e8df991f3b"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.riotgames.com/en" target="_blank">Riot Games</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/5918" target="_blank">AS6507</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.207</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::6507:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/riot_games/d068dbf8af4fc47b25252e660cd9b240"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.romtelecom.ro" target="_blank">Romtelecom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/1682" target="_blank">AS9050</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.149</span>
+						
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/romtelecom/68c1c2d0c2f69b0c8a8778c33424abdb"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://s3c.bg/" target="_blank">S3 Company Ltd.</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/6414" target="_blank">AS44901</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.109</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:4901:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/s3_company_ltd/c788b3c087af7a532d932ba108f8ed50"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.sattrakt.com" target="_blank">SAT-TRAKT</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS41897</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.189</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:1897:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">30G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">20G + 10G bck</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/sat_trakt/fe4caaa3b44102a91511a2b3a0edf383"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.sattrakt.com" target="_blank">SAT-TRAKT</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS41897</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.190</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:1897:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/sat_trakt/54d552a2c6842f4c021d027d37281f0f"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.setcor.com/" target="_blank">SETCOR ICT</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/8442" target="_blank">AS61211</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.211</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::6:1211:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/setcor_ict/6b6d3aee6e4f58cbd70d97bd787d6285"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://serverastra.com" target="_blank">ServerAstra</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/27579" target="_blank">AS56322</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.57</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5:6322:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/serverastra/73b8e51448ff9edf48abc9f65d427f9b"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.servergarden.hu/" target="_blank">Servergarden</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/15803" target="_blank">AS47381</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.124</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:7381:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/doclerweb/50a2fa41c7b090e883227f97e5970106"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.servergarden.hu/" target="_blank">Servergarden</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/15803" target="_blank">AS47381</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.134</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:7381:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/doclerweb/89ac3451f84886fdefd1e50e4369f019"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://sweet.tv" target="_blank">Sweet TV</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/21712" target="_blank">AS204384</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">2Connect DC10</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.43</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:4383:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/van_group_s_r_o_sweet_tv/67bfed84dfdc3a095506cb1b69b1bcb9"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://sweet.tv" target="_blank">Sweet TV</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/21712" target="_blank">AS204384</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">2Connect DC10</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.83</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:4383:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/van_group_s_r_o_sweet_tv/37deeddcf603dbf3dc54f32591564ea3"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.swisscom.com" target="_blank">Swisscom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/5" target="_blank">AS3303</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.125</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3303:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/swisscom/661f344f1aa3e725219fe0f938ff755c"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://sybell.hu" target="_blank">Sybell Informatika</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS62449</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.123</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::6:2449:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/sybell_informatika/974e40d43394776492ad4af238777415"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://szerverplex.hu/" target="_blank">Szerverplex</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/6696" target="_blank">AS61998</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.71</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::6:1998:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/szerverplex/9fd6bfb7382bddb3e66c97ccb0513b29"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://t-2.com" target="_blank">T-2 d.o.o.</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/8611" target="_blank">AS34779</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.36</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:4779:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">10Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/t_2_d_o_o/1d3140ba64d7e31cb42c6d1e32ab43d7"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://tamanet.hu" target="_blank">TamaNET</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/32305" target="_blank">AS206361</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.206</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:6361:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/tamanet/4b0a0b011261647efba179d32b2fe1aa"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.tarr.hu/" target="_blank">Tarr</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/3871" target="_blank">AS8462</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.172</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8462:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/tarr/6bc10a4cb8c30b86fca214097645e472"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.tarr.hu/" target="_blank">Tarr</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/3871" target="_blank">AS8462</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.173</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8462:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/tarr/4cc62e632be86372d2f2863eea08a6af"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.telehouse.bg" target="_blank">Telehouse AD</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/4977" target="_blank">AS57344</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.166</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5:7344:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">25G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/telehouse_ad/1eb0a90e87b52b884e844eea3fbc19a6"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://mts.rs/ " target="_blank">Telekom Srbija a.d. Belgrade</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/3167" target="_blank">AS8400</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.171</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::8400:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/telekom_srbija_a_d_belgrade/bf282131214fefdbe32d5c69597b3d19"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://trans-pack.hu/" target="_blank">Trans-Pack </a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS209108</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.108</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:9108:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/trans_pack/ba8851ce7113bbf7dfd65b9879c610a3"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://tarhely.eu" target="_blank">Tárhely.Eu</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/24014" target="_blank">AS43359</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.70</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:3359:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/tarhely_eu/478229a83e3aebaf3b4738b5d454db83"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.turktelekomint.com" target="_blank">Türk Telekom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/2648" target="_blank">AS6663</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.20</span>
+						
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/pantel_international/987c1050d6c58aa60e5f68b28a39a35c"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://ugni.net" target="_blank">UGNI (ex. SBB)</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/3397" target="_blank">AS31042</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.26</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:1042:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/serbia_broadband/32f3b1cb5ae7fa14eb6775aae6562464"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.unitedtelecom.hu/" target="_blank">United Telecom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/16832" target="_blank">AS41206</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.54</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:1206:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">20G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/united_telecom/5e488bfe623084f271f4a494593460aa"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.unitedtelecom.hu/" target="_blank">United Telecom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/16832" target="_blank">AS41206</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.55</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:1206:2</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">20G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/united_telecom/76e1151ff60f0117d75941a72a57c5e7"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname">VIVAcom</span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/16717" target="_blank">AS51920</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.50</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5:1920:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">10G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">4Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/vivacom/e05d2fb63918eeb94c0d30858ef0c754"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.vnet.sk" target="_blank">VNET</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/3926" target="_blank">AS29405</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.24</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::2:9405:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">2G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">Virtual BIX port</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/vnet/8ad15876d1e4b9675c670d1aecbbd832"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.valvesoftware.com/hu/" target="_blank">Valve Corporation</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/4782" target="_blank">AS32590</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.28</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:2590:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">40G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/valve_corporation/af5d7b21b39eaffd1fd182a3b9233b12"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://vinet.hu/" target="_blank">ViNetwork</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS208126</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.126</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:8126:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/vinetwork/d90c534cbe4a1d806745c3bd48379a77"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.wedos.com/" target="_blank">WEDOS Internet, a.s.</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/31913" target="_blank">AS208414</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">Digital Realty (InterXion VIE1)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.208</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::20:8414:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">1Gbps on 10G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/wedos_internet_a_s/9477807d923e95852c56d344d7557a9a"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://wbd.com" target="_blank">Warner Bros. Discovery</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/2003" target="_blank">AS43500</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.67</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:3500:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/warner_bros_discovery/1e6fb8aa43010c14fa467a26ac9700f4"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.wavecom.hu" target="_blank">WaveCom</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/19965" target="_blank">AS39201</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.41</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::3:9201:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">4G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/wavecom/cded4cb4a004c7f43fd3b5757259c88b"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href=" Website https://www.websupport.sk" target="_blank">Websupport</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/25400" target="_blank">AS51013</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.60</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5:1013:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">BIX VIP of RETN</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/websupport/790360768a509e7b8f4037bf8ee1bd9e"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.zalaszam.hu" target="_blank">Zalaszám</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad">AS50031</td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.156</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::5:31:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">BIX VIP</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/zalaszam/846039c3eea791581e93114826fae549"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="https://www.i3d.net" target="_blank">i3D.net</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/2496" target="_blank">AS49544</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Open/Free</td>
+		<td  data-title="Node" class="c clearpad">T-Systems Cloud & Datacenter (Dataplex)</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.150</span>
+			<span class="mdata"><i>IPv6 cím:</i> 2001:7F8:35::4:9544:1</span>			
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">100G</td>		
+	<td  data-title="Megjegyzés" class="clearpad">40Gbps on 100G</td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/i3d_net/094b64e8afd308843060eb7e20b04761"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	<tr>
+		<td>
+			<span class="mname"><a href="http://www.ines.ro/" target="_blank">iNES Group</a></span>
+		</td>		
+		<td  data-title="AS number" class="c  clearpad"><a href="https://www.peeringdb.com/net/2920" target="_blank">AS12310</a></td>
+		<td  data-title="Peering policy" class="c clearpad">Selective</td>
+		<td  data-title="Node" class="c clearpad">VH</td>
+				
+		<td>
+		
+			<span class="mdata"><i>IPv4 cím:</i> 193.188.137.159</span>
+						
+		</td>
+	<td  data-title="Sávszélesség" class="c clearpad">1G</td>		
+	<td  data-title="Megjegyzés" class="clearpad"></td>	
+	<td  data-title="Megtekint" class="c clearpad"><a href="/statisztika/ines_group/04db6a04bb39774b32e489b5c2324f9d"><i class="fa fa-area-chart staticon"></i></a></td>	
+	</tr>
+	
+	</tbody>
+	</table>
+ </div>
+</div></div>
+		</div>		
+	</div>
+</div>
+
+<div id="ax_42"><div class="footerdiv">	
+	<div class="container footer">
+		<div class="row">
+			<div class="col-ms-12 col-xs-6 col-sm-6 col-md-4">
+				<div class="footermenu">
+					<h3>Hasznos Linkek</h3>
+					<ul class="fa-ul">
+					  <li><i class="fa-li fa fa-angle-double-right"></i><a href="https://www.domain.hu/">Domain kereső</a></li>
+					  <li><i class="fa-li fa fa-angle-double-right"></i><a href="/statisztika">Statisztikák</a></li>
+					  <li><i class="fa-li fa fa-angle-double-right"></i><a href="/bix_szabalyzat">Szabályzat</a></li>
+					  <li><i class="fa-li fa fa-angle-double-right"></i><a href="https://ixpman.bix.hu/login">Belépés tagoknak</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-ms-12 col-xs-6 col-sm-6 col-md-4">
+				<div class="sociallinks">
+					<h3>Kövessen minket</h3>
+						<p>
+											
+							<a href="https://www.linkedin.com/company/budapest-internet-exchange"><span class="fa fa-linkedin-square"></span> LinkedIN</a>
+						</p>
+					</div>						
+			</div>
+			<div class="col-ms-12 col-xs-6 col-sm-6 col-md-4">
+				<div class="footeraddress">					
+					<h3>Kapcsolat</h3>
+					<p>
+					<span class="name"><b>BIX - Budapest Internet Exchange</b></span><br />
+					<span class="fa fa-map-marker"></span> 1089 Budapest, Bláthy Ottó utca 9.<br />
+					<span class="fa fa-phone"></span> +36 1 238 0115<br />
+					<span class="fa  fa-envelope"></span> <a href="mailto:info@bix.hu">info@bix.hu</a>
+					</p>
+				</div>							
+			</div>				
+		</div>
+	</div>
+
+	<div class="container footer1">
+		<div class="row">
+			<div class="col-xs-12 col-sm-9 col-md-9 l"><div class="footercopyr">Minden jog fenntartva! © ISZT (Council of Hungarian Internet Providers) | honlapkészítés: <a href="http://www.dds.hu/"><b>DDSWEB</b></a></div></div>
+			<div class="col-xs-12 col-sm-3 col-md-3 r"><div class="footercopyr"><a href="/impresszum">Impresszum</a></div></div>
+		</div>
+	</div>
+</div>	</div></div></div>
+<script type="text/javascript">a3_template_state='fullpage_1_1787304721_.2.2.3.3.0.36.37.37.38.38.39.39.40.40.1.45.45.1.42.42.36.0.';DDS.AJAX.url_setup();DDS.AJAX.startEventPolling();</script>
+</body>
+</html>
