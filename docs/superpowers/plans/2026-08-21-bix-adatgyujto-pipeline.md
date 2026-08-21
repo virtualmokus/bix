@@ -1726,10 +1726,11 @@ ezért csak azokra a mezőkre használjuk, amiket a BIX nem közöl.
 
 ## Amit szándékosan NEM gyűjtünk
 
-- **Tagok e-mail-címe és telefonszáma.** Szerepel a `bix.hu/tagok` oldalon,
-  de kapcsolattartói adat tömeges újraközlése fölösleges GDPR-kockázat.
-- **Per-port forgalmi adat.** A `stats.bix.hu/graph.cgi` kizárólag PNG-t ad
-  vissza, számadatot nem — a képből való visszafejtést elvetettük.
+- **Természetes személyhez köthető adat.** Kizárólag szervezeti szintű
+  információt használunk: cégnév, ASN, csatlakozási pont, sávszélesség,
+  peering-irányelv. Kapcsolattartói adat nem kerül a projektbe.
+- **Per-port forgalmi adat.** A forgalom grafikonként érhető el, számadatként
+  nem — a képből való visszafejtést elvetettük.
 
 ## Futtatás helyben
 

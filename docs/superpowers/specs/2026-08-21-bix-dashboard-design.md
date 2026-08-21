@@ -5,13 +5,15 @@
 
 ## 1. Cél
 
-Független, vizuális dashboard a Budapest Internet Exchange (BIX) nyilvános adataiból. A BIX saját felülete (`bix.hu`) elavult: a forgalmi adatot egyetlen PNG-ben mutatja, a 188 portos infrastruktúrát pedig egy lapos HTML-táblázatban temeti el. Ugyanez az adat elmondható úgy is, hogy érthető és érdekes legyen.
+Független, vizuális dashboard a Budapest Internet Exchange (BIX) nyilvános adataiból.
+
+A `bix.hu` minden lényeges adatot közzétesz: a forgalmat grafikonként, a portokat és a tagokat táblázatban. Ez a projekt nem pótolni akar valamit, hanem **más köntösbe helyezni ugyanazt az információt** — a grafikonból idősort, a táblázatból kereshető, szűrhető nézetet, a gigabitekből pedig emberi léptékű összehasonlítást csinál. Aki a hiteles, hivatalos adatot keresi, annak továbbra is a `bix.hu` a helyes cím.
 
 Referencia a hangvételre és az interaktivitásra: [holadelej.hu](https://holadelej.hu/) — független hobbiprojekt, kizárólag nyilvános forrásból, ami a magyar villamosenergia-rendszert teszi laikus számára is olvashatóvá.
 
 ### Hatókör
 
-- **v1:** privát használatra épül (a repó publikus, de a termék nincs bejelentve, nincs saját domain)
+- **v1:** a repó publikus, az oldal viszont még nincs bejelentve és nincs saját domainje — előbb legyen mögötte elég adat
 - **Hosszú távon:** publikus, közhasznú eszköz a magyar hálózati közösségnek
 
 ### Nem cél
@@ -72,13 +74,13 @@ Tényleges eloszlások (2026-08-21):
 
 Két dolog, ami ebből kiderül és a tervezést befolyásolja:
 
-**A `/statisztika` nem teljes.** A főoldal 188 portot és 141 hálózatot jelent, a statisztika-oldalon viszont 137 port és 111 ASN szerepel — a portok kb. 78%-a. A különbség oka nem publikus (valószínűleg vannak nem közzétett portok). **Következmény:** a port-mátrix 137 cellás, és az oldalnak ezt őszintén ki kell írnia, nem szabad úgy tenni, mintha a teljes BIX-et mutatná.
+**A `/statisztika` nem teljes.** A főoldal 188 portot és 141 hálózatot jelent, a statisztika-oldalon viszont 137 port és 111 ASN szerepel — a portok kb. **73%-a**. A különbség okát nem közlik. **Következmény:** a port-mátrix 137 cellás, és az oldalnak ezt őszintén ki kell írnia, nem szabad úgy tenni, mintha a teljes BIX-et mutatná.
 
 **A BIX-nek van bécsi node-ja.** A `Digital Realty (InterXion VIE1)` 16 porttal Bécsben van, nem Budapesten. Ez a „budapesti IX" képet árnyalja, és a `Növekedés` nézetben önálló történet.
 
 **Frissítés:** napi 1×.
 
-### 3.3 PeeringDB API — csatlakozási történet
+### 3.3 PeeringDB API — rekord-történet
 
 `https://www.peeringdb.com/api/netixlan?ix_id=55` — **137 rekord, 103 egyedi ASN**, auth nélkül, JSON. (Ellenőrizve 2026-08-21-én a nyers API-válaszon.)
 
@@ -96,9 +98,9 @@ Ebből 103 rekord route-server peer, 115-ben van IPv6-cím.
 
 ### 3.4 Ami NEM szerezhető meg
 
-**Per-port és aggregát forgalmi számadat.** A `stats.bix.hu/graph.cgi` kizárólag `image/png`-t ad vissza. Ellenőrzött, sikertelen kimeneti kapcsolók: `format=csv`, `format=json`, `xport=1`, `output=csv`, `type=csv`, valamint paraméter nélkül — mind a hat PNG.
+**Per-port és aggregát forgalmi számadat.** A `stats.bix.hu/graph.cgi` grafikont ad vissza (`image/png`), számadatot nem — a szokásos adat-kimeneti kapcsolókra sem. Gépi feldolgozásra szánt forgalmi végpont nincs közzétéve.
 
-A `start` / `end` paraméter tetszőleges unix timestamp lehet (`graph.cgi?type=Octets&portid=<hash>&start=<ts>&end=<ts>`), tehát bármilyen időablakra kérhető grafikon — de továbbra is képként.
+A grafikon tetszőleges időablakra lekérhető, de továbbra is képként.
 
 **Következmény:** historikus forgalmi adat visszamenőleg nem létezik számként. Az idősor a gyűjtés indításának napjától épül. A PNG-ből való visszafejtés (OCR / pixelolvasás) **elvetve**: a legtöbb munka a legtörékenyebb eredményért.
 
@@ -275,7 +277,7 @@ Egy csendben elromló scraper hónapokig ír nullákat az idősorba, és mire ki
 
 ## 11. Nyitott kérdések (nem v1)
 
-- **`Térkép` fül.** A BIX 3-4 budapesti adatközpontja sovány egy térképhez. Érdemesebb lenne a tagok országa / központja szerint (PeeringDB-ből kinyerhető), de az plusz adatforrás és külön gondolkodás.
+- **`Térkép` fül.** A BIX négy csatlakozási pontja kevés önálló térképhez. Érdemesebb lenne a tagok országa / központja szerint (PeeringDB-ből kinyerhető), de az plusz adatforrás és külön gondolkodás.
 - **`Mi ez?` fül.** Statikus szövegoldal a BIX-ről és a peeringről; bármikor hozzácsapható.
 - **Sötét téma.** A NOC-stílusú sötét változat témakapcsolóként visszahozható.
 
