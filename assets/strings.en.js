@@ -204,6 +204,8 @@ export default {
     explainTitle: 'How to read this map',
     explainBody:
       'Lines run from Budapest to each exchange, coloured by how many BIX members are also present there. Click any dot and the view changes: the panel lists the members, the lines redraw from that exchange, and every other exchange sharing the same networks stays lit while the rest fade. That is how you can see, for example, that the crowd at Vienna overlaps almost entirely with the crowd at Frankfurt.',
+    cableLabel: 'Submarine cables',
+    cableToggle: 'Show',
     minShared: 'Min. shared members',
     regionLabel: 'Region',
     allRegions: 'All regions',
@@ -224,10 +226,22 @@ export default {
       membersHere: 'BIX members present',
       relatedTitle: 'Shares networks with',
       relatedHint: 'Exchanges whose members overlap with this one. Click to jump.',
+      cablesTitle: 'Submarine cables within reach',
+      cablesHint:
+        '{n} cables land within 150 km of this exchange. Turn on the cable layer to see them highlighted.',
+      inland:
+        'No submarine cable lands near this exchange. The closest is {landing}, {km} km away — everything here arrives overland.',
+      sharedCableTitle: 'Shares a physical cable with',
+      sharedCableHint:
+        'These exchanges sit near a landing of the same cable. This is a genuinely shared piece of physical infrastructure — unlike the peering lines, which are logical.',
     },
+    physicalWarnTitle: 'The lines are logical, not physical.',
+    physicalWarnBody:
+      'The connections drawn from Budapest show that the same networks are present at both exchanges. They are not circuits, and no public data says which fibre any of that traffic actually follows. The submarine cable layer is the one thing on this map that is physical infrastructure — and Hungary, being landlocked, touches none of it.',
     fallback:
       'The map library could not be loaded. The connection data is still available on the Overview tab.',
-    attribution: 'Map tiles © OpenStreetMap contributors. Exchange locations from PeeringDB.',
+    attribution:
+      'Map tiles © OpenStreetMap contributors. Exchange locations from PeeringDB. Submarine cable routes and landing points © TeleGeography, used under CC BY-NC-SA 3.0.',
   },
 
   legal: {
@@ -248,7 +262,7 @@ export default {
       {
         heading: 'Where the data comes from',
         body:
-          'Aggregate traffic figures and the port-level table are read from pages published on bix.hu. Network profiles, exchange locations and worldwide membership come from the PeeringDB public API. Map tiles are served by OpenStreetMap. Each source is credited on the pages where its data appears, and the collection code is open for inspection in the project repository.',
+          'Aggregate traffic figures and the port-level table are read from pages published on bix.hu. Network profiles, exchange locations and worldwide membership come from the PeeringDB public API. Submarine cable routes and landing points come from TeleGeography’s Submarine Cable Map and are used under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 licence — which is one reason this project stays non-commercial. Map tiles are served by OpenStreetMap. Each source is credited on the pages where its data appears, and the collection code is open for inspection in the project repository.',
       },
       {
         heading: 'Accuracy and liability',

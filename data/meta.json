@@ -22,5 +22,9 @@
   "global": {
     "last_success": "2026-08-21T12:56:59Z",
     "last_error": null
+  },
+  "cables": {
+    "last_success": "2026-08-21T13:55:39Z",
+    "last_error": null
   }
 }

@@ -10,13 +10,15 @@ const STALE_AFTER_MINUTES = {
 };
 
 export async function loadAll(fetchFn, base = 'data') {
-  const [csv, members, ports, meta, global] = await Promise.all([
+  const [csv, members, ports, meta, global, cables] = await Promise.all([
     fetchFn(`${base}/traffic.csv`).then((r) => r.text()),
     fetchFn(`${base}/members.json`).then((r) => r.json()),
     fetchFn(`${base}/ports.json`).then((r) => r.json()),
     fetchFn(`${base}/meta.json`).then((r) => r.json()),
     // A globális réteg opcionális: nélküle az oldal többi része él marad.
     fetchFn(`${base}/global.json`).then((r) => r.json()).catch(() => null),
+    // A tengeralatti kábelréteg is opcionális — hiánya nem dönti el az oldalt.
+    fetchFn(`${base}/cables.json`).then((r) => r.json()).catch(() => null),
   ]);
 
   return {
@@ -25,6 +27,7 @@ export async function loadAll(fetchFn, base = 'data') {
     ports: ports.ports ?? [],
     meta,
     global: global ?? null,
+    cables: cables ?? null,
   };
 }
 

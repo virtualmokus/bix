@@ -36,6 +36,46 @@ export function filterExchanges(exchanges, { minShared = 1, region = '', asn = '
 }
 
 /**
+ * Melyik csomópontok érhetők el UGYANAZON a fizikai tengeralatti kábelen,
+ * mint a kiválasztott? Ez az egyetlen olyan kapcsolat ezen a térképen, ami
+ * valódi közös fizikai eszközt jelent — a peering-vonalak logikaiak.
+ *
+ * `cableIndex`: { ixId: string[] } — csomópontonként a közeli kábelek.
+ */
+export function sharedCableExchanges(selectedId, cableIndex, exchanges, limit = 8) {
+  const own = new Set(cableIndex?.[selectedId]?.cables ?? []);
+  if (own.size === 0) return [];
+
+  const selected = exchanges.find((e) => e.id === selectedId);
+  const ownCity = selected?.city ?? null;
+
+  const matches = exchanges
+    .filter((e) => e.id !== selectedId)
+    // Az azonos városban lévő csomópontok értelemszerűen ugyanazokat a
+    // kábeleket érik el; ez nem információ. A kérdés az, melyik MÁSIK
+    // település ül ugyanazon a fizikai kábelen.
+    .filter((e) => !ownCity || e.city !== ownCity)
+    .map((e) => {
+      const theirs = cableIndex?.[e.id]?.cables ?? [];
+      return { exchange: e, cables: theirs.filter((c) => own.has(c)) };
+    })
+    .filter((r) => r.cables.length > 0)
+    .sort((a, b) => b.cables.length - a.cables.length);
+
+  // Városonként csak a legerősebb egyezés kerül a listába.
+  const seen = new Set();
+  const out = [];
+  for (const match of matches) {
+    const city = match.exchange.city ?? `#${match.exchange.id}`;
+    if (seen.has(city)) continue;
+    seen.add(city);
+    out.push(match);
+    if (out.length === limit) break;
+  }
+  return out;
+}
+
+/**
  * Melyik csomópontok osztoznak ugyanazokon a hálózatokon a kiválasztottal?
  * Az átfedés a közös ASN-ek száma — ez köti össze például Frankfurtot
  * Béccsel, függetlenül attól, hogy mindkettő a BIX-hez is kapcsolódik.
@@ -89,6 +129,8 @@ export function render(data) {
     )}</p>` +
     `<details class="explainer"><summary>${escapeHtml(s.explainTitle)}</summary>` +
     `<p>${escapeHtml(s.explainBody)}</p></details>` +
+    `<p class="note note--warning"><strong>${escapeHtml(s.physicalWarnTitle)}</strong> ` +
+    `${escapeHtml(s.physicalWarnBody)}</p>` +
 
     `<div class="map-shell" id="map-shell">` +
     `<div class="map-controls">` +
@@ -104,6 +146,9 @@ export function render(data) {
     `<select id="map-member" class="filter">` +
     option('', s.allMembers, true) + memberOptions +
     `</select></label>` +
+    `<label class="ctl ctl--check"><span>${escapeHtml(s.cableLabel)}</span>` +
+    `<label class="switch"><input type="checkbox" id="map-cables">` +
+    `<span>${escapeHtml(s.cableToggle)}</span></label></label>` +
     `<button type="button" id="map-reset" class="btn btn--ghost">${escapeHtml(s.reset)}</button>` +
     `<button type="button" id="map-full" class="btn">${escapeHtml(s.fullscreen)}</button>` +
     `</div>` +
@@ -162,8 +207,33 @@ export function mount(root, data) {
     attribution: '© OpenStreetMap contributors',
   }).addTo(map);
 
+  // A kábelréteg a térkép alá kerül, hogy a csomópontok fölötte maradjanak.
+  const cableLayer = L.layerGroup().addTo(map);
   const lineLayer = L.layerGroup().addTo(map);
   const dotLayer = L.layerGroup().addTo(map);
+
+  const cableData = data.cables ?? null;
+  const cableIndex = cableData?.exchanges ?? {};
+  const cableById = new Map((cableData?.cables ?? []).map((c) => [c.id, c]));
+  const cablesToggle = root.querySelector('#map-cables');
+
+  /** Kábelek rajzolása; `highlight` a kiemelendő kábelek azonosítói. */
+  function drawCables(highlight) {
+    cableLayer.clearLayers();
+    if (!cablesToggle?.checked || !cableData) return;
+
+    for (const cable of cableData.cables) {
+      const isHot = highlight?.has(cable.id);
+      for (const segment of cable.geometry) {
+        L.polyline(segment.map(([lng, lat]) => [lat, lng]), {
+          color: isHot ? '#B26A00' : (cable.color ?? '#8FA6B8'),
+          weight: isHot ? 2.4 : 0.8,
+          opacity: isHot ? 0.95 : (highlight ? 0.15 : 0.5),
+          interactive: false,
+        }).addTo(cableLayer);
+      }
+    }
+  }
   const markers = new Map();
   let selectedId = null;
 
@@ -173,6 +243,61 @@ export function mount(root, data) {
       region: regionSel.value,
       asn: memberSel.value,
     };
+  }
+
+  /** A tengeralatti szakasz a panelben: mit tudunk fizikailag, és mit nem. */
+  function cableSection(exchange) {
+    const info = cableIndex[exchange.id];
+    if (!info) return '';
+
+    const cables = info.cables ?? [];
+    const shared = sharedCableExchanges(exchange.id, cableIndex, all, 6);
+
+    // Szárazföldi csomópont: ez önmagában is beszédes tény.
+    if (cables.length === 0) {
+      return (
+        `<p class="panel-label">${escapeHtml(s.panel.cablesTitle)}</p>` +
+        `<p class="panel-note">${escapeHtml(
+          s.panel.inland
+            .replace('{km}', formatInt(info.nearest_km ?? 0))
+            .replace('{landing}', info.nearest_landing ?? '—')
+        )}</p>`
+      );
+    }
+
+    const names = cables
+      .map((id) => cableById.get(id)?.name)
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b));
+    const shown = names.slice(0, 10);
+
+    return (
+      `<p class="panel-label">${escapeHtml(s.panel.cablesTitle)}</p>` +
+      `<p class="panel-note">${escapeHtml(
+        s.panel.cablesHint.replace('{n}', formatInt(cables.length))
+      )}</p>` +
+      `<div class="chip-row">` +
+      shown.map((n) => `<span class="chip chip--cable">${escapeHtml(n)}</span>`).join('') +
+      (names.length > shown.length
+        ? `<span class="chip chip--muted">+${formatInt(names.length - shown.length)}</span>`
+        : '') +
+      `</div>` +
+      (shared.length
+        ? `<p class="panel-label">${escapeHtml(s.panel.sharedCableTitle)}</p>` +
+          `<p class="panel-note">${escapeHtml(s.panel.sharedCableHint)}</p>` +
+          `<ul class="panel-list">` +
+          shared
+            .map(
+              (r) =>
+                `<li><button type="button" class="link-btn" data-goto="${r.exchange.id}">` +
+                `${escapeHtml(r.exchange.name)}</button>` +
+                `<span class="panel-city">${escapeHtml(r.exchange.city ?? '')}</span>` +
+                `<span class="mono panel-overlap">${formatInt(r.cables.length)}</span></li>`
+            )
+            .join('') +
+          `</ul>`
+        : '')
+    );
   }
 
   function panelContent(exchange) {
@@ -215,7 +340,8 @@ export function mount(root, data) {
             )
             .join('') +
           `</ul>`
-        : '')
+        : '') +
+      cableSection(exchange)
     );
   }
 
@@ -255,6 +381,12 @@ export function mount(root, data) {
 
     const visible = filterExchanges(all, currentFilters());
     const selected = selectedId ? all.find((e) => e.id === selectedId) : null;
+
+    // Kiválasztáskor a csomópontot kiszolgáló kábelek emelkednek ki.
+    const hotCables = selected
+      ? new Set(cableIndex[selected.id]?.cables ?? [])
+      : null;
+    drawCables(hotCables && hotCables.size ? hotCables : null);
 
     // Kiemeléskor a kiválasztottal közös hálózatot futtató csomópontok
     // maradnak élénkek, a többi elhalványul.
@@ -317,11 +449,14 @@ export function mount(root, data) {
       .replace('{t}', formatInt(all.length - 1));
   }
 
+  cablesToggle?.addEventListener('change', draw);
+
   for (const el of [minSel, regionSel, memberSel]) {
     el.addEventListener('input', () => { selectedId = null; panel.classList.remove('is-open'); layout.classList.remove('panel-open'); draw(); });
   }
 
   root.querySelector('#map-reset').addEventListener('click', () => {
+    if (cablesToggle) cablesToggle.checked = false;
     minSel.value = '3';
     regionSel.value = '';
     memberSel.value = '';

@@ -240,3 +240,10 @@ body.has-fullscreen-map { overflow: hidden; }
   font-size: 11px; line-height: 1.55; color: var(--text-muted);
   margin-top: 8px; max-width: 52ch;
 }
+
+/* Kábelréteg kapcsoló és kábel-chipek */
+.ctl--check { justify-content: flex-end; }
+.switch { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; padding: 6px 0; }
+.switch input { width: 15px; height: 15px; accent-color: var(--blue-fg); cursor: pointer; }
+.chip--cable { background: var(--orange-bg); color: var(--orange-fg); }
+.panel-city { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 210px; }
