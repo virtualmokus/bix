@@ -1,48 +1,56 @@
-# BIX Dashboard — adatgyűjtő
+# BIX Dashboard
 
 Független hobbiprojekt, ami a [Budapest Internet Exchange](https://www.bix.hu/)
-nyilvános adatait gyűjti és teszi géppel olvashatóvá.
+nyilvánosan közzétett adatait gyűjti, és olvasható formában mutatja meg.
+
 *All information is publicly fetched from bix.hu.*
 
-**Nincs kapcsolatunk az ISZT-vel vagy a BIX üzemeltetőjével.**
+**Ez nem hivatalos oldal.** Nincs kapcsolatunk az ISZT-vel, a BIX üzemeltetőjével
+vagy bármelyik tagszervezettel. Az itt látható adatok értelmezése a miénk, a
+hibákért is mi felelünk — hivatalos információért a [bix.hu](https://www.bix.hu/)
+az irányadó.
 
-## Adatforrások
+## Mit tartalmaz
 
-| Forrás | Mit ad | Frissítés |
+| Adat | Forrás | Frissítés |
 |---|---|---|
-| `bix.hu` főoldal | aggregát forgalmi számok | 15 perc |
-| `bix.hu/statisztika` | port-szintű szerkezet (137 port, 111 ASN) | napi |
-| PeeringDB `netixlan?ix_id=55` | IPv6, route-server flag, rekord-dátumok (137 rekord, 103 ASN) | napi |
+| Aggregát forgalom (aktuális, csúcs, kapacitás) | bix.hu | 15 perc |
+| Port-szintű szerkezet: tag, ASN, node, sávszélesség, peering policy | bix.hu | napi |
+| IPv6-cím, route-server jelölés, rekord-dátumok | [PeeringDB](https://www.peeringdb.com/ix/55) | napi |
 
-Ütközés esetén a `bix.hu` az elsődleges forrás. A PeeringDB önbevallásos —
-szerepel benne `speed: 0` és a BIX saját adatával ellentmondó 400G is —,
-ezért a `speed` mezőjét egyáltalán nem használjuk.
+Kizárólag **szervezeti szintű adatot** használunk: cégnév, autonóm rendszer
+száma, csatlakozási pont, sávszélesség, peering-irányelv. Természetes személyhez
+köthető adat — kapcsolattartó neve, e-mail-címe, telefonszáma — nem kerül
+a projektbe, akkor sem, ha nyilvánosan elérhető.
 
 ## Adatfájlok
 
-- `data/traffic.csv` — append-only idősor, 2026 augusztusától
+Minden adat nyers formában is elérhető, gépi feldolgozásra:
+
+- `data/traffic.csv` — forgalmi idősor, 2026 augusztusától gyűlik
 - `data/ports.json` — port-szintű pillanatkép
-- `data/peeringdb.json` — szűrt PeeringDB rekordok
-- `data/members.json` — ASN szerint összefésült nézet (123 tag)
-- `data/meta.json` — forrásonkénti utolsó siker és hiba
+- `data/peeringdb.json` — a PeeringDB-ből átvett mezők
+- `data/members.json` — ASN szerint összefésült nézet
+- `data/meta.json` — forrásonként az utolsó sikeres frissítés
 
-## Fontos adatértelmezési figyelmeztetés
+## Amit az adatról tudni kell
 
-A PeeringDB `created` mezője **nem** a BIX-csatlakozás dátuma. A legkorábbi
-érték 2010-es, miközben a BIX 1996 óta működik — a mező azt mondja meg, mikor
-került be a rekord a PeeringDB-be. Bármilyen megjelenítés, ami ezt
-„csatlakozási dátumként" mutatja, félrevezető.
+Három dolog, ami félreértésre ad okot, ha nem mondjuk ki:
 
-Ugyanígy: a `/statisztika` oldal 137 portot listáz, miközben a főoldal 188-at
-jelent. A publikus statisztika a portok kb. 78%-át fedi le.
+**A PeeringDB rekord-dátuma nem csatlakozási dátum.** A legkorábbi érték 2010-es,
+miközben a BIX 1996 óta működik. A mező azt mutatja, mikor került be a rekord a
+PeeringDB-be. Ezért az oldal sehol nem nevezi „csatlakozásnak".
 
-## Amit szándékosan NEM gyűjtünk
+**A publikus statisztika nem teljes.** A bix.hu statisztikaoldala 137 portot
+listáz, miközben a főoldal 188 portot jelent — a portok nagyjából 73%-a. Az
+oldal ezt láthatóan kiírja, nem tesz úgy, mintha a teljes képet mutatná.
 
-- **Tagok e-mail-címe és telefonszáma.** Szerepel a `bix.hu/tagok` oldalon,
-  de kapcsolattartói adat tömeges újraközlése fölösleges GDPR-kockázat.
-- **Per-port forgalmi adat.** A `stats.bix.hu/graph.cgi` kizárólag PNG-t ad
-  vissza — `format=csv`, `format=json`, `xport=1`, `output=csv` és `type=csv`
-  mind képet eredményez. A képből való visszafejtést elvetettük.
+**Ütközés esetén a bix.hu az elsődleges.** A PeeringDB önbevallásos, akadnak
+benne pontatlan sávszélesség-értékek, ezért a sebesség-mezőjét nem használjuk.
+
+**Forgalmi idősor csak előre van.** A BIX a historikus forgalmat grafikonként
+teszi közzé, számadatként nem, ezért visszamenőleges adat nincs. A gyűjtés
+indulásának napjától épül az idősor.
 
 ## Futtatás helyben
 
@@ -50,13 +58,13 @@ jelent. A publikus statisztika a portok kb. 78%-át fedi le.
 npm ci
 npm test
 node collect/traffic.js
-node collect/ports.js
-node collect/peeringdb.js
-node collect/merge.js
 ```
 
-## Terhelés
+A weboldalhoz bármilyen statikus kiszolgáló megteszi a repó gyökeréből.
 
-15 perces mintavétel, kérésenként egy oldalletöltés, `User-Agent`-ben
-kontakt-URL-lel. A `bix.hu/robots.txt` csak `/admin/` és `/index.html`
-alatt tilt; a használt útvonalak engedettek.
+## Terhelés és etikett
+
+15 percenként egyetlen oldalletöltés, azonosítható `User-Agent`-tel, ami erre a
+repóra mutat. A `robots.txt` tiltásait tiszteletben tartjuk. Ha az oldal
+üzemeltetőjeként bármi kifogásod van a gyűjtés ellen, nyiss egy issue-t —
+leállítjuk.

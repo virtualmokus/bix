@@ -43,13 +43,16 @@ export function areaChart({ points, width, height, accent = 'var(--blue-fg)' }) 
   );
 }
 
+// A kitöltés `--fill` arányként megy át (0–1), nem `width`-ként: a szélesség
+// animálása elrendezés-újraszámolást vált ki minden képkockán. A CSS ebből
+// `transform: scaleX()`-et csinál, ami a GPU-n fut.
 export function barRow({ label, value, max, accent = 'var(--blue-fg)' }) {
-  const percent = max > 0 ? Math.min(100, (value / max) * 100) : 0;
+  const ratio = max > 0 ? Math.min(1, value / max) : 0;
   return (
     `<div class="bar-row">` +
     `<span class="bar-label">${escapeHtml(label)}</span>` +
     `<span class="bar-track">` +
-    `<span class="bar-fill" style="width:${percent.toFixed(1)}%;background:${accent}"></span>` +
+    `<span class="bar-fill" style="--fill:${ratio.toFixed(3)};background:${accent}"></span>` +
     `</span>` +
     `</div>`
   );

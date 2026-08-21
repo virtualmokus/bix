@@ -7,9 +7,11 @@ import { areaChart, barRow, escapeHtml } from '../chart.js';
 const MIN_POINTS_FOR_CHART = 4;
 const s = strings.now;
 
-function humanCard(icon, value, text) {
+// Az `--index` a léptetett belépéshez kell: a három kártya nem egyszerre
+// érkezik, hanem 60ms-onként (lásd style.css, .human-card.is-visible).
+function humanCard(index, icon, value, text) {
   return (
-    `<div class="card human-card reveal">` +
+    `<div class="card human-card reveal" style="--index:${index}">` +
     `<span class="human-icon">${icon}</span>` +
     `<div class="human-value">${value}</div>` +
     `<p class="human-text">${escapeHtml(text)}</p>` +
@@ -71,16 +73,19 @@ export function render(data) {
     `<p class="eyebrow">${escapeHtml(s.humanScale)}</p>` +
     `<div class="human-grid">` +
     humanCard(
+      0,
       icons.stream,
       formatInt(concurrent4kStreams(latest.current_gbps)),
       'egyidejű 4K stream férne bele a jelenlegi forgalomba'
     ) +
     humanCard(
+      1,
       icons.storage,
       `${formatInt(Math.round(gigabytesPerSecond(latest.current_gbps)))} GB`,
       'adat halad át minden egyes másodpercben'
     ) +
     humanCard(
+      2,
       icons.network,
       formatInt(latest.networks),
       `hálózat kapcsolódik a BIX-hez, ${formatInt(latest.ports)} porton keresztül`

@@ -28,15 +28,24 @@ test('az areaChart üres adatra üres svg-t ad', () => {
   assert.ok(!svg.includes('<path'));
 });
 
-test('a barRow a max-hoz arányosítja a szélességet', () => {
+test('a barRow a max-hoz arányosítja a kitöltést', () => {
   const svg = barRow({ label: 'most', value: 50, max: 200 });
-  assert.ok(svg.includes('25.0%'));
+  assert.ok(svg.includes('--fill:0.250'));
   assert.ok(svg.includes('most'));
 });
 
 test('a barRow nulla max esetén nem oszt nullával', () => {
   const svg = barRow({ label: 'x', value: 5, max: 0 });
-  assert.ok(svg.includes('0.0%'));
+  assert.ok(svg.includes('--fill:0.000'));
+});
+
+test('a barRow nem animálható elrendezés-tulajdonságot ad ki', () => {
+  const svg = barRow({ label: 'x', value: 1, max: 2 });
+  assert.ok(!svg.includes('width:'), 'a width animálása elrendezés-újraszámolást vált ki');
+});
+
+test('a barRow a maxot meghaladó értéket levágja', () => {
+  assert.ok(barRow({ label: 'x', value: 300, max: 200 }).includes('--fill:1.000'));
 });
 
 test('a barRow escapeli a címkét', () => {
