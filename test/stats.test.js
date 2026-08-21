@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   distribution, topBy, sumBy, memberBandwidth, keyFigures,
-  redundancy, headroom, adoption,
+  redundancy, headroom, adoption, cohorts, totalCapacityMbps,
 } from '../assets/stats.js';
 
 const ports = [
@@ -89,4 +89,43 @@ test('az elterjedtség IPv6-ot és route-server peert számol', () => {
   assert.equal(a.routeServer, 2);
   assert.equal(a.announcesIpv6, 1);
   assert.equal(a.profiled, 2);
+});
+
+test('a kohorsz évenként számot és kapacitást ad, a közbenső éveket nullázva', () => {
+  const ms = [
+    { first_seen: '2010-01-01T00:00:00Z', ports: [{ bandwidth_mbps: 1000 }] },
+    { first_seen: '2010-06-01T00:00:00Z', ports: [{ bandwidth_mbps: 10000 }] },
+    { first_seen: '2013-01-01T00:00:00Z', ports: [{ bandwidth_mbps: 100000 }] },
+    { first_seen: null, ports: [{ bandwidth_mbps: 999 }] },
+  ];
+  assert.deepEqual(cohorts(ms), [
+    { label: '2010', count: 2, mbps: 11000 },
+    { label: '2011', count: 0, mbps: 0 },
+    { label: '2012', count: 0, mbps: 0 },
+    { label: '2013', count: 1, mbps: 100000 },
+  ]);
+});
+
+test('a kohorsz dátum nélküli tagot nem számol be', () => {
+  const total = cohorts([
+    { first_seen: '2020-01-01T00:00:00Z', ports: [{ bandwidth_mbps: 5000 }] },
+    { first_seen: null, ports: [{ bandwidth_mbps: 5000 }] },
+  ]).reduce((s, c) => s + c.mbps, 0);
+  assert.equal(total, 5000);
+});
+
+test('üres bemenetre üres kohorsz', () => {
+  assert.deepEqual(cohorts([]), []);
+  assert.deepEqual(cohorts([{ first_seen: null, ports: [] }]), []);
+});
+
+test('az összkapacitás minden tag minden portját összegzi', () => {
+  assert.equal(
+    totalCapacityMbps([
+      { ports: [{ bandwidth_mbps: 1000 }, { bandwidth_mbps: 1000 }] },
+      { ports: [{ bandwidth_mbps: 100000 }] },
+      { ports: [] },
+    ]),
+    102000
+  );
 });

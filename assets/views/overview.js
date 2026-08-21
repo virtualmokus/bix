@@ -5,7 +5,7 @@ import { concurrent4kStreams, gigabytesPerSecond, utilizationPercent } from '../
 import { areaChart, barRow, cumulativeChart, escapeHtml } from '../chart.js';
 import {
   distribution, topBy, sumBy, memberBandwidth,
-  keyFigures, redundancy, headroom, adoption,
+  keyFigures, redundancy, headroom, adoption, cohorts, totalCapacityMbps,
 } from '../stats.js';
 
 const MIN_POINTS_FOR_CHART = 4;
@@ -236,16 +236,7 @@ export function render(data) {
   const vix = data.global?.exchanges?.find((e) => e.name === 'VIX');
   const decix = data.global?.exchanges?.find((e) => e.name === 'DE-CIX Frankfurt');
 
-  const buckets = (() => {
-    const years = members.map((m) => m.first_seen).filter(Boolean).map((d) => Number(d.slice(0, 4)));
-    if (years.length === 0) return [];
-    const min = Math.min(...years), max = Math.max(...years);
-    const counts = new Map();
-    for (const y of years) counts.set(y, (counts.get(y) ?? 0) + 1);
-    const out = [];
-    for (let y = min; y <= max; y++) out.push({ label: String(y), value: counts.get(y) ?? 0 });
-    return out;
-  })();
+  const buckets = cohorts(members);
 
   return (
     (latest ? heroSection(latest, rows) : '') +
@@ -394,11 +385,31 @@ export function render(data) {
       ? `<section class="section reveal">` +
         `<p class="eyebrow">${escapeHtml(s.growthEyebrow)}</p>` +
         `<h2 class="section-title">${escapeHtml(s.growthTitle)}</h2>` +
+        `<p class="lede">${escapeHtml(
+          s.growthLede
+            .replace('{gbps}', formatInt(Math.round(totalCapacityMbps(members) / 1000)))
+            .replace('{n}', formatInt(members.length))
+        )}</p>` +
+        `<div class="split-grid">` +
+        `<div><p class="label">${escapeHtml(s.growthCapacityTitle)}</p>` +
         cumulativeChart({
-          buckets, width: 860, height: 200,
-          yFormat: (v) => `${formatInt(v)} ${s.growthY}`,
+          buckets: buckets.map((b) => ({ label: b.label, value: b.mbps / 1000 })),
+          width: 470, height: 220, accent: '#B26A00',
+          yUnit: s.growthCapacityUnit,
+          yFormat: (v) => formatInt(Math.round(v)),
         }) +
-        `<p class="note note--info">${escapeHtml(s.growthCaption)}</p>` +
+        `<p class="chart-note">${escapeHtml(s.growthCapacityNote)}</p></div>` +
+        `<div><p class="label">${escapeHtml(s.growthCountTitle)}</p>` +
+        cumulativeChart({
+          buckets: buckets.map((b) => ({ label: b.label, value: b.count })),
+          width: 470, height: 220,
+          yUnit: s.growthCountUnit,
+          yFormat: (v) => formatInt(Math.round(v)),
+        }) +
+        `<p class="chart-note">${escapeHtml(s.growthCountNote)}</p></div>` +
+        `</div>` +
+        `<p class="note note--warning">${icons.warning}<strong>${escapeHtml(s.growthWarnTitle)}</strong> ` +
+        escapeHtml(s.growthCaption) + `</p>` +
         `</section>`
       : '')
   );

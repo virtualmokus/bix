@@ -234,3 +234,9 @@ body.has-fullscreen-map { overflow: hidden; }
   .map-canvas { height: 420px; }
   #map-reset { margin-left: 0; }
 }
+
+/* Diagram alatti rövid magyarázat */
+.chart-note {
+  font-size: 11px; line-height: 1.55; color: var(--text-muted);
+  margin-top: 8px; max-width: 52ch;
+}

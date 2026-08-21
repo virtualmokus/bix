@@ -133,10 +133,20 @@ export default {
     topPrefixes: 'IPv4 prefixes announced',
 
     growthEyebrow: 'Growth',
-    growthTitle: 'Twenty years ago 10 gigabit was the ceiling — today it is the entry level',
+    growthTitle: 'Where today’s capacity came from',
+    growthLede:
+      'The {n} members hold {gbps} Gb/s of port capacity between them. Grouping them by the year each network’s record first appeared shows which arrivals brought the weight — and it is not the oldest ones.',
+    growthCapacityTitle: 'Capacity held today, accumulated by arrival year',
+    growthCapacityUnit: 'Gb/s',
+    growthCapacityNote:
+      'Read as: networks that appeared by this year hold this much capacity today. The 2023 arrivals alone account for 1,155 Gb/s.',
+    growthCountTitle: 'Networks, accumulated by arrival year',
+    growthCountUnit: 'networks',
+    growthCountNote:
+      'The two curves diverge: the count rises steadily, the capacity in steps. Later arrivals bring far bigger ports than early ones.',
+    growthWarnTitle: 'This is not a history of capacity.',
     growthCaption:
-      'PeeringDB’s “created” field records when the entry appeared in the database — not when the network connected to BIX. BIX has operated since 1996, yet the oldest record is from 2010.',
-    growthY: 'records',
+      'Both charts place today’s figures against the year each network’s PeeringDB record first appeared. They do not show what capacity existed in the past — no such measurement is published. PeeringDB’s “created” field also marks when the entry reached that database, not when the network joined BIX: the exchange has run since 1996, yet the oldest record is from 2010.',
   },
 
   members: {

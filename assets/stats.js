@@ -86,6 +86,45 @@ export function headroom(ports) {
     .filter(Boolean);
 }
 
+/**
+ * Évjárat szerinti bontás: hány tag, és mennyi az általuk MA birtokolt
+ * együttes portkapacitás. Az év a PeeringDB-rekord megjelenési éve.
+ *
+ * FIGYELEM: ez nem történeti mérés. Nem azt mondja meg, mekkora volt a
+ * kapacitás 2015-ben — azt mondja meg, hogy a MAI kapacitásból mennyit
+ * birtokolnak azok, akik 2015-ben jelentek meg. A megjelenítésnek ezt
+ * egyértelműen ki kell írnia.
+ */
+export function cohorts(members) {
+  const years = members.map((m) => m.first_seen).filter(Boolean).map((d) => Number(d.slice(0, 4)));
+  if (years.length === 0) return [];
+
+  const min = Math.min(...years);
+  const max = Math.max(...years);
+  const byYear = new Map();
+
+  for (const member of members) {
+    if (!member.first_seen) continue;
+    const year = Number(member.first_seen.slice(0, 4));
+    const entry = byYear.get(year) ?? { count: 0, mbps: 0 };
+    entry.count += 1;
+    entry.mbps += memberBandwidth(member);
+    byYear.set(year, entry);
+  }
+
+  const out = [];
+  for (let year = min; year <= max; year++) {
+    const entry = byYear.get(year) ?? { count: 0, mbps: 0 };
+    out.push({ label: String(year), count: entry.count, mbps: entry.mbps });
+  }
+  return out;
+}
+
+/** A tagok portjainak együttes kapacitása Mb/s-ben. */
+export function totalCapacityMbps(members) {
+  return sumBy(members, memberBandwidth);
+}
+
 /** Hány tag hirdet IPv6-ot, illetve peerel route-serverrel. */
 export function adoption(members) {
   const withNetwork = members.filter((m) => m.network);
