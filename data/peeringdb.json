@@ -1,0 +1,827 @@
+{
+  "fetched_at": "2026-08-21T09:33:45Z",
+  "records": [
+    {
+      "asn": 9002,
+      "ipaddr6": "2001:7f8:35::9002:1",
+      "is_rs_peer": false,
+      "created": "2010-07-29T00:00:00Z"
+    },
+    {
+      "asn": 9050,
+      "ipaddr6": null,
+      "is_rs_peer": false,
+      "created": "2010-07-29T00:00:00Z"
+    },
+    {
+      "asn": 20845,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2010-07-29T00:00:00Z"
+    },
+    {
+      "asn": 3303,
+      "ipaddr6": "2001:7f8:35::3303:1",
+      "is_rs_peer": true,
+      "created": "2010-08-13T00:00:00Z"
+    },
+    {
+      "asn": 213746,
+      "ipaddr6": null,
+      "is_rs_peer": false,
+      "created": "2010-11-02T00:00:00Z"
+    },
+    {
+      "asn": 16276,
+      "ipaddr6": "2001:7f8:35::1:6276:1",
+      "is_rs_peer": true,
+      "created": "2011-01-20T00:00:00Z"
+    },
+    {
+      "asn": 15169,
+      "ipaddr6": "2001:7f8:35::1:5169:1",
+      "is_rs_peer": false,
+      "created": "2011-05-03T00:00:00Z"
+    },
+    {
+      "asn": 8448,
+      "ipaddr6": "2001:7f8:35::8448:1",
+      "is_rs_peer": true,
+      "created": "2011-05-18T00:00:00Z"
+    },
+    {
+      "asn": 5483,
+      "ipaddr6": null,
+      "is_rs_peer": false,
+      "created": "2012-10-06T00:00:00Z"
+    },
+    {
+      "asn": 8400,
+      "ipaddr6": "2001:7f8:35::8400:1",
+      "is_rs_peer": true,
+      "created": "2012-10-16T00:00:00Z"
+    },
+    {
+      "asn": 6663,
+      "ipaddr6": "2001:7f8:35::6663:1",
+      "is_rs_peer": true,
+      "created": "2013-05-14T00:00:00Z"
+    },
+    {
+      "asn": 6939,
+      "ipaddr6": "2001:7f8:35::6939:1",
+      "is_rs_peer": true,
+      "created": "2013-07-30T00:00:00Z"
+    },
+    {
+      "asn": 151358,
+      "ipaddr6": "2001:7f8:35::15:1358:1",
+      "is_rs_peer": true,
+      "created": "2013-12-06T00:00:00Z"
+    },
+    {
+      "asn": 12301,
+      "ipaddr6": "2001:7f8:35::1:2301:1",
+      "is_rs_peer": true,
+      "created": "2014-06-03T00:00:00Z"
+    },
+    {
+      "asn": 12301,
+      "ipaddr6": "2001:7f8:35::1:2301:2",
+      "is_rs_peer": true,
+      "created": "2015-01-12T00:00:00Z"
+    },
+    {
+      "asn": 8075,
+      "ipaddr6": "2001:7f8:35::8075:1",
+      "is_rs_peer": false,
+      "created": "2015-01-29T00:00:00Z"
+    },
+    {
+      "asn": 8448,
+      "ipaddr6": "2001:7f8:35::8448:2",
+      "is_rs_peer": true,
+      "created": "2015-02-06T00:00:00Z"
+    },
+    {
+      "asn": 9146,
+      "ipaddr6": "2001:7f8:35::9146:1",
+      "is_rs_peer": false,
+      "created": "2015-12-08T00:00:00Z"
+    },
+    {
+      "asn": 8462,
+      "ipaddr6": "2001:7f8:35::8462:2",
+      "is_rs_peer": false,
+      "created": "2016-01-23T00:00:00Z"
+    },
+    {
+      "asn": 9009,
+      "ipaddr6": "2001:7f8:35::9009:1",
+      "is_rs_peer": true,
+      "created": "2016-02-20T00:00:00Z"
+    },
+    {
+      "asn": 29278,
+      "ipaddr6": "2001:7f8:35::2:9278:1",
+      "is_rs_peer": true,
+      "created": "2016-02-25T00:00:00Z"
+    },
+    {
+      "asn": 21215,
+      "ipaddr6": "2001:7f8:35::2:1215:1",
+      "is_rs_peer": true,
+      "created": "2016-07-29T15:49:26Z"
+    },
+    {
+      "asn": 29405,
+      "ipaddr6": "2001:7f8:35::2:9405:1",
+      "is_rs_peer": true,
+      "created": "2016-08-09T11:05:21Z"
+    },
+    {
+      "asn": 5507,
+      "ipaddr6": "2001:7f8:35::5507:1",
+      "is_rs_peer": true,
+      "created": "2016-12-08T09:59:47Z"
+    },
+    {
+      "asn": 5507,
+      "ipaddr6": "2001:7f8:35::5507:2",
+      "is_rs_peer": true,
+      "created": "2016-12-08T10:00:21Z"
+    },
+    {
+      "asn": 62214,
+      "ipaddr6": "2001:7f8:35::6:2214:1",
+      "is_rs_peer": true,
+      "created": "2016-12-08T14:58:58Z"
+    },
+    {
+      "asn": 62214,
+      "ipaddr6": "2001:7f8:35::6:2214:2",
+      "is_rs_peer": true,
+      "created": "2016-12-08T14:59:30Z"
+    },
+    {
+      "asn": 13335,
+      "ipaddr6": "2001:7f8:35::1:3335:1",
+      "is_rs_peer": false,
+      "created": "2017-02-10T15:02:18Z"
+    },
+    {
+      "asn": 35311,
+      "ipaddr6": "2001:7f8:35::3:5311:1",
+      "is_rs_peer": true,
+      "created": "2017-03-24T07:45:03Z"
+    },
+    {
+      "asn": 213669,
+      "ipaddr6": "2001:7f8:35::21:3669:1",
+      "is_rs_peer": true,
+      "created": "2017-04-04T15:28:59Z"
+    },
+    {
+      "asn": 32590,
+      "ipaddr6": "2001:7f8:35::3:2590:1",
+      "is_rs_peer": true,
+      "created": "2017-06-29T13:03:26Z"
+    },
+    {
+      "asn": 8462,
+      "ipaddr6": "2001:7f8:35::8462:1",
+      "is_rs_peer": false,
+      "created": "2017-08-16T07:32:05Z"
+    },
+    {
+      "asn": 206892,
+      "ipaddr6": "2001:7f8:35::20:6892:1",
+      "is_rs_peer": true,
+      "created": "2017-11-21T20:59:22Z"
+    },
+    {
+      "asn": 34655,
+      "ipaddr6": "2001:7f8:35::3:4655:1",
+      "is_rs_peer": true,
+      "created": "2018-01-31T13:23:08Z"
+    },
+    {
+      "asn": 47381,
+      "ipaddr6": "2001:7f8:35::4:7381:2",
+      "is_rs_peer": true,
+      "created": "2018-01-31T14:01:02Z"
+    },
+    {
+      "asn": 47381,
+      "ipaddr6": "2001:7f8:35::4:7381:1",
+      "is_rs_peer": true,
+      "created": "2018-01-31T14:08:03Z"
+    },
+    {
+      "asn": 206892,
+      "ipaddr6": "2001:7f8:35::20:6892:2",
+      "is_rs_peer": true,
+      "created": "2018-01-31T15:53:52Z"
+    },
+    {
+      "asn": 44306,
+      "ipaddr6": "2001:7f8:35::4:4306:1",
+      "is_rs_peer": true,
+      "created": "2018-04-13T13:41:43Z"
+    },
+    {
+      "asn": 51920,
+      "ipaddr6": "2001:7f8:35::5:1920:1",
+      "is_rs_peer": true,
+      "created": "2018-05-14T09:47:09Z"
+    },
+    {
+      "asn": 41206,
+      "ipaddr6": "2001:7f8:35::4:1206:1",
+      "is_rs_peer": false,
+      "created": "2018-05-24T08:56:30Z"
+    },
+    {
+      "asn": 41206,
+      "ipaddr6": "2001:7f8:35::4:1206:2",
+      "is_rs_peer": false,
+      "created": "2018-05-24T10:33:31Z"
+    },
+    {
+      "asn": 34779,
+      "ipaddr6": "2001:7f8:35::3:4779:1",
+      "is_rs_peer": true,
+      "created": "2018-06-21T11:31:55Z"
+    },
+    {
+      "asn": 20510,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2018-11-20T20:44:06Z"
+    },
+    {
+      "asn": 21320,
+      "ipaddr6": "2001:7f8:35::2:1320:1",
+      "is_rs_peer": false,
+      "created": "2018-12-19T17:09:05Z"
+    },
+    {
+      "asn": 51013,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2018-12-26T16:07:53Z"
+    },
+    {
+      "asn": 62292,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2018-12-26T16:09:26Z"
+    },
+    {
+      "asn": 8075,
+      "ipaddr6": "2001:7f8:35::8075:2",
+      "is_rs_peer": false,
+      "created": "2019-03-21T21:25:01Z"
+    },
+    {
+      "asn": 15576,
+      "ipaddr6": "2001:7f8:35::1:5576:1",
+      "is_rs_peer": true,
+      "created": "2019-05-06T16:38:05Z"
+    },
+    {
+      "asn": 39201,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2019-06-03T14:25:48Z"
+    },
+    {
+      "asn": 15566,
+      "ipaddr6": "2001:7f8:35::1:5566:1",
+      "is_rs_peer": true,
+      "created": "2019-06-06T19:17:28Z"
+    },
+    {
+      "asn": 42864,
+      "ipaddr6": "2001:7f8:35::4:2864:1",
+      "is_rs_peer": true,
+      "created": "2019-09-18T11:06:52Z"
+    },
+    {
+      "asn": 16509,
+      "ipaddr6": "2001:7f8:35::1:6509:1",
+      "is_rs_peer": false,
+      "created": "2019-12-04T16:07:26Z"
+    },
+    {
+      "asn": 8990,
+      "ipaddr6": "2001:7f8:35::8990:3",
+      "is_rs_peer": true,
+      "created": "2020-01-17T13:59:15Z"
+    },
+    {
+      "asn": 8990,
+      "ipaddr6": "2001:7f8:35::8990:2",
+      "is_rs_peer": true,
+      "created": "2020-01-17T14:00:50Z"
+    },
+    {
+      "asn": 44302,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2020-01-28T09:30:43Z"
+    },
+    {
+      "asn": 24822,
+      "ipaddr6": "2001:7f8:35::2:4822:1",
+      "is_rs_peer": true,
+      "created": "2020-02-05T11:50:02Z"
+    },
+    {
+      "asn": 43928,
+      "ipaddr6": "2001:7f8:35::4:3928:1",
+      "is_rs_peer": false,
+      "created": "2020-02-10T07:26:15Z"
+    },
+    {
+      "asn": 29657,
+      "ipaddr6": "2001:7f8:35::2:9657:1",
+      "is_rs_peer": true,
+      "created": "2020-04-13T19:00:51Z"
+    },
+    {
+      "asn": 47116,
+      "ipaddr6": null,
+      "is_rs_peer": false,
+      "created": "2020-05-13T07:54:47Z"
+    },
+    {
+      "asn": 43359,
+      "ipaddr6": "2001:7f8:35::4:3359:1",
+      "is_rs_peer": true,
+      "created": "2020-07-22T12:02:58Z"
+    },
+    {
+      "asn": 43500,
+      "ipaddr6": "2001:7f8:35::4:3500:1",
+      "is_rs_peer": true,
+      "created": "2020-08-12T12:38:02Z"
+    },
+    {
+      "asn": 208154,
+      "ipaddr6": "2001:7f8:35::20:8154:1",
+      "is_rs_peer": true,
+      "created": "2020-09-28T13:24:07Z"
+    },
+    {
+      "asn": 44302,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2020-11-19T00:13:54Z"
+    },
+    {
+      "asn": 20510,
+      "ipaddr6": "2001:7f8:35::2:510:1",
+      "is_rs_peer": true,
+      "created": "2020-11-19T00:14:34Z"
+    },
+    {
+      "asn": 47116,
+      "ipaddr6": "2001:7f8:35::4:7116:1",
+      "is_rs_peer": true,
+      "created": "2020-11-19T00:16:03Z"
+    },
+    {
+      "asn": 20845,
+      "ipaddr6": "2001:7f8:35::2:845:1",
+      "is_rs_peer": true,
+      "created": "2020-11-19T00:17:19Z"
+    },
+    {
+      "asn": 39201,
+      "ipaddr6": "2001:7f8:35::3:9201:1",
+      "is_rs_peer": true,
+      "created": "2020-11-19T00:17:41Z"
+    },
+    {
+      "asn": 1955,
+      "ipaddr6": "2001:7f8:35::1955:1",
+      "is_rs_peer": true,
+      "created": "2020-11-19T08:07:47Z"
+    },
+    {
+      "asn": 1955,
+      "ipaddr6": "2001:7f8:35::1955:2",
+      "is_rs_peer": true,
+      "created": "2020-11-19T08:08:17Z"
+    },
+    {
+      "asn": 47169,
+      "ipaddr6": "2001:7f8:35::4:7169:3",
+      "is_rs_peer": true,
+      "created": "2020-11-30T07:39:32Z"
+    },
+    {
+      "asn": 47169,
+      "ipaddr6": "2001:7f8:35::4:7169:4",
+      "is_rs_peer": true,
+      "created": "2020-11-30T07:39:36Z"
+    },
+    {
+      "asn": 24806,
+      "ipaddr6": "2001:7f8:35::2:4806:1",
+      "is_rs_peer": true,
+      "created": "2020-11-30T08:11:04Z"
+    },
+    {
+      "asn": 61998,
+      "ipaddr6": "2001:7f8:35::6:1998:1",
+      "is_rs_peer": true,
+      "created": "2020-12-03T19:46:50Z"
+    },
+    {
+      "asn": 61998,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2020-12-03T19:46:50Z"
+    },
+    {
+      "asn": 42473,
+      "ipaddr6": "2001:7f8:35::4:2473:1",
+      "is_rs_peer": true,
+      "created": "2020-12-15T13:45:52Z"
+    },
+    {
+      "asn": 5400,
+      "ipaddr6": "2001:7f8:35::5400:1",
+      "is_rs_peer": false,
+      "created": "2020-12-30T13:40:22Z"
+    },
+    {
+      "asn": 32261,
+      "ipaddr6": "2001:7f8:35::3:2261:1",
+      "is_rs_peer": true,
+      "created": "2021-01-22T10:56:49Z"
+    },
+    {
+      "asn": 208154,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2021-03-02T22:54:07Z"
+    },
+    {
+      "asn": 21334,
+      "ipaddr6": "2001:7f8:35::2:1334:4",
+      "is_rs_peer": true,
+      "created": "2021-04-01T07:30:27Z"
+    },
+    {
+      "asn": 21334,
+      "ipaddr6": "2001:7f8:35::2:1334:3",
+      "is_rs_peer": true,
+      "created": "2021-04-01T07:31:43Z"
+    },
+    {
+      "asn": 39679,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2021-04-28T11:47:07Z"
+    },
+    {
+      "asn": 3856,
+      "ipaddr6": "2001:7f8:35::3856:1",
+      "is_rs_peer": true,
+      "created": "2021-05-27T14:30:21Z"
+    },
+    {
+      "asn": 16509,
+      "ipaddr6": "2001:7f8:35::1:6509:2",
+      "is_rs_peer": false,
+      "created": "2021-06-03T07:59:38Z"
+    },
+    {
+      "asn": 29278,
+      "ipaddr6": "2001:7f8:35::2:9278:3",
+      "is_rs_peer": true,
+      "created": "2021-06-15T15:40:12Z"
+    },
+    {
+      "asn": 50031,
+      "ipaddr6": "2001:7f8:35::5:31:1",
+      "is_rs_peer": true,
+      "created": "2021-06-16T11:47:58Z"
+    },
+    {
+      "asn": 62051,
+      "ipaddr6": "2001:7f8:35::6:2051:1",
+      "is_rs_peer": true,
+      "created": "2021-10-19T09:54:45Z"
+    },
+    {
+      "asn": 210966,
+      "ipaddr6": "2001:7f8:35::21:966:1",
+      "is_rs_peer": true,
+      "created": "2021-12-03T13:26:47Z"
+    },
+    {
+      "asn": 49206,
+      "ipaddr6": "2001:7f8:35::4:9206:1",
+      "is_rs_peer": true,
+      "created": "2021-12-14T12:54:25Z"
+    },
+    {
+      "asn": 197889,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2022-01-08T16:33:54Z"
+    },
+    {
+      "asn": 25875,
+      "ipaddr6": "2001:7f8:35::2:5875:1",
+      "is_rs_peer": true,
+      "created": "2022-02-24T13:23:02Z"
+    },
+    {
+      "asn": 49544,
+      "ipaddr6": "2001:7f8:35::4:9544:1",
+      "is_rs_peer": false,
+      "created": "2022-03-08T10:13:35Z"
+    },
+    {
+      "asn": 35263,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2022-05-03T10:07:34Z"
+    },
+    {
+      "asn": 35263,
+      "ipaddr6": "2001:7f8:35::3:5263:1",
+      "is_rs_peer": true,
+      "created": "2022-05-03T10:07:36Z"
+    },
+    {
+      "asn": 200964,
+      "ipaddr6": "2001:7f8:35::20:964:1",
+      "is_rs_peer": true,
+      "created": "2022-06-16T13:23:19Z"
+    },
+    {
+      "asn": 2686,
+      "ipaddr6": "2001:7f8:35::2686:1",
+      "is_rs_peer": true,
+      "created": "2022-07-20T15:16:32Z"
+    },
+    {
+      "asn": 56322,
+      "ipaddr6": "2001:7f8:35::5:6322:1",
+      "is_rs_peer": true,
+      "created": "2022-09-08T16:06:52Z"
+    },
+    {
+      "asn": 20742,
+      "ipaddr6": "2001:7f8:35::2:742:1",
+      "is_rs_peer": true,
+      "created": "2022-11-09T17:35:48Z"
+    },
+    {
+      "asn": 20940,
+      "ipaddr6": "2001:7f8:35::2:940:1",
+      "is_rs_peer": true,
+      "created": "2022-12-16T09:40:45Z"
+    },
+    {
+      "asn": 2635,
+      "ipaddr6": "2001:7f8:35::2635:1",
+      "is_rs_peer": true,
+      "created": "2023-01-04T00:20:19Z"
+    },
+    {
+      "asn": 8220,
+      "ipaddr6": "2001:7f8:35::8220:1",
+      "is_rs_peer": false,
+      "created": "2023-01-13T11:35:00Z"
+    },
+    {
+      "asn": 61211,
+      "ipaddr6": "2001:7f8:35::6:1211:1",
+      "is_rs_peer": true,
+      "created": "2023-01-17T13:18:29Z"
+    },
+    {
+      "asn": 51920,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2023-01-23T19:31:14Z"
+    },
+    {
+      "asn": 44901,
+      "ipaddr6": "2001:7f8:35::4:4901:1",
+      "is_rs_peer": true,
+      "created": "2023-01-30T10:41:20Z"
+    },
+    {
+      "asn": 32787,
+      "ipaddr6": "2001:7f8:35::3:2787:1",
+      "is_rs_peer": false,
+      "created": "2023-02-01T16:24:50Z"
+    },
+    {
+      "asn": 6507,
+      "ipaddr6": "2001:7f8:35::6507:1",
+      "is_rs_peer": false,
+      "created": "2023-02-14T01:13:31Z"
+    },
+    {
+      "asn": 54113,
+      "ipaddr6": "2001:7f8:35::5:4113:1",
+      "is_rs_peer": true,
+      "created": "2023-02-15T18:17:59Z"
+    },
+    {
+      "asn": 40994,
+      "ipaddr6": "2001:7f8:35::4:994:1",
+      "is_rs_peer": true,
+      "created": "2023-02-16T10:32:22Z"
+    },
+    {
+      "asn": 206361,
+      "ipaddr6": "2001:7f8:35::20:6361:1",
+      "is_rs_peer": true,
+      "created": "2023-02-24T05:27:09Z"
+    },
+    {
+      "asn": 15169,
+      "ipaddr6": "2001:7f8:35::1:5169:2",
+      "is_rs_peer": false,
+      "created": "2023-03-29T15:20:40Z"
+    },
+    {
+      "asn": 396986,
+      "ipaddr6": "2001:7f8:35::39:6986:1",
+      "is_rs_peer": false,
+      "created": "2023-05-18T14:31:36Z"
+    },
+    {
+      "asn": 32934,
+      "ipaddr6": "2001:7f8:35::3:2934:2",
+      "is_rs_peer": false,
+      "created": "2023-05-23T12:40:15Z"
+    },
+    {
+      "asn": 32934,
+      "ipaddr6": "2001:7f8:35::3:2934:1",
+      "is_rs_peer": false,
+      "created": "2023-05-23T12:41:32Z"
+    },
+    {
+      "asn": 15169,
+      "ipaddr6": "2001:7f8:35::1:5169:3",
+      "is_rs_peer": false,
+      "created": "2023-07-05T16:54:42Z"
+    },
+    {
+      "asn": 209108,
+      "ipaddr6": "2001:7f8:35::20:9108:1",
+      "is_rs_peer": false,
+      "created": "2023-08-09T12:55:37Z"
+    },
+    {
+      "asn": 208414,
+      "ipaddr6": "2001:7f8:35::20:8414:1",
+      "is_rs_peer": true,
+      "created": "2023-10-10T05:33:24Z"
+    },
+    {
+      "asn": 62449,
+      "ipaddr6": "2001:7f8:35::6:2449:1",
+      "is_rs_peer": true,
+      "created": "2023-11-14T14:48:28Z"
+    },
+    {
+      "asn": 204384,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2023-12-04T14:04:18Z"
+    },
+    {
+      "asn": 216010,
+      "ipaddr6": "2001:7f8:35::21:6010:1",
+      "is_rs_peer": true,
+      "created": "2023-12-20T15:12:43Z"
+    },
+    {
+      "asn": 47692,
+      "ipaddr6": "2001:7f8:35::4:7692:1",
+      "is_rs_peer": true,
+      "created": "2024-03-18T16:11:11Z"
+    },
+    {
+      "asn": 15958,
+      "ipaddr6": "2001:7f8:35::1:5958:1",
+      "is_rs_peer": true,
+      "created": "2024-04-02T14:03:13Z"
+    },
+    {
+      "asn": 215904,
+      "ipaddr6": "2001:7f8:35::21:5904:1",
+      "is_rs_peer": false,
+      "created": "2024-04-18T07:56:35Z"
+    },
+    {
+      "asn": 60673,
+      "ipaddr6": null,
+      "is_rs_peer": false,
+      "created": "2024-04-19T08:05:44Z"
+    },
+    {
+      "asn": 42,
+      "ipaddr6": "2001:7f8:35::42:1",
+      "is_rs_peer": true,
+      "created": "2024-07-10T17:07:07Z"
+    },
+    {
+      "asn": 204384,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2024-08-02T15:30:56Z"
+    },
+    {
+      "asn": 43928,
+      "ipaddr6": "2001:7f8:35::4:3928:2",
+      "is_rs_peer": false,
+      "created": "2024-08-28T12:53:08Z"
+    },
+    {
+      "asn": 54113,
+      "ipaddr6": "2001:7f8:35::5:4113:2",
+      "is_rs_peer": true,
+      "created": "2024-11-12T18:18:26Z"
+    },
+    {
+      "asn": 57344,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2024-12-19T11:51:57Z"
+    },
+    {
+      "asn": 24822,
+      "ipaddr6": "2001:7f8:35::2:4822:2",
+      "is_rs_peer": true,
+      "created": "2025-02-21T11:24:23Z"
+    },
+    {
+      "asn": 33891,
+      "ipaddr6": "2001:7f8:35::3:3891:1",
+      "is_rs_peer": false,
+      "created": "2025-07-30T08:44:54Z"
+    },
+    {
+      "asn": 205275,
+      "ipaddr6": null,
+      "is_rs_peer": true,
+      "created": "2025-10-27T11:38:35Z"
+    },
+    {
+      "asn": 210788,
+      "ipaddr6": "2001:7f8:35::21:788:3",
+      "is_rs_peer": true,
+      "created": "2026-02-06T10:03:26Z"
+    },
+    {
+      "asn": 210788,
+      "ipaddr6": "2001:7f8:35::21:788:4",
+      "is_rs_peer": true,
+      "created": "2026-02-06T10:04:01Z"
+    },
+    {
+      "asn": 12303,
+      "ipaddr6": "2001:7f8:35::1:2303:3",
+      "is_rs_peer": true,
+      "created": "2026-02-06T10:11:34Z"
+    },
+    {
+      "asn": 12303,
+      "ipaddr6": "2001:7f8:35::1:2303:4",
+      "is_rs_peer": true,
+      "created": "2026-02-06T10:12:08Z"
+    },
+    {
+      "asn": 8412,
+      "ipaddr6": "2001:7f8:35::8412:1",
+      "is_rs_peer": false,
+      "created": "2026-02-16T13:01:33Z"
+    },
+    {
+      "asn": 197792,
+      "ipaddr6": "2001:7f8:35::19:7792:1",
+      "is_rs_peer": true,
+      "created": "2026-05-27T14:30:15Z"
+    },
+    {
+      "asn": 197792,
+      "ipaddr6": "2001:7f8:35::19:7792:2",
+      "is_rs_peer": true,
+      "created": "2026-05-27T14:30:33Z"
+    }
+  ]
+}
