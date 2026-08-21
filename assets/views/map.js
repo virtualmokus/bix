@@ -330,12 +330,26 @@ export function mount(root, data) {
   });
 
   const fullBtn = root.querySelector('#map-full');
-  fullBtn.addEventListener('click', () => {
-    shell.classList.toggle('is-fullscreen');
-    fullBtn.textContent = shell.classList.contains('is-fullscreen') ? s.exitFullscreen : s.fullscreen;
-    document.body.classList.toggle('has-fullscreen-map', shell.classList.contains('is-fullscreen'));
+
+  function setFullscreen(on) {
+    shell.classList.toggle('is-fullscreen', on);
+    document.body.classList.toggle('has-fullscreen-map', on);
+    fullBtn.textContent = on ? s.exitFullscreen : s.fullscreen;
+    // A fejléc magassága mobilon tördeléskor változik, ezért mérjük.
+    const header = document.querySelector('.site-header');
+    if (header) {
+      document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+    }
     setTimeout(() => map.invalidateSize(), 320);
+  }
+
+  fullBtn.addEventListener('click', () => {
+    setFullscreen(!shell.classList.contains('is-fullscreen'));
   });
+
+  // A térkép nézet alapból teljes képernyőn nyílik — ez a fő tartalma.
+  // A fejléc nem tűnik el, így a többi fül egy kattintással elérhető.
+  setFullscreen(true);
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;

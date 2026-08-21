@@ -63,6 +63,22 @@ export default {
         'Members that have an IPv6 address configured on the exchange fabric — a prerequisite for exchanging IPv6 traffic locally rather than routing it abroad.',
     },
 
+    // Sötét sávok a szekciók között — egy szám, egy állítás.
+    bands: {
+      reachUnit: 'internet exchanges',
+      reachHead: '{name} plugs into this many exchanges worldwide',
+      reachBody:
+        'BIX is one of them. That is why a request from a Hungarian household for such a network’s content usually never crosses a border — the answer is already in the building.',
+      viennaUnit: 'of the 137 ports',
+      viennaHead: 'The “Budapest” exchange has a leg in Vienna',
+      viennaBody:
+        'Digital Realty InterXion VIE1 sits in Austria and carries {gbps} Gb/s of member capacity. A national exchange that stops at the border would be a smaller exchange.',
+      decixUnit: 'BIX members',
+      decixHead: 'also peer at DE-CIX Frankfurt',
+      decixBody:
+        'That is {pct} of the {total} members. The networks here are not confined to Hungary; most of the large ones sit at several exchanges at once, and BIX is the local doorway to them.',
+    },
+
     humanScale: 'How much is that, really?',
     human: {
       streams: 'simultaneous 4K streams would fit into the current traffic',

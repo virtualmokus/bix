@@ -42,6 +42,10 @@ function boot({ views, data }) {
   const root = document.getElementById('view');
 
   function show(name) {
+    // A térkép teljes képernyős állapota a body-n is hagy nyomot; nézetváltáskor
+    // ezt le kell szedni, különben a görgetés tiltva marad a többi fülön is.
+    document.body.classList.remove('has-fullscreen-map');
+
     const view = views[name];
     root.innerHTML = view.render(data);
     view.mount?.(root, data);

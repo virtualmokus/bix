@@ -1,0 +1,129 @@
+/* =========================================================================
+   BIX — határozott réteg
+   Szélesebb, feszesebb megjelenés: erős szekciófejek, sötét statisztika-
+   sávok a ritmus megtörésére. A cél nem marketinges látvány, hanem hogy az
+   adat súlya látszódjon — a lap technikai eszköz marad.
+   ========================================================================= */
+
+:root { --header-h: 67px; }
+
+/* ===== Szélesség: alkalmazkodik a böngészőhöz =====
+   A tartalomdoboz a viewporttal nő, a folyószöveg viszont olvasható
+   sorhosszon marad — széles monitoron a táblázat és a rács kap helyet,
+   nem a bekezdés. */
+.view {
+  max-width: 1760px;
+  padding-inline: clamp(16px, 3vw, 56px);
+}
+.site-footer { max-width: 1760px; padding-inline: clamp(16px, 3vw, 56px); }
+.site-header { padding-inline: clamp(16px, 3vw, 56px); }
+
+/* Széles képernyőn több oszlop fér a kulcsszámokba és a bontásokba. */
+@media (min-width: 1500px) {
+  .figure-grid { grid-template-columns: repeat(8, 1fr); }
+  .fact-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1900px) {
+  .split-grid { gap: 56px; }
+}
+
+/* A táblázat kitölti a rendelkezésre álló szélességet. */
+.table--dense { width: 100%; }
+
+/* ===== Határozottabb szekciófejek ===== */
+.section-title {
+  font-size: clamp(26px, 2.4vw, 40px);
+  color: var(--text);
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--text); font-weight: 700;
+}
+.eyebrow::before {
+  content: ""; width: 22px; height: 3px; border-radius: 2px;
+  background: var(--text); display: inline-block;
+}
+
+.label {
+  font-size: 12px; font-weight: 700; color: var(--text);
+  padding-bottom: 8px; margin-bottom: 14px;
+  border-bottom: 2px solid var(--text);
+  display: inline-block;
+}
+
+/* ===== Sötét statisztika-sáv: a ritmus megtörése ===== */
+.band {
+  background: #1B1B1F;
+  color: #F2F1EE;
+  border-radius: var(--radius-card);
+  padding: clamp(20px, 2.5vw, 34px) clamp(20px, 3vw, 40px);
+  margin: 48px 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(20px, 3vw, 48px);
+}
+.band-figure {
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #fff;
+  white-space: nowrap;
+}
+.band-unit {
+  display: block; font-family: var(--font-sans);
+  font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: #8E8B85; margin-top: 8px;
+}
+.band-text strong {
+  display: block; font-size: clamp(15px, 1.4vw, 19px);
+  font-weight: 600; line-height: 1.35; margin-bottom: 7px;
+}
+.band-text span {
+  display: block; font-size: 14px; line-height: 1.65; color: #A9A59E;
+  max-width: 70ch;
+}
+.band--accent { background: #1F4B6B; }
+.band--accent .band-unit { color: #9EC4DE; }
+.band--accent .band-text span { color: #C4DAE8; }
+
+@media (max-width: 720px) {
+  .band { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* ===== Térkép teljes képernyőn: a fejléc marad elérhető =====
+   Nem takarjuk el a navigációt — a térkép a fejléc alatti teljes
+   területet foglalja el, így a fülek egy kattintással elérhetők. */
+.map-shell.is-fullscreen {
+  position: fixed;
+  inset: var(--header-h) 0 0 0;
+  z-index: 900;
+}
+.map-shell.is-fullscreen .map-canvas { height: 100%; }
+
+/* A térkép nézetben a szekció nem kap alsó margót, ha teljes képernyős. */
+.view:has(.map-shell.is-fullscreen) { padding-bottom: 0; }
+
+/* Keskeny képernyőn a vezérlősor és a lábléc felemésztené a térképet, ezért
+   összenyomjuk őket, és a vászonnak minimum-magasságot adunk. */
+@media (max-width: 720px) {
+  .map-shell.is-fullscreen .map-controls {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    padding: 10px 12px;
+  }
+  .map-shell.is-fullscreen .ctl > span { font-size: 9px; }
+  .map-shell.is-fullscreen .filter { padding: 5px 8px; font-size: 12px; }
+  .map-shell.is-fullscreen .btn { padding: 6px 10px; }
+  .map-shell.is-fullscreen #map-reset { margin-left: 0; }
+  .map-shell.is-fullscreen .map-footbar { padding: 6px 12px; font-size: 10px; }
+  .map-shell.is-fullscreen .map-legend { display: none; }
+  .map-shell.is-fullscreen .map-canvas { min-height: 48vh; }
+  /* Az oldalpanel a térkép fölé csúszik, nem alá szorítja. */
+  .map-shell.is-fullscreen .map-panel.is-open {
+    position: absolute; inset: auto 0 0 0; max-height: 60%;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
+    border-top: 1px solid var(--border);
+  }
+  .map-shell.is-fullscreen .map-layout { position: relative; }
+}

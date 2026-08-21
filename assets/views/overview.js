@@ -85,6 +85,21 @@ function distBars(entries, { formatLabel = (k) => k, unit = '', colors = null } 
     .join('');
 }
 
+/**
+ * Sötét statisztika-sáv: egyetlen nagy szám és egy mondat, ami megmondja,
+ * miért érdekes. A szekciók közé ékelve megtöri a diagramok ritmusát.
+ */
+function band(figure, unit, headline, detail, variant = '') {
+  return (
+    `<aside class="band ${variant} reveal">` +
+    `<div class="band-figure mono">${figure}` +
+    `<span class="band-unit">${escapeHtml(unit)}</span></div>` +
+    `<div class="band-text"><strong>${escapeHtml(headline)}</strong>` +
+    `<span>${escapeHtml(detail)}</span></div>` +
+    `</aside>`
+  );
+}
+
 function factCard(index, tone, title, body) {
   return (
     `<div class="card fact reveal tone-${tone}" style="--index:${index}">` +
@@ -236,6 +251,11 @@ export function render(data) {
   const vix = data.global?.exchanges?.find((e) => e.name === 'VIX');
   const decix = data.global?.exchanges?.find((e) => e.name === 'DE-CIX Frankfurt');
 
+  // A bécsi node a „budapesti” IX egyetlen külföldi lába — külön kiemelést ér.
+  const viennaOnes = ports.filter((p) => /InterXion VIE1/i.test(p.node ?? ''));
+  const viennaPorts = viennaOnes.length;
+  const viennaMbps = sumBy(viennaOnes, (p) => p.bandwidth_mbps);
+
   const buckets = cohorts(members);
 
   return (
@@ -269,6 +289,16 @@ export function render(data) {
         humanCard(1, icons.storage, `${formatInt(Math.round(gigabytesPerSecond(latest.current_gbps)))} GB`, s.human.bytes, 'green') +
         humanCard(2, icons.network, formatInt(totalPrefixes), s.human.prefixes, 'purple') +
         `</div></section>`
+      : '') +
+
+    // Megtörés: a legszélesebb elérésű tag egyetlen számban.
+    (byIx.length
+      ? band(
+          formatInt(byIx[0].network.ix_count),
+          s.bands.reachUnit,
+          s.bands.reachHead.replace('{name}', byIx[0].name),
+          s.bands.reachBody
+        )
       : '') +
 
     // ---- Kik ülnek a BIX-en ----
@@ -324,7 +354,30 @@ export function render(data) {
     `</div></section>` +
 
     // ---- BIX és a világ ----
+    // Megtörés: mennyi kapacitás ül a bécsi lábon.
+    (viennaPorts
+      ? band(
+          formatInt(viennaPorts),
+          s.bands.viennaUnit,
+          s.bands.viennaHead,
+          s.bands.viennaBody.replace('{gbps}', formatInt(Math.round(viennaMbps / 1000))),
+          'band--accent'
+        )
+      : '') +
+
     worldSection(data.global) +
+
+    // Megtörés: a frankfurti átfedés aránya.
+    (decix
+      ? band(
+          formatInt(decix.shared),
+          s.bands.decixUnit,
+          s.bands.decixHead,
+          s.bands.decixBody
+            .replace('{total}', formatInt(members.length))
+            .replace('{pct}', formatPercent((decix.shared / members.length) * 100, 0))
+        )
+      : '') +
 
     // ---- Érdekességek ----
     `<section class="section">` +
