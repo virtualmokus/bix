@@ -49,7 +49,7 @@ git init
 npm init -y
 npm pkg set type=module
 npm pkg set name=bix-dashboard
-npm pkg set scripts.test="node --test test/"
+npm pkg set scripts.test="node --test"   # Node 24 alatt a "test/" argumentum modulútvonalként értelmeződne
 npm install cheerio
 ```
 

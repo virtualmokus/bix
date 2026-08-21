@@ -1,0 +1,2765 @@
+{
+  "fetched_at": "2026-08-21T09:36:23Z",
+  "members": [
+    {
+      "asn": 42,
+      "name": "Packet Clearing House (PCH)",
+      "website": "https://www.pch.net/",
+      "policy": "Open/Free",
+      "first_seen": "2024-07-10T17:07:07Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::42:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.62",
+          "bandwidth_mbps": 10000,
+          "note": "1Gbps on 10G",
+          "graph_id": "cb4595a76d85dcd257a4488fb9e227f1"
+        }
+      ]
+    },
+    {
+      "asn": 1955,
+      "name": "Pro-M/NIIF",
+      "website": "https://www.pro-m.hu",
+      "policy": "Open/Free",
+      "first_seen": "2020-11-19T08:07:47Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::1955:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.13",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "e9b7c64657c49b3e7a66ae1125a5ee37"
+        },
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.89",
+          "bandwidth_mbps": 100000,
+          "note": "Backup Link",
+          "graph_id": "84255228d4ce51b2ebf942adb2fab2f9"
+        }
+      ]
+    },
+    {
+      "asn": 2635,
+      "name": "Aut O Mattic Ltd. (WordPress.com)",
+      "website": "https://automattic.com",
+      "policy": "Open/Free",
+      "first_seen": "2023-01-04T00:20:19Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2635:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.94",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "dad39e75d957fcc86592aa27dc8f9293"
+        }
+      ]
+    },
+    {
+      "asn": 2686,
+      "name": "AT&T EMEA",
+      "website": "https://www.att.com",
+      "policy": "Selective",
+      "first_seen": "2022-07-20T15:16:32Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2686:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.86",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "4760beaf7c0a911e1d074f9eee88036f"
+        }
+      ]
+    },
+    {
+      "asn": 3244,
+      "name": "3C Telecom",
+      "website": "http://www.3ctelecom.hu",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.18",
+          "bandwidth_mbps": 1000,
+          "note": "Backup Link",
+          "graph_id": "1c93472e613b32c0eaa37f02f65f10cd"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.35",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "42d3fbefd870f8fb15b18b03c73f797f"
+        }
+      ]
+    },
+    {
+      "asn": 3303,
+      "name": "Swisscom",
+      "website": "http://www.swisscom.com",
+      "policy": "Selective",
+      "first_seen": "2010-08-13T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::3303:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.125",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "661f344f1aa3e725219fe0f938ff755c"
+        }
+      ]
+    },
+    {
+      "asn": 3856,
+      "name": "Packet Clearing House (PCH)",
+      "website": "https://www.pch.net/",
+      "policy": "Open/Free",
+      "first_seen": "2021-05-27T14:30:21Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::3856:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.72",
+          "bandwidth_mbps": 10000,
+          "note": "1Gbps on 10G",
+          "graph_id": "fc87c68607912b1f61adc31401375ffe"
+        }
+      ]
+    },
+    {
+      "asn": 5400,
+      "name": "BT Global Europe",
+      "website": "http://www.bt.net",
+      "policy": "Restrictive",
+      "first_seen": "2020-12-30T13:40:22Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::5400:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.53",
+          "bandwidth_mbps": 1000,
+          "note": null,
+          "graph_id": "ac044aba7c0833ab5e5ea701d69720b5"
+        }
+      ]
+    },
+    {
+      "asn": 5483,
+      "name": "Magyar Telekom",
+      "website": "http://www.telekom.hu",
+      "policy": "Selective",
+      "first_seen": "2012-10-06T00:00:00Z",
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.12",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "3669abf99e5bf93373a89520b1ba6c3b"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.139",
+          "bandwidth_mbps": 100000,
+          "note": "Backup link",
+          "graph_id": "a861b98f5e932a7cce5b3f60d1549883"
+        }
+      ]
+    },
+    {
+      "asn": 5507,
+      "name": "AS5507",
+      "website": null,
+      "policy": null,
+      "first_seen": "2016-12-08T09:59:47Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::5507:1",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 6507,
+      "name": "Riot Games",
+      "website": "https://www.riotgames.com/en",
+      "policy": "Selective",
+      "first_seen": "2023-02-14T01:13:31Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::6507:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.207",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "d068dbf8af4fc47b25252e660cd9b240"
+        }
+      ]
+    },
+    {
+      "asn": 6663,
+      "name": "Türk Telekom",
+      "website": "http://www.turktelekomint.com",
+      "policy": "Open/Free",
+      "first_seen": "2013-05-14T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::6663:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.20",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "987c1050d6c58aa60e5f68b28a39a35c"
+        }
+      ]
+    },
+    {
+      "asn": 6939,
+      "name": "Hurricane Electric",
+      "website": "http://www.he.net",
+      "policy": "Open/Free",
+      "first_seen": "2013-07-30T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::6939:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.175",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "9022c1a4a0f13243cc40629c5d03a3d4"
+        }
+      ]
+    },
+    {
+      "asn": 8075,
+      "name": "Microsoft",
+      "website": "http://www.microsoft.com/",
+      "policy": "Selective",
+      "first_seen": "2015-01-29T00:00:00Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::8075:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.21",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "6f25f07b98015eee9df60cbbaaa2a53d"
+        },
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.51",
+          "bandwidth_mbps": 100000,
+          "note": "#2",
+          "graph_id": "a1cc3554a4c140c55e23ecad86b2bc1b"
+        }
+      ]
+    },
+    {
+      "asn": 8220,
+      "name": "Colt Technology Services GmbH",
+      "website": "https://www.colt.net",
+      "policy": "Selective",
+      "first_seen": "2023-01-13T11:35:00Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::8220:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.82",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "640441211b10c3d91b24b5e4312b5707"
+        }
+      ]
+    },
+    {
+      "asn": 8400,
+      "name": "Telekom Srbija a.d. Belgrade",
+      "website": "https://mts.rs/ ",
+      "policy": "Selective",
+      "first_seen": "2012-10-16T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::8400:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.171",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "bf282131214fefdbe32d5c69597b3d19"
+        }
+      ]
+    },
+    {
+      "asn": 8412,
+      "name": "Magenta Telekom",
+      "website": " https://www.magenta.at",
+      "policy": "Open/Free",
+      "first_seen": "2026-02-16T13:01:33Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::8412:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.88",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "df3d63d309f7c4ece877daa1696796a9"
+        }
+      ]
+    },
+    {
+      "asn": 8447,
+      "name": "A1 Telekom Austria AG",
+      "website": "https://www.a1.net/",
+      "policy": "Selective",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.44",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "101b6323dcfb2a0428b747057aa37465"
+        }
+      ]
+    },
+    {
+      "asn": 8448,
+      "name": "CETIN Hungary",
+      "website": "http://www.cetin.hu",
+      "policy": "Open/Free",
+      "first_seen": "2011-05-18T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::8448:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "2Connect DC10",
+          "ipv4": "193.188.137.47",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "6f7eec9ebcd9b5258aeac9756765f2fb"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.95",
+          "bandwidth_mbps": 200000,
+          "note": null,
+          "graph_id": "d8c49fa03f8dad8744676fd98dbcbcb8"
+        }
+      ]
+    },
+    {
+      "asn": 8462,
+      "name": "Tarr",
+      "website": "http://www.tarr.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2016-01-23T00:00:00Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::8462:2",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.172",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "6bc10a4cb8c30b86fca214097645e472"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.173",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "4cc62e632be86372d2f2863eea08a6af"
+        }
+      ]
+    },
+    {
+      "asn": 8990,
+      "name": "Antenna Hungária",
+      "website": "http://www.ahrt.hu",
+      "policy": "Open/Free",
+      "first_seen": "2020-01-17T13:59:15Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::8990:3",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.168",
+          "bandwidth_mbps": 100000,
+          "note": "VH 100G",
+          "graph_id": "d9fac610a5432403b997589730bb5619"
+        },
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.170",
+          "bandwidth_mbps": 100000,
+          "note": "DPX 100G",
+          "graph_id": "e345a8d1e1829c4e15619d744afd706d"
+        }
+      ]
+    },
+    {
+      "asn": 9002,
+      "name": "RETN",
+      "website": "http://www.retn.net",
+      "policy": "Selective",
+      "first_seen": "2010-07-29T00:00:00Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::9002:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.153",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "ead63b6c85611b8078a3a4458e0071e1"
+        }
+      ]
+    },
+    {
+      "asn": 9009,
+      "name": "M247 Networks",
+      "website": "http://www.m247.com",
+      "policy": "Open/Free",
+      "first_seen": "2016-02-20T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::9009:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.176",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "95a1b58230febb4573e58eeeef959a43"
+        }
+      ]
+    },
+    {
+      "asn": 9050,
+      "name": "Romtelecom",
+      "website": "http://www.romtelecom.ro",
+      "policy": "Selective",
+      "first_seen": "2010-07-29T00:00:00Z",
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.149",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "68c1c2d0c2f69b0c8a8778c33424abdb"
+        }
+      ]
+    },
+    {
+      "asn": 9146,
+      "name": "BH Telecom",
+      "website": "http://www.bhtelecom.ba/",
+      "policy": "Open/Free",
+      "first_seen": "2015-12-08T00:00:00Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::9146:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.22",
+          "bandwidth_mbps": 20000,
+          "note": null,
+          "graph_id": "a50a8f4e436357f0aeeeda7f4c35dff2"
+        }
+      ]
+    },
+    {
+      "asn": 12301,
+      "name": "Invitech",
+      "website": "https://www.invitech.hu",
+      "policy": "Open/Free",
+      "first_seen": "2014-06-03T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::1:2301:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "2Connect DC10",
+          "ipv4": "193.188.137.167",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "8ed88b83c3970415cd71813a67590ab2"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.42",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "4743355e010669cf99fe2198cd929561"
+        }
+      ]
+    },
+    {
+      "asn": 12303,
+      "name": "ISZT",
+      "website": "http://www.iszt.hu",
+      "policy": "Open/Free",
+      "first_seen": "2026-02-06T10:11:34Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::1:2303:3",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.10",
+          "bandwidth_mbps": 10000,
+          "note": "under construction",
+          "graph_id": "a1e6436c17804297cf6ea13fcb06fcf6"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.7",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "f7d3e1b81bfb8a43b675962bd91dc52a"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.8",
+          "bandwidth_mbps": 10000,
+          "note": "under construction",
+          "graph_id": "96bb4f0e11217cf668a9852b64677d11"
+        }
+      ]
+    },
+    {
+      "asn": 12310,
+      "name": "iNES Group",
+      "website": "http://www.ines.ro/",
+      "policy": "Selective",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.159",
+          "bandwidth_mbps": 1000,
+          "note": null,
+          "graph_id": "04db6a04bb39774b32e489b5c2324f9d"
+        }
+      ]
+    },
+    {
+      "asn": 13335,
+      "name": "Cloudflare",
+      "website": "https://www.cloudflare.com/",
+      "policy": "Open/Free",
+      "first_seen": "2017-02-10T15:02:18Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::1:3335:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.27",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "74f95dbe523e82021dbe2d9ace41a134"
+        }
+      ]
+    },
+    {
+      "asn": 15169,
+      "name": "AS15169",
+      "website": null,
+      "policy": null,
+      "first_seen": "2011-05-03T00:00:00Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::1:5169:1",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 15566,
+      "name": "Infotechna",
+      "website": "http://www.infotechna.hu",
+      "policy": "Open/Free",
+      "first_seen": "2019-06-06T19:17:28Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::1:5566:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.87",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "3a8227adedf5b1b65f7439a9e0bf27ea"
+        }
+      ]
+    },
+    {
+      "asn": 15576,
+      "name": "NTS Workspace",
+      "website": "http://www.nts.ch",
+      "policy": "Open/Free",
+      "first_seen": "2019-05-06T16:38:05Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::1:5576:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.52",
+          "bandwidth_mbps": 1000,
+          "note": "Virtual BIX port",
+          "graph_id": "845fcd50adec7733571f809f0a3748fe"
+        }
+      ]
+    },
+    {
+      "asn": 15958,
+      "name": "CETIN Serbia",
+      "website": "https://www.cetin.rs/",
+      "policy": "Selective",
+      "first_seen": "2024-04-02T14:03:13Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::1:5958:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.102",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "d27cf53d4b5b7cc9a991214c34e72f5b"
+        }
+      ]
+    },
+    {
+      "asn": 16276,
+      "name": "OVHcloud",
+      "website": "https://www.ovhcloud.com",
+      "policy": "Open/Free",
+      "first_seen": "2011-01-20T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::1:6276:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.162",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "029afd0971c1257ccacc814dfb3a735a"
+        }
+      ]
+    },
+    {
+      "asn": 16509,
+      "name": "AS16509",
+      "website": null,
+      "policy": null,
+      "first_seen": "2019-12-04T16:07:26Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::1:6509:1",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 20510,
+      "name": "Nexum",
+      "website": "http://www.nexum.hu",
+      "policy": "Open/Free",
+      "first_seen": "2018-11-20T20:44:06Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:510:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.32",
+          "bandwidth_mbps": 10000,
+          "note": "3Gbps on 10G",
+          "graph_id": "c3b8fb47d5ba4e18d75b83c55aa2b9e9"
+        }
+      ]
+    },
+    {
+      "asn": 20742,
+      "name": "Internet4U",
+      "website": "https://i4u.hu",
+      "policy": "Open/Free",
+      "first_seen": "2022-11-09T17:35:48Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:742:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.107",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "cf1101f5c0445622b9285ca1d94f1210"
+        }
+      ]
+    },
+    {
+      "asn": 20845,
+      "name": "DIGI",
+      "website": "http://digi.hu",
+      "policy": "Open/Free",
+      "first_seen": "2010-07-29T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:845:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.96",
+          "bandwidth_mbps": 300000,
+          "note": null,
+          "graph_id": "0d50763727d3057dadc1c63d28e67247"
+        }
+      ]
+    },
+    {
+      "asn": 20940,
+      "name": "Akamai Technologies",
+      "website": "http://www.akamai.com",
+      "policy": "Open/Free",
+      "first_seen": "2022-12-16T09:40:45Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:940:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.209",
+          "bandwidth_mbps": 200000,
+          "note": null,
+          "graph_id": "38b8ab7d08dd58058fdacc510f34a18e"
+        }
+      ]
+    },
+    {
+      "asn": 21215,
+      "name": "AS21215",
+      "website": null,
+      "policy": null,
+      "first_seen": "2016-07-29T15:49:26Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:1215:1",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 21320,
+      "name": "GEANT",
+      "website": "https://www.geant.org/",
+      "policy": "Selective",
+      "first_seen": "2018-12-19T17:09:05Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::2:1320:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.37",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "7ee4adc3b45561a5a0bf9aacdb099beb"
+        }
+      ]
+    },
+    {
+      "asn": 21334,
+      "name": "One",
+      "website": "https://www.one.hu",
+      "policy": "Open/Free",
+      "first_seen": "2021-04-01T07:30:27Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:1334:4",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.179",
+          "bandwidth_mbps": 300000,
+          "note": null,
+          "graph_id": "8695bcfb8bbb9250520f16f48510bff5"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.184",
+          "bandwidth_mbps": 300000,
+          "note": null,
+          "graph_id": "ed1a4af7eb3de1c4d8803ca2be1d2b5f"
+        }
+      ]
+    },
+    {
+      "asn": 24806,
+      "name": "Internet CZ",
+      "website": "http://www.forpsi.com",
+      "policy": "Selective",
+      "first_seen": "2020-11-30T08:11:04Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:4806:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.140",
+          "bandwidth_mbps": 1000,
+          "note": null,
+          "graph_id": "b0582d0f7b662f666aa5e01803805395"
+        }
+      ]
+    },
+    {
+      "asn": 24822,
+      "name": "OPC Networks",
+      "website": "http://www.opcnet.hu/",
+      "policy": "Selective",
+      "first_seen": "2020-02-05T11:50:02Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:4822:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.90",
+          "bandwidth_mbps": 10000,
+          "note": "backup",
+          "graph_id": "7d52b4c49bb23175f92d3c12cbc667d2"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.91",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "bf3f9919aa7a13d74d07a21d7b5c2641"
+        }
+      ]
+    },
+    {
+      "asn": 25875,
+      "name": "AS25875",
+      "website": null,
+      "policy": null,
+      "first_seen": "2022-02-24T13:23:02Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:5875:1",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 29278,
+      "name": "Rackhost",
+      "website": "https://www.rackhost.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2016-02-25T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:9278:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.121",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "88f4d95986d916dc88b8f9958f5cc9e2"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.122",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "f0f7b2fd082461aeb6f7e3f254ef6af9"
+        }
+      ]
+    },
+    {
+      "asn": 29405,
+      "name": "VNET",
+      "website": "http://www.vnet.sk",
+      "policy": "Open/Free",
+      "first_seen": "2016-08-09T11:05:21Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:9405:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.24",
+          "bandwidth_mbps": 2000,
+          "note": "Virtual BIX port",
+          "graph_id": "8ad15876d1e4b9675c670d1aecbbd832"
+        }
+      ]
+    },
+    {
+      "asn": 29657,
+      "name": "IoT Zrt",
+      "website": "https://iotzrt.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2020-04-13T19:00:51Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::2:9657:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.38",
+          "bandwidth_mbps": 1000,
+          "note": "1 Gbps on 10G",
+          "graph_id": "3a6327dd650e9cc1f814d626ea116153"
+        }
+      ]
+    },
+    {
+      "asn": 30836,
+      "name": "23VNet",
+      "website": "http://hostit.hu/",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.63",
+          "bandwidth_mbps": 1000,
+          "note": "1 Gbps on 10G",
+          "graph_id": "3ebf42ab0b26c6a0d562210d4a61292a"
+        }
+      ]
+    },
+    {
+      "asn": 31042,
+      "name": "UGNI (ex. SBB)",
+      "website": "https://ugni.net",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.26",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "32f3b1cb5ae7fa14eb6775aae6562464"
+        }
+      ]
+    },
+    {
+      "asn": 32261,
+      "name": "AS32261",
+      "website": null,
+      "policy": null,
+      "first_seen": "2021-01-22T10:56:49Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::3:2261:1",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 32590,
+      "name": "Valve Corporation",
+      "website": "https://www.valvesoftware.com/hu/",
+      "policy": "Open/Free",
+      "first_seen": "2017-06-29T13:03:26Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::3:2590:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.28",
+          "bandwidth_mbps": 40000,
+          "note": "40Gbps on 100G",
+          "graph_id": "af5d7b21b39eaffd1fd182a3b9233b12"
+        }
+      ]
+    },
+    {
+      "asn": 32787,
+      "name": "AS32787",
+      "website": null,
+      "policy": null,
+      "first_seen": "2023-02-01T16:24:50Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::3:2787:1",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 32934,
+      "name": "Meta (facebook)",
+      "website": "https://www.facebook.com/peering",
+      "policy": "Selective",
+      "first_seen": "2023-05-23T12:40:15Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::3:2934:2",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.193",
+          "bandwidth_mbps": 200000,
+          "note": null,
+          "graph_id": "dbcfa043e562b4d63add7b96d537ab9f"
+        },
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.97",
+          "bandwidth_mbps": 200000,
+          "note": null,
+          "graph_id": "a06d55a5509bb35bdd9483c8d81071cb"
+        }
+      ]
+    },
+    {
+      "asn": 33891,
+      "name": "Core-Backbone GmbH",
+      "website": "https://www.core-backbone.com",
+      "policy": "Selective",
+      "first_seen": "2025-07-30T08:44:54Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::3:3891:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.75",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "4ee627bc87ede4e6e016d9c59e2979e1"
+        }
+      ]
+    },
+    {
+      "asn": 34655,
+      "name": "DuoDecad",
+      "website": "https://www.doclerholding.com/",
+      "policy": "Open/Free",
+      "first_seen": "2018-01-31T13:23:08Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::3:4655:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.31",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "2bb94aebc8b337936fc4a289adb7e262"
+        }
+      ]
+    },
+    {
+      "asn": 34779,
+      "name": "T-2 d.o.o.",
+      "website": "http://t-2.com",
+      "policy": "Open/Free",
+      "first_seen": "2018-06-21T11:31:55Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::3:4779:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.36",
+          "bandwidth_mbps": 100000,
+          "note": "10Gbps on 100G",
+          "graph_id": "1d3140ba64d7e31cb42c6d1e32ab43d7"
+        }
+      ]
+    },
+    {
+      "asn": 35263,
+      "name": "RLAN",
+      "website": "http://www.rlan.hu",
+      "policy": "Open/Free",
+      "first_seen": "2022-05-03T10:07:34Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::3:5263:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.148",
+          "bandwidth_mbps": 1000,
+          "note": null,
+          "graph_id": "6d9e036a55867427ff85e95eb0612b4c"
+        }
+      ]
+    },
+    {
+      "asn": 35311,
+      "name": "PR-Telecom",
+      "website": "http://www.pr.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2017-03-24T07:45:03Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::3:5311:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.135",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "580c3f11d9ac3c3479595f6bbca1ad78"
+        }
+      ]
+    },
+    {
+      "asn": 39201,
+      "name": "WaveCom",
+      "website": "http://www.wavecom.hu",
+      "policy": "Open/Free",
+      "first_seen": "2019-06-03T14:25:48Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::3:9201:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.41",
+          "bandwidth_mbps": 4000,
+          "note": null,
+          "graph_id": "cded4cb4a004c7f43fd3b5757259c88b"
+        }
+      ]
+    },
+    {
+      "asn": 39679,
+      "name": "JZT Informatikai Kft",
+      "website": "https://jztkft.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2021-04-28T11:47:07Z",
+      "is_rs_peer": true,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.73",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "be89d5eddfe8a7cfe4240bf5bd228e79"
+        }
+      ]
+    },
+    {
+      "asn": 40994,
+      "name": "Alwyzon (Hohl IT e.U.)",
+      "website": "https://www.alwyzon.net/",
+      "policy": "Open/Free",
+      "first_seen": "2023-02-16T10:32:22Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:994:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.40",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "6f276705966e1a49bd88c754578d610f"
+        }
+      ]
+    },
+    {
+      "asn": 41206,
+      "name": "United Telecom",
+      "website": "https://www.unitedtelecom.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2018-05-24T08:56:30Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::4:1206:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.54",
+          "bandwidth_mbps": 20000,
+          "note": null,
+          "graph_id": "5e488bfe623084f271f4a494593460aa"
+        },
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.55",
+          "bandwidth_mbps": 20000,
+          "note": null,
+          "graph_id": "76e1151ff60f0117d75941a72a57c5e7"
+        }
+      ]
+    },
+    {
+      "asn": 41303,
+      "name": "MátraCOMP",
+      "website": "https://www.matracomp.hu/",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.30",
+          "bandwidth_mbps": 1000,
+          "note": "Virtual BIX port",
+          "graph_id": "14360555420c654dfc262a9c6e1bc94d"
+        }
+      ]
+    },
+    {
+      "asn": 41627,
+      "name": "PickUp",
+      "website": "http://www.pickup.hu/",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.161",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "fd53c043621465552aa55814c23e3215"
+        }
+      ]
+    },
+    {
+      "asn": 41897,
+      "name": "SAT-TRAKT",
+      "website": "https://www.sattrakt.com",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.189",
+          "bandwidth_mbps": 30000,
+          "note": "20G + 10G bck",
+          "graph_id": "fe4caaa3b44102a91511a2b3a0edf383"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.190",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "54d552a2c6842f4c021d027d37281f0f"
+        }
+      ]
+    },
+    {
+      "asn": 42473,
+      "name": "ANEXIA",
+      "website": "https://www.anexia.com",
+      "policy": "Selective",
+      "first_seen": "2020-12-15T13:45:52Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:2473:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.68",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "a0529af8cd14d46b5c7c86f6f877a6db"
+        }
+      ]
+    },
+    {
+      "asn": 42864,
+      "name": "Giganet",
+      "website": "http://www.giganet.hu",
+      "policy": "Open/Free",
+      "first_seen": "2019-09-18T11:06:52Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:2864:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.141",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "f6613b954cceadac28ddf9373cf46f46"
+        }
+      ]
+    },
+    {
+      "asn": 43359,
+      "name": "Tárhely.Eu",
+      "website": "https://tarhely.eu",
+      "policy": "Open/Free",
+      "first_seen": "2020-07-22T12:02:58Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:3359:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.70",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "478229a83e3aebaf3b4738b5d454db83"
+        }
+      ]
+    },
+    {
+      "asn": 43500,
+      "name": "Warner Bros. Discovery",
+      "website": "https://wbd.com",
+      "policy": "Open/Free",
+      "first_seen": "2020-08-12T12:38:02Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:3500:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.67",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "1e6fb8aa43010c14fa467a26ac9700f4"
+        }
+      ]
+    },
+    {
+      "asn": 43928,
+      "name": "MVM Informatika",
+      "website": "http://mvm-informatika.hu",
+      "policy": "Open/Free",
+      "first_seen": "2020-02-10T07:26:15Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::4:3928:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.143",
+          "bandwidth_mbps": 10000,
+          "note": "Backup Link",
+          "graph_id": "f838ea67a8c6b60342febb59f4f36fff"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.144",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "8260dd72f9049ce36a891aba2a409e28"
+        }
+      ]
+    },
+    {
+      "asn": 44302,
+      "name": "NETregator",
+      "website": "http://www.iec.hu",
+      "policy": "Open/Free",
+      "first_seen": "2020-01-28T09:30:43Z",
+      "is_rs_peer": true,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.145",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "907586d4716d4d9f45a697ec0026a238"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.146",
+          "bandwidth_mbps": 10000,
+          "note": "backup",
+          "graph_id": "368f185f3cd4671797c3aa5937e7bfa2"
+        }
+      ]
+    },
+    {
+      "asn": 44306,
+      "name": "Omonia",
+      "website": "http://www.omonia.hr",
+      "policy": "Open/Free",
+      "first_seen": "2018-04-13T13:41:43Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:4306:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.33",
+          "bandwidth_mbps": 1000,
+          "note": null,
+          "graph_id": "ce81fcb47e9a86cf1110d05917d7f690"
+        }
+      ]
+    },
+    {
+      "asn": 44460,
+      "name": "MediaCenter Hungary",
+      "website": "https://mediacenter.hu/",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.34",
+          "bandwidth_mbps": 10000,
+          "note": "1Gbps on 10G",
+          "graph_id": "2da2b514010b4a5a7100b9004ce93dfa"
+        }
+      ]
+    },
+    {
+      "asn": 44901,
+      "name": "S3 Company Ltd.",
+      "website": "https://s3c.bg/",
+      "policy": "Open/Free",
+      "first_seen": "2023-01-30T10:41:20Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:4901:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.109",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "c788b3c087af7a532d932ba108f8ed50"
+        }
+      ]
+    },
+    {
+      "asn": 47116,
+      "name": "IntelliHome",
+      "website": "http://www.intellihome.hu",
+      "policy": "Open/Free",
+      "first_seen": "2020-05-13T07:54:47Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:7116:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.147",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "5d3f7d45d660bf17b178690358fcf2ab"
+        }
+      ]
+    },
+    {
+      "asn": 47169,
+      "name": "MVM NET",
+      "website": "http://www.mvmnet.hu",
+      "policy": "Open/Free",
+      "first_seen": "2020-11-30T07:39:32Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:7169:3",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.152",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "f559e106f2129a3098c5949b00b71490"
+        },
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.164",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "ac6f107e3c7be83411e377ffac0d5726"
+        }
+      ]
+    },
+    {
+      "asn": 47381,
+      "name": "Servergarden",
+      "website": "https://www.servergarden.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2018-01-31T14:01:02Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:7381:2",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.124",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "50a2fa41c7b090e883227f97e5970106"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.134",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "89ac3451f84886fdefd1e50e4369f019"
+        }
+      ]
+    },
+    {
+      "asn": 47692,
+      "name": "Nessus GmbH",
+      "website": "https://www.nessus.at/",
+      "policy": "Open/Free",
+      "first_seen": "2024-03-18T16:11:11Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:7692:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.192",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "6da5ba8e638059c94e1bb775e44b361b"
+        }
+      ]
+    },
+    {
+      "asn": 49206,
+      "name": "PeakFactory",
+      "website": null,
+      "policy": "Open/Free",
+      "first_seen": "2021-12-14T12:54:25Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:9206:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.58",
+          "bandwidth_mbps": 20000,
+          "note": null,
+          "graph_id": "d285aab8b6e2da627b4dda5cf3812844"
+        },
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.93",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "0486805e659442f2b819a9e1f0576bcb"
+        }
+      ]
+    },
+    {
+      "asn": 49544,
+      "name": "i3D.net",
+      "website": "https://www.i3d.net",
+      "policy": "Open/Free",
+      "first_seen": "2022-03-08T10:13:35Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::4:9544:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.150",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "094b64e8afd308843060eb7e20b04761"
+        }
+      ]
+    },
+    {
+      "asn": 50031,
+      "name": "Zalaszám",
+      "website": "http://www.zalaszam.hu",
+      "policy": "Open/Free",
+      "first_seen": "2021-06-16T11:47:58Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::5:31:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.156",
+          "bandwidth_mbps": 1000,
+          "note": "BIX VIP",
+          "graph_id": "846039c3eea791581e93114826fae549"
+        }
+      ]
+    },
+    {
+      "asn": 51013,
+      "name": "Websupport",
+      "website": " Website https://www.websupport.sk",
+      "policy": "Open/Free",
+      "first_seen": "2018-12-26T16:07:53Z",
+      "is_rs_peer": true,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.60",
+          "bandwidth_mbps": 1000,
+          "note": "BIX VIP of RETN",
+          "graph_id": "790360768a509e7b8f4037bf8ee1bd9e"
+        }
+      ]
+    },
+    {
+      "asn": 51920,
+      "name": "VIVAcom",
+      "website": null,
+      "policy": "Open/Free",
+      "first_seen": "2018-05-14T09:47:09Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::5:1920:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.50",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "e05d2fb63918eeb94c0d30858ef0c754"
+        }
+      ]
+    },
+    {
+      "asn": 54113,
+      "name": "Fastly, Inc.",
+      "website": "https://www.fastly.com",
+      "policy": "Selective",
+      "first_seen": "2023-02-15T18:17:59Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::5:4113:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.113",
+          "bandwidth_mbps": 200000,
+          "note": null,
+          "graph_id": null
+        },
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.114",
+          "bandwidth_mbps": 200000,
+          "note": null,
+          "graph_id": null
+        }
+      ]
+    },
+    {
+      "asn": 56322,
+      "name": "ServerAstra",
+      "website": "https://serverastra.com",
+      "policy": "Open/Free",
+      "first_seen": "2022-09-08T16:06:52Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::5:6322:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.57",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "73b8e51448ff9edf48abc9f65d427f9b"
+        }
+      ]
+    },
+    {
+      "asn": 57344,
+      "name": "Telehouse AD",
+      "website": "http://www.telehouse.bg",
+      "policy": "Open/Free",
+      "first_seen": "2024-12-19T11:51:57Z",
+      "is_rs_peer": true,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.166",
+          "bandwidth_mbps": 25000,
+          "note": null,
+          "graph_id": "1eb0a90e87b52b884e844eea3fbc19a6"
+        }
+      ]
+    },
+    {
+      "asn": 59649,
+      "name": "NMHH",
+      "website": "http://www.nmhh.hu",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.174",
+          "bandwidth_mbps": 200000,
+          "note": null,
+          "graph_id": "c2c8bd9ef989beb841b444a6e8b8813b"
+        }
+      ]
+    },
+    {
+      "asn": 60673,
+      "name": "ActivCom",
+      "website": "http://www.activcom.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2024-04-19T08:05:44Z",
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.23",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "3011663b84a07ebc0dc41506bdbb2c7f"
+        }
+      ]
+    },
+    {
+      "asn": 61211,
+      "name": "SETCOR ICT",
+      "website": "https://www.setcor.com/",
+      "policy": "Open/Free",
+      "first_seen": "2023-01-17T13:18:29Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::6:1211:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.211",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "6b6d3aee6e4f58cbd70d97bd787d6285"
+        }
+      ]
+    },
+    {
+      "asn": 61998,
+      "name": "Szerverplex",
+      "website": "https://szerverplex.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2020-12-03T19:46:50Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::6:1998:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.71",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "9fd6bfb7382bddb3e66c97ccb0513b29"
+        }
+      ]
+    },
+    {
+      "asn": 62051,
+      "name": "42NET",
+      "website": "https://42netmedia.com/",
+      "policy": "Open/Free",
+      "first_seen": "2021-10-19T09:54:45Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::6:2051:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.84",
+          "bandwidth_mbps": 1000,
+          "note": null,
+          "graph_id": "554bcc7d4e980619c8eaeeeeae6773cd"
+        }
+      ]
+    },
+    {
+      "asn": 62214,
+      "name": "RackForest",
+      "website": "http://rackforest.hu",
+      "policy": "Open/Free",
+      "first_seen": "2016-12-08T14:58:58Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::6:2214:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.45",
+          "bandwidth_mbps": 20000,
+          "note": "Backup Link",
+          "graph_id": "a334112b4ed22ef2db20b59112007597"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.46",
+          "bandwidth_mbps": 20000,
+          "note": null,
+          "graph_id": "ad43593ed50db45ef90c79d1f7fbc185"
+        }
+      ]
+    },
+    {
+      "asn": 62292,
+      "name": "AS62292",
+      "website": null,
+      "policy": null,
+      "first_seen": "2018-12-26T16:09:26Z",
+      "is_rs_peer": true,
+      "ipv6": null,
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 62449,
+      "name": "Sybell Informatika",
+      "website": "https://sybell.hu",
+      "policy": "Open/Free",
+      "first_seen": "2023-11-14T14:48:28Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::6:2449:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.123",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "974e40d43394776492ad4af238777415"
+        }
+      ]
+    },
+    {
+      "asn": 151358,
+      "name": "Finovy Cloud",
+      "website": "https://finovy.com/en/",
+      "policy": "Restrictive",
+      "first_seen": "2013-12-06T00:00:00Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::15:1358:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "2Connect DC10",
+          "ipv4": "193.188.137.155",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "a9c659726796b6055b1b1b419200d4c1"
+        }
+      ]
+    },
+    {
+      "asn": 197248,
+      "name": "Drávanet",
+      "website": "http://www.dravanet.hu",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.104",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "cce18d007ccdcb6562770dd1434b0095"
+        },
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.77",
+          "bandwidth_mbps": 20000,
+          "note": null,
+          "graph_id": "2a2dcfb8a9017eab978938dcf66508ee"
+        }
+      ]
+    },
+    {
+      "asn": 197792,
+      "name": "AS197792",
+      "website": null,
+      "policy": null,
+      "first_seen": "2026-05-27T14:30:15Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::19:7792:1",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 197862,
+      "name": "Netfone",
+      "website": "https://netfone.hu/",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.103",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "5398c875b849d6e8ad628b284f77b0f9"
+        }
+      ]
+    },
+    {
+      "asn": 197889,
+      "name": "Microsystem-Kecskemét",
+      "website": null,
+      "policy": "Open/Free",
+      "first_seen": "2022-01-08T16:33:54Z",
+      "is_rs_peer": true,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "2Connect DC10",
+          "ipv4": "193.188.137.92",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "758279c2241771356cd0de861cb61647"
+        }
+      ]
+    },
+    {
+      "asn": 199235,
+      "name": "Mikroháló",
+      "website": null,
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.56",
+          "bandwidth_mbps": 1000,
+          "note": null,
+          "graph_id": "a77f59da5ca50240edddcdf7d20c789d"
+        }
+      ]
+    },
+    {
+      "asn": 200964,
+      "name": "ISIS-COM",
+      "website": "https://www.isiscom.hu",
+      "policy": "Open/Free",
+      "first_seen": "2022-06-16T13:23:19Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::20:964:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.158",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "a154728d19b9933aded41b149e358975"
+        }
+      ]
+    },
+    {
+      "asn": 203246,
+      "name": "Mobillan-Sat",
+      "website": "https://www.mobillan.hu/",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.99",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "515d4e90cfdb6f272de525cf5252ed00"
+        }
+      ]
+    },
+    {
+      "asn": 204384,
+      "name": "Sweet TV",
+      "website": "https://sweet.tv",
+      "policy": "Open/Free",
+      "first_seen": "2023-12-04T14:04:18Z",
+      "is_rs_peer": true,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "2Connect DC10",
+          "ipv4": "193.188.137.43",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "67bfed84dfdc3a095506cb1b69b1bcb9"
+        },
+        {
+          "node": "2Connect DC10",
+          "ipv4": "193.188.137.83",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "37deeddcf603dbf3dc54f32591564ea3"
+        }
+      ]
+    },
+    {
+      "asn": 204745,
+      "name": "Macronet",
+      "website": "https://www.macronet.hu",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.157",
+          "bandwidth_mbps": 1000,
+          "note": null,
+          "graph_id": "8092c4c98f05ccec9725e3414fed4028"
+        }
+      ]
+    },
+    {
+      "asn": 205275,
+      "name": "ROMARG",
+      "website": " https://www.romarg.ro",
+      "policy": "Open/Free",
+      "first_seen": "2025-10-27T11:38:35Z",
+      "is_rs_peer": true,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.76",
+          "bandwidth_mbps": 1000,
+          "note": "VIP of RETN",
+          "graph_id": "7b44f4e0049885a87085ae6cfe8bfcbe"
+        }
+      ]
+    },
+    {
+      "asn": 206361,
+      "name": "TamaNET",
+      "website": "https://tamanet.hu",
+      "policy": "Open/Free",
+      "first_seen": "2023-02-24T05:27:09Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::20:6361:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.206",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "4b0a0b011261647efba179d32b2fe1aa"
+        }
+      ]
+    },
+    {
+      "asn": 206892,
+      "name": "Rendszerinformatika",
+      "website": "https://rendszerinformatika.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2017-11-21T20:59:22Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::20:6892:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.48",
+          "bandwidth_mbps": 100000,
+          "note": "40Gbps on 100G",
+          "graph_id": "3af8bb674922dca79375f4cc5ef5c1e5"
+        },
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.49",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "6fdce69d8f05920e261867e8df991f3b"
+        }
+      ]
+    },
+    {
+      "asn": 207349,
+      "name": "Opennet",
+      "website": "https://www.opennet.hu",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.66",
+          "bandwidth_mbps": 10000,
+          "note": "1Gbps on 10G",
+          "graph_id": "0dbedd7259827d89b91f9935cb5a3060"
+        }
+      ]
+    },
+    {
+      "asn": 208126,
+      "name": "ViNetwork",
+      "website": "https://vinet.hu/",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.126",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "d90c534cbe4a1d806745c3bd48379a77"
+        }
+      ]
+    },
+    {
+      "asn": 208154,
+      "name": "ELIN.hu",
+      "website": "https://elin.hu",
+      "policy": "Open/Free",
+      "first_seen": "2020-09-28T13:24:07Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::20:8154:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.65",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "9d3586f3ce0a05b4208ff4073cbed238"
+        }
+      ]
+    },
+    {
+      "asn": 208414,
+      "name": "WEDOS Internet, a.s.",
+      "website": "https://www.wedos.com/",
+      "policy": "Open/Free",
+      "first_seen": "2023-10-10T05:33:24Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::20:8414:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.208",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "9477807d923e95852c56d344d7557a9a"
+        }
+      ]
+    },
+    {
+      "asn": 209108,
+      "name": "Trans-Pack",
+      "website": "https://trans-pack.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2023-08-09T12:55:37Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::20:9108:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.108",
+          "bandwidth_mbps": 10000,
+          "note": null,
+          "graph_id": "ba8851ce7113bbf7dfd65b9879c610a3"
+        }
+      ]
+    },
+    {
+      "asn": 210788,
+      "name": "AS210788",
+      "website": null,
+      "policy": null,
+      "first_seen": "2026-02-06T10:03:26Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::21:788:3",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 210966,
+      "name": "DC Hosting",
+      "website": " https://premiumwebtarhely.hu",
+      "policy": "Open/Free",
+      "first_seen": "2021-12-03T13:26:47Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::21:966:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.138",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "d72a3aa5a64974e581492dcdc4e32a9a"
+        }
+      ]
+    },
+    {
+      "asn": 212707,
+      "name": "KeviWLAN",
+      "website": "https://www.keviwlan.hu/",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.81",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "d9bb47f23007b59ec9008fbc7ce9d3f1"
+        }
+      ]
+    },
+    {
+      "asn": 213669,
+      "name": "DarkSystems",
+      "website": " https://darksystems.hu",
+      "policy": "Open/Free",
+      "first_seen": "2017-04-04T15:28:59Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::21:3669:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.29",
+          "bandwidth_mbps": 1000,
+          "note": "1Gbps on 10G",
+          "graph_id": "2870e3bcfcc6c72abf166f5ed58b926d"
+        }
+      ]
+    },
+    {
+      "asn": 213746,
+      "name": "AS213746",
+      "website": null,
+      "policy": null,
+      "first_seen": "2010-11-02T00:00:00Z",
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 215366,
+      "name": "Birintech Solutions",
+      "website": "https://bgn.hu",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.215",
+          "bandwidth_mbps": 10000,
+          "note": "1 Gbps on 10G",
+          "graph_id": "b88fd0b9980594c8e5c74d19bb0b5083"
+        }
+      ]
+    },
+    {
+      "asn": 215904,
+      "name": "HostingBazis",
+      "website": "https://hostingbazis.hu/",
+      "policy": "Open/Free",
+      "first_seen": "2024-04-18T07:56:35Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::21:5904:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.59",
+          "bandwidth_mbps": 10000,
+          "note": "1Gbps on 10G",
+          "graph_id": "668c34f6e3907e7309f7fc55d408a7ef"
+        }
+      ]
+    },
+    {
+      "asn": 216010,
+      "name": "AS216010",
+      "website": null,
+      "policy": null,
+      "first_seen": "2023-12-20T15:12:43Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::21:6010:1",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": []
+    },
+    {
+      "asn": 328126,
+      "name": "Orange",
+      "website": null,
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.79",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "1da8ea6b768f4466142e4246bbe91c09"
+        }
+      ]
+    },
+    {
+      "asn": 396986,
+      "name": "ByteDance Inc. (TikTok)",
+      "website": "https://www.bytedance.com/",
+      "policy": "Open/Free",
+      "first_seen": "2023-05-18T14:31:36Z",
+      "is_rs_peer": false,
+      "ipv6": "2001:7f8:35::39:6986:1",
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "Digital Realty (InterXion VIE1)",
+          "ipv4": "193.188.137.98",
+          "bandwidth_mbps": 100000,
+          "note": null,
+          "graph_id": "f91e813c5be67971027f7dd03cbdda77"
+        }
+      ]
+    }
+  ]
+}
