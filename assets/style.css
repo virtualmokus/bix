@@ -1,0 +1,180 @@
+/* =========================================================================
+   BIX — design rendszer
+   Vezető rendszer: minimalist-ui (meleg monokróm, lapos, 1px keretek,
+   tompított pasztell akcentusok). A high-end-visual-design skillből csak a
+   mozgás, a tipográfia-tiltások és a teljesítmény-szabályok érvényesek —
+   a landing-page-specifikus előírásai (Double-Bezel, 2rem squircle, lebegő
+   üveg-navbar, py-40) adatsűrű felületen rontanák az olvashatóságot.
+   ========================================================================= */
+
+:root {
+  --canvas:     #FBFBFA;
+  --surface:    #FFFFFF;
+  --border:     #EAEAEA;
+  --text:       #2F3437;
+  --text-muted: #787774;
+
+  --blue-bg:   #E1F3FE;  --blue-fg:   #1F6C9F;
+  --yellow-bg: #FBF3DB;  --yellow-fg: #956400;
+  --green-bg:  #EDF3EC;  --green-fg:  #346538;
+  --red-bg:    #FDEBEC;  --red-fg:    #9F2F2D;
+
+  --radius-card:   8px;
+  --radius-button: 4px;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font-sans:  'Geist', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono:  'Geist Mono', ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--canvas);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Fejléc ===== */
+.site-header {
+  display: flex; align-items: center; gap: 24px;
+  padding: 16px 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand-mark { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
+.brand-tagline { font-size: 12px; color: var(--text-muted); }
+
+.tabs { display: flex; gap: 4px; margin-left: auto; }
+.tab {
+  font: inherit; font-size: 14px; color: var(--text-muted);
+  background: none; border: none; cursor: pointer;
+  padding: 6px 12px; border-radius: var(--radius-button);
+  transition: color 200ms var(--ease), background 200ms var(--ease);
+}
+.tab:hover { background: var(--canvas); color: var(--text); }
+.tab[aria-selected="true"] { color: var(--text); font-weight: 500; background: var(--canvas); }
+
+.live-badge {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--green-fg); background: var(--green-bg);
+  padding: 4px 10px; border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+.live-badge[hidden] { display: none; }
+
+/* ===== Szerkezet ===== */
+.view { max-width: 1120px; margin: 0 auto; padding: 64px 32px 96px; }
+.section { margin-bottom: 80px; }
+.eyebrow {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;
+  color: var(--text-muted); font-weight: 500; margin-bottom: 10px;
+}
+.section-title {
+  font-family: var(--font-serif); font-size: 34px; font-weight: 400;
+  line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  transition: box-shadow 200ms var(--ease);
+}
+.card:hover { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); }
+
+.mono, td.num, .asn { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+.note { border-radius: var(--radius-card); padding: 16px 20px; font-size: 14px; margin-top: 20px; }
+.note--info    { background: var(--blue-bg);   color: var(--blue-fg); }
+.note--warning { background: var(--yellow-bg); color: var(--yellow-fg); }
+.note svg { width: 16px; height: 16px; vertical-align: -3px; margin-right: 6px; }
+
+.hint { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+
+/* ===== Mozgás ===== */
+.reveal { opacity: 0; transform: translateY(12px); }
+.reveal.is-visible {
+  opacity: 1; transform: none;
+  transition: opacity 600ms var(--ease), transform 600ms var(--ease);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.is-visible { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===== Grafikonok ===== */
+.chart { width: 100%; height: auto; display: block; }
+.bar-row { display: grid; grid-template-columns: 220px 1fr; gap: 14px; align-items: center; margin-bottom: 10px; }
+.bar-label { font-size: 13px; color: var(--text-muted); }
+.bar-track { height: 8px; background: var(--canvas); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+.bar-fill { display: block; height: 100%; border-radius: 4px; transition: width 600ms var(--ease); }
+
+/* ===== Most nézet ===== */
+.hero-number { font-size: 72px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; margin-bottom: 24px; }
+.hero-unit { font-size: 20px; color: var(--text-muted); margin-left: 10px; font-family: var(--font-sans); font-weight: 400; }
+
+.human-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.human-icon { display: block; width: 22px; height: 22px; color: var(--blue-fg); margin-bottom: 14px; }
+.human-icon svg { width: 100%; height: 100%; }
+.human-value { font-family: var(--font-mono); font-size: 24px; font-weight: 500; letter-spacing: -0.02em; }
+.human-text { font-size: 13px; color: var(--text-muted); margin-top: 6px; }
+
+/* ===== Tagok nézet ===== */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.filter {
+  font: inherit; font-size: 13px; padding: 7px 10px;
+  border: 1px solid var(--border); border-radius: var(--radius-button);
+  background: var(--surface); color: var(--text);
+}
+.filter:focus { outline: 2px solid var(--blue-bg); outline-offset: 1px; }
+
+.matrix { display: grid; grid-template-columns: repeat(auto-fill, minmax(14px, 1fr)); gap: 3px; }
+.cell { aspect-ratio: 1; border-radius: 2px; display: block; transition: transform 200ms var(--ease); }
+.cell:hover { transform: scale(1.35); }
+.bw-s  { background: #EDF2F7; }
+.bw-m  { background: #C7DFF3; }
+.bw-l  { background: #7FB6E0; }
+.bw-xl { background: var(--blue-fg); }
+
+.matrix-legend { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 11px; color: var(--text-muted); }
+.matrix-legend i { width: 14px; height: 10px; border-radius: 2px; display: block; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table th {
+  text-align: left; font-size: 10px; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--text-muted); font-weight: 500;
+  padding: 8px 12px 8px 0; border-bottom: 1px solid var(--border);
+}
+.table td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+.badge {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em;
+  background: var(--yellow-bg); color: var(--yellow-fg);
+  padding: 2px 8px; border-radius: 9999px; white-space: nowrap;
+}
+
+/* ===== Lábléc ===== */
+.site-footer {
+  max-width: 1120px; margin: 0 auto; padding: 32px;
+  border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--text-muted); line-height: 1.8;
+}
+
+/* ===== Mobil ===== */
+@media (max-width: 768px) {
+  .site-header { flex-wrap: wrap; padding: 12px 16px; gap: 12px; }
+  .tabs { margin-left: 0; }
+  .view { padding: 32px 16px 64px; }
+  .section { margin-bottom: 56px; }
+  .section-title { font-size: 26px; }
+  .hero-number { font-size: 48px; }
+  .human-grid { grid-template-columns: 1fr; }
+  .bar-row { grid-template-columns: 1fr; gap: 6px; }
+  .table { font-size: 12px; }
+}

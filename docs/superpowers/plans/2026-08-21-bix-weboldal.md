@@ -16,7 +16,7 @@
 - **Nincs build lépés, nincs bundler, nincs böngészőoldali npm-függőség.** Ami a repóban van, azt szolgálja ki a Pages.
 - **GitHub Pages:** `main` branch, `/` (root). Ezért az `index.html` a repó gyökerében ül, az adat pedig relatív `data/…` útvonalon érhető el.
 - **Minden felületi szöveg** az `assets/strings.hu.js`-ből jön. Sehol nincs beégetett magyar szöveg a nézetekben.
-- **hu-HU formázás:** tizedesvessző, ezres helyen keskeny szóköz (`679,68`, `8 358`).
+- **hu-HU formázás:** tizedesvessző. Csoportelválasztó **csak ötjegyűtől** (`8358`, de `10 000`) — ez a magyar helyesírás, és az `Intl` `hu-HU` alapból így viselkedik. Az elválasztó U+00A0.
 - **Az oldalnak egyetlen adatponttal is működnie kell.** A `traffic.csv` jelenleg 1 sort tartalmaz; a `Most` nézet ilyenkor nem rajzol csonka grafikont, hanem kiírja, hány mérés van és mikortól gyűlik.
 - **Tilos a `created` mezőt „csatlakozás"-ként feliratozni.** A `Növekedés` nézet felirata kötelezően „PeeringDB-ben megjelent kapcsolatok" (spec 3.3, Figyelmeztetés 1).
 - **Az adathiányt ki kell írni:** a `/statisztika` 137 portot fed le a főoldal által jelentett 188-ból. Ez látható jelzés, nem lábjegyzet.
