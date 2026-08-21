@@ -36,15 +36,58 @@ export function filterMembers(
   });
 }
 
-/** Alapértelmezett rendezés: együttes sávszélesség szerint csökkenően. */
-export function sortMembers(members) {
-  return [...members].sort(
-    (a, b) => memberBandwidth(b) - memberBandwidth(a) || a.asn - b.asn
-  );
-}
-
 function uniqueSorted(values) {
   return [...new Set(values.filter(Boolean))].sort();
+}
+
+/**
+ * Oszloponkénti rendezési kulcs. A szám és a szöveg külön kezelendő: a
+ * hiányzó érték mindig a lista végére kerül, függetlenül az iránytól.
+ */
+export const SORT_KEYS = {
+  name: { type: 'text', get: (m) => m.name },
+  asn: { type: 'number', get: (m) => m.asn },
+  type: { type: 'text', get: (m) => m.network?.type },
+  scope: { type: 'text', get: (m) => m.network?.scope },
+  node: { type: 'text', get: (m) => uniqueSorted(m.ports.map((p) => p.node)).join(', ') },
+  bandwidth: { type: 'number', get: (m) => memberBandwidth(m) },
+  policy: { type: 'text', get: (m) => m.policy ?? m.network?.policy },
+  prefixes: { type: 'number', get: (m) => m.network?.prefixes4 },
+  ix: { type: 'number', get: (m) => m.network?.ix_count },
+  v6: { type: 'number', get: (m) => (m.ipv6 ? 1 : 0) },
+  rs: { type: 'number', get: (m) => (m.is_rs_peer ? 1 : 0) },
+};
+
+export function sortMembers(members, column = 'bandwidth', direction = 'desc') {
+  const key = SORT_KEYS[column] ?? SORT_KEYS.bandwidth;
+  const sign = direction === 'asc' ? 1 : -1;
+
+  return [...members].sort((a, b) => {
+    const va = key.get(a);
+    const vb = key.get(b);
+
+    const emptyA = va === null || va === undefined || va === '';
+    const emptyB = vb === null || vb === undefined || vb === '';
+    if (emptyA && emptyB) return a.asn - b.asn;
+    if (emptyA) return 1; // a hiányzó érték mindig hátra
+    if (emptyB) return -1;
+
+    const cmp =
+      key.type === 'number'
+        ? Number(va) - Number(vb)
+        : String(va).localeCompare(String(vb), 'en');
+
+    return cmp * sign || a.asn - b.asn;
+  });
+}
+
+/** Rendezhető oszlopfej. A gomb billentyűzetről is elérhető. */
+function head(column, label, title = '', extraClass = '') {
+  return (
+    `<th class="${extraClass}"${title ? ` title="${escapeHtml(title)}"` : ''}>` +
+    `<button type="button" class="th-sort" data-sort="${column}">` +
+    `${escapeHtml(label)}<span class="th-arrow" aria-hidden="true"></span></button></th>`
+  );
 }
 
 function select(id, allLabel, options, format = (v) => v) {
@@ -166,14 +209,14 @@ export function render(data) {
       s.showing.replace('{n}', formatInt(members.length)).replace('{t}', formatInt(members.length))
     )}</p>` +
     `<div class="table-scroll"><table class="table table--dense"><thead><tr>` +
-    `<th>${escapeHtml(c.name)}</th><th>${escapeHtml(c.asn)}</th>` +
-    `<th>${escapeHtml(c.type)}</th><th>${escapeHtml(c.scope)}</th>` +
-    `<th>${escapeHtml(c.node)}</th><th>${escapeHtml(c.bandwidth)}</th>` +
-    `<th>${escapeHtml(c.policy)}</th>` +
-    `<th title="${escapeHtml(s.legend.prefixes)}">${escapeHtml(c.prefixes)}</th>` +
-    `<th title="${escapeHtml(s.legend.ix)}">${escapeHtml(c.ix)}</th>` +
-    `<th class="c" title="${escapeHtml(s.legend.v6)}">${escapeHtml(c.v6)}</th>` +
-    `<th class="c" title="${escapeHtml(s.legend.rs)}">${escapeHtml(c.rs)}</th>` +
+    head('name', c.name) + head('asn', c.asn) +
+    head('type', c.type) + head('scope', c.scope) +
+    head('node', c.node) + head('bandwidth', c.bandwidth) +
+    head('policy', c.policy) +
+    head('prefixes', c.prefixes, s.legend.prefixes) +
+    head('ix', c.ix, s.legend.ix) +
+    head('v6', c.v6, s.legend.v6, 'c') +
+    head('rs', c.rs, s.legend.rs, 'c') +
     `</tr></thead><tbody id="member-rows">${rows(members)}</tbody></table></div>` +
     `<p class="hint">${escapeHtml(s.legend.prefixes)} · ${escapeHtml(s.legend.ix)}</p>` +
     `</section>`
@@ -183,23 +226,62 @@ export function render(data) {
 export function mount(root, data) {
   const tbody = root.querySelector('#member-rows');
   const counter = root.querySelector('#member-count');
-  const all = sortMembers(data.members ?? []);
+  const all = data.members ?? [];
   const ids = ['f-query', 'f-type', 'f-node', 'f-bandwidth', 'f-policy'];
   const inputs = ids.map((id) => root.querySelector(`#${id}`));
 
+  let column = 'bandwidth';
+  let direction = 'desc';
+
+  function markHeaders() {
+    for (const btn of root.querySelectorAll('.th-sort')) {
+      const active = btn.dataset.sort === column;
+      btn.classList.toggle('is-sorted', active);
+      btn.dataset.dir = active ? direction : '';
+      btn.closest('th').setAttribute(
+        'aria-sort',
+        active ? (direction === 'asc' ? 'ascending' : 'descending') : 'none'
+      );
+    }
+  }
+
   function apply() {
     const [query, type, node, bandwidth, policy] = inputs.map((el) => el.value);
-    const filtered = filterMembers(all, { query, type, node, bandwidth, policy });
+    const filtered = sortMembers(
+      filterMembers(all, { query, type, node, bandwidth, policy }),
+      column,
+      direction
+    );
     tbody.innerHTML = rows(filtered);
     counter.textContent = s.showing
       .replace('{n}', formatInt(filtered.length))
       .replace('{t}', formatInt(all.length));
+    markHeaders();
   }
 
   for (const el of inputs) el.addEventListener('input', apply);
 
+  for (const btn of root.querySelectorAll('.th-sort')) {
+    btn.addEventListener('click', () => {
+      const next = btn.dataset.sort;
+      // Ugyanarra az oszlopra kattintva irányt vált; újra kattintva vissza.
+      if (next === column) {
+        direction = direction === 'desc' ? 'asc' : 'desc';
+      } else {
+        column = next;
+        // A szöveges oszlopok A-tól, a számok a legnagyobbtól indulnak.
+        direction = SORT_KEYS[next]?.type === 'text' ? 'asc' : 'desc';
+      }
+      apply();
+    });
+  }
+
   root.querySelector('#f-reset')?.addEventListener('click', () => {
     for (const el of inputs) el.value = '';
+    column = 'bandwidth';
+    direction = 'desc';
     apply();
   });
+
+  markHeaders();
 }

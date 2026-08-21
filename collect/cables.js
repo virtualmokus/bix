@@ -139,6 +139,48 @@ export function linkExchanges(exchanges, landings) {
   return out;
 }
 
+/** A kattintáskor megjelenő adatok. Kapcsolattartót nem tárolunk. */
+export function pickDetail(record) {
+  return {
+    length: record.length || null,
+    owners: record.owners || null,
+    suppliers: record.suppliers || null,
+    rfs: record.rfs || null,
+    is_planned: Boolean(record.is_planned),
+    url: record.url || null,
+  };
+}
+
+/**
+ * Kábelenkénti részletek (tulajdonos, szállító, hossz, üzembe helyezés).
+ * Ez kábelenként külön kérés, ezért csak azokat kérjük le, amikről még nincs
+ * adatunk — az első futás után naponta jellemzően nulla vagy néhány kérés.
+ */
+export async function fetchMissingDetails(cables, existing, fetch, { pauseMs = 120, max = 900 } = {}) {
+  const details = { ...existing };
+  let fetched = 0;
+
+  for (const cable of cables) {
+    if (details[cable.id] || fetched >= max) continue;
+    try {
+      const record = await fetch(`${API}/cable/${encodeURIComponent(cable.id)}.json`);
+      details[cable.id] = pickDetail(record ?? {});
+    } catch {
+      // Egyetlen kábel hiánya nem állítja meg a gyűjtést.
+    }
+    fetched++;
+    await new Promise((r) => setTimeout(r, pauseMs));
+  }
+
+  // A már nem létező kábelek adatát nem hurcoljuk tovább.
+  const live = new Set(cables.map((c) => c.id));
+  for (const id of Object.keys(details)) {
+    if (!live.has(id)) delete details[id];
+  }
+
+  return { details, fetched };
+}
+
 export async function collectCables({
   fetch = fetchJson,
   now = () => new Date(),
@@ -178,11 +220,22 @@ export async function collectCables({
       exchanges = {}; // a globális réteg még nem gyűlt össze
     }
 
+    // A korábbi részletek újrahasznosítása, hogy ne kérjünk le mindent naponta.
+    let previous = {};
+    try {
+      const old = JSON.parse(await readFile(join(dataDir, 'cables.json'), 'utf8'));
+      previous = old.details ?? {};
+    } catch {
+      previous = {};
+    }
+    const { details, fetched } = await fetchMissingDetails(linked.cables, previous, fetch);
+
     const payload = {
       fetched_at: ts,
       source: SOURCE,
       license: LICENSE,
       license_url: LICENSE_URL,
+      details,
       cables: linked.cables,
       landings: linked.landings.map((l) => ({
         id: l.id,
@@ -197,7 +250,7 @@ export async function collectCables({
 
     await writeFile(join(dataDir, 'cables.json'), `${JSON.stringify(payload)}\n`, 'utf8');
     await recordSuccess(metaPath, 'cables', ts);
-    return { ts, cables: linked.cables, landings: linked.landings };
+    return { ts, cables: linked.cables, landings: linked.landings, fetchedDetails: fetched };
   } catch (err) {
     await recordError(metaPath, 'cables', ts, err.message);
     throw err;
@@ -206,9 +259,9 @@ export async function collectCables({
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   try {
-    const { cables, landings } = await collectCables();
+    const { cables, landings, fetchedDetails } = await collectCables();
     const linked = landings.filter((l) => l.cables.length > 0).length;
-    console.log(`OK — ${cables.length} kábel, ${linked}/${landings.length} partraszállás társítva`);
+    console.log(`OK — ${cables.length} kábel, ${linked}/${landings.length} partraszállás társítva, ${fetchedDetails} új részlet`);
   } catch (err) {
     console.error(`HIBA: ${err.message}`);
     process.exit(1);

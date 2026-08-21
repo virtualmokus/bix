@@ -193,7 +193,7 @@ export function mount(root, data) {
   const regionSel = root.querySelector('#map-region');
   const memberSel = root.querySelector('#map-member');
 
-  const map = L.map(container, { worldCopyJump: true, scrollWheelZoom: true }).setView([47.5, 19.05], 4);
+  const map = L.map(container, { worldCopyJump: false, scrollWheelZoom: true, minZoom: 2 }).setView([47.5, 19.05], 4);
 
   // A nézet beillesztésekor a konténernek még nincs végleges mérete (rács,
   // betűtöltés, panel-animáció), ezért a Leaflet rossz pozíciókat számolna.
@@ -207,7 +207,16 @@ export function mount(root, data) {
     attribution: '© OpenStreetMap contributors',
   }).addTo(map);
 
-  // A kábelréteg a térkép alá kerül, hogy a csomópontok fölötte maradjanak.
+  // A vektorrétegeket a világ mindhárom példányában kirajzoljuk (−360°, 0°,
+  // +360°), különben oldalra húzva üres térkép fogadna: a csempék ismétlődnek,
+  // a jelölők nem. Így a lapozás egyetlen, körbeérő térképnek látszik.
+  const WORLD_COPIES = [-360, 0, 360];
+
+  // Több ezer vonalat az SVG-renderer megfojt; a vászon nagyságrenddel
+  // gyorsabb, és a kattintást is kezeli.
+  const bulkRenderer = L.canvas({ padding: 0.4 });
+
+  const borderLayer = L.layerGroup().addTo(map);
   const cableLayer = L.layerGroup().addTo(map);
   const lineLayer = L.layerGroup().addTo(map);
   const dotLayer = L.layerGroup().addTo(map);
@@ -215,7 +224,49 @@ export function mount(root, data) {
   const cableData = data.cables ?? null;
   const cableIndex = cableData?.exchanges ?? {};
   const cableById = new Map((cableData?.cables ?? []).map((c) => [c.id, c]));
+  const cableDetails = cableData?.details ?? {};
   const cablesToggle = root.querySelector('#map-cables');
+
+  /** Országhatárok sötéttel — kizoomolva az OSM csempéken alig látszanak. */
+  function drawBorders() {
+    borderLayer.clearLayers();
+    const lines = data.borders?.lines ?? [];
+    for (const offset of WORLD_COPIES) {
+      for (const line of lines) {
+        L.polyline(line.map(([lng, lat]) => [lat, lng + offset]), {
+          color: '#3A4550',
+          weight: 0.9,
+          opacity: 0.75,
+          interactive: false,
+          renderer: bulkRenderer,
+        }).addTo(borderLayer);
+      }
+    }
+  }
+
+  function cablePopup(cable) {
+    const d = cableDetails[cable.id] ?? {};
+    const rows = [
+      [s.cablePopup.owners, d.owners],
+      [s.cablePopup.suppliers, d.suppliers],
+      [s.cablePopup.length, d.length],
+      [s.cablePopup.rfs, d.rfs],
+      [s.cablePopup.landings, cable.countries?.join(', ')],
+    ].filter(([, value]) => value);
+
+    return (
+      `<strong class="cable-pop-name">${escapeHtml(cable.name)}</strong>` +
+      (d.is_planned ? `<span class="cable-pop-planned">${escapeHtml(s.cablePopup.planned)}</span>` : '') +
+      `<dl class="cable-pop">` +
+      rows
+        .map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd>`)
+        .join('') +
+      `</dl>` +
+      (d.url
+        ? `<a href="${escapeHtml(d.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.cablePopup.site)}</a>`
+        : '')
+    );
+  }
 
   /** Kábelek rajzolása; `highlight` a kiemelendő kábelek azonosítói. */
   function drawCables(highlight) {
@@ -224,13 +275,19 @@ export function mount(root, data) {
 
     for (const cable of cableData.cables) {
       const isHot = highlight?.has(cable.id);
-      for (const segment of cable.geometry) {
-        L.polyline(segment.map(([lng, lat]) => [lat, lng]), {
-          color: isHot ? '#B26A00' : (cable.color ?? '#8FA6B8'),
-          weight: isHot ? 2.4 : 0.8,
-          opacity: isHot ? 0.95 : (highlight ? 0.15 : 0.5),
-          interactive: false,
-        }).addTo(cableLayer);
+      for (const offset of WORLD_COPIES) {
+        for (const segment of cable.geometry) {
+          L.polyline(segment.map(([lng, lat]) => [lat, lng + offset]), {
+            color: isHot ? '#B26A00' : (cable.color ?? '#8FA6B8'),
+            weight: isHot ? 2.6 : 1,
+            opacity: isHot ? 0.95 : (highlight ? 0.18 : 0.6),
+            bubblingMouseEvents: false,
+            renderer: bulkRenderer,
+          })
+            .bindPopup(() => cablePopup(cable), { maxWidth: 300 })
+            .bindTooltip(cable.name, { sticky: true })
+            .addTo(cableLayer);
+        }
       }
     }
   }
@@ -387,6 +444,7 @@ export function mount(root, data) {
       ? new Set(cableIndex[selected.id]?.cables ?? [])
       : null;
     drawCables(hotCables && hotCables.size ? hotCables : null);
+    drawBorders();
 
     // Kiemeléskor a kiválasztottal közös hálózatot futtató csomópontok
     // maradnak élénkek, a többi elhalványul.
@@ -402,9 +460,22 @@ export function mount(root, data) {
       const dim = relatedIds && !isRelated;
 
       if (home && !selected) {
-        L.polyline([[home.lat, home.lng], [e.lat, e.lng]], {
-          color: style.color, weight: style.weight, opacity: 0.5,
-        }).addTo(lineLayer);
+        for (const offset of WORLD_COPIES) {
+          L.polyline([[home.lat, home.lng + offset], [e.lat, e.lng + offset]], {
+            color: style.color, weight: style.weight, opacity: 0.5, interactive: false,
+          }).addTo(lineLayer);
+        }
+      }
+
+      for (const offset of WORLD_COPIES.filter((o) => o !== 0)) {
+        L.circleMarker([e.lat, e.lng + offset], {
+          radius: markerRadius(e.shared) * (e.id === selectedId ? 1.5 : 1),
+          color: e.id === selectedId ? '#9F2F2D' : style.color,
+          fillColor: style.color,
+          fillOpacity: dim ? 0.12 : 0.7,
+          opacity: dim ? 0.2 : 1,
+          weight: e.id === selectedId ? 3 : 1,
+        }).on('click', () => select(e)).addTo(dotLayer);
       }
 
       const marker = L.circleMarker([e.lat, e.lng], {
@@ -426,22 +497,27 @@ export function mount(root, data) {
     if (selected) {
       for (const r of relatedExchanges(selected, visible, 25)) {
         const t = r.exchange;
-        L.polyline([[selected.lat, selected.lng], [t.lat, t.lng]], {
-          color: lineStyle(r.overlap).color,
-          weight: lineStyle(r.overlap).weight,
-          opacity: 0.75,
-          dashArray: '4 4',
-        }).addTo(lineLayer);
+        for (const offset of WORLD_COPIES) {
+          L.polyline([[selected.lat, selected.lng + offset], [t.lat, t.lng + offset]], {
+            color: lineStyle(r.overlap).color,
+            weight: lineStyle(r.overlap).weight,
+            opacity: 0.75,
+            dashArray: '4 4',
+            interactive: false,
+          }).addTo(lineLayer);
+        }
       }
     }
 
     if (home) {
-      L.circleMarker([home.lat, home.lng], {
-        radius: 10, color: '#9F2F2D', fillColor: '#9F2F2D', fillOpacity: 0.9, weight: 2,
-      })
-        .bindTooltip('BIX — Budapest', { direction: 'top' })
-        .on('click', () => select(home))
-        .addTo(dotLayer);
+      for (const offset of WORLD_COPIES) {
+        L.circleMarker([home.lat, home.lng + offset], {
+          radius: 10, color: '#9F2F2D', fillColor: '#9F2F2D', fillOpacity: 0.9, weight: 2,
+        })
+          .bindTooltip('BIX — Budapest', { direction: 'top' })
+          .on('click', () => select(home))
+          .addTo(dotLayer);
+      }
     }
 
     counter.textContent = s.countLabel

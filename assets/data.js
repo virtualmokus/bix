@@ -10,7 +10,7 @@ const STALE_AFTER_MINUTES = {
 };
 
 export async function loadAll(fetchFn, base = 'data') {
-  const [csv, members, ports, meta, global, cables] = await Promise.all([
+  const [csv, members, ports, meta, global, cables, borders] = await Promise.all([
     fetchFn(`${base}/traffic.csv`).then((r) => r.text()),
     fetchFn(`${base}/members.json`).then((r) => r.json()),
     fetchFn(`${base}/ports.json`).then((r) => r.json()),
@@ -19,6 +19,8 @@ export async function loadAll(fetchFn, base = 'data') {
     fetchFn(`${base}/global.json`).then((r) => r.json()).catch(() => null),
     // A tengeralatti kábelréteg is opcionális — hiánya nem dönti el az oldalt.
     fetchFn(`${base}/cables.json`).then((r) => r.json()).catch(() => null),
+    // Országhatárok: statikus, ritkán változó geometria.
+    fetchFn(`${base}/borders.json`).then((r) => r.json()).catch(() => null),
   ]);
 
   return {
@@ -28,6 +30,7 @@ export async function loadAll(fetchFn, base = 'data') {
     meta,
     global: global ?? null,
     cables: cables ?? null,
+    borders: borders ?? null,
   };
 }
 

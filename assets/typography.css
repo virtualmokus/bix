@@ -1,0 +1,124 @@
+/* =========================================================================
+   BIX — betűméret-korrekció
+   Az eredeti skála 10–13 px körül mozgott, ami adatsűrű felületen is
+   fárasztó. Mindent egy fokozattal feljebb tolunk; a hierarchia (mi
+   nagyobb minél) változatlan, csak az alsó határ emelkedik.
+   Ez a fájl a többi után töltődik, ezért felülír.
+   ========================================================================= */
+
+body { font-size: 16px; line-height: 1.6; }
+
+/* ===== Fejléc ===== */
+.brand-mark { font-size: 21px; }
+.brand-tagline { font-size: 14px; }
+.tab { font-size: 16px; padding: 8px 14px; }
+.live-badge { font-size: 12px; padding: 5px 11px; }
+
+/* ===== Szekciók ===== */
+.eyebrow { font-size: 12px; letter-spacing: 0.16em; }
+.lede { font-size: 17px; line-height: 1.65; }
+.label { font-size: 14px; }
+.hint { font-size: 14px; }
+.note { font-size: 15px; line-height: 1.6; }
+
+/* ===== Kulcsszámok ===== */
+.figure-value { font-size: 30px; }
+.figure-label { font-size: 14px; }
+.figure-hint { font-size: 12.5px; line-height: 1.5; }
+.figure-explain { font-size: 13.5px; line-height: 1.6; }
+.figure-more { width: 19px; height: 19px; font-size: 12px; }
+
+/* ===== Emberi lépték ===== */
+.human-value { font-size: 27px; }
+.human-text { font-size: 14.5px; }
+.human-icon { width: 24px; height: 24px; }
+
+/* ===== Sávok ===== */
+.bar-label { font-size: 14px; }
+.bar-value { font-size: 13px; }
+.bar-row { grid-template-columns: minmax(140px, 1.4fr) minmax(60px, 2fr) auto; }
+
+/* ===== Érdekesség-kártyák ===== */
+.fact-title { font-size: 16px; }
+.fact-body { font-size: 14.5px; line-height: 1.6; }
+
+/* ===== Nyitható magyarázó ===== */
+.explainer > summary { font-size: 14px; }
+.explainer > summary::before { width: 17px; height: 17px; font-size: 14px; }
+.explainer p { font-size: 14.5px; }
+
+/* ===== Tábla ===== */
+.table--dense { font-size: 14px; }
+.table--dense th { font-size: 12px; letter-spacing: 0.06em; }
+.table--dense th, .table--dense td { padding: 9px 14px; }
+.col-node { font-size: 12.5px; }
+.aka { font-size: 12.5px; }
+.ports-n { font-size: 11.5px; }
+.badge { font-size: 11px; }
+
+/* ===== Szűrők és gombok ===== */
+.filter { font-size: 14px; padding: 8px 11px; }
+.btn { font-size: 14px; padding: 8px 16px; }
+.ctl > span { font-size: 11px; }
+.switch { font-size: 14px; }
+.switch input { width: 17px; height: 17px; }
+
+/* ===== Térkép-panel ===== */
+.panel-title { font-size: 18px; }
+.panel-sub { font-size: 13px; }
+.panel-stats strong { font-size: 21px; }
+.panel-stats span { font-size: 11px; }
+.panel-label { font-size: 11px; letter-spacing: 0.09em; }
+.panel-note { font-size: 12.5px; }
+.panel-list li { font-size: 13.5px; }
+.panel-city { font-size: 11.5px; }
+.panel-overlap { font-size: 15px; }
+.chip { font-size: 12.5px; padding: 4px 10px; }
+.map-footbar { font-size: 12.5px; }
+.map-legend { font-size: 12.5px; }
+.leaflet-container { font-size: 13px; }
+
+/* ===== Lábléc és jogi oldal ===== */
+.site-footer { font-size: 13.5px; }
+.legal-section h3 { font-size: 17px; }
+.legal-section p { font-size: 15.5px; line-height: 1.7; }
+.chart-note { font-size: 12.5px; }
+
+/* =========================================================================
+   Új elemek: rendezhető fejléc, kábel-buborék
+   ========================================================================= */
+
+.th-sort {
+  font: inherit; font-weight: inherit; letter-spacing: inherit;
+  text-transform: inherit; color: inherit;
+  background: none; border: none; padding: 0; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 5px;
+  white-space: nowrap;
+}
+.th-sort .th-arrow {
+  width: 0; height: 0; opacity: 0;
+  border-left: 4px solid transparent; border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  transition: opacity 150ms var(--ease), transform 150ms var(--ease);
+}
+.th-sort.is-sorted { color: var(--text); }
+.th-sort.is-sorted .th-arrow { opacity: 1; }
+.th-sort.is-sorted[data-dir="asc"] .th-arrow { transform: rotate(180deg); }
+@media (hover: hover) and (pointer: fine) {
+  .th-sort:hover { color: var(--text); }
+  .th-sort:hover .th-arrow { opacity: 0.45; }
+}
+.table--dense th[aria-sort]:not([aria-sort="none"]) { background: var(--blue-bg); }
+
+.cable-pop-name { font-size: 15px; display: block; }
+.cable-pop-planned {
+  display: inline-block; font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.06em; background: var(--yellow-bg); color: var(--yellow-fg);
+  padding: 2px 7px; border-radius: 9999px; margin-top: 4px;
+}
+.cable-pop {
+  display: grid; grid-template-columns: auto 1fr; gap: 3px 10px;
+  margin: 9px 0; font-size: 13px;
+}
+.cable-pop dt { color: var(--text-muted); white-space: nowrap; }
+.cable-pop dd { margin: 0; }

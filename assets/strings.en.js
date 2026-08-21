@@ -205,6 +205,15 @@ export default {
     explainBody:
       'Lines run from Budapest to each exchange, coloured by how many BIX members are also present there. Click any dot and the view changes: the panel lists the members, the lines redraw from that exchange, and every other exchange sharing the same networks stays lit while the rest fade. That is how you can see, for example, that the crowd at Vienna overlaps almost entirely with the crowd at Frankfurt.',
     cableLabel: 'Submarine cables',
+    cablePopup: {
+      owners: 'Owners',
+      suppliers: 'Built by',
+      length: 'Length',
+      rfs: 'In service',
+      landings: 'Lands in',
+      planned: 'planned',
+      site: 'Official site',
+    },
     cableToggle: 'Show',
     minShared: 'Min. shared members',
     regionLabel: 'Region',

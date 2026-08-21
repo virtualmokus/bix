@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { render, filterMembers, bandwidthClass } from '../assets/views/members.js';
+import { render, filterMembers, bandwidthClass, sortMembers, SORT_KEYS } from '../assets/views/members.js';
 
 const members = [
   {
@@ -81,4 +81,56 @@ test('a csak-PeeringDB-s tag jelölést kap', () => {
 // emojiként jelennek meg: pontosan azt tiltja a design rendszer.
 test('nincs benne emoji', () => {
   assert.ok(!/\p{Emoji_Presentation}/u.test(render(data)));
+});
+
+// ---- rendezés ----
+
+const sortable = [
+  { asn: 100, name: 'Zeta', policy: 'Open/Free', sources: ['bix'], ipv6: null, is_rs_peer: false,
+    ports: [{ node: 'VH', bandwidth_mbps: 1000 }],
+    network: { type: 'Content', scope: 'Global', prefixes4: 50, ix_count: 9, aka: null } },
+  { asn: 200, name: 'Alfa', policy: 'Selective', sources: ['bix'], ipv6: '2001:db8::1', is_rs_peer: true,
+    ports: [{ node: 'VH', bandwidth_mbps: 100000 }],
+    network: { type: 'NSP', scope: 'Europe', prefixes4: 5000, ix_count: 2, aka: null } },
+  { asn: 300, name: 'Béta', policy: null, sources: ['peeringdb'], ipv6: null, is_rs_peer: false,
+    ports: [], network: null },
+];
+
+test('alapból együttes sávszélesség szerint csökkenően rendez', () => {
+  assert.deepEqual(sortMembers(sortable).map((m) => m.asn), [200, 100, 300]);
+});
+
+test('név szerint növekvő sorrendbe tesz', () => {
+  assert.deepEqual(sortMembers(sortable, 'name', 'asc').map((m) => m.name), ['Alfa', 'Béta', 'Zeta']);
+});
+
+test('az irány megfordítható', () => {
+  assert.deepEqual(sortMembers(sortable, 'name', 'desc').map((m) => m.name), ['Zeta', 'Béta', 'Alfa']);
+});
+
+test('a hiányzó érték mindkét irányban hátra kerül', () => {
+  // A 300-as tagnak nincs hálózati profilja, tehát nincs prefix-száma.
+  assert.equal(sortMembers(sortable, 'prefixes', 'desc').at(-1).asn, 300);
+  assert.equal(sortMembers(sortable, 'prefixes', 'asc').at(-1).asn, 300);
+});
+
+test('számoszlopot számként rendez, nem szövegként', () => {
+  assert.deepEqual(sortMembers(sortable, 'prefixes', 'desc').slice(0, 2).map((m) => m.asn), [200, 100]);
+});
+
+test('logikai oszlop szerint is rendez', () => {
+  assert.equal(sortMembers(sortable, 'rs', 'desc')[0].asn, 200);
+  assert.equal(sortMembers(sortable, 'v6', 'desc')[0].asn, 200);
+});
+
+test('ismeretlen oszlopnál a sávszélességre esik vissza', () => {
+  assert.deepEqual(
+    sortMembers(sortable, 'nincs-ilyen').map((m) => m.asn),
+    sortMembers(sortable, 'bandwidth').map((m) => m.asn)
+  );
+});
+
+test('minden oszlopfej rendezhető gombot kap', () => {
+  const html = render(data);
+  assert.equal((html.match(/class="th-sort"/g) ?? []).length, Object.keys(SORT_KEYS).length);
 });
