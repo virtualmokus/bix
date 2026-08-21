@@ -271,3 +271,49 @@ body {
   .hero-grid, .split-grid, .fact-grid { grid-template-columns: 1fr; gap: 28px; }
   .figure-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* =========================================================================
+   Színréteg — a kategóriák mindenhol ugyanazt a színt viselik
+   ========================================================================= */
+
+:root {
+  --purple-bg: #EFE9F7;  --purple-fg: #7C5CBF;
+  --teal-bg:   #E4F2F0;  --teal-fg:   #0F766E;
+  --orange-bg: #F7EBDD;  --orange-fg: #B26A00;
+}
+
+.figure { border-top: 3px solid var(--figure-accent, var(--border)); }
+
+.tone-blue   { border-left: 3px solid var(--blue-fg); }
+.tone-green  { border-left: 3px solid var(--green-fg); }
+.tone-purple { border-left: 3px solid var(--purple-fg); }
+.tone-teal   { border-left: 3px solid var(--teal-fg); }
+.tone-orange { border-left: 3px solid var(--orange-fg); }
+
+.tone-blue .human-icon   { color: var(--blue-fg); }
+.tone-green .human-icon  { color: var(--green-fg); }
+.tone-purple .human-icon { color: var(--purple-fg); }
+
+.bar-row--strong .bar-label { color: var(--text); font-weight: 500; }
+.bar-row--strong .bar-value { color: var(--text); font-weight: 500; }
+
+/* ===== Térkép ===== */
+.map-canvas {
+  height: 560px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--canvas);
+}
+.map-controls {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 14px; font-size: 13px;
+}
+.map-legend { margin-left: auto; font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.map-legend-item { display: inline-flex; align-items: center; gap: 4px; }
+.map-legend-item i { width: 16px; height: 3px; border-radius: 2px; display: inline-block; }
+.leaflet-container { font-family: var(--font-sans); font-size: 12px; }
+
+@media (max-width: 768px) {
+  .map-canvas { height: 380px; }
+  .map-legend { margin-left: 0; }
+}

@@ -73,7 +73,7 @@ test('a render escapeli a tagneveket', () => {
 });
 
 test('a csak-PeeringDB-s tag jelölést kap', () => {
-  assert.ok(render(data).includes('csak PeeringDB'));
+  assert.ok(render(data).includes('PeeringDB only'));
 });
 
 test('nincs benne emoji', () => {

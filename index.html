@@ -1,13 +1,15 @@
 <!doctype html>
-<html lang="hu">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BIX — Budapest Internet Exchange adatnézet</title>
-<meta name="description" content="Független, vizuális adatnézet a Budapest Internet Exchange nyilvános adataiból.">
+<title>BIX — Budapest Internet Exchange data view</title>
+<meta name="description" content="Independent visual data view of the Budapest Internet Exchange, built from public sources.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -19,6 +21,7 @@
     <nav class="tabs" role="tablist">
       <button class="tab" role="tab" data-view="overview" aria-selected="true"></button>
       <button class="tab" role="tab" data-view="members" aria-selected="false"></button>
+      <button class="tab" role="tab" data-view="map" aria-selected="false"></button>
     </nav>
     <span class="live-badge" id="live-badge"></span>
   </header>

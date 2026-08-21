@@ -1,4 +1,4 @@
-import strings from '../strings.hu.js';
+import strings from '../strings.en.js';
 import { formatBandwidth, formatInt, formatPercent } from '../format.js';
 import { escapeHtml } from '../chart.js';
 import { memberBandwidth } from '../stats.js';
@@ -70,7 +70,7 @@ function matrix(ports) {
 }
 
 function tick(on) {
-  return on ? '<span class="tick" aria-label="igen">●</span>' : '<span class="tick-off">·</span>';
+  return on ? '<span class="tick" aria-label="yes">●</span>' : '<span class="tick-off">·</span>';
 }
 
 export function rows(members) {

@@ -1,4 +1,4 @@
-const LOCALE = 'hu-HU';
+const LOCALE = 'en-GB';
 
 export function formatDecimal(n, digits = 2) {
   return new Intl.NumberFormat(LOCALE, {
@@ -23,11 +23,12 @@ export function formatRelative(isoString, now) {
   if (!isoString) return '';
 
   const minutes = Math.floor((now.getTime() - new Date(isoString).getTime()) / 60000);
-  if (minutes < 1) return 'épp most';
-  if (minutes < 60) return `${minutes} perce`;
+  if (minutes < 1) return 'just now';
+  if (minutes < 60) return `${minutes} min ago`;
 
   const hours = Math.floor(minutes / 60);
-  if (hours < 24) return `${hours} órája`;
+  if (hours < 24) return hours === 1 ? '1 hour ago' : `${hours} hours ago`;
 
-  return `${Math.floor(hours / 24)} napja`;
+  const days = Math.floor(hours / 24);
+  return days === 1 ? '1 day ago' : `${days} days ago`;
 }

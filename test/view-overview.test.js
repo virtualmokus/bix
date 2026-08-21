@@ -28,15 +28,15 @@ const data = { traffic, ports, members, meta: {} };
 
 test('a kihasználtsági sávok mellett ott a tényleges szám', () => {
   const html = render(data);
-  assert.ok(html.includes('742,99 Gb/s'), 'hiányzik az aktuális érték');
-  assert.ok(html.includes('1116,82 Gb/s'), 'hiányzik a valaha mért csúcs értéke');
-  assert.ok(html.includes('8358 Gb/s'), 'hiányzik a kapacitás értéke');
+  assert.ok(html.includes('742.99 Gb/s'), 'hiányzik az aktuális érték');
+  assert.ok(html.includes('1,116.82 Gb/s'), 'hiányzik a valaha mért csúcs értéke');
+  assert.ok(html.includes('8,358 Gb/s'), 'hiányzik a kapacitás értéke');
 });
 
 test('a kulcsszámok között ott a bejelentett és a publikus portszám is', () => {
   const html = render(data);
   assert.ok(html.includes('188'));
-  assert.ok(html.includes('publikus port'));
+  assert.ok(html.includes('public ports'));
 });
 
 test('kiírja a hálózattípus- és hatókör-bontást', () => {
@@ -64,7 +64,7 @@ test('a növekedési görbe felirata nem nevezi csatlakozásnak a PeeringDB dát
 });
 
 test('kiírja a bécsi node figyelmeztetést', () => {
-  assert.ok(render(data).includes('Bécs'));
+  assert.ok(render(data).includes('Vienna'));
 });
 
 test('forgalmi adat nélkül sem dob, és a szerkezeti rész megmarad', () => {

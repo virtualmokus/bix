@@ -1,4 +1,4 @@
-import strings from '../strings.hu.js';
+import strings from '../strings.en.js';
 import icons from '../icons.js';
 import { formatDecimal, formatInt, formatPercent, formatBandwidth, formatRelative } from '../format.js';
 import { concurrent4kStreams, gigabytesPerSecond, utilizationPercent } from '../humanize.js';
@@ -11,9 +11,29 @@ import {
 const MIN_POINTS_FOR_CHART = 4;
 const s = strings.overview;
 
-function figure(value, label, hint) {
+// Kategóriánként állandó szín — így a típus a táblán, a bontásban és a
+// térképen is ugyanazt a színt viseli.
+export const TYPE_COLORS = {
+  'Content': '#1F6C9F',
+  'NSP': '#7C5CBF',
+  'Cable/DSL/ISP': '#346538',
+  'Enterprise': '#B26A00',
+  'Educational/Research': '#9F2F2D',
+  'Non-Profit': '#0F766E',
+  'Network Services': '#A21CAF',
+  'Route Server': '#787774',
+};
+
+const SCOPE_COLORS = {
+  'Global': '#1F6C9F',
+  'Europe': '#346538',
+  'Regional': '#B26A00',
+  'Not Disclosed': '#787774',
+};
+
+function figure(value, label, hint, accent) {
   return (
-    `<div class="figure">` +
+    `<div class="figure"${accent ? ` style="--figure-accent:${accent}"` : ''}>` +
     `<div class="figure-value mono">${value}</div>` +
     `<div class="figure-label">${escapeHtml(label)}</div>` +
     (hint ? `<div class="figure-hint">${escapeHtml(hint)}</div>` : '') +
@@ -21,9 +41,9 @@ function figure(value, label, hint) {
   );
 }
 
-function humanCard(index, icon, value, text) {
+function humanCard(index, icon, value, text, tone) {
   return (
-    `<div class="card human-card reveal" style="--index:${index}">` +
+    `<div class="card human-card reveal tone-${tone}" style="--index:${index}">` +
     `<span class="human-icon">${icon}</span>` +
     `<div class="human-value mono">${value}</div>` +
     `<p class="human-text">${escapeHtml(text)}</p>` +
@@ -31,8 +51,8 @@ function humanCard(index, icon, value, text) {
   );
 }
 
-function distBars(entries, { formatLabel = (k) => k, unit = 'db' } = {}) {
-  if (entries.length === 0) return `<p class="hint">${escapeHtml(s.noData)}</p>`;
+function distBars(entries, { formatLabel = (k) => k, unit = '', colors = null } = {}) {
+  if (entries.length === 0) return `<p class="hint">${escapeHtml(strings.noData)}</p>`;
   const max = Math.max(...entries.map(([, count]) => count));
   return entries
     .map(([key, count]) =>
@@ -40,19 +60,31 @@ function distBars(entries, { formatLabel = (k) => k, unit = 'db' } = {}) {
         label: formatLabel(key),
         value: count,
         max,
-        display: `${formatInt(count)} ${unit}`,
+        accent: colors?.[key] ?? 'var(--blue-fg)',
+        display: unit ? `${formatInt(count)} ${unit}` : formatInt(count),
       })
     )
     .join('');
 }
 
-function factCard(index, title, body) {
+function factCard(index, tone, title, body) {
   return (
-    `<div class="card fact reveal" style="--index:${index}">` +
+    `<div class="card fact reveal tone-${tone}" style="--index:${index}">` +
     `<h3 class="fact-title">${title}</h3>` +
     `<p class="fact-body">${body}</p>` +
     `</div>`
   );
+}
+
+function trafficXLabels(rows) {
+  if (rows.length < 2) return [];
+  const picks = [0, Math.floor(rows.length / 2), rows.length - 1];
+  return [...new Set(picks)].map((i) => ({
+    x: i,
+    label: new Date(rows[i].ts).toLocaleString('en-GB', {
+      month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit',
+    }),
+  }));
 }
 
 function heroSection(latest, rows) {
@@ -61,7 +93,9 @@ function heroSection(latest, rows) {
       ? areaChart({
           points: rows.map((row, i) => ({ x: i, y: row.current_gbps })),
           width: 720,
-          height: 120,
+          height: 170,
+          yFormat: (v) => `${formatInt(v)} ${s.chartY}`,
+          xLabels: trafficXLabels(rows),
         })
       : `<div class="note note--info">` +
         `<strong>${escapeHtml(s.seriesStarting)}</strong> ` +
@@ -88,19 +122,79 @@ function heroSection(latest, rows) {
     barRow({
       label: s.current, value: latest.current_gbps, max: latest.capacity_gbps,
       display: `${formatDecimal(latest.current_gbps)} Gb/s · ${formatPercent(util)}`,
+      strong: true,
     }) +
     barRow({
-      label: s.peak, value: latest.peak_gbps, max: latest.capacity_gbps, accent: '#7FB6E0',
+      label: s.peak, value: latest.peak_gbps, max: latest.capacity_gbps, accent: '#7C5CBF',
       display: `${formatDecimal(latest.peak_gbps)} Gb/s · ${formatPercent(peakUtil)}`,
+      strong: true,
     }) +
     barRow({
       label: s.capacity, value: latest.capacity_gbps, max: latest.capacity_gbps, accent: 'var(--border)',
       display: `${formatInt(latest.capacity_gbps)} Gb/s · 100%`,
+      strong: true,
     }) +
     `<p class="note note--warning">${icons.info}<strong>${escapeHtml(s.didYouKnow)}</strong> ` +
     escapeHtml(s.capacityNote) + `</p>` +
     `</div>` +
     `</section>`
+  );
+}
+
+function worldSection(global) {
+  if (!global?.exchanges?.length) return '';
+  const exchanges = global.exchanges;
+  const others = exchanges.filter((e) => e.id !== global.home_ix_id);
+  const bix = exchanges.find((e) => e.id === global.home_ix_id);
+
+  const byNetCount = [...exchanges].sort((a, b) => (b.net_count ?? 0) - (a.net_count ?? 0));
+  const rank = byNetCount.findIndex((e) => e.id === global.home_ix_id) + 1;
+
+  const topWorld = byNetCount.slice(0, 7);
+  const compare = bix && !topWorld.includes(bix) ? [...topWorld, bix] : topWorld;
+  const maxNet = compare[0]?.net_count ?? 1;
+
+  const topShared = others.slice(0, 10);
+  const maxShared = topShared[0]?.shared ?? 1;
+
+  return (
+    `<section class="section reveal">` +
+    `<p class="eyebrow">${escapeHtml(s.worldEyebrow)}</p>` +
+    `<h2 class="section-title">${escapeHtml(s.worldTitle)}</h2>` +
+    `<p class="hint">${escapeHtml(s.worldHint)}</p>` +
+    (rank
+      ? `<p class="note note--info">${escapeHtml(
+          s.worldRank.replace('{rank}', formatInt(rank)).replace('{total}', formatInt(exchanges.length))
+        )}</p>`
+      : '') +
+    `<div class="split-grid">` +
+    `<div><p class="label">${escapeHtml(s.topExchanges)}</p>` +
+    compare
+      .map((e) =>
+        barRow({
+          label: `${e.name} (${e.city ?? '?'})`,
+          value: e.net_count ?? 0,
+          max: maxNet,
+          accent: e.id === global.home_ix_id ? '#B26A00' : 'var(--blue-fg)',
+          display: formatInt(e.net_count ?? 0),
+          strong: e.id === global.home_ix_id,
+        })
+      )
+      .join('') + `</div>` +
+    `<div><p class="label">${escapeHtml(s.sharedTitle)}</p>` +
+    `<p class="hint">${escapeHtml(s.sharedHint)}</p>` +
+    topShared
+      .map((e) =>
+        barRow({
+          label: `${e.name} (${e.city ?? '?'})`,
+          value: e.shared,
+          max: maxShared,
+          accent: '#346538',
+          display: formatInt(e.shared),
+        })
+      )
+      .join('') + `</div>` +
+    `</div></section>`
   );
 }
 
@@ -121,6 +215,9 @@ export function render(data) {
   const byBandwidth = topBy(members, memberBandwidth, 6);
   const totalPrefixes = sumBy(profiled, (m) => m.network.prefixes4);
 
+  const vix = data.global?.exchanges?.find((e) => e.name === 'VIX');
+  const decix = data.global?.exchanges?.find((e) => e.name === 'DE-CIX Frankfurt');
+
   const buckets = (() => {
     const years = members.map((m) => m.first_seen).filter(Boolean).map((d) => Number(d.slice(0, 4)));
     if (years.length === 0) return [];
@@ -139,15 +236,15 @@ export function render(data) {
     `<section class="section reveal">` +
     `<p class="eyebrow">${escapeHtml(s.keyFigures)}</p>` +
     `<div class="figure-grid">` +
-    figure(formatInt(f.networksReported ?? 0), s.fig.networks, s.fig.networksHint) +
-    figure(formatInt(f.portsReported ?? 0), s.fig.ports, s.fig.portsHint) +
+    figure(formatInt(f.networksReported ?? 0), s.fig.networks, s.fig.networksHint, '#1F6C9F') +
+    figure(formatInt(f.portsReported ?? 0), s.fig.ports, s.fig.portsHint, '#1F6C9F') +
     figure(formatInt(f.portsPublic), s.fig.portsPublic,
-      f.coveragePercent ? s.fig.portsPublicHint.replace('{p}', formatPercent(f.coveragePercent, 0)) : '') +
-    figure(formatInt(f.members), s.fig.members, s.fig.membersHint) +
-    figure(formatInt(f.nodes), s.fig.nodes, s.fig.nodesHint) +
-    figure(f.largestPortMbps ? formatBandwidth(f.largestPortMbps) : '—', s.fig.largestPort, s.fig.largestPortHint) +
-    figure(formatInt(adopt.routeServer), s.fig.routeServer, s.fig.routeServerHint) +
-    figure(formatInt(adopt.ipv6), s.fig.ipv6, s.fig.ipv6Hint) +
+      f.coveragePercent ? s.fig.portsPublicHint.replace('{p}', formatPercent(f.coveragePercent, 0)) : '', '#B26A00') +
+    figure(formatInt(f.members), s.fig.members, s.fig.membersHint, '#346538') +
+    figure(formatInt(f.nodes), s.fig.nodes, s.fig.nodesHint, '#7C5CBF') +
+    figure(f.largestPortMbps ? formatBandwidth(f.largestPortMbps) : '—', s.fig.largestPort, s.fig.largestPortHint, '#7C5CBF') +
+    figure(formatInt(adopt.routeServer), s.fig.routeServer, s.fig.routeServerHint, '#0F766E') +
+    figure(formatInt(adopt.ipv6), s.fig.ipv6, s.fig.ipv6Hint, '#0F766E') +
     `</div></section>` +
 
     // ---- Emberi lépték ----
@@ -155,12 +252,9 @@ export function render(data) {
       ? `<section class="section">` +
         `<p class="eyebrow">${escapeHtml(s.humanScale)}</p>` +
         `<div class="human-grid">` +
-        humanCard(0, icons.stream, formatInt(concurrent4kStreams(latest.current_gbps)),
-          'egyidejű 4K stream férne bele a jelenlegi forgalomba') +
-        humanCard(1, icons.storage, `${formatInt(Math.round(gigabytesPerSecond(latest.current_gbps)))} GB`,
-          'adat halad át minden egyes másodpercben') +
-        humanCard(2, icons.network, formatInt(totalPrefixes),
-          'IPv4 prefixet hirdetnek együttesen a tagok (átfedésekkel, önbevallás alapján)') +
+        humanCard(0, icons.stream, formatInt(concurrent4kStreams(latest.current_gbps)), s.human.streams, 'blue') +
+        humanCard(1, icons.storage, `${formatInt(Math.round(gigabytesPerSecond(latest.current_gbps)))} GB`, s.human.bytes, 'green') +
+        humanCard(2, icons.network, formatInt(totalPrefixes), s.human.prefixes, 'purple') +
         `</div></section>`
       : '') +
 
@@ -171,9 +265,9 @@ export function render(data) {
     `<p class="hint">${escapeHtml(s.whoHint.replace('{n}', formatInt(profiled.length)).replace('{t}', formatInt(members.length)))}</p>` +
     `<div class="split-grid">` +
     `<div><p class="label">${escapeHtml(s.byType)}</p>` +
-    distBars(distribution(profiled, (m) => m.network.type)) + `</div>` +
+    distBars(distribution(profiled, (m) => m.network.type), { colors: TYPE_COLORS }) + `</div>` +
     `<div><p class="label">${escapeHtml(s.byScope)}</p>` +
-    distBars(distribution(profiled, (m) => m.network.scope)) + `</div>` +
+    distBars(distribution(profiled, (m) => m.network.scope), { colors: SCOPE_COLORS }) + `</div>` +
     `</div>` +
     `<div class="split-grid">` +
     `<div><p class="label">${escapeHtml(s.byTraffic)}</p>` +
@@ -188,17 +282,17 @@ export function render(data) {
     `<h2 class="section-title">${escapeHtml(s.howTitle)}</h2>` +
     `<div class="split-grid">` +
     `<div><p class="label">${escapeHtml(s.byNode)}</p>` +
-    distBars(distribution(ports, (p) => p.node), { unit: 'port' }) +
+    distBars(distribution(ports, (p) => p.node), { unit: 'ports' }) +
     `<p class="note note--warning">${escapeHtml(s.viennaNote)}</p></div>` +
     `<div><p class="label">${escapeHtml(s.byBandwidth)}</p>` +
     distBars(
       distribution(ports, (p) => p.bandwidth_mbps).sort((a, b) => b[0] - a[0]),
-      { formatLabel: formatBandwidth, unit: 'port' }
+      { formatLabel: formatBandwidth, unit: 'ports' }
     ) + `</div>` +
     `</div>` +
     `<div class="split-grid">` +
     `<div><p class="label">${escapeHtml(s.byPolicy)}</p>` +
-    distBars(distribution(members, (m) => m.policy), { unit: 'tag' }) + `</div>` +
+    distBars(distribution(members, (m) => m.policy), { unit: 'members' }) + `</div>` +
     `<div><p class="label">${escapeHtml(s.biggestMembers)}</p>` +
     byBandwidth
       .map((m) =>
@@ -206,10 +300,14 @@ export function render(data) {
           label: m.name, value: memberBandwidth(m),
           max: memberBandwidth(byBandwidth[0]),
           display: formatBandwidth(memberBandwidth(m)),
+          accent: TYPE_COLORS[m.network?.type] ?? 'var(--blue-fg)',
         })
       )
       .join('') + `</div>` +
     `</div></section>` +
+
+    // ---- BIX és a világ ----
+    worldSection(data.global) +
 
     // ---- Érdekességek ----
     `<section class="section">` +
@@ -217,20 +315,26 @@ export function render(data) {
     `<h2 class="section-title">${escapeHtml(s.factsTitle)}</h2>` +
     `<div class="fact-grid">` +
     (byIx.length
-      ? factCard(0, escapeHtml(s.facts.reachTitle),
+      ? factCard(0, 'blue', escapeHtml(s.facts.reachTitle),
           s.facts.reachBody
             .replace('{name}', `<strong>${escapeHtml(byIx[0].name)}</strong>`)
             .replace('{n}', `<strong>${formatInt(byIx[0].network.ix_count)}</strong>`))
       : '') +
-    factCard(1, escapeHtml(s.facts.redundancyTitle),
+    (vix && decix
+      ? factCard(1, 'orange', escapeHtml(s.facts.viennaTitle),
+          s.facts.viennaBody
+            .replace('{n}', `<strong>${formatInt(vix.shared)}</strong>`)
+            .replace('{de}', `<strong>${formatInt(decix.shared)}</strong>`))
+      : '') +
+    factCard(2, 'green', escapeHtml(s.facts.redundancyTitle),
       s.facts.redundancyBody
         .replace('{multi}', `<strong>${formatInt(red.multiPortMembers)}</strong>`)
         .replace('{backup}', `<strong>${formatInt(red.backupPorts)}</strong>`)) +
     (head.length
-      ? factCard(2, escapeHtml(s.facts.headroomTitle),
+      ? factCard(3, 'purple', escapeHtml(s.facts.headroomTitle),
           s.facts.headroomBody.replace('{n}', `<strong>${formatInt(head.length)}</strong>`))
       : '') +
-    factCard(3, escapeHtml(s.facts.ipv6Title),
+    factCard(4, 'teal', escapeHtml(s.facts.ipv6Title),
       s.facts.ipv6Body
         .replace('{n}', `<strong>${formatInt(adopt.announcesIpv6)}</strong>`)
         .replace('{t}', `<strong>${formatInt(adopt.profiled)}</strong>`)) +
@@ -242,7 +346,8 @@ export function render(data) {
       .map((m) =>
         barRow({
           label: m.name, value: m.network.ix_count, max: byIx[0].network.ix_count,
-          display: `${formatInt(m.network.ix_count)} IXP`,
+          display: `${formatInt(m.network.ix_count)} IXPs`,
+          accent: TYPE_COLORS[m.network?.type] ?? 'var(--blue-fg)',
         })
       )
       .join('') + `</div>` +
@@ -252,6 +357,7 @@ export function render(data) {
         barRow({
           label: m.name, value: m.network.prefixes4, max: byPrefix[0].network.prefixes4,
           display: formatInt(m.network.prefixes4),
+          accent: TYPE_COLORS[m.network?.type] ?? 'var(--blue-fg)',
         })
       )
       .join('') + `</div>` +
@@ -262,7 +368,10 @@ export function render(data) {
       ? `<section class="section reveal">` +
         `<p class="eyebrow">${escapeHtml(s.growthEyebrow)}</p>` +
         `<h2 class="section-title">${escapeHtml(s.growthTitle)}</h2>` +
-        cumulativeChart({ buckets, width: 860, height: 180 }) +
+        cumulativeChart({
+          buckets, width: 860, height: 200,
+          yFormat: (v) => `${formatInt(v)} ${s.growthY}`,
+        }) +
         `<p class="note note--info">${escapeHtml(s.growthCaption)}</p>` +
         `</section>`
       : '')

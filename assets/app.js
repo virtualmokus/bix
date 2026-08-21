@@ -1,10 +1,11 @@
-import strings from './strings.hu.js';
+import strings from './strings.en.js';
 import { loadAll, staleness } from './data.js';
 import { formatRelative } from './format.js';
 import * as overview from './views/overview.js';
 import * as members from './views/members.js';
+import * as mapView from './views/map.js';
 
-const VIEWS = ['overview', 'members'];
+const VIEWS = ['overview', 'members', 'map'];
 
 function applyStaticStrings() {
   document.querySelector('[data-str="siteTagline"]').textContent = strings.siteTagline;
@@ -83,7 +84,7 @@ function renderLoadError(message) {
 
 try {
   const data = await loadAll((url) => fetch(url));
-  boot({ views: { overview, members }, data });
+  boot({ views: { overview, members, map: mapView }, data });
   renderFooter(data);
 } catch (err) {
   renderLoadError(err.message);
