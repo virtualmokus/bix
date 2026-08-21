@@ -3,6 +3,40 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { recordSuccess, recordError } from './meta.js';
 
+// A PeeringDB hálózati profilját ASN szerint ráolvassa a tagokra. A `name`-et
+// csak akkor írja felül, ha a BIX-től nincs — ütközésnél a bix.hu az elsődleges.
+export function attachNetworks(members, networks) {
+  const byAsn = new Map(networks.map((n) => [n.asn, n]));
+
+  return members.map((member) => {
+    const net = byAsn.get(member.asn);
+    if (!net) return { ...member, network: null };
+
+    const sources = member.sources.includes('peeringdb')
+      ? member.sources
+      : [...member.sources, 'peeringdb'];
+
+    return {
+      ...member,
+      sources,
+      name: member.sources.includes('bix') ? member.name : net.name || member.name,
+      website: member.website ?? net.website,
+      network: {
+        aka: net.aka,
+        type: net.type,
+        scope: net.scope,
+        traffic: net.traffic,
+        ratio: net.ratio,
+        prefixes4: net.prefixes4,
+        prefixes6: net.prefixes6,
+        ix_count: net.ix_count,
+        fac_count: net.fac_count,
+        policy: net.policy,
+      },
+    };
+  });
+}
+
 export function mergeMembers(ports, records) {
   const byAsn = new Map();
 
@@ -75,7 +109,17 @@ export async function runMerge({ now = () => new Date(), dataDir = 'data' } = {}
   try {
     const { ports } = await readJson(join(dataDir, 'ports.json'));
     const { records } = await readJson(join(dataDir, 'peeringdb.json'));
-    const { members } = mergeMembers(ports, records);
+    let { members } = mergeMembers(ports, records);
+
+    // A hálózati profil opcionális: ha még nem gyűlt össze, a merge attól
+    // még lefut, csak `network: null` marad a tagokon.
+    try {
+      const { networks } = await readJson(join(dataDir, 'networks.json'));
+      members = attachNetworks(members, networks);
+    } catch {
+      members = members.map((m) => ({ ...m, network: null }));
+    }
+
     await writeFile(
       join(dataDir, 'members.json'),
       `${JSON.stringify({ fetched_at: ts, members }, null, 2)}\n`,

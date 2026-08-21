@@ -1,11 +1,10 @@
 import strings from './strings.hu.js';
 import { loadAll, staleness } from './data.js';
 import { formatRelative } from './format.js';
-import * as now from './views/now.js';
+import * as overview from './views/overview.js';
 import * as members from './views/members.js';
-import * as growth from './views/growth.js';
 
-const VIEWS = ['now', 'members', 'growth'];
+const VIEWS = ['overview', 'members'];
 
 function applyStaticStrings() {
   document.querySelector('[data-str="siteTagline"]').textContent = strings.siteTagline;
@@ -53,7 +52,7 @@ function boot({ views, data }) {
   }
 
   const fromHash = location.hash.slice(1);
-  show(VIEWS.includes(fromHash) ? fromHash : 'now');
+  show(VIEWS.includes(fromHash) ? fromHash : 'overview');
 }
 
 function renderFooter(data) {
@@ -84,7 +83,7 @@ function renderLoadError(message) {
 
 try {
   const data = await loadAll((url) => fetch(url));
-  boot({ views: { now, members, growth }, data });
+  boot({ views: { overview, members }, data });
   renderFooter(data);
 } catch (err) {
   renderLoadError(err.message);

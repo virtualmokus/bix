@@ -37,7 +37,17 @@ jobs:
         run: node collect/peeringdb.js
         continue-on-error: true
 
+      # Az első merge állítja elő a members.json-t, amiből a hálózati gyűjtő
+      # az ASN-listát veszi; a második fésüli rá a kapott profilokat.
       - name: Összefésülés
+        run: node collect/merge.js
+
+      - id: networks
+        name: Hálózati profilok
+        run: node collect/networks.js
+        continue-on-error: true
+
+      - name: Összefésülés a profilokkal
         run: node collect/merge.js
 
       - name: Commit
@@ -51,7 +61,7 @@ jobs:
           git push
 
       - name: Hibás forrás jelzése
-        if: steps.ports.outcome == 'failure' || steps.peeringdb.outcome == 'failure'
+        if: steps.ports.outcome == 'failure' || steps.peeringdb.outcome == 'failure' || steps.networks.outcome == 'failure'
         run: |
           echo "Legalább egy forrás hibázott. Részletek a data/meta.json last_error mezőiben."
           exit 1

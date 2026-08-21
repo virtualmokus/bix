@@ -211,3 +211,63 @@ body {
   .bar-row { grid-template-columns: 1fr; gap: 6px; }
   .table { font-size: 12px; }
 }
+
+/* =========================================================================
+   Sűrű elrendezés — az adat a főszereplő, nem a levegő
+   ========================================================================= */
+
+.section { margin-bottom: 56px; }
+.view { max-width: 1240px; padding: 48px 32px 96px; }
+
+.label {
+  font-size: 11px; font-weight: 600; color: var(--text);
+  margin-bottom: 12px; letter-spacing: -0.01em;
+}
+
+.hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
+
+/* ===== Kulcsszámok ===== */
+.figure-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden;
+}
+.figure { background: var(--surface); padding: 16px 18px; }
+.figure-value { font-size: 26px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+.figure-label { font-size: 12px; color: var(--text); margin-top: 2px; }
+.figure-hint { font-size: 11px; color: var(--text-muted); margin-top: 4px; line-height: 1.45; }
+
+/* ===== Kétoszlopos bontások ===== */
+.split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+.split-grid:last-child { margin-bottom: 0; }
+
+/* ===== Sávok: a szám kötelező ===== */
+.bar-row { grid-template-columns: minmax(120px, 1.4fr) minmax(60px, 2fr) auto; gap: 12px; margin-bottom: 7px; }
+.bar-label { font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-value { font-size: 11px; color: var(--text-muted); white-space: nowrap; text-align: right; }
+
+/* ===== Érdekesség-kártyák ===== */
+.fact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 8px; }
+.fact { padding: 20px 22px; }
+.fact-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.01em; }
+.fact-body { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+.fact-body strong { color: var(--text); font-family: var(--font-mono); font-weight: 500; }
+
+/* ===== Sűrű tábla ===== */
+.table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-card); }
+.table--dense { font-size: 12px; margin: 0; }
+.table--dense th { padding: 9px 10px; background: var(--surface); position: sticky; top: 0; z-index: 1; white-space: nowrap; }
+.table--dense td { padding: 7px 10px; white-space: nowrap; }
+.table--dense tbody tr:last-child td { border-bottom: none; }
+.table--dense td.c, .table--dense th.c { text-align: center; }
+.col-name { max-width: 260px; white-space: normal; }
+.col-node { max-width: 200px; white-space: normal; font-size: 11px; color: var(--text-muted); }
+.aka { display: block; font-size: 11px; color: var(--text-muted); }
+.ports-n { font-size: 10px; color: var(--text-muted); margin-left: 4px; }
+.tick { color: var(--green-fg); }
+.tick-off { color: var(--text-tertiary, #c7c7cc); }
+
+@media (max-width: 900px) {
+  .hero-grid, .split-grid, .fact-grid { grid-template-columns: 1fr; gap: 28px; }
+  .figure-grid { grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-21T09:36:23Z",
+  "fetched_at": "2026-08-21T10:48:39Z",
   "members": [
     {
       "asn": 42,
@@ -21,7 +21,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "cb4595a76d85dcd257a4488fb9e227f1"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Woodynet, PCH",
+        "type": "Educational/Research",
+        "scope": "Global",
+        "traffic": "1-5Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 600,
+        "prefixes6": 600,
+        "ix_count": 333,
+        "fac_count": 56,
+        "policy": "Open"
+      }
     },
     {
       "asn": 1955,
@@ -50,7 +62,19 @@
           "note": "Backup Link",
           "graph_id": "84255228d4ce51b2ebf942adb2fab2f9"
         }
-      ]
+      ],
+      "network": {
+        "aka": "NIIF Insitiute, NIIFI",
+        "type": "Educational/Research",
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": "Balanced",
+        "prefixes4": 100,
+        "prefixes6": 3,
+        "ix_count": 1,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 2635,
@@ -72,7 +96,19 @@
           "note": "4Gbps on 10G",
           "graph_id": "dad39e75d957fcc86592aa27dc8f9293"
         }
-      ]
+      ],
+      "network": {
+        "aka": "WordPress.com",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "300-500Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 150,
+        "prefixes6": 100,
+        "ix_count": 49,
+        "fac_count": 29,
+        "policy": "Open"
+      }
     },
     {
       "asn": 2686,
@@ -94,7 +130,19 @@
           "note": null,
           "graph_id": "4760beaf7c0a911e1d074f9eee88036f"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": "Balanced",
+        "prefixes4": 5000,
+        "prefixes6": 2000,
+        "ix_count": 22,
+        "fac_count": 0,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 3244,
@@ -122,7 +170,8 @@
           "note": "1Gbps on 10G",
           "graph_id": "42d3fbefd870f8fb15b18b03c73f797f"
         }
-      ]
+      ],
+      "network": null
     },
     {
       "asn": 3303,
@@ -144,7 +193,19 @@
           "note": null,
           "graph_id": "661f344f1aa3e725219fe0f938ff755c"
         }
-      ]
+      ],
+      "network": {
+        "aka": "IP-Plus",
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": "1-5Tbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 10000,
+        "prefixes6": 1800,
+        "ix_count": 64,
+        "fac_count": 31,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 3856,
@@ -166,7 +227,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "fc87c68607912b1f61adc31401375ffe"
         }
-      ]
+      ],
+      "network": {
+        "aka": "PCH, WoodyNet",
+        "type": "Educational/Research",
+        "scope": "Global",
+        "traffic": "1-5Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 1,
+        "prefixes6": 1,
+        "ix_count": 323,
+        "fac_count": 5,
+        "policy": "Open"
+      }
     },
     {
       "asn": 5400,
@@ -188,7 +261,19 @@
           "note": null,
           "graph_id": "ac044aba7c0833ab5e5ea701d69720b5"
         }
-      ]
+      ],
+      "network": {
+        "aka": "British Telecom",
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": "1-5Tbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 20000,
+        "prefixes6": 2000,
+        "ix_count": 57,
+        "fac_count": 141,
+        "policy": "Restrictive"
+      }
     },
     {
       "asn": 5483,
@@ -217,12 +302,24 @@
           "note": "Backup link",
           "graph_id": "a861b98f5e932a7cce5b3f60d1549883"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Hungarian Telecom",
+        "type": "NSP",
+        "scope": "Regional",
+        "traffic": "50-100Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 2000,
+        "prefixes6": 100,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 5507,
-      "name": "AS5507",
-      "website": null,
+      "name": "BIX Route Servers",
+      "website": "https://www.bix.hu/",
       "policy": null,
       "first_seen": "2016-12-08T09:59:47Z",
       "is_rs_peer": true,
@@ -230,7 +327,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": "Internet Szolgáltatók Tanácsa Egyesület",
+        "type": "Route Server",
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 200000,
+        "prefixes6": 100000,
+        "ix_count": 1,
+        "fac_count": 6,
+        "policy": "Open"
+      }
     },
     {
       "asn": 6507,
@@ -252,7 +361,19 @@
           "note": "4Gbps on 10G",
           "graph_id": "d068dbf8af4fc47b25252e660cd9b240"
         }
-      ]
+      ],
+      "network": {
+        "aka": "League of Legends / VALORANT / Legends of Runeterra / Teamfight Tactics / Wild Rift",
+        "type": "Content",
+        "scope": "Regional",
+        "traffic": "500-1000Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 50,
+        "prefixes6": 10,
+        "ix_count": 86,
+        "fac_count": 44,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 6663,
@@ -274,7 +395,19 @@
           "note": "40Gbps on 100G",
           "graph_id": "987c1050d6c58aa60e5f68b28a39a35c"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Euroweb / Pantel International",
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": "10-20Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 40000,
+        "prefixes6": 8000,
+        "ix_count": 16,
+        "fac_count": 21,
+        "policy": "Restrictive"
+      }
     },
     {
       "asn": 6939,
@@ -296,7 +429,19 @@
           "note": null,
           "graph_id": "9022c1a4a0f13243cc40629c5d03a3d4"
         }
-      ]
+      ],
+      "network": {
+        "aka": "HE.net",
+        "type": "NSP",
+        "scope": "Global",
+        "traffic": "100+Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 210000,
+        "prefixes6": 180000,
+        "ix_count": 335,
+        "fac_count": 343,
+        "policy": "Open"
+      }
     },
     {
       "asn": 8075,
@@ -325,7 +470,19 @@
           "note": "#2",
           "graph_id": "a1cc3554a4c140c55e23ecad86b2bc1b"
         }
-      ]
+      ],
+      "network": {
+        "aka": "8068 8069",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": null,
+        "ratio": "Mostly Outbound",
+        "prefixes4": 2000,
+        "prefixes6": 500,
+        "ix_count": 207,
+        "fac_count": 167,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 8220,
@@ -347,7 +504,19 @@
           "note": null,
           "graph_id": "640441211b10c3d91b24b5e4312b5707"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Colt Technology Services, Colt Telecom",
+        "type": "NSP",
+        "scope": "Global",
+        "traffic": "1-5Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 25000,
+        "prefixes6": 3000,
+        "ix_count": 54,
+        "fac_count": 200,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 8400,
@@ -369,7 +538,19 @@
           "note": "40Gbps on 100G",
           "graph_id": "bf282131214fefdbe32d5c69597b3d19"
         }
-      ]
+      ],
+      "network": {
+        "aka": "MTS",
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": "Balanced",
+        "prefixes4": 2000,
+        "prefixes6": 200,
+        "ix_count": 13,
+        "fac_count": 4,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 8412,
@@ -391,7 +572,19 @@
           "note": null,
           "graph_id": "df3d63d309f7c4ece877daa1696796a9"
         }
-      ]
+      ],
+      "network": {
+        "aka": "T-Mobile Austria, UPC Austria, Maxmobil, Telekabel, Chello",
+        "type": "Cable/DSL/ISP",
+        "scope": "Regional",
+        "traffic": null,
+        "ratio": "Balanced",
+        "prefixes4": 600,
+        "prefixes6": 200,
+        "ix_count": 3,
+        "fac_count": 7,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 8447,
@@ -402,7 +595,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -412,7 +606,19 @@
           "note": null,
           "graph_id": "101b6323dcfb2a0428b747057aa37465"
         }
-      ]
+      ],
+      "network": {
+        "aka": "AON/Highway 194",
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": "50-100Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 3000,
+        "prefixes6": 350,
+        "ix_count": 5,
+        "fac_count": 2,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 8448,
@@ -441,7 +647,19 @@
           "note": null,
           "graph_id": "d8c49fa03f8dad8744676fd98dbcbcb8"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "NSP",
+        "scope": "Regional",
+        "traffic": "100-200Gbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 11,
+        "prefixes6": 2,
+        "ix_count": 1,
+        "fac_count": 3,
+        "policy": "Open"
+      }
     },
     {
       "asn": 8462,
@@ -470,7 +688,19 @@
           "note": "40Gbps on 100G",
           "graph_id": "4cc62e632be86372d2f2863eea08a6af"
         }
-      ]
+      ],
+      "network": {
+        "aka": "CoryNet, ZelkaNet",
+        "type": "Cable/DSL/ISP",
+        "scope": "Regional",
+        "traffic": "200-300Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 25,
+        "prefixes6": 2,
+        "ix_count": 3,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 8990,
@@ -499,7 +729,19 @@
           "note": "DPX 100G",
           "graph_id": "e345a8d1e1829c4e15619d744afd706d"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Antenna Hungaria",
+        "type": "NSP",
+        "scope": "Regional",
+        "traffic": "100-200Gbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 40,
+        "prefixes6": 5,
+        "ix_count": 1,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 9002,
@@ -521,7 +763,19 @@
           "note": null,
           "graph_id": "ead63b6c85611b8078a3a4458e0071e1"
         }
-      ]
+      ],
+      "network": {
+        "aka": "RETN.net",
+        "type": "NSP",
+        "scope": "Global",
+        "traffic": "20-50Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 150000,
+        "prefixes6": 20000,
+        "ix_count": 25,
+        "fac_count": 184,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 9009,
@@ -543,7 +797,19 @@
           "note": null,
           "graph_id": "95a1b58230febb4573e58eeeef959a43"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Globalaxs Communications - OHTele - Axamba - WebTapestry - SOInternet",
+        "type": "NSP",
+        "scope": "Global",
+        "traffic": "5-10Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 5000,
+        "prefixes6": 500,
+        "ix_count": 61,
+        "fac_count": 54,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 9050,
@@ -565,7 +831,19 @@
           "note": "4Gbps on 10G",
           "graph_id": "68c1c2d0c2f69b0c8a8778c33424abdb"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Orange Romania S.A. (AS9050)",
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": "500-1000Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 5000,
+        "prefixes6": 250,
+        "ix_count": 7,
+        "fac_count": 11,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 9146,
@@ -587,7 +865,19 @@
           "note": null,
           "graph_id": "a50a8f4e436357f0aeeeda7f4c35dff2"
         }
-      ]
+      ],
+      "network": {
+        "aka": "BIHNET",
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": "300-500Gbps",
+        "ratio": "Heavy Inbound",
+        "prefixes4": 400,
+        "prefixes6": 30,
+        "ix_count": 3,
+        "fac_count": 3,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 12301,
@@ -616,7 +906,19 @@
           "note": null,
           "graph_id": "4743355e010669cf99fe2198cd929561"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Invitech (Fibernet, PanTel, Hungarotel, Euroweb, Novacom, Elender, Digitel2002, Vivendi, Deltav)",
+        "type": "NSP",
+        "scope": "Regional",
+        "traffic": "100-200Gbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 400,
+        "prefixes6": 20,
+        "ix_count": 2,
+        "fac_count": 7,
+        "policy": "Open"
+      }
     },
     {
       "asn": 12303,
@@ -652,7 +954,19 @@
           "note": "under construction",
           "graph_id": "96bb4f0e11217cf668a9852b64677d11"
         }
-      ]
+      ],
+      "network": {
+        "aka": "ISZT Nonprofit Kft",
+        "type": "Non-Profit",
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 10,
+        "prefixes6": 10,
+        "ix_count": 1,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 12310,
@@ -663,7 +977,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -673,7 +988,19 @@
           "note": null,
           "graph_id": "04db6a04bb39774b32e489b5c2324f9d"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": "20-50Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 1000,
+        "prefixes6": 100,
+        "ix_count": 2,
+        "fac_count": 4,
+        "policy": "Open"
+      }
     },
     {
       "asn": 13335,
@@ -695,12 +1022,24 @@
           "note": null,
           "graph_id": "74f95dbe523e82021dbe2d9ace41a134"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Global",
+        "traffic": null,
+        "ratio": "Mostly Outbound",
+        "prefixes4": 80000,
+        "prefixes6": 30000,
+        "ix_count": 357,
+        "fac_count": 224,
+        "policy": "Open"
+      }
     },
     {
       "asn": 15169,
-      "name": "AS15169",
-      "website": null,
+      "name": "Google LLC",
+      "website": "https://about.google/intl/en/",
       "policy": null,
       "first_seen": "2011-05-03T00:00:00Z",
       "is_rs_peer": false,
@@ -708,7 +1047,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": "Google, YouTube (for Google Fiber see AS16591 record)",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": null,
+        "ratio": "Mostly Outbound",
+        "prefixes4": 15000,
+        "prefixes6": 10000,
+        "ix_count": 176,
+        "fac_count": 137,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 15566,
@@ -730,7 +1081,19 @@
           "note": null,
           "graph_id": "3a8227adedf5b1b65f7439a9e0bf27ea"
         }
-      ]
+      ],
+      "network": {
+        "aka": "ServerGalactic",
+        "type": "Cable/DSL/ISP",
+        "scope": "Global",
+        "traffic": "20-50Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 30,
+        "prefixes6": 10,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 15576,
@@ -752,7 +1115,19 @@
           "note": "Virtual BIX port",
           "graph_id": "845fcd50adec7733571f809f0a3748fe"
         }
-      ]
+      ],
+      "network": {
+        "aka": "NTS",
+        "type": "NSP",
+        "scope": "Regional",
+        "traffic": "20-50Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 1000,
+        "prefixes6": 800,
+        "ix_count": 6,
+        "fac_count": 4,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 15958,
@@ -774,7 +1149,19 @@
           "note": null,
           "graph_id": "d27cf53d4b5b7cc9a991214c34e72f5b"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "NSP",
+        "scope": "Regional",
+        "traffic": null,
+        "ratio": "Mostly Inbound",
+        "prefixes4": 1500,
+        "prefixes6": 75,
+        "ix_count": 5,
+        "fac_count": 0,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 16276,
@@ -796,12 +1183,24 @@
           "note": null,
           "graph_id": "029afd0971c1257ccacc814dfb3a735a"
         }
-      ]
+      ],
+      "network": {
+        "aka": "OVHcloud",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "10-20Tbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 5000,
+        "prefixes6": 1000,
+        "ix_count": 98,
+        "fac_count": 67,
+        "policy": "Open"
+      }
     },
     {
       "asn": 16509,
-      "name": "AS16509",
-      "website": null,
+      "name": "Amazon.com",
+      "website": "https://www.amazon.com",
       "policy": null,
       "first_seen": "2019-12-04T16:07:26Z",
       "is_rs_peer": false,
@@ -809,7 +1208,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": "Amazon Web Services",
+        "type": "Enterprise",
+        "scope": "Global",
+        "traffic": null,
+        "ratio": "Balanced",
+        "prefixes4": 16000,
+        "prefixes6": 8000,
+        "ix_count": 167,
+        "fac_count": 190,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 20510,
@@ -831,7 +1242,19 @@
           "note": "3Gbps on 10G",
           "graph_id": "c3b8fb47d5ba4e18d75b83c55aa2b9e9"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Cable/DSL/ISP",
+        "scope": "Regional",
+        "traffic": "1-5Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 1,
+        "prefixes6": 1,
+        "ix_count": 1,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 20742,
@@ -853,7 +1276,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "cf1101f5c0445622b9285ca1d94f1210"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": "1-5Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 10,
+        "prefixes6": 10,
+        "ix_count": 1,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 20845,
@@ -875,7 +1310,19 @@
           "note": null,
           "graph_id": "0d50763727d3057dadc1c63d28e67247"
         }
-      ]
+      ],
+      "network": {
+        "aka": "HDSNET",
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": "300-500Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 150,
+        "prefixes6": 10,
+        "ix_count": 1,
+        "fac_count": 2,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 20940,
@@ -897,12 +1344,24 @@
           "note": null,
           "graph_id": "38b8ab7d08dd58058fdacc510f34a18e"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "100+Tbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 12000,
+        "prefixes6": 5000,
+        "ix_count": 250,
+        "fac_count": 224,
+        "policy": "Open"
+      }
     },
     {
       "asn": 21215,
-      "name": "AS21215",
-      "website": null,
+      "name": "UGNI",
+      "website": "https://ugni.net",
       "policy": null,
       "first_seen": "2016-07-29T15:49:26Z",
       "is_rs_peer": true,
@@ -910,7 +1369,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": "UGNI",
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": "100+Tbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 5000,
+        "prefixes6": 250,
+        "ix_count": 15,
+        "fac_count": 16,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 21320,
@@ -932,7 +1403,19 @@
           "note": "40Gbps on 100G",
           "graph_id": "7ee4adc3b45561a5a0bf9aacdb099beb"
         }
-      ]
+      ],
+      "network": {
+        "aka": "GEANT Association",
+        "type": "Educational/Research",
+        "scope": "Europe",
+        "traffic": "1-5Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 40000,
+        "prefixes6": 10000,
+        "ix_count": 17,
+        "fac_count": 15,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 21334,
@@ -961,7 +1444,19 @@
           "note": null,
           "graph_id": "ed1a4af7eb3de1c4d8803ca2be1d2b5f"
         }
-      ]
+      ],
+      "network": {
+        "aka": "2Connect HU",
+        "type": null,
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": "Mostly Inbound",
+        "prefixes4": 500,
+        "prefixes6": 200,
+        "ix_count": 1,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 24806,
@@ -983,7 +1478,19 @@
           "note": null,
           "graph_id": "b0582d0f7b662f666aa5e01803805395"
         }
-      ]
+      ],
+      "network": {
+        "aka": "FORPSI",
+        "type": "Network Services",
+        "scope": "Europe",
+        "traffic": "50-100Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 20,
+        "prefixes6": 10,
+        "ix_count": 2,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 24822,
@@ -1012,12 +1519,24 @@
           "note": null,
           "graph_id": "bf3f9919aa7a13d74d07a21d7b5c2641"
         }
-      ]
+      ],
+      "network": {
+        "aka": "OPCNET",
+        "type": null,
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 10,
+        "prefixes6": 5,
+        "ix_count": 1,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 25875,
-      "name": "AS25875",
-      "website": null,
+      "name": "FriendFinder Networks",
+      "website": "http://www.various.com",
       "policy": null,
       "first_seen": "2022-02-24T13:23:02Z",
       "is_rs_peer": true,
@@ -1025,7 +1544,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": "Various Inc",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "50-100Gbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 50,
+        "prefixes6": 10,
+        "ix_count": 3,
+        "fac_count": 3,
+        "policy": "Open"
+      }
     },
     {
       "asn": 29278,
@@ -1054,7 +1585,19 @@
           "note": "40Gbps on 100G",
           "graph_id": "f0f7b2fd082461aeb6f7e3f254ef6af9"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "NSP",
+        "scope": "Regional",
+        "traffic": "500-1000Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 2000,
+        "prefixes6": 250,
+        "ix_count": 3,
+        "fac_count": 4,
+        "policy": "Open"
+      }
     },
     {
       "asn": 29405,
@@ -1076,7 +1619,19 @@
           "note": "Virtual BIX port",
           "graph_id": "8ad15876d1e4b9675c670d1aecbbd832"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": "20-50Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 220,
+        "prefixes6": 50,
+        "ix_count": 5,
+        "fac_count": 6,
+        "policy": "Open"
+      }
     },
     {
       "asn": 29657,
@@ -1098,7 +1653,19 @@
           "note": "1 Gbps on 10G",
           "graph_id": "3a6327dd650e9cc1f814d626ea116153"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Last-Mile Kft",
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": "5-10Gbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 40,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 30836,
@@ -1109,7 +1676,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -1119,7 +1687,19 @@
           "note": "1 Gbps on 10G",
           "graph_id": "3ebf42ab0b26c6a0d562210d4a61292a"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": null,
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 0,
+        "prefixes6": 0,
+        "ix_count": 0,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 31042,
@@ -1130,7 +1710,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -1140,12 +1721,24 @@
           "note": null,
           "graph_id": "32f3b1cb5ae7fa14eb6775aae6562464"
         }
-      ]
+      ],
+      "network": {
+        "aka": "SBB",
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": "Balanced",
+        "prefixes4": 5000,
+        "prefixes6": 500,
+        "ix_count": 1,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 32261,
-      "name": "AS32261",
-      "website": null,
+      "name": "Subspace",
+      "website": "https://www.subspace.com",
       "policy": null,
       "first_seen": "2021-01-22T10:56:49Z",
       "is_rs_peer": true,
@@ -1153,7 +1746,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": "SUBSPACE",
+        "type": null,
+        "scope": "Global",
+        "traffic": null,
+        "ratio": null,
+        "prefixes4": 40,
+        "prefixes6": 40,
+        "ix_count": 53,
+        "fac_count": 102,
+        "policy": "Restrictive"
+      }
     },
     {
       "asn": 32590,
@@ -1175,12 +1780,24 @@
           "note": "40Gbps on 100G",
           "graph_id": "af5d7b21b39eaffd1fd182a3b9233b12"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Steam",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "20-50Tbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 100,
+        "prefixes6": 50,
+        "ix_count": 83,
+        "fac_count": 34,
+        "policy": "Open"
+      }
     },
     {
       "asn": 32787,
-      "name": "AS32787",
-      "website": null,
+      "name": "Akamai Prolexic DDoS Mitigation",
+      "website": "https://www.akamai.com/us/en/cloud-security.jsp",
       "policy": null,
       "first_seen": "2023-02-01T16:24:50Z",
       "is_rs_peer": false,
@@ -1188,7 +1805,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": "Prolexic",
+        "type": "NSP",
+        "scope": "Global",
+        "traffic": null,
+        "ratio": "Mostly Inbound",
+        "prefixes4": 15000,
+        "prefixes6": 1000,
+        "ix_count": 62,
+        "fac_count": 0,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 32934,
@@ -1217,7 +1846,19 @@
           "note": null,
           "graph_id": "a06d55a5509bb35bdd9483c8d81071cb"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Facebook, Instagram, WhatsApp, Messenger, Workplace",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "100+Tbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 100,
+        "prefixes6": 100,
+        "ix_count": 209,
+        "fac_count": 138,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 33891,
@@ -1239,7 +1880,19 @@
           "note": "40Gbps on 100G",
           "graph_id": "4ee627bc87ede4e6e016d9c59e2979e1"
         }
-      ]
+      ],
+      "network": {
+        "aka": "CORE-BACKBONE",
+        "type": "NSP",
+        "scope": "Global",
+        "traffic": "10-20Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 25000,
+        "prefixes6": 7500,
+        "ix_count": 30,
+        "fac_count": 83,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 34655,
@@ -1261,7 +1914,19 @@
           "note": "4Gbps on 10G",
           "graph_id": "2bb94aebc8b337936fc4a289adb7e262"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Duodecad IT Services Luxembourg, Docler Holding, Docler Networks, Jasmin Media Group",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "100-200Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 50,
+        "prefixes6": 10,
+        "ix_count": 19,
+        "fac_count": 19,
+        "policy": "Open"
+      }
     },
     {
       "asn": 34779,
@@ -1283,7 +1948,19 @@
           "note": "10Gbps on 100G",
           "graph_id": "1d3140ba64d7e31cb42c6d1e32ab43d7"
         }
-      ]
+      ],
+      "network": {
+        "aka": "t-2",
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": "300-500Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 400,
+        "prefixes6": 100,
+        "ix_count": 7,
+        "fac_count": 7,
+        "policy": "Open"
+      }
     },
     {
       "asn": 35263,
@@ -1305,7 +1982,19 @@
           "note": null,
           "graph_id": "6d9e036a55867427ff85e95eb0612b4c"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": null,
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 0,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 35311,
@@ -1327,7 +2016,19 @@
           "note": null,
           "graph_id": "580c3f11d9ac3c3479595f6bbca1ad78"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Cable/DSL/ISP",
+        "scope": "Regional",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 20,
+        "prefixes6": 5,
+        "ix_count": 1,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 39201,
@@ -1349,7 +2050,19 @@
           "note": null,
           "graph_id": "cded4cb4a004c7f43fd3b5757259c88b"
         }
-      ]
+      ],
+      "network": {
+        "aka": "WaveCom",
+        "type": "Cable/DSL/ISP",
+        "scope": "Regional",
+        "traffic": "5-10Gbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 0,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 39679,
@@ -1371,7 +2084,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "be89d5eddfe8a7cfe4240bf5bd228e79"
         }
-      ]
+      ],
+      "network": {
+        "aka": "JZT",
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": "10-20Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 128,
+        "prefixes6": 2,
+        "ix_count": 1,
+        "fac_count": 3,
+        "policy": "Open"
+      }
     },
     {
       "asn": 40994,
@@ -1393,7 +2118,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "6f276705966e1a49bd88c754578d610f"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Alwyzon",
+        "type": "Content",
+        "scope": "Europe",
+        "traffic": "50-100Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 100,
+        "prefixes6": 50,
+        "ix_count": 5,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 41206,
@@ -1422,7 +2159,19 @@
           "note": null,
           "graph_id": "76e1151ff60f0117d75941a72a57c5e7"
         }
-      ]
+      ],
+      "network": {
+        "aka": "United Telecom",
+        "type": null,
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 300,
+        "prefixes6": 30,
+        "ix_count": 1,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 41303,
@@ -1433,7 +2182,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -1443,7 +2193,19 @@
           "note": "Virtual BIX port",
           "graph_id": "14360555420c654dfc262a9c6e1bc94d"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Cable/DSL/ISP",
+        "scope": null,
+        "traffic": "1-5Gbps",
+        "ratio": null,
+        "prefixes4": 4,
+        "prefixes6": 0,
+        "ix_count": 0,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 41627,
@@ -1454,7 +2216,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -1464,7 +2227,19 @@
           "note": null,
           "graph_id": "fd53c043621465552aa55814c23e3215"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": null,
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": null,
+        "prefixes6": null,
+        "ix_count": 0,
+        "fac_count": 0,
+        "policy": null
+      }
     },
     {
       "asn": 41897,
@@ -1475,7 +2250,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -1492,7 +2268,19 @@
           "note": "40Gbps on 100G",
           "graph_id": "54d552a2c6842f4c021d027d37281f0f"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": null,
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 0,
+        "prefixes6": 0,
+        "ix_count": 0,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 42473,
@@ -1514,7 +2302,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "a0529af8cd14d46b5c7c86f6f877a6db"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Anexia World Wide Cloud",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": null,
+        "ratio": "Balanced",
+        "prefixes4": 1000,
+        "prefixes6": 500,
+        "ix_count": 58,
+        "fac_count": 90,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 42864,
@@ -1536,7 +2336,19 @@
           "note": "40Gbps on 100G",
           "graph_id": "f6613b954cceadac28ddf9373cf46f46"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Giganet Kft",
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": "10-20Gbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 108,
+        "prefixes6": 10,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 43359,
@@ -1558,7 +2370,19 @@
           "note": null,
           "graph_id": "478229a83e3aebaf3b4738b5d454db83"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": "Mostly Outbound",
+        "prefixes4": 0,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 43500,
@@ -1580,7 +2404,19 @@
           "note": null,
           "graph_id": "1e6fb8aa43010c14fa467a26ac9700f4"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Max, HBO Max, Discovery+, WarnerMedia Services",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": null,
+        "ratio": "Heavy Outbound",
+        "prefixes4": 50,
+        "prefixes6": 50,
+        "ix_count": 5,
+        "fac_count": 6,
+        "policy": "Open"
+      }
     },
     {
       "asn": 43928,
@@ -1609,7 +2445,19 @@
           "note": "4Gbps on 10G",
           "graph_id": "8260dd72f9049ce36a891aba2a409e28"
         }
-      ]
+      ],
+      "network": {
+        "aka": "MVMI Informatika Zrt",
+        "type": "Enterprise",
+        "scope": "Europe",
+        "traffic": "100-1000Mbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 3,
+        "prefixes6": 1,
+        "ix_count": 1,
+        "fac_count": 0,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 44302,
@@ -1638,7 +2486,19 @@
           "note": "backup",
           "graph_id": "368f185f3cd4671797c3aa5937e7bfa2"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": "1-5Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 40,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 44306,
@@ -1660,7 +2520,19 @@
           "note": null,
           "graph_id": "ce81fcb47e9a86cf1110d05917d7f690"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Omonia d.o.o.",
+        "type": "NSP",
+        "scope": "Global",
+        "traffic": null,
+        "ratio": null,
+        "prefixes4": 100000,
+        "prefixes6": 100000,
+        "ix_count": 7,
+        "fac_count": 23,
+        "policy": "Open"
+      }
     },
     {
       "asn": 44460,
@@ -1681,7 +2553,8 @@
           "note": "1Gbps on 10G",
           "graph_id": "2da2b514010b4a5a7100b9004ce93dfa"
         }
-      ]
+      ],
+      "network": null
     },
     {
       "asn": 44901,
@@ -1703,7 +2576,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "c788b3c087af7a532d932ba108f8ed50"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Europe",
+        "traffic": "1-5Tbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 5000,
+        "prefixes6": 300,
+        "ix_count": 22,
+        "fac_count": 18,
+        "policy": "Open"
+      }
     },
     {
       "asn": 47116,
@@ -1725,7 +2610,19 @@
           "note": null,
           "graph_id": "5d3f7d45d660bf17b178690358fcf2ab"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Cable/DSL/ISP",
+        "scope": "Not Disclosed",
+        "traffic": "1-5Gbps",
+        "ratio": "Not Disclosed",
+        "prefixes4": 100,
+        "prefixes6": 20,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 47169,
@@ -1754,7 +2651,19 @@
           "note": null,
           "graph_id": "ac6f107e3c7be83411e377ffac0d5726"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "NSP",
+        "scope": "Europe",
+        "traffic": "10-20Gbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 120,
+        "prefixes6": 10,
+        "ix_count": 2,
+        "fac_count": 2,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 47381,
@@ -1783,7 +2692,19 @@
           "note": null,
           "graph_id": "89ac3451f84886fdefd1e50e4369f019"
         }
-      ]
+      ],
+      "network": {
+        "aka": "DoclerNet, DoclerWeb",
+        "type": "Content",
+        "scope": "Regional",
+        "traffic": null,
+        "ratio": "Heavy Outbound",
+        "prefixes4": 100,
+        "prefixes6": 20,
+        "ix_count": 1,
+        "fac_count": 3,
+        "policy": "Open"
+      }
     },
     {
       "asn": 47692,
@@ -1805,12 +2726,24 @@
           "note": null,
           "graph_id": "6da5ba8e638059c94e1bb775e44b361b"
         }
-      ]
+      ],
+      "network": {
+        "aka": "NESSUS",
+        "type": "Network Services",
+        "scope": "Europe",
+        "traffic": "1-5Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 300,
+        "prefixes6": 100,
+        "ix_count": 6,
+        "fac_count": 11,
+        "policy": "Open"
+      }
     },
     {
       "asn": 49206,
       "name": "PeakFactory",
-      "website": null,
+      "website": "http://peakfactory.com",
       "policy": "Open/Free",
       "first_seen": "2021-12-14T12:54:25Z",
       "is_rs_peer": true,
@@ -1834,7 +2767,19 @@
           "note": null,
           "graph_id": "0486805e659442f2b819a9e1f0576bcb"
         }
-      ]
+      ],
+      "network": {
+        "aka": "PeakFactory",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "500-1000Gbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 5,
+        "prefixes6": 3,
+        "ix_count": 4,
+        "fac_count": 3,
+        "policy": "Open"
+      }
     },
     {
       "asn": 49544,
@@ -1856,7 +2801,19 @@
           "note": "40Gbps on 100G",
           "graph_id": "094b64e8afd308843060eb7e20b04761"
         }
-      ]
+      ],
+      "network": {
+        "aka": "i3D Interactive 3D Ubisoft",
+        "type": "NSP",
+        "scope": "Global",
+        "traffic": "5-10Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 5000,
+        "prefixes6": 2000,
+        "ix_count": 102,
+        "fac_count": 63,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 50031,
@@ -1878,7 +2835,19 @@
           "note": "BIX VIP",
           "graph_id": "846039c3eea791581e93114826fae549"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Zalaszam Kft.",
+        "type": "Cable/DSL/ISP",
+        "scope": "Regional",
+        "traffic": "1-5Gbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 1,
+        "prefixes6": 1,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 51013,
@@ -1900,12 +2869,24 @@
           "note": "BIX VIP of RETN",
           "graph_id": "790360768a509e7b8f4037bf8ee1bd9e"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Websupport",
+        "type": "Content",
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": null,
+        "prefixes4": 13,
+        "prefixes6": 4,
+        "ix_count": 4,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 51920,
       "name": "VIVAcom",
-      "website": null,
+      "website": "http://www.vivacom.hu",
       "policy": "Open/Free",
       "first_seen": "2018-05-14T09:47:09Z",
       "is_rs_peer": true,
@@ -1922,7 +2903,19 @@
           "note": "4Gbps on 10G",
           "graph_id": "e05d2fb63918eeb94c0d30858ef0c754"
         }
-      ]
+      ],
+      "network": {
+        "aka": "VIVAcom Magyarorszag Kft",
+        "type": null,
+        "scope": "Regional",
+        "traffic": "5-10Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 32,
+        "prefixes6": 32,
+        "ix_count": 1,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 54113,
@@ -1951,7 +2944,19 @@
           "note": null,
           "graph_id": null
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "100+Tbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 1000,
+        "prefixes6": 1000,
+        "ix_count": 152,
+        "fac_count": 109,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 56322,
@@ -1973,7 +2978,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "73b8e51448ff9edf48abc9f65d427f9b"
         }
-      ]
+      ],
+      "network": {
+        "aka": "ServerAstra",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "20-50Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 200,
+        "prefixes6": 200,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 57344,
@@ -1995,7 +3012,19 @@
           "note": null,
           "graph_id": "1eb0a90e87b52b884e844eea3fbc19a6"
         }
-      ]
+      ],
+      "network": {
+        "aka": "AS-57344",
+        "type": "Cable/DSL/ISP",
+        "scope": "Global",
+        "traffic": "300-500Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 5000,
+        "prefixes6": 500,
+        "ix_count": 30,
+        "fac_count": 25,
+        "policy": "Open"
+      }
     },
     {
       "asn": 59649,
@@ -2016,7 +3045,8 @@
           "note": null,
           "graph_id": "c2c8bd9ef989beb841b444a6e8b8813b"
         }
-      ]
+      ],
+      "network": null
     },
     {
       "asn": 60673,
@@ -2038,7 +3068,19 @@
           "note": "4Gbps on 10G",
           "graph_id": "3011663b84a07ebc0dc41506bdbb2c7f"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Enterprise",
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 300,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 61211,
@@ -2060,7 +3102,19 @@
           "note": "4Gbps on 10G",
           "graph_id": "6b6d3aee6e4f58cbd70d97bd787d6285"
         }
-      ]
+      ],
+      "network": {
+        "aka": "SETCOR d.o.o.",
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": null,
+        "prefixes4": 23,
+        "prefixes6": 3,
+        "ix_count": 3,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 61998,
@@ -2082,7 +3136,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "9fd6bfb7382bddb3e66c97ccb0513b29"
         }
-      ]
+      ],
+      "network": {
+        "aka": "SzerverPlex",
+        "type": "Content",
+        "scope": "Regional",
+        "traffic": "5-10Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 12,
+        "prefixes6": 2,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 62051,
@@ -2104,7 +3170,19 @@
           "note": null,
           "graph_id": "554bcc7d4e980619c8eaeeeeae6773cd"
         }
-      ]
+      ],
+      "network": {
+        "aka": "42NET",
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": "1-5Gbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 1,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 62214,
@@ -2133,12 +3211,24 @@
           "note": null,
           "graph_id": "ad43593ed50db45ef90c79d1f7fbc185"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Regional",
+        "traffic": "20-50Gbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 150,
+        "prefixes6": 100,
+        "ix_count": 1,
+        "fac_count": 3,
+        "policy": "Open"
+      }
     },
     {
       "asn": 62292,
-      "name": "AS62292",
-      "website": null,
+      "name": "EZIT",
+      "website": "https://www.ezit.hu",
       "policy": null,
       "first_seen": "2018-12-26T16:09:26Z",
       "is_rs_peer": true,
@@ -2146,7 +3236,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Regional",
+        "traffic": "5-10Gbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 26,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 62449,
@@ -2168,7 +3270,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "974e40d43394776492ad4af238777415"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Sybell",
+        "type": "Content",
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": "Mostly Outbound",
+        "prefixes4": 0,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 151358,
@@ -2190,7 +3304,19 @@
           "note": "4Gbps on 10G",
           "graph_id": "a9c659726796b6055b1b1b419200d4c1"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Enterprise",
+        "scope": "Global",
+        "traffic": "5-10Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 64,
+        "prefixes6": 64,
+        "ix_count": 2,
+        "fac_count": 7,
+        "policy": "Open"
+      }
     },
     {
       "asn": 197248,
@@ -2201,7 +3327,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -2218,12 +3345,24 @@
           "note": null,
           "graph_id": "2a2dcfb8a9017eab978938dcf66508ee"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 50,
+        "prefixes6": 50,
+        "ix_count": 0,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 197792,
-      "name": "AS197792",
-      "website": null,
+      "name": "BIX Infrastructure",
+      "website": "http://www.iszt.hu",
       "policy": null,
       "first_seen": "2026-05-27T14:30:15Z",
       "is_rs_peer": true,
@@ -2231,7 +3370,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": "Internet Szolgáltatók Tanácsa Egyesület",
+        "type": "Non-Profit",
+        "scope": "Regional",
+        "traffic": "100-1000Mbps",
+        "ratio": "Balanced",
+        "prefixes4": 10,
+        "prefixes6": 10,
+        "ix_count": 1,
+        "fac_count": 6,
+        "policy": "Open"
+      }
     },
     {
       "asn": 197862,
@@ -2252,12 +3403,13 @@
           "note": "4Gbps on 10G",
           "graph_id": "5398c875b849d6e8ad628b284f77b0f9"
         }
-      ]
+      ],
+      "network": null
     },
     {
       "asn": 197889,
       "name": "Microsystem-Kecskemét",
-      "website": null,
+      "website": "http://www.microsystem.hu",
       "policy": "Open/Free",
       "first_seen": "2022-01-08T16:33:54Z",
       "is_rs_peer": true,
@@ -2274,7 +3426,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "758279c2241771356cd0de861cb61647"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Cable/DSL/ISP",
+        "scope": "Europe",
+        "traffic": "5-10Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 100,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 3,
+        "policy": "Open"
+      }
     },
     {
       "asn": 199235,
@@ -2295,7 +3459,8 @@
           "note": null,
           "graph_id": "a77f59da5ca50240edddcdf7d20c789d"
         }
-      ]
+      ],
+      "network": null
     },
     {
       "asn": 200964,
@@ -2317,7 +3482,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "a154728d19b9933aded41b149e358975"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Cable/DSL/ISP",
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 100,
+        "prefixes6": 10,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 203246,
@@ -2338,7 +3515,8 @@
           "note": "1Gbps on 10G",
           "graph_id": "515d4e90cfdb6f272de525cf5252ed00"
         }
-      ]
+      ],
+      "network": null
     },
     {
       "asn": 204384,
@@ -2367,7 +3545,19 @@
           "note": null,
           "graph_id": "37deeddcf603dbf3dc54f32591564ea3"
         }
-      ]
+      ],
+      "network": {
+        "aka": "SWEET.TV",
+        "type": "Content",
+        "scope": "Europe",
+        "traffic": "1-5Tbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 30,
+        "prefixes6": 0,
+        "ix_count": 10,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 204745,
@@ -2388,7 +3578,8 @@
           "note": null,
           "graph_id": "8092c4c98f05ccec9725e3414fed4028"
         }
-      ]
+      ],
+      "network": null
     },
     {
       "asn": 205275,
@@ -2410,7 +3601,19 @@
           "note": "VIP of RETN",
           "graph_id": "7b44f4e0049885a87085ae6cfe8bfcbe"
         }
-      ]
+      ],
+      "network": {
+        "aka": "ROMARG",
+        "type": "Content",
+        "scope": "Europe",
+        "traffic": "10-20Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 0,
+        "prefixes6": 0,
+        "ix_count": 11,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 206361,
@@ -2432,7 +3635,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "4b0a0b011261647efba179d32b2fe1aa"
         }
-      ]
+      ],
+      "network": {
+        "aka": "TamaNET",
+        "type": "Cable/DSL/ISP",
+        "scope": "Not Disclosed",
+        "traffic": "1-5Gbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 1,
+        "prefixes6": 1,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 206892,
@@ -2461,7 +3676,19 @@
           "note": null,
           "graph_id": "6fdce69d8f05920e261867e8df991f3b"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": null,
+        "scope": "Europe",
+        "traffic": null,
+        "ratio": "Balanced",
+        "prefixes4": 30,
+        "prefixes6": 10,
+        "ix_count": 1,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 207349,
@@ -2472,7 +3699,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -2482,7 +3710,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "0dbedd7259827d89b91f9935cb5a3060"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": null,
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": null,
+        "prefixes6": null,
+        "ix_count": 0,
+        "fac_count": 0,
+        "policy": null
+      }
     },
     {
       "asn": 208126,
@@ -2493,7 +3733,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -2503,7 +3744,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "d90c534cbe4a1d806745c3bd48379a77"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": null,
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": null,
+        "prefixes6": null,
+        "ix_count": 0,
+        "fac_count": 0,
+        "policy": null
+      }
     },
     {
       "asn": 208154,
@@ -2525,7 +3778,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "9d3586f3ce0a05b4208ff4073cbed238"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Europe",
+        "traffic": "1-5Gbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 1,
+        "prefixes6": 1,
+        "ix_count": 1,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 208414,
@@ -2547,7 +3812,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "9477807d923e95852c56d344d7557a9a"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Network Services",
+        "scope": "Global",
+        "traffic": "20-50Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 20,
+        "prefixes6": 150,
+        "ix_count": 45,
+        "fac_count": 4,
+        "policy": "Selective"
+      }
     },
     {
       "asn": 209108,
@@ -2569,12 +3846,24 @@
           "note": null,
           "graph_id": "ba8851ce7113bbf7dfd65b9879c610a3"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Enterprise",
+        "scope": "Europe",
+        "traffic": "5-10Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 1,
+        "prefixes6": 1,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 210788,
-      "name": "AS210788",
-      "website": null,
+      "name": "BIX Google VPP Service",
+      "website": "https://www.bix.hu/",
       "policy": null,
       "first_seen": "2026-02-06T10:03:26Z",
       "is_rs_peer": true,
@@ -2582,7 +3871,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": "Internet Szolgáltatók Tanácsa Egyesület",
+        "type": "Non-Profit",
+        "scope": "Regional",
+        "traffic": "100-200Gbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 10000,
+        "prefixes6": 10000,
+        "ix_count": 1,
+        "fac_count": 6,
+        "policy": "Open"
+      }
     },
     {
       "asn": 210966,
@@ -2604,7 +3905,19 @@
           "note": "1Gbps on 10G",
           "graph_id": "d72a3aa5a64974e581492dcdc4e32a9a"
         }
-      ]
+      ],
+      "network": {
+        "aka": "DC Hosting",
+        "type": "Content",
+        "scope": "Regional",
+        "traffic": "1-5Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 100,
+        "prefixes6": 100,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 212707,
@@ -2625,7 +3938,8 @@
           "note": "4Gbps on 10G",
           "graph_id": "d9bb47f23007b59ec9008fbc7ce9d3f1"
         }
-      ]
+      ],
+      "network": null
     },
     {
       "asn": 213669,
@@ -2647,12 +3961,24 @@
           "note": "1Gbps on 10G",
           "graph_id": "2870e3bcfcc6c72abf166f5ed58b926d"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": "Cable/DSL/ISP",
+        "scope": "Regional",
+        "traffic": "1-5Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 10000,
+        "prefixes6": 5000,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 213746,
-      "name": "AS213746",
-      "website": null,
+      "name": "FIBERWAVE",
+      "website": "https://www.fiberwave.hu",
       "policy": null,
       "first_seen": "2010-11-02T00:00:00Z",
       "is_rs_peer": false,
@@ -2660,7 +3986,19 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": "Fiberwave Bt.",
+        "type": "Cable/DSL/ISP",
+        "scope": "Regional",
+        "traffic": "1-5Gbps",
+        "ratio": "Balanced",
+        "prefixes4": 2,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 215366,
@@ -2671,7 +4009,8 @@
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -2681,7 +4020,19 @@
           "note": "1 Gbps on 10G",
           "graph_id": "b88fd0b9980594c8e5c74d19bb0b5083"
         }
-      ]
+      ],
+      "network": {
+        "aka": "BGN",
+        "type": null,
+        "scope": "Europe",
+        "traffic": "100-1000Mbps",
+        "ratio": "Mostly Inbound",
+        "prefixes4": 2,
+        "prefixes6": 0,
+        "ix_count": 0,
+        "fac_count": 2,
+        "policy": "Open"
+      }
     },
     {
       "asn": 215904,
@@ -2703,12 +4054,24 @@
           "note": "1Gbps on 10G",
           "graph_id": "668c34f6e3907e7309f7fc55d408a7ef"
         }
-      ]
+      ],
+      "network": {
+        "aka": null,
+        "type": null,
+        "scope": "Europe",
+        "traffic": "5-10Gbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 3,
+        "prefixes6": 1,
+        "ix_count": 1,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 216010,
-      "name": "AS216010",
-      "website": null,
+      "name": "CONSTREAM",
+      "website": "https://www.constream.hu",
       "policy": null,
       "first_seen": "2023-12-20T15:12:43Z",
       "is_rs_peer": true,
@@ -2716,18 +4079,31 @@
       "sources": [
         "peeringdb"
       ],
-      "ports": []
+      "ports": [],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": 1,
+        "prefixes6": 0,
+        "ix_count": 1,
+        "fac_count": 1,
+        "policy": "Open"
+      }
     },
     {
       "asn": 328126,
       "name": "Orange",
-      "website": null,
+      "website": "https://internationalcarriers.orange.com/en/offers/media-delivery-boost-2.html",
       "policy": "Open/Free",
       "first_seen": null,
       "is_rs_peer": false,
       "ipv6": null,
       "sources": [
-        "bix"
+        "bix",
+        "peeringdb"
       ],
       "ports": [
         {
@@ -2737,7 +4113,19 @@
           "note": "4Gbps on 10G",
           "graph_id": "1da8ea6b768f4466142e4246bbe91c09"
         }
-      ]
+      ],
+      "network": {
+        "aka": "Orange CDN",
+        "type": "Content",
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Heavy Outbound",
+        "prefixes4": 50,
+        "prefixes6": 0,
+        "ix_count": 3,
+        "fac_count": 0,
+        "policy": "Open"
+      }
     },
     {
       "asn": 396986,
@@ -2759,7 +4147,19 @@
           "note": null,
           "graph_id": "f91e813c5be67971027f7dd03cbdda77"
         }
-      ]
+      ],
+      "network": {
+        "aka": "TikTok",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": null,
+        "ratio": "Mostly Outbound",
+        "prefixes4": 1000,
+        "prefixes6": 1000,
+        "ix_count": 90,
+        "fac_count": 73,
+        "policy": "Selective"
+      }
     }
   ]
 }
