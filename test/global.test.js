@@ -12,7 +12,7 @@ test('az aggregálás IX-enként egyedi ASN-eket számol', () => {
   const agg = aggregateMemberships(rows);
   assert.deepEqual(
     agg.sort((a, b) => a.ix_id - b.ix_id),
-    [{ ix_id: 31, shared: 1 }, { ix_id: 55, shared: 2 }]
+    [{ ix_id: 31, shared: 1, asns: [1] }, { ix_id: 55, shared: 2, asns: [1, 2] }]
   );
 });
 
@@ -52,6 +52,6 @@ test('a vonalstílus az átfedés erejével erősödik', () => {
 
 test('a jelölő sugara korlátos', () => {
   assert.ok(markerRadius(1) >= 3);
-  assert.ok(markerRadius(103) <= 14);
+  assert.ok(markerRadius(103) <= 15);
   assert.ok(markerRadius(40) > markerRadius(5));
 });

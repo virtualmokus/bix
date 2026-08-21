@@ -4,8 +4,9 @@ import { formatRelative } from './format.js';
 import * as overview from './views/overview.js';
 import * as members from './views/members.js';
 import * as mapView from './views/map.js';
+import * as legal from './views/legal.js';
 
-const VIEWS = ['overview', 'members', 'map'];
+const VIEWS = ['overview', 'members', 'map', 'legal'];
 
 function applyStaticStrings() {
   document.querySelector('[data-str="siteTagline"]').textContent = strings.siteTagline;
@@ -52,6 +53,15 @@ function boot({ views, data }) {
     btn.addEventListener('click', () => show(btn.dataset.view));
   }
 
+  // A láblécből is át lehet ugrani a jogi oldalra.
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('[data-goto-legal]');
+    if (!link) return;
+    event.preventDefault();
+    show('legal');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
   const fromHash = location.hash.slice(1);
   show(VIEWS.includes(fromHash) ? fromHash : 'overview');
 }
@@ -67,7 +77,8 @@ function renderFooter(data) {
     : strings.footer.updated.replace('{when}', when);
 
   document.getElementById('footer').innerHTML =
-    `<p>${line}</p><p>${strings.footer.independent}</p><p>${strings.footer.sources}</p>`;
+    `<p>${line}</p><p>${strings.footer.independent}</p>` +
+    `<p>${strings.footer.sources} <a href="#legal" data-goto-legal>${strings.footer.legalLink}</a></p>`;
 
   const badge = document.getElementById('live-badge');
   badge.textContent = strings.live;
@@ -76,15 +87,16 @@ function renderFooter(data) {
 
 function renderLoadError(message) {
   applyStaticStrings();
+  const safe = String(message).replace(/[<>&]/g, '');
   document.getElementById('view').innerHTML =
     `<section class="section"><p class="note note--warning">` +
-    `Az adat betöltése nem sikerült: ${message}</p></section>`;
+    `Could not load the data: ${safe}</p></section>`;
   document.getElementById('live-badge').hidden = true;
 }
 
 try {
   const data = await loadAll((url) => fetch(url));
-  boot({ views: { overview, members, map: mapView }, data });
+  boot({ views: { overview, members, map: mapView, legal }, data });
   renderFooter(data);
 } catch (err) {
   renderLoadError(err.message);

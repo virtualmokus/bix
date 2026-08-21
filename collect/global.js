@@ -18,7 +18,11 @@ function chunks(list, size) {
 
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/** Tagsági rekordokból IX-enkénti összesítés: hány BIX-tag van ott jelen. */
+/**
+ * Tagsági rekordokból IX-enkénti összesítés. Az ASN-listát is megtartjuk:
+ * enélkül nem lehet megmondani, hogy két csomópont *ugyanazokon* a
+ * hálózatokon osztozik-e — márpedig a térkép kiemelése ezen áll.
+ */
 export function aggregateMemberships(rows) {
   const byIx = new Map();
   for (const row of rows) {
@@ -29,7 +33,11 @@ export function aggregateMemberships(rows) {
     }
     entry.asns.add(row.asn);
   }
-  return [...byIx.values()].map((e) => ({ ix_id: e.ix_id, shared: e.asns.size }));
+  return [...byIx.values()].map((e) => ({
+    ix_id: e.ix_id,
+    shared: e.asns.size,
+    asns: [...e.asns].sort((a, b) => a - b),
+  }));
 }
 
 /** Összefűzi az aggregátumot a metaadattal és a koordinátával. */
@@ -38,7 +46,7 @@ export function buildExchanges(aggregated, ixMeta, coords) {
   const geo = new Map(coords.map((c) => [c.ix_id, c]));
 
   return aggregated
-    .map(({ ix_id, shared }) => {
+    .map(({ ix_id, shared, asns }) => {
       const m = meta.get(ix_id);
       if (!m) return null;
       const g = geo.get(ix_id);
@@ -47,10 +55,12 @@ export function buildExchanges(aggregated, ixMeta, coords) {
         name: m.name,
         city: m.city || null,
         country: m.country || null,
+        region: m.region_continent || null,
         net_count: m.net_count ?? null,
         lat: g?.lat ?? null,
         lng: g?.lng ?? null,
         shared,
+        asns: asns ?? [],
       };
     })
     .filter(Boolean)
@@ -92,7 +102,7 @@ export async function collectGlobal({
     const ixMeta = [];
     for (const part of chunks(ixIds, CHUNK)) {
       const j = await fetch(
-        `${API}/ix?id__in=${part.join(',')}&fields=id,name,city,country,net_count`
+        `${API}/ix?id__in=${part.join(',')}&fields=id,name,city,country,net_count,region_continent`
       );
       ixMeta.push(...(j.data ?? []));
       await wait(pauseMs);

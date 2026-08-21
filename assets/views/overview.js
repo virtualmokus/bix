@@ -31,13 +31,31 @@ const SCOPE_COLORS = {
   'Not Disclosed': '#787774',
 };
 
-function figure(value, label, hint, accent) {
-  return (
-    `<div class="figure"${accent ? ` style="--figure-accent:${accent}"` : ''}>` +
+// A kulcsszám kinyitható, ha van hozzá magyarázat. A <details> natívan
+// kezeli a nyitást — nem kell JS, és billentyűzetről is működik.
+function figure(value, label, hint, accent, explain) {
+  const style = accent ? ` style="--figure-accent:${accent}"` : '';
+  const body =
     `<div class="figure-value mono">${value}</div>` +
     `<div class="figure-label">${escapeHtml(label)}</div>` +
-    (hint ? `<div class="figure-hint">${escapeHtml(hint)}</div>` : '') +
-    `</div>`
+    (hint ? `<div class="figure-hint">${escapeHtml(hint)}</div>` : '');
+
+  if (!explain) return `<div class="figure"${style}>${body}</div>`;
+
+  return (
+    `<details class="figure figure--expandable"${style}>` +
+    `<summary>${body}<span class="figure-more" aria-hidden="true">?</span></summary>` +
+    `<p class="figure-explain">${escapeHtml(explain)}</p>` +
+    `</details>`
+  );
+}
+
+/** Összecsukható magyarázó blokk egy diagram alá. */
+function explainer(text) {
+  if (!text) return '';
+  return (
+    `<details class="explainer"><summary>${escapeHtml(strings.showMore)}</summary>` +
+    `<p>${escapeHtml(text)}</p></details>`
   );
 }
 
@@ -180,7 +198,7 @@ function worldSection(global) {
           strong: e.id === global.home_ix_id,
         })
       )
-      .join('') + `</div>` +
+      .join('') + explainer(s.topExchangesExplain) + `</div>` +
     `<div><p class="label">${escapeHtml(s.sharedTitle)}</p>` +
     `<p class="hint">${escapeHtml(s.sharedHint)}</p>` +
     topShared
@@ -235,16 +253,20 @@ export function render(data) {
     // ---- Kulcsszámok ----
     `<section class="section reveal">` +
     `<p class="eyebrow">${escapeHtml(s.keyFigures)}</p>` +
+    `<p class="hint">${escapeHtml(s.keyFiguresHint)}</p>` +
     `<div class="figure-grid">` +
-    figure(formatInt(f.networksReported ?? 0), s.fig.networks, s.fig.networksHint, '#1F6C9F') +
-    figure(formatInt(f.portsReported ?? 0), s.fig.ports, s.fig.portsHint, '#1F6C9F') +
+    figure(formatInt(f.networksReported ?? 0), s.fig.networks, s.fig.networksHint, '#1F6C9F', s.fig.networksExplain) +
+    figure(formatInt(f.portsReported ?? 0), s.fig.ports, s.fig.portsHint, '#1F6C9F', s.fig.portsExplain) +
     figure(formatInt(f.portsPublic), s.fig.portsPublic,
-      f.coveragePercent ? s.fig.portsPublicHint.replace('{p}', formatPercent(f.coveragePercent, 0)) : '', '#B26A00') +
-    figure(formatInt(f.members), s.fig.members, s.fig.membersHint, '#346538') +
-    figure(formatInt(f.nodes), s.fig.nodes, s.fig.nodesHint, '#7C5CBF') +
-    figure(f.largestPortMbps ? formatBandwidth(f.largestPortMbps) : '—', s.fig.largestPort, s.fig.largestPortHint, '#7C5CBF') +
-    figure(formatInt(adopt.routeServer), s.fig.routeServer, s.fig.routeServerHint, '#0F766E') +
-    figure(formatInt(adopt.ipv6), s.fig.ipv6, s.fig.ipv6Hint, '#0F766E') +
+      f.coveragePercent ? s.fig.portsPublicHint.replace('{p}', formatPercent(f.coveragePercent, 0)) : '',
+      '#B26A00', s.fig.portsPublicExplain) +
+    figure(formatInt(f.members), s.fig.members, s.fig.membersHint, '#346538', s.fig.membersExplain) +
+    figure(formatInt(f.nodes), s.fig.nodes, s.fig.nodesHint, '#7C5CBF', s.fig.nodesExplain) +
+    figure(f.largestPortMbps ? formatBandwidth(f.largestPortMbps) : '—', s.fig.largestPort,
+      s.fig.largestPortHint, '#7C5CBF', s.fig.largestPortExplain) +
+    figure(formatInt(adopt.routeServer), s.fig.routeServer, s.fig.routeServerHint,
+      '#0F766E', strings.glossary.routeServer) +
+    figure(formatInt(adopt.ipv6), s.fig.ipv6, s.fig.ipv6Hint, '#0F766E', s.fig.ipv6Explain) +
     `</div></section>` +
 
     // ---- Emberi lépték ----
@@ -265,15 +287,19 @@ export function render(data) {
     `<p class="hint">${escapeHtml(s.whoHint.replace('{n}', formatInt(profiled.length)).replace('{t}', formatInt(members.length)))}</p>` +
     `<div class="split-grid">` +
     `<div><p class="label">${escapeHtml(s.byType)}</p>` +
-    distBars(distribution(profiled, (m) => m.network.type), { colors: TYPE_COLORS }) + `</div>` +
+    distBars(distribution(profiled, (m) => m.network.type), { colors: TYPE_COLORS }) +
+    explainer(s.byTypeExplain) + `</div>` +
     `<div><p class="label">${escapeHtml(s.byScope)}</p>` +
-    distBars(distribution(profiled, (m) => m.network.scope), { colors: SCOPE_COLORS }) + `</div>` +
+    distBars(distribution(profiled, (m) => m.network.scope), { colors: SCOPE_COLORS }) +
+    explainer(s.byScopeExplain) + `</div>` +
     `</div>` +
     `<div class="split-grid">` +
     `<div><p class="label">${escapeHtml(s.byTraffic)}</p>` +
-    distBars(distribution(profiled, (m) => m.network.traffic)) + `</div>` +
+    distBars(distribution(profiled, (m) => m.network.traffic)) +
+    explainer(s.byTrafficExplain) + `</div>` +
     `<div><p class="label">${escapeHtml(s.byRatio)}</p>` +
-    distBars(distribution(profiled, (m) => m.network.ratio)) + `</div>` +
+    distBars(distribution(profiled, (m) => m.network.ratio)) +
+    explainer(s.byRatioExplain) + `</div>` +
     `</div></section>` +
 
     // ---- Hogyan kapcsolódnak ----
@@ -303,7 +329,7 @@ export function render(data) {
           accent: TYPE_COLORS[m.network?.type] ?? 'var(--blue-fg)',
         })
       )
-      .join('') + `</div>` +
+      .join('') + explainer(s.biggestMembersExplain) + `</div>` +
     `</div></section>` +
 
     // ---- BIX és a világ ----

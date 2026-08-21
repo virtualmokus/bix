@@ -79,6 +79,9 @@ test('hálózati profil nélkül sem dob', () => {
   assert.ok(typeof html === 'string' && html.length > 0);
 });
 
+// A ©/™/® jelek Extended_Pictographic-ok, de nem emojik — a forrásmegjelöléshez
+// kellenek. Az Emoji_Presentation csak azokat fogja, amik alapértelmezésben
+// emojiként jelennek meg: pontosan azt tiltja a design rendszer.
 test('nincs benne emoji', () => {
-  assert.ok(!/\p{Extended_Pictographic}/u.test(render(data)));
+  assert.ok(!/\p{Emoji_Presentation}/u.test(render(data)));
 });

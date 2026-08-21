@@ -2,6 +2,7 @@ import strings from '../strings.en.js';
 import { formatBandwidth, formatInt, formatPercent } from '../format.js';
 import { escapeHtml } from '../chart.js';
 import { memberBandwidth } from '../stats.js';
+import { TYPE_COLORS } from './overview.js';
 
 const s = strings.members;
 
@@ -85,17 +86,28 @@ export function rows(members) {
       const net = member.network;
       const onlyPdb = member.sources.length === 1 && member.sources[0] === 'peeringdb';
       const badge = onlyPdb ? ` <span class="badge">${escapeHtml(s.onlyPeeringdb)}</span>` : '';
-      const aka = net?.aka ? `<span class="aka">${escapeHtml(net.aka)}</span>` : '';
+      // Néhány aka-mező kilenc korábbi márkanevet sorol; CSS-ben két sorra
+      // vágjuk, a teljes szöveg a tooltipben marad meg.
+      const aka = net?.aka
+        ? `<span class="aka" title="${escapeHtml(net.aka)}">${escapeHtml(net.aka)}</span>`
+        : '';
 
       return (
         `<tr>` +
         `<td class="col-name">${escapeHtml(member.name)}${badge}${aka}</td>` +
         `<td class="num asn">${member.asn}</td>` +
-        `<td>${escapeHtml(net?.type ?? '—')}</td>` +
+        `<td class="col-type">` +
+        (net?.type
+          ? `<span class="type-dot" style="background:${TYPE_COLORS[net.type] ?? 'var(--text-muted)'}"></span>` +
+            escapeHtml(net.type)
+          : '—') +
+        `</td>` +
         `<td>${escapeHtml(net?.scope ?? '—')}</td>` +
         `<td class="col-node">${escapeHtml(nodes.join(', ') || '—')}</td>` +
-        `<td class="num">${total ? formatBandwidth(total) : '—'}` +
-        (member.ports.length > 1 ? `<span class="ports-n">${member.ports.length}×</span>` : '') +
+        `<td class="num col-cap">${total ? formatBandwidth(total) : '—'}` +
+        (member.ports.length > 1
+          ? ` <span class="ports-n" title="${member.ports.length} ports">${member.ports.length}×</span>`
+          : '') +
         `</td>` +
         `<td>${escapeHtml(member.policy ?? net?.policy ?? '—')}</td>` +
         `<td class="num">${net?.prefixes4 ? formatInt(net.prefixes4) : '—'}</td>` +
@@ -124,7 +136,14 @@ export function render(data) {
     `<section class="section">` +
     `<p class="eyebrow">${escapeHtml(s.eyebrow)}</p>` +
     `<h2 class="section-title">${escapeHtml(s.title)}</h2>` +
+    `<p class="lede">${escapeHtml(s.lede)}</p>` +
     `<p class="note note--warning">${escapeHtml(warning)}</p>` +
+    `<details class="explainer"><summary>${escapeHtml(strings.showMore)}</summary>` +
+    `<p><strong>ASN.</strong> ${escapeHtml(strings.glossary.asn)}</p>` +
+    `<p><strong>Peering policy.</strong> ${escapeHtml(strings.glossary.peering)}</p>` +
+    `<p><strong>Prefixes.</strong> ${escapeHtml(strings.glossary.prefixes)}</p>` +
+    `<p><strong>Route server (RS).</strong> ${escapeHtml(strings.glossary.routeServer)}</p>` +
+    `</details>` +
     `</section>` +
 
     `<section class="section reveal">` +
@@ -141,6 +160,7 @@ export function render(data) {
     select('f-bandwidth', s.allBandwidths,
       [...new Set(ports.map((p) => p.bandwidth_mbps))].sort((a, b) => b - a), formatBandwidth) +
     select('f-policy', s.allPolicies, uniqueSorted(members.map((m) => m.policy))) +
+    `<button type="button" id="f-reset" class="btn btn--ghost">${escapeHtml(s.reset)}</button>` +
     `</div>` +
     `<p class="hint" id="member-count">${escapeHtml(
       s.showing.replace('{n}', formatInt(members.length)).replace('{t}', formatInt(members.length))
@@ -177,4 +197,9 @@ export function mount(root, data) {
   }
 
   for (const el of inputs) el.addEventListener('input', apply);
+
+  root.querySelector('#f-reset')?.addEventListener('click', () => {
+    for (const el of inputs) el.value = '';
+    apply();
+  });
 }
