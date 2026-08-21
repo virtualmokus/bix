@@ -193,24 +193,39 @@ export function mount(root, data) {
   const regionSel = root.querySelector('#map-region');
   const memberSel = root.querySelector('#map-member');
 
-  const map = L.map(container, { worldCopyJump: false, scrollWheelZoom: true, minZoom: 2 }).setView([47.5, 19.05], 4);
+  const map = L.map(container, {
+    worldCopyJump: false,
+    scrollWheelZoom: true,
+    maxBounds: L.latLngBounds([-85, -180], [85, 180]),
+    maxBoundsViscosity: 1,
+  }).setView([47.5, 19.05], 4);
+
+  // A legkisebb nagyítás az, ahol a világ épp kitölti a keretet — így sem
+  // ismétlődés, sem üres sáv nem marad a térkép mellett.
+  function fitWorld() {
+    const zoom = map.getBoundsZoom(L.latLngBounds([-85, -180], [85, 180]), true);
+    map.setMinZoom(zoom);
+    if (map.getZoom() < zoom) map.setZoom(zoom);
+  }
 
   // A nézet beillesztésekor a konténernek még nincs végleges mérete (rács,
   // betűtöltés, panel-animáció), ezért a Leaflet rossz pozíciókat számolna.
   // A ResizeObserver minden méretváltozásra újraszámoltatja.
-  requestAnimationFrame(() => map.invalidateSize());
+  requestAnimationFrame(() => { map.invalidateSize(); fitWorld(); });
   if (typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(() => map.invalidateSize()).observe(container);
+    new ResizeObserver(() => { map.invalidateSize(); fitWorld(); }).observe(container);
   }
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 12,
+    noWrap: true,
     attribution: '© OpenStreetMap contributors',
   }).addTo(map);
 
-  // A vektorrétegeket a világ mindhárom példányában kirajzoljuk (−360°, 0°,
-  // +360°), különben oldalra húzva üres térkép fogadna: a csempék ismétlődnek,
-  // a jelölők nem. Így a lapozás egyetlen, körbeérő térképnek látszik.
-  const WORLD_COPIES = [-360, 0, 360];
+  // Egyetlen világ jelenik meg, ismétlődés nélkül. A korábbi megoldás a
+  // vektorokat ±360°-on is kirajzolta, hogy a lapozás folytonos legyen —
+  // ettől viszont több teljes világ látszott egyszerre. A csempék `noWrap`-je
+  // és a `maxBounds` együtt zárja ki az ismétlődést.
+  const WORLD_COPIES = [0];
 
   // Több ezer vonalat az SVG-renderer megfojt; a vászon nagyságrenddel
   // gyorsabb, és a kattintást is kezeli.
@@ -370,6 +385,7 @@ export function mount(root, data) {
       `<button type="button" class="map-panel-close" id="panel-close" aria-label="${escapeHtml(s.close)}">×</button>` +
       `<h3 class="panel-title">${escapeHtml(exchange.name)}</h3>` +
       `<p class="panel-sub">${escapeHtml([exchange.city, exchange.country, exchange.region].filter(Boolean).join(' · '))}</p>` +
+      `<button type="button" class="btn panel-dossier" data-open-ix="${exchange.id}">${escapeHtml(s.panel.openPage)}</button>` +
 
       `<div class="panel-stats">` +
       `<div><strong class="mono">${formatInt(exchange.shared)}</strong><span>${escapeHtml(s.panel.shared)}</span></div>` +
@@ -467,7 +483,7 @@ export function mount(root, data) {
         }
       }
 
-      for (const offset of WORLD_COPIES.filter((o) => o !== 0)) {
+      for (const offset of []) { // nincs világ-másolat
         L.circleMarker([e.lat, e.lng + offset], {
           radius: markerRadius(e.shared) * (e.id === selectedId ? 1.5 : 1),
           color: e.id === selectedId ? '#9F2F2D' : style.color,

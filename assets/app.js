@@ -1,10 +1,12 @@
 import strings from './strings.en.js';
 import { loadAll, staleness } from './data.js';
 import { formatRelative } from './format.js';
+import { parseHash } from './app-routing.js';
 import * as overview from './views/overview.js';
 import * as members from './views/members.js';
 import * as mapView from './views/map.js';
 import * as legal from './views/legal.js';
+import * as exchange from './views/exchange.js';
 
 const VIEWS = ['overview', 'members', 'map', 'legal'];
 
@@ -30,28 +32,46 @@ function revealOnScroll(root) {
   for (const el of root.querySelectorAll('.reveal')) observer.observe(el);
 }
 
-function selectTab(name) {
+function selectTab(name, param) {
+  // Az IX-adatlap a térképhez tartozik, ezért a Világtérkép fül marad aktív.
+  const active = name === 'ix' ? 'map' : name;
   for (const btn of document.querySelectorAll('.tab')) {
-    btn.setAttribute('aria-selected', String(btn.dataset.view === name));
+    btn.setAttribute('aria-selected', String(btn.dataset.view === active));
   }
-  history.replaceState(null, '', `#${name}`);
+  history.replaceState(null, '', param ? `#${name}/${param}` : `#${name}`);
 }
 
 function boot({ views, data }) {
   applyStaticStrings();
   const root = document.getElementById('view');
 
-  function show(name) {
+  function show(name, param = null) {
     // A térkép teljes képernyős állapota a body-n is hagy nyomot; nézetváltáskor
     // ezt le kell szedni, különben a görgetés tiltva marad a többi fülön is.
     document.body.classList.remove('has-fullscreen-map');
 
-    const view = views[name];
-    root.innerHTML = view.render(data);
-    view.mount?.(root, data);
-    selectTab(name);
+    const view = views[name] ?? views.overview;
+    root.innerHTML = view.render(data, param);
+    view.mount?.(root, data, param);
+    selectTab(name, param);
     revealOnScroll(root);
+    window.scrollTo({ top: 0 });
   }
+
+  // Bárhonnan meg lehet nyitni egy csomópont adatlapját.
+  document.addEventListener('click', (event) => {
+    const open = event.target.closest('[data-open-ix]');
+    if (open) {
+      event.preventDefault();
+      show('ix', open.dataset.openIx);
+      return;
+    }
+    const goto = event.target.closest('[data-goto-view]');
+    if (goto) {
+      event.preventDefault();
+      show(goto.dataset.gotoView);
+    }
+  });
 
   for (const btn of document.querySelectorAll('.tab')) {
     btn.addEventListener('click', () => show(btn.dataset.view));
@@ -66,8 +86,8 @@ function boot({ views, data }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  const fromHash = location.hash.slice(1);
-  show(VIEWS.includes(fromHash) ? fromHash : 'overview');
+  const initial = parseHash(location.hash, VIEWS);
+  show(initial.name, initial.param);
 }
 
 function renderFooter(data) {
@@ -100,7 +120,7 @@ function renderLoadError(message) {
 
 try {
   const data = await loadAll((url) => fetch(url));
-  boot({ views: { overview, members, map: mapView, legal }, data });
+  boot({ views: { overview, members, map: mapView, legal, ix: exchange }, data });
   renderFooter(data);
 } catch (err) {
   renderLoadError(err.message);

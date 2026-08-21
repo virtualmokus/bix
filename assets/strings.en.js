@@ -235,6 +235,7 @@ export default {
       membersHere: 'BIX members present',
       relatedTitle: 'Shares networks with',
       relatedHint: 'Exchanges whose members overlap with this one. Click to jump.',
+      openPage: 'Open full dossier',
       cablesTitle: 'Submarine cables within reach',
       cablesHint:
         '{n} cables land within 150 km of this exchange. Turn on the cable layer to see them highlighted.',
@@ -251,6 +252,61 @@ export default {
       'The map library could not be loaded. The connection data is still available on the Overview tab.',
     attribution:
       'Map tiles © OpenStreetMap contributors. Exchange locations from PeeringDB. Submarine cable routes and landing points © TeleGeography, used under CC BY-NC-SA 3.0.',
+  },
+
+  exchange: {
+    eyebrow: 'Exchange dossier',
+    notFound: 'No exchange with id {id} in the collected data.',
+    backToMap: 'Back to map',
+    download: 'Download JSON',
+    copy: 'Copy JSON',
+    copied: 'Copied',
+    copyFailed: 'Copy failed',
+    peeringdb: 'View on PeeringDB',
+    planned: 'planned',
+    membersHint:
+      'Networks present at both this exchange and BIX. Figures come from each network’s own PeeringDB profile.',
+    relatedHint: 'Exchanges where the same networks appear. A logical overlap, not a circuit.',
+    sharedCableHint: 'Exchanges near a landing of the same submarine cable — a shared physical asset.',
+    inland:
+      'No submarine cable lands within 150 km. The nearest is {landing}, {km} km away, so everything here arrives overland.',
+    stats: {
+      networks: 'networks registered here',
+      bixMembers: 'also peer at BIX',
+      relatedIx: 'exchanges share networks',
+      cables: 'submarine cables in reach',
+    },
+    fields: {
+      id: 'PeeringDB id',
+      city: 'City',
+      country: 'Country',
+      region: 'Region',
+      coords: 'Coordinates',
+      nearestLanding: 'Nearest cable landing',
+    },
+    sections: {
+      members: 'BIX members present here',
+      cables: 'Submarine cables within 150 km',
+      relatedIx: 'Shares networks with',
+      sharedCable: 'Shares a physical cable with',
+      landings: 'Cable landings within 150 km',
+    },
+    cols: {
+      member: 'Network', asn: 'ASN', type: 'Type', scope: 'Scope',
+      ix: 'IXPs', prefixes: 'Prefixes',
+      cable: 'Cable', owners: 'Owners', builder: 'Built by',
+      length: 'Length', rfs: 'In service', lands: 'Lands in',
+      exchange: 'Exchange', city: 'City',
+      sharedNetworks: 'Shared networks', sharedCables: 'Shared cables',
+      landing: 'Landing point', country: 'Country', distance: 'Distance',
+    },
+    empty: {
+      members: 'No BIX member is recorded at this exchange.',
+      cables: 'No submarine cable within reach.',
+      related: 'No overlap with other exchanges in this dataset.',
+      sharedCable: 'No exchange shares a cable with this one.',
+      landings: 'No landing point within 150 km.',
+    },
   },
 
   legal: {

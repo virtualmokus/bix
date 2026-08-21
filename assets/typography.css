@@ -122,3 +122,13 @@ body { font-size: 16px; line-height: 1.6; }
 }
 .cable-pop dt { color: var(--text-muted); white-space: nowrap; }
 .cable-pop dd { margin: 0; }
+
+/* IX-adatlap */
+.ix-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.ix-actions .btn { text-decoration: none; display: inline-flex; align-items: center; }
+.ix-stats { grid-template-columns: repeat(4, 1fr); max-width: 780px; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; margin-top: 18px; font-size: 14.5px; }
+.kv dt { color: var(--text-muted); white-space: nowrap; }
+.kv dd { margin: 0; }
+.panel-dossier { width: 100%; margin-top: 12px; justify-content: center; }
+@media (max-width: 720px) { .ix-stats { grid-template-columns: repeat(2, 1fr); } }
