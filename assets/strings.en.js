@@ -236,6 +236,8 @@ export default {
       relatedTitle: 'Shares networks with',
       relatedHint: 'Exchanges whose members overlap with this one. Click to jump.',
       openPage: 'Open full dossier',
+      officialSite: 'Official site',
+      officialStats: 'Official statistics',
       cablesTitle: 'Submarine cables within reach',
       cablesHint:
         '{n} cables land within 150 km of this exchange. Turn on the cable layer to see them highlighted.',
@@ -263,6 +265,10 @@ export default {
     copied: 'Copied',
     copyFailed: 'Copy failed',
     peeringdb: 'View on PeeringDB',
+    visitSite: 'Official site',
+    visitStats: 'Official statistics',
+    officialNote:
+      'The links above go to the operator’s own pages. Where this site and the operator disagree, the operator is right.',
     planned: 'planned',
     membersHint:
       'Networks present at both this exchange and BIX. Figures come from each network’s own PeeringDB profile.',
@@ -283,6 +289,13 @@ export default {
       region: 'Region',
       coords: 'Coordinates',
       nearestLanding: 'Nearest cable landing',
+      longName: 'Full name',
+      alsoKnown: 'Also known as',
+      website: 'Official website',
+      stats: 'Official statistics page',
+      dashboard: 'Status dashboard',
+      ipv6: 'IPv6 on the fabric',
+      serviceLevel: 'Service level',
     },
     sections: {
       members: 'BIX members present here',

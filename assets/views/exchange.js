@@ -72,8 +72,15 @@ export function buildDossier(data, ixId) {
       region: exchange.region,
       latitude: exchange.lat,
       longitude: exchange.lng,
+      name_long: exchange.name_long ?? null,
+      aka: exchange.aka ?? null,
       networks_total: exchange.net_count,
       bix_members_present: exchange.shared,
+      ipv6_on_fabric: exchange.proto_ipv6 ?? null,
+      service_level: exchange.service_level ?? null,
+      official_website: exchange.website ?? null,
+      official_statistics: exchange.url_stats ?? null,
+      status_dashboard: exchange.status_dashboard ?? null,
       peeringdb_url: `https://www.peeringdb.com/ix/${exchange.id}`,
     },
     submarine: {
@@ -153,8 +160,15 @@ export function render(data, ixId) {
     `<button type="button" class="btn btn--ghost" data-goto-view="map">${escapeHtml(s.backToMap)}</button>` +
     `<button type="button" class="btn" id="ix-download">${escapeHtml(s.download)}</button>` +
     `<button type="button" class="btn btn--ghost" id="ix-copy">${escapeHtml(s.copy)}</button>` +
+    (x.official_website
+      ? `<a class="btn" href="${escapeHtml(x.official_website)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.visitSite)}</a>`
+      : '') +
+    (x.official_statistics
+      ? `<a class="btn btn--ghost" href="${escapeHtml(x.official_statistics)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.visitStats)}</a>`
+      : '') +
     `<a class="btn btn--ghost" href="${escapeHtml(x.peeringdb_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.peeringdb)}</a>` +
     `</div>` +
+    `<p class="hint">${escapeHtml(s.officialNote)}</p>` +
     `</section>` +
 
     `<section class="section reveal">` +
@@ -171,6 +185,16 @@ export function render(data, ixId) {
       [s.fields.region, escapeHtml(x.region ?? '—')],
       [s.fields.coords, x.latitude != null
         ? `<span class="mono">${x.latitude}, ${x.longitude}</span>` : '—'],
+      [s.fields.longName, x.name_long ? escapeHtml(x.name_long) : null],
+      [s.fields.alsoKnown, x.aka ? escapeHtml(x.aka) : null],
+      [s.fields.website, x.official_website
+        ? `<a href="${escapeHtml(x.official_website)}" target="_blank" rel="noopener noreferrer">${escapeHtml(x.official_website)}</a>` : null],
+      [s.fields.stats, x.official_statistics
+        ? `<a href="${escapeHtml(x.official_statistics)}" target="_blank" rel="noopener noreferrer">${escapeHtml(x.official_statistics)}</a>` : null],
+      [s.fields.dashboard, x.status_dashboard
+        ? `<a href="${escapeHtml(x.status_dashboard)}" target="_blank" rel="noopener noreferrer">${escapeHtml(x.status_dashboard)}</a>` : null],
+      [s.fields.ipv6, x.ipv6_on_fabric === null ? null : (x.ipv6_on_fabric ? 'yes' : 'no')],
+      [s.fields.serviceLevel, x.service_level ? escapeHtml(x.service_level) : null],
       [s.fields.nearestLanding, sub.nearest_landing
         ? `${escapeHtml(sub.nearest_landing)} <span class="mono">(${formatInt(sub.nearest_landing_km)} km)</span>`
         : '—'],

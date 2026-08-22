@@ -5,6 +5,8 @@ nyilvánosan közzétett adatait gyűjti, és olvasható formában mutatja meg.
 
 *All information is publicly fetched from bix.hu.*
 
+**Live site:** https://virtualmokus.github.io/bix/
+
 **Ez nem hivatalos oldal.** Nincs kapcsolatunk az ISZT-vel, a BIX üzemeltetőjével
 vagy bármelyik tagszervezettel. Az itt látható adatok értelmezése a miénk, a
 hibákért is mi felelünk — hivatalos információért a [bix.hu](https://www.bix.hu/)
@@ -68,3 +70,15 @@ A weboldalhoz bármilyen statikus kiszolgáló megteszi a repó gyökeréből.
 repóra mutat. A `robots.txt` tiltásait tiszteletben tartjuk. Ha az oldal
 üzemeltetőjeként bármi kifogásod van a gyűjtés ellen, nyiss egy issue-t —
 leállítjuk.
+
+## Licenc
+
+A **kód MIT** licenc alatt van. A `data/` alatti **gyűjtött adat nem** — minden
+fájl megtartja a saját forrásának feltételeit.
+
+A `data/cables.json` **CC BY-NC-SA 3.0** (TeleGeography), és ez az oka annak,
+hogy a projekt nem kereskedelmi. Kereskedelmi felhasználáshoz ezt a fájlt, a
+`collect/cables.js` gyűjtőt és a térkép kábelrétegét el kell távolítani — a
+projekt többi része nem hordozza ezt a korlátozást.
+
+Részletek és forrásonkénti bontás: [LICENSE](LICENSE).

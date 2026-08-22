@@ -1,0 +1,85 @@
+This repository contains material under two different licences. Read both
+before reusing anything from it.
+
+===============================================================================
+1. SOURCE CODE — MIT Licence
+===============================================================================
+
+Applies to all source code in this repository: the contents of `collect/`,
+`assets/`, `test/`, `index.html`, the GitHub Actions workflows, and the
+documentation in `docs/`.
+
+Copyright (c) 2026 virtualmokus
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+===============================================================================
+2. COLLECTED DATA — third-party terms apply
+===============================================================================
+
+The files under `data/` are not original work. They are collected from public
+sources and remain subject to those sources' terms. The MIT licence above does
+NOT cover them.
+
+`data/cables.json`
+    Submarine cable routes, landing points, owners and in-service dates.
+    Source:  TeleGeography Submarine Cable Map
+             https://www.submarinecablemap.com/
+    Licence: Creative Commons Attribution-NonCommercial-ShareAlike 3.0
+             https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+    This is the reason this project is non-commercial. If you intend to use
+    this repository commercially, remove `data/cables.json`, the `collect/
+    cables.js` collector and the map's cable layer first — the rest of the
+    project does not carry the NonCommercial restriction.
+
+`data/global.json`, `data/members.json`, `data/networks.json`,
+`data/peeringdb.json`
+    Exchange, network and membership records.
+    Source:  PeeringDB — https://www.peeringdb.com/
+    Terms:   https://www.peeringdb.com/aup
+    Attribution to PeeringDB is required. Records are self-reported by the
+    networks themselves and are not verified.
+
+`data/ports.json`, `data/traffic.csv`
+    Port-level structure and aggregate traffic figures.
+    Source:  bix.hu, operated by the Council of Hungarian Internet Providers
+             (ISZT) — https://www.bix.hu/
+    These are figures published openly by the operator. This project is not
+    affiliated with, endorsed by, or connected to ISZT or BIX.
+
+`data/borders.json`
+    Country boundary lines, simplified.
+    Source:  Natural Earth — https://www.naturalearthdata.com/
+    Licence: Public domain.
+
+Map tiles displayed by the site are served by OpenStreetMap and are subject to
+the ODbL: https://www.openstreetmap.org/copyright
+
+===============================================================================
+3. NO WARRANTY ON THE DATA
+===============================================================================
+
+The collected data is provided as-is. It may be incomplete, outdated, misread
+by the collection scripts, or wrong at its source. Do not rely on it for
+operational, commercial or contractual decisions. See the "About & legal" page
+of the site for the full statement.
+
+This file is written in good faith by the project's author and has not been
+reviewed by a lawyer.

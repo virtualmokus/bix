@@ -53,10 +53,21 @@ export function buildExchanges(aggregated, ixMeta, coords) {
       return {
         id: ix_id,
         name: m.name,
+        name_long: m.name_long || null,
+        aka: m.aka || null,
         city: m.city || null,
         country: m.country || null,
         region: m.region_continent || null,
         net_count: m.net_count ?? null,
+        // Hivatalos hivatkozások. A származtatott adat mellé mindig oda kell
+        // tenni, hol lehet az elsődleges forrást ellenőrizni. A PeeringDB
+        // kapcsolattartói mezőit (tech_email, sales_phone…) szándékosan
+        // nem kérjük le — csak szervezeti szintű adatot tárolunk.
+        website: m.website || null,
+        url_stats: m.url_stats || null,
+        status_dashboard: m.status_dashboard || null,
+        proto_ipv6: m.proto_ipv6 ?? null,
+        service_level: m.service_level || null,
         lat: g?.lat ?? null,
         lng: g?.lng ?? null,
         shared,
@@ -102,7 +113,8 @@ export async function collectGlobal({
     const ixMeta = [];
     for (const part of chunks(ixIds, CHUNK)) {
       const j = await fetch(
-        `${API}/ix?id__in=${part.join(',')}&fields=id,name,city,country,net_count,region_continent`
+        `${API}/ix?id__in=${part.join(',')}&fields=id,name,name_long,aka,city,country,` +
+          `net_count,region_continent,website,url_stats,status_dashboard,proto_ipv6,service_level`
       );
       ixMeta.push(...(j.data ?? []));
       await wait(pauseMs);
