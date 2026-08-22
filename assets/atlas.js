@@ -7,7 +7,7 @@
  * anélkül, hogy újra kellene gyűjteni bármit.
  */
 
-/** A kiválasztott csomópontra vonatkozó nézet, a régi `global` alakjában. */
+/** A kiválasztott csomópontra vonatkozó nézet. */
 export function buildHomeView(atlas, homeId) {
   if (!atlas?.exchanges?.length) return null;
 
