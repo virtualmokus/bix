@@ -96,15 +96,20 @@ function option(value, label, selected) {
   return `<option value="${escapeHtml(value)}"${selected ? ' selected' : ''}>${escapeHtml(label)}</option>`;
 }
 
+// BIX — az alapértelmezett nézőpont, és az egyetlen, amihez helyi
+// forgalmi és port-adatunk is van.
+const DEFAULT_HOME = 55;
+
 export function render(data) {
   const exchanges = data.global?.exchanges ?? [];
+  const homeId = data.global?.home_ix_id ?? DEFAULT_HOME;
+  const homeExchange = exchanges.find((e) => e.id === homeId);
   const withGeo = exchanges.filter((e) => e.lat != null);
   const cities = new Set(withGeo.map((e) => `${e.city}|${e.country}`));
   const regions = [...new Set(exchanges.map((e) => e.region).filter(Boolean))].sort();
 
   // Csak azok a tagok kerülnek a listába, akik legalább egy külföldi
   // csomóponton is jelen vannak — a többinél a szűrő üres térképet adna.
-  const homeId = data.global?.home_ix_id;
   const abroad = new Set();
   for (const e of exchanges) {
     if (e.id === homeId) continue;
@@ -129,11 +134,26 @@ export function render(data) {
     )}</p>` +
     `<details class="explainer"><summary>${escapeHtml(s.explainTitle)}</summary>` +
     `<p>${escapeHtml(s.explainBody)}</p></details>` +
+    (homeExchange && homeId !== DEFAULT_HOME
+      ? `<p class="note note--info"><strong>${escapeHtml(s.foreignTitle.replace('{name}', homeExchange.name))}</strong> ` +
+        `${escapeHtml(s.foreignBody)} ` +
+        `<button type="button" class="link-btn" data-home="${DEFAULT_HOME}">${escapeHtml(s.backHome)}</button></p>`
+      : '') +
     `<p class="note note--warning"><strong>${escapeHtml(s.physicalWarnTitle)}</strong> ` +
     `${escapeHtml(s.physicalWarnBody)}</p>` +
 
     `<div class="map-shell" id="map-shell">` +
     `<div class="map-controls">` +
+    `<label class="ctl ctl--home"><span>${escapeHtml(s.homeLabel)}</span>` +
+    `<select id="map-home" class="filter">` +
+    [...exchanges]
+      .filter((e) => e.lat != null)
+      .sort((a, b) => (b.net_count ?? 0) - (a.net_count ?? 0))
+      .slice(0, 400)
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map((e) => option(e.id, `${e.name}${e.city ? ' — ' + e.city : ''}`, e.id === homeId))
+      .join('') +
+    `</select></label>` +
     `<label class="ctl"><span>${escapeHtml(s.minShared)}</span>` +
     `<select id="map-min" class="filter">` +
     [1, 2, 3, 5, 10, 20].map((v) => option(v, String(v), v === 3)).join('') +
@@ -536,9 +556,14 @@ export function mount(root, data) {
       }
     }
 
-    counter.textContent = s.countLabel
-      .replace('{n}', formatInt(visible.filter((e) => e.id !== homeId).length))
-      .replace('{t}', formatInt(all.length - 1));
+    // A rejtett csomópontok számát is kiírjuk. Enélkül úgy tűnne, hogy hiányzik
+    // az adat, pedig csak a „min. közös tag” szűrő vág.
+    const shown = visible.filter((e) => e.id !== homeId).length;
+    const total = all.length - 1;
+    const hidden = total - shown;
+    counter.textContent =
+      s.countLabel.replace('{n}', formatInt(shown)).replace('{t}', formatInt(total)) +
+      (hidden > 0 ? ` · ${s.filterNote.replace('{n}', formatInt(hidden))}` : '');
   }
 
   cablesToggle?.addEventListener('change', draw);

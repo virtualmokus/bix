@@ -72,6 +72,26 @@ function boot({ views, data }) {
     window.scrollTo({ top: 0 });
   }
 
+  // Nézőpontváltás: az egész oldal újraszámol, ezért újratöltéssel megy —
+  // ugyanaz a minta, mint a nyelvváltásnál, és nem hagy félig frissült állapotot.
+  function setHome(id) {
+    const url = new URL(location.href);
+    if (Number(id) === 55) url.searchParams.delete('home');
+    else url.searchParams.set('home', id);
+    location.href = url.toString();
+  }
+
+  document.addEventListener('click', (event) => {
+    const btn = event.target.closest('[data-home]');
+    if (!btn) return;
+    event.preventDefault();
+    setHome(btn.dataset.home);
+  });
+
+  document.addEventListener('change', (event) => {
+    if (event.target.id === 'map-home') setHome(event.target.value);
+  });
+
   // Bárhonnan meg lehet nyitni egy csomópont adatlapját.
   document.addEventListener('click', (event) => {
     const open = event.target.closest('[data-open-ix]');
@@ -133,7 +153,8 @@ function renderLoadError(message) {
 }
 
 try {
-  const data = await loadAll((url) => fetch(url));
+  const homeId = new URLSearchParams(location.search).get('home');
+  const data = await loadAll((url) => fetch(url), 'data', homeId);
   boot({ views: { overview, members, map: mapView, legal, ix: exchange }, data });
   renderFooter(data);
 } catch (err) {

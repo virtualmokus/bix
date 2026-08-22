@@ -214,10 +214,10 @@ export async function collectCables({
 
     let exchanges = {};
     try {
-      const global = JSON.parse(await readFile(join(dataDir, 'global.json'), 'utf8'));
-      exchanges = linkExchanges(global.exchanges ?? [], linked.landings);
+      const atlas = JSON.parse(await readFile(join(dataDir, 'atlas.json'), 'utf8'));
+      exchanges = linkExchanges(atlas.exchanges ?? [], linked.landings);
     } catch {
-      exchanges = {}; // a globális réteg még nem gyűlt össze
+      exchanges = {}; // az atlasz még nem gyűlt össze
     }
 
     // A korábbi részletek újrahasznosítása, hogy ne kérjünk le mindent naponta.

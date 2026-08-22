@@ -50,9 +50,12 @@ jobs:
       - name: Összefésülés a profilokkal
         run: node collect/merge.js
 
-      - id: global
-        name: Globális IXP-térkép
-        run: node collect/global.js
+      # A teljes atlasz: mind az 1320 csomópont és a köztük lévő tagsági gráf.
+      # A nézőpontot a böngésző számolja ki belőle, ezért nem kell külön
+      # gyűjtés minden lehetséges kiindulóponthoz.
+      - id: atlas
+        name: Globális atlasz (minden csomópont)
+        run: node collect/atlas.js
         continue-on-error: true
 
       # A tengeralatti kábelek lassan változnak, a fájl viszont nagy — ezért
@@ -73,7 +76,7 @@ jobs:
           git push
 
       - name: Hibás forrás jelzése
-        if: steps.ports.outcome == 'failure' || steps.peeringdb.outcome == 'failure' || steps.networks.outcome == 'failure' || steps.global.outcome == 'failure' || steps.cables.outcome == 'failure'
+        if: steps.ports.outcome == 'failure' || steps.peeringdb.outcome == 'failure' || steps.networks.outcome == 'failure' || steps.atlas.outcome == 'failure' || steps.cables.outcome == 'failure'
         run: |
           echo "Legalább egy forrás hibázott. Részletek a data/meta.json last_error mezőiben."
           exit 1

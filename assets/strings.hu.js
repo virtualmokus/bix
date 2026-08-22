@@ -113,7 +113,7 @@ export default {
       'A Digital Realty (InterXion VIE1) nem Budapesten van, hanem Bécsben — a „budapesti” csomópontnak van egy osztrák lába.',
 
     worldEyebrow: 'A BIX és a világ',
-    worldTitle: 'Hol áll a BIX a 621 csomópont között',
+    worldTitle: 'Hol áll a BIX a(z) {total} csomópont között',
     worldHint:
       'Abból számolva, hogy a BIX tagjai hol peerelnek még. A tagszámok a PeeringDB-ből jönnek, és regisztrált hálózatokat számolnak, nem forgalmat.',
     worldRank:
@@ -195,6 +195,12 @@ export default {
   },
 
   map: {
+    homeLabel: "Nézőpont",
+    homeHint: "Ezen az oldalon minden a kiválasztott csomóponthoz képest számolódik.",
+    foreignTitle: "{name} nézőpontjából.",
+    foreignBody: "Élő forgalmi és port-szintű adat csak a BIX-hez van, mert egyedül az teszi közzé a nyers számait számként. Minden más itt — tagságok, átfedések, kábelek, érkezési évek — minden csomópontra ugyanúgy számolódik.",
+    backHome: "Vissza a BIX-hez",
+    filterNote: "A min. közös tag szűrő elrejt: {n}.",
     eyebrow: 'Világtérkép',
     title: 'Hol peerelnek még a BIX tagjai',
     intro:

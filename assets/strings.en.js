@@ -115,7 +115,7 @@ export default {
       'Digital Realty (InterXion VIE1) is not in Budapest but in Vienna — the “Budapest” exchange has an Austrian leg.',
 
     worldEyebrow: 'BIX and the world',
-    worldTitle: 'Where BIX stands among 621 exchanges',
+    worldTitle: 'Where BIX stands among {total} exchanges',
     worldHint:
       'Computed from where BIX members also peer. Member counts come from PeeringDB and count registered networks, not traffic.',
     worldRank:
@@ -197,6 +197,12 @@ export default {
   },
 
   map: {
+    homeLabel: "Viewpoint",
+    homeHint: "Everything on this page is computed relative to the chosen exchange.",
+    foreignTitle: "Viewing from {name}.",
+    foreignBody: "Live traffic and port-level detail exist only for BIX, because it is the one exchange whose raw figures are published as numbers. Everything else here — memberships, overlaps, cables, arrival years — is computed the same way for every exchange.",
+    backHome: "Back to BIX",
+    filterNote: "Hidden by the min. shared members filter: {n}.",
     eyebrow: 'World map',
     title: 'Where BIX members also peer',
     intro:

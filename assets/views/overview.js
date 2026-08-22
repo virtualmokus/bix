@@ -193,7 +193,7 @@ function worldSection(global) {
   return (
     `<section class="section reveal">` +
     `<p class="eyebrow">${escapeHtml(s.worldEyebrow)}</p>` +
-    `<h2 class="section-title">${escapeHtml(s.worldTitle)}</h2>` +
+    `<h2 class="section-title">${escapeHtml(s.worldTitle.replace('{total}', formatInt(exchanges.length)))}</h2>` +
     `<p class="hint">${escapeHtml(s.worldHint)}</p>` +
     (rank
       ? `<p class="note note--info">${escapeHtml(
