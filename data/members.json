@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-21T10:48:39Z",
+  "fetched_at": "2026-08-22T04:59:28Z",
   "members": [
     {
       "asn": 42,
@@ -438,7 +438,7 @@
         "ratio": "Balanced",
         "prefixes4": 210000,
         "prefixes6": 180000,
-        "ix_count": 335,
+        "ix_count": 336,
         "fac_count": 343,
         "policy": "Open"
       }
@@ -4156,7 +4156,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 1000,
         "prefixes6": 1000,
-        "ix_count": 90,
+        "ix_count": 86,
         "fac_count": 73,
         "policy": "Selective"
       }

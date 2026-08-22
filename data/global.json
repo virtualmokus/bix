@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-21T12:56:59Z",
+  "fetched_at": "2026-08-22T04:59:28Z",
   "home_ix_id": 55,
   "exchanges": [
     {
@@ -279,7 +279,7 @@
       "city": "London",
       "country": "GB",
       "region": "Europe",
-      "net_count": 836,
+      "net_count": 835,
       "lat": null,
       "lng": null,
       "shared": 35,
@@ -634,43 +634,6 @@
       ]
     },
     {
-      "id": 3,
-      "name": "Equinix Dallas",
-      "city": "Dallas",
-      "country": "US",
-      "region": "North America",
-      "net_count": 205,
-      "lat": 32.800955,
-      "lng": -96.81955,
-      "shared": 24,
-      "asns": [
-        42,
-        2635,
-        3303,
-        3856,
-        5400,
-        6507,
-        6939,
-        8075,
-        8220,
-        9009,
-        13335,
-        15169,
-        16276,
-        16509,
-        20940,
-        32261,
-        32590,
-        32787,
-        32934,
-        43500,
-        49544,
-        54113,
-        208414,
-        396986
-      ]
-    },
-    {
       "id": 63,
       "name": "ESpanix Madrid Lower LAN",
       "city": "Madrid",
@@ -780,6 +743,42 @@
       ]
     },
     {
+      "id": 3,
+      "name": "Equinix Dallas",
+      "city": "Dallas",
+      "country": "US",
+      "region": "North America",
+      "net_count": 205,
+      "lat": 32.800955,
+      "lng": -96.81955,
+      "shared": 23,
+      "asns": [
+        42,
+        2635,
+        3303,
+        3856,
+        5400,
+        6507,
+        6939,
+        8075,
+        8220,
+        9009,
+        13335,
+        15169,
+        16276,
+        16509,
+        20940,
+        32261,
+        32590,
+        32787,
+        32934,
+        43500,
+        49544,
+        54113,
+        208414
+      ]
+    },
+    {
       "id": 2,
       "name": "Equinix Chicago",
       "city": "Chicago",
@@ -788,7 +787,7 @@
       "net_count": 253,
       "lat": 41.85365,
       "lng": -87.618342,
-      "shared": 23,
+      "shared": 22,
       "asns": [
         42,
         2635,
@@ -811,43 +810,7 @@
         32934,
         49544,
         54113,
-        208414,
-        396986
-      ]
-    },
-    {
-      "id": 1,
-      "name": "Equinix Ashburn",
-      "city": "Ashburn",
-      "country": "US",
-      "region": "North America",
-      "net_count": 348,
-      "lat": 39.016363,
-      "lng": -77.459023,
-      "shared": 22,
-      "asns": [
-        42,
-        2635,
-        3303,
-        3856,
-        5400,
-        6507,
-        6939,
-        8075,
-        8220,
-        13335,
-        15169,
-        16276,
-        16509,
-        20940,
-        32261,
-        32590,
-        32787,
-        32934,
-        42473,
-        49544,
-        54113,
-        396986
+        208414
       ]
     },
     {
@@ -1022,6 +985,40 @@
         49544,
         54113,
         396986
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Equinix Ashburn",
+      "city": "Ashburn",
+      "country": "US",
+      "region": "North America",
+      "net_count": 348,
+      "lat": 39.016363,
+      "lng": -77.459023,
+      "shared": 21,
+      "asns": [
+        42,
+        2635,
+        3303,
+        3856,
+        5400,
+        6507,
+        6939,
+        8075,
+        8220,
+        13335,
+        15169,
+        16276,
+        16509,
+        20940,
+        32261,
+        32590,
+        32787,
+        32934,
+        42473,
+        49544,
+        54113
       ]
     },
     {
@@ -1580,7 +1577,7 @@
       "city": "Sydney",
       "country": "AU",
       "region": "Australia",
-      "net_count": 227,
+      "net_count": 228,
       "lat": -33.921868,
       "lng": 151.188025,
       "shared": 18,
@@ -1602,37 +1599,6 @@
         42473,
         49544,
         54113,
-        396986
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Equinix San Jose",
-      "city": "San Jose",
-      "country": "US",
-      "region": "North America",
-      "net_count": 184,
-      "lat": 37.241767,
-      "lng": -121.782967,
-      "shared": 18,
-      "asns": [
-        42,
-        2635,
-        5400,
-        6507,
-        6939,
-        8075,
-        8220,
-        13335,
-        15169,
-        16276,
-        16509,
-        20940,
-        32787,
-        32934,
-        49544,
-        54113,
-        208414,
         396986
       ]
     },
@@ -1673,7 +1639,7 @@
       "city": "London",
       "country": "GB",
       "region": "Europe",
-      "net_count": 310,
+      "net_count": 309,
       "lat": null,
       "lng": null,
       "shared": 17,
@@ -1758,6 +1724,36 @@
       ]
     },
     {
+      "id": 5,
+      "name": "Equinix San Jose",
+      "city": "San Jose",
+      "country": "US",
+      "region": "North America",
+      "net_count": 184,
+      "lat": 37.241767,
+      "lng": -121.782967,
+      "shared": 17,
+      "asns": [
+        42,
+        2635,
+        5400,
+        6507,
+        6939,
+        8075,
+        8220,
+        13335,
+        15169,
+        16276,
+        16509,
+        20940,
+        32787,
+        32934,
+        49544,
+        54113,
+        208414
+      ]
+    },
+    {
       "id": 832,
       "name": "DE-CIX Mumbai",
       "city": "Mumbai",
@@ -1792,7 +1788,7 @@
       "city": "Sydney",
       "country": "AU",
       "region": "Australia",
-      "net_count": 182,
+      "net_count": 183,
       "lat": -33.921868,
       "lng": 151.188025,
       "shared": 16,
@@ -2190,7 +2186,7 @@
       "city": "Amsterdam",
       "country": "NL",
       "region": "Europe",
-      "net_count": 439,
+      "net_count": 440,
       "lat": 50.09885,
       "lng": 8.632004,
       "shared": 14,
@@ -2375,7 +2371,7 @@
       "city": "Melbourne",
       "country": "AU",
       "region": "Australia",
-      "net_count": 134,
+      "net_count": 135,
       "lat": -37.821705,
       "lng": 144.931061,
       "shared": 13,
@@ -3987,7 +3983,7 @@
       "city": "New-York, London, Paris, Madrid, Frankfurt, Amsterdam, Warsaw, Bratislava, Lviv, Kyiv, Hong Kong",
       "country": "PL",
       "region": "Europe",
-      "net_count": 181,
+      "net_count": 183,
       "lat": 52.227354,
       "lng": 21.003357,
       "shared": 9,
@@ -4852,7 +4848,7 @@
       "city": "Tapos, Depok",
       "country": "ID",
       "region": "Asia Pacific",
-      "net_count": 319,
+      "net_count": 320,
       "lat": -6.441178,
       "lng": 106.877179,
       "shared": 7,
@@ -6308,7 +6304,7 @@
       "city": "Frankfurt",
       "country": "DE",
       "region": "Europe",
-      "net_count": 277,
+      "net_count": 276,
       "lat": 50.11925,
       "lng": 8.735199,
       "shared": 4,
@@ -6359,7 +6355,7 @@
       "city": "Amsterdam",
       "country": "NL",
       "region": "Europe",
-      "net_count": 204,
+      "net_count": 206,
       "lat": 52.033382,
       "lng": 4.496007,
       "shared": 4,
@@ -6376,7 +6372,7 @@
       "city": "Amsterdam, Bordeaux, Frankfurt, Genève, Lille, London, Lyon, Marseille, Milano, Montpellier, Paris, Zurich",
       "country": "FR",
       "region": "Europe",
-      "net_count": 141,
+      "net_count": 140,
       "lat": 48.856654,
       "lng": 2.38532,
       "shared": 4,
@@ -6864,6 +6860,23 @@
       ]
     },
     {
+      "id": 4622,
+      "name": "GraniteIX",
+      "city": "Salt Lake City, UT",
+      "country": "US",
+      "region": "North America",
+      "net_count": 22,
+      "lat": 40.511814,
+      "lng": -111.887967,
+      "shared": 4,
+      "asns": [
+        13335,
+        20940,
+        32590,
+        32934
+      ]
+    },
+    {
       "id": 4318,
       "name": "MegaIX New York",
       "city": "New York",
@@ -6895,23 +6908,6 @@
         3856,
         6939,
         13335
-      ]
-    },
-    {
-      "id": 4622,
-      "name": "GraniteIX",
-      "city": "Salt Lake City, UT",
-      "country": "US",
-      "region": "North America",
-      "net_count": 21,
-      "lat": 40.511814,
-      "lng": -111.887967,
-      "shared": 4,
-      "asns": [
-        13335,
-        20940,
-        32590,
-        32934
       ]
     },
     {
@@ -7508,7 +7504,7 @@
       "city": "Amsterdam",
       "country": "NL",
       "region": "Europe",
-      "net_count": 53,
+      "net_count": 54,
       "lat": 52.293351,
       "lng": 4.945054,
       "shared": 3,
@@ -8690,7 +8686,7 @@
       "city": "Dhaka",
       "country": "BD",
       "region": "Asia Pacific",
-      "net_count": 164,
+      "net_count": 165,
       "lat": 23.751135,
       "lng": 90.386276,
       "shared": 2,
@@ -8795,7 +8791,7 @@
       "city": "Kansas City",
       "country": "US",
       "region": "North America",
-      "net_count": 56,
+      "net_count": 57,
       "lat": 39.136878,
       "lng": -94.577558,
       "shared": 2,
@@ -8925,21 +8921,6 @@
       ]
     },
     {
-      "id": 4186,
-      "name": "TurkIX Sofia",
-      "city": "Sofia",
-      "country": "BG",
-      "region": "Europe",
-      "net_count": 30,
-      "lat": 42.67892,
-      "lng": 23.36733,
-      "shared": 2,
-      "asns": [
-        6939,
-        44901
-      ]
-    },
-    {
       "id": 4281,
       "name": "STIX.DO",
       "city": "Santiago",
@@ -8952,6 +8933,21 @@
       "asns": [
         42,
         3856
+      ]
+    },
+    {
+      "id": 4186,
+      "name": "TurkIX Sofia",
+      "city": "Sofia",
+      "country": "BG",
+      "region": "Europe",
+      "net_count": 29,
+      "lat": 42.67892,
+      "lng": 23.36733,
+      "shared": 2,
+      "asns": [
+        6939,
+        44901
       ]
     },
     {
@@ -9642,6 +9638,21 @@
       "asns": [
         13335,
         208414
+      ]
+    },
+    {
+      "id": 4606,
+      "name": "AMS-IX Manila",
+      "city": "Manila",
+      "country": "PH",
+      "region": "Asia Pacific",
+      "net_count": 11,
+      "lat": 14.539221,
+      "lng": 121.020161,
+      "shared": 2,
+      "asns": [
+        6939,
+        32934
       ]
     },
     {
@@ -11218,20 +11229,6 @@
       "shared": 1,
       "asns": [
         13335
-      ]
-    },
-    {
-      "id": 4606,
-      "name": "AMS-IX Manila",
-      "city": "Manila",
-      "country": "PH",
-      "region": "Asia Pacific",
-      "net_count": 10,
-      "lat": 14.539221,
-      "lng": 121.020161,
-      "shared": 1,
-      "asns": [
-        32934
       ]
     },
     {
