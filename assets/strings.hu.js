@@ -374,7 +374,7 @@ export default {
       {
         heading: 'Ez nem jogi tanács',
         body:
-          'Ezt a nyilatkozatot az oldal szerzője írta jóhiszeműen, és nem nézte át ügyvéd. A szándékot és a gyakorlatot írja le; nem jogi vélemény, és senkire nézve nem keletkeztet kötelezettséget.',
+          "Ahol ez az oldal licencfeltételeket foglal össze vagy jogszabályt értelmez, ott jóhiszemű olvasat szerepel, nem ügyvéd által ellenőrzött vélemény. Ha az adatokat újra felhasználod, az eredeti licenc szövege az irányadó, nem az itteni összefoglaló. Az adatkezelésről szóló szakasz ezzel szemben nem értelmezés, hanem vállalás: az oldal az ott leírtak szerint működik.",
       },
     ],
   },

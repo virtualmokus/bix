@@ -81,7 +81,7 @@ test('a jogi oldal kimondja a felelősség kizárását és a függetlenséget',
   assert.ok(html.includes('no liability'), 'hiányzik a felelősségkizárás');
   assert.ok(html.includes('not operated by'), 'hiányzik a függetlenségi nyilatkozat');
   assert.ok(html.includes('without any warranty'), 'hiányzik a garanciakizárás');
-  assert.ok(html.includes('not been reviewed by a lawyer'), 'hiányzik a jogi tanács kizárása');
+  assert.ok(html.includes('without review by a lawyer'), 'hiányzik a jogi tanács kizárása');
 });
 
 test('a jogi oldal nem ígér jogi tanácsot, és nevesíti a forrásokat', () => {

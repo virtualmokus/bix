@@ -374,7 +374,7 @@ export default {
       {
         heading: 'Not legal advice',
         body:
-          'This notice is written in good faith by the site’s author and has not been reviewed by a lawyer. It describes intent and practice; it is not a legal opinion and creates no obligation on any reader.',
+          "Where this site summarises licence terms or interprets legislation, it does so in good faith and without review by a lawyer. If you reuse the data, the original licence text governs, not the summary given here. The section on data handling is not an interpretation but a commitment: the site operates as it is described there.",
       },
     ],
   },

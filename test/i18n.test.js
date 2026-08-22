@@ -92,6 +92,6 @@ test('a jogi szakaszok száma megegyezik', () => {
 test('a magyar jogi szöveg is kimondja a felelősségkizárást', () => {
   const body = hu.legal.sections.map((x) => x.body).join(' ');
   assert.ok(body.includes('nem vállal felelősséget'));
-  assert.ok(body.includes('nem nézte át ügyvéd'));
+  assert.ok(body.includes('nem ügyvéd által ellenőrzött'));
   assert.ok(body.includes('Nincs kapcsolat') || hu.legal.sections.some((x) => x.heading === 'Nincs kapcsolat'));
 });
