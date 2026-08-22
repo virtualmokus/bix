@@ -247,3 +247,39 @@ body.has-fullscreen-map { overflow: hidden; }
 .switch input { width: 15px; height: 15px; accent-color: var(--blue-fg); cursor: pointer; }
 .chip--cable { background: var(--orange-bg); color: var(--orange-fg); }
 .panel-city { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 210px; }
+
+/* ===== GYIK — natív <details>, a magyarázó stílusának nagyobb testvére ===== */
+.faq-body { margin-top: 26px; border-top: 1px solid var(--border); }
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 200ms var(--ease);
+}
+.faq-item > summary {
+  cursor: pointer; list-style: none;
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 20px 4px; font-size: 17px; font-weight: 500;
+  color: var(--text); line-height: 1.45;
+}
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary::before {
+  content: "+"; flex: none; font-family: var(--font-mono);
+  font-size: 15px; line-height: 1; width: 20px; height: 20px;
+  border-radius: 5px; background: var(--blue-bg); color: var(--blue-fg);
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background-color 200ms var(--ease), color 200ms var(--ease);
+}
+.faq-item[open] > summary::before { content: "\2212"; background: var(--blue-fg); color: var(--surface); }
+.faq-item p {
+  font-size: 15px; line-height: 1.7; color: var(--text-muted);
+  max-width: 74ch; padding: 0 4px 22px 38px; margin: 0;
+}
+.faq-item p + p { padding-top: 12px; }
+.faq-footer { margin-top: 26px; }
+
+@media (hover: hover) {
+  .faq-item > summary:hover { color: var(--blue-fg); }
+}
+@media (max-width: 640px) {
+  .faq-item > summary { font-size: 16px; gap: 10px; }
+  .faq-item p { padding-left: 30px; font-size: 14px; }
+}

@@ -5,10 +5,11 @@ import { parseHash } from './app-routing.js';
 import * as overview from './views/overview.js';
 import * as members from './views/members.js';
 import * as mapView from './views/map.js';
+import * as faq from './views/faq.js';
 import * as legal from './views/legal.js';
 import * as exchange from './views/exchange.js';
 
-const VIEWS = ['overview', 'members', 'map', 'legal'];
+const VIEWS = ['overview', 'members', 'map', 'faq', 'legal'];
 
 function applyStaticStrings() {
   document.documentElement.lang = locale;
@@ -155,7 +156,7 @@ function renderLoadError(message) {
 try {
   const homeId = new URLSearchParams(location.search).get('home');
   const data = await loadAll((url) => fetch(url), 'data', homeId);
-  boot({ views: { overview, members, map: mapView, legal, ix: exchange }, data });
+  boot({ views: { overview, members, map: mapView, faq, legal, ix: exchange }, data });
   renderFooter(data);
 } catch (err) {
   renderLoadError(err.message);

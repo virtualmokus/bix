@@ -1,7 +1,7 @@
 export default {
   siteName: 'BIX',
   siteTagline: 'Budapest Internet Exchange — independent data view',
-  tabs: { overview: 'Overview', members: 'Members', map: 'World map', legal: 'About & legal' },
+  tabs: { overview: 'Overview', members: 'Members', map: 'World map', faq: 'FAQ', legal: 'About & legal' },
   live: 'LIVE',
   noData: 'No data for this yet.',
   showMore: 'What does this mean?',
@@ -324,6 +324,49 @@ export default {
       sharedCable: 'No exchange shares a cable with this one.',
       landings: 'No landing point within 150 km.',
     },
+  },
+
+  faq: {
+    eyebrow: "Frequently asked",
+    title: "What this data does and does not say",
+    intro: "These are the questions the interface gets asked most. The answers are already given in place, next to the charts they apply to; they are collected here so they are easy to find and easy to link to.",
+    items: [
+      {
+        q: "Where does the data come from?",
+        a:
+          "Four public sources: PeeringDB for exchanges, networks and memberships; bix.hu for Hungarian port and traffic figures; TeleGeography for submarine cables and landing points; Natural Earth for country outlines. Nothing here is produced by this site — every figure is a copy or a calculation of something already public elsewhere. The About & legal page names each source with its licence.",
+      },
+      {
+        q: "Does the joining year show when a network actually joined?",
+        a:
+          "No, and the interface never labels it that way. PeeringDB records when a row was created in its own database, which is usually long after the network started peering — often simply the day someone got round to registering. Charts built on it show when records appeared, not when networks arrived, and they say so above the axis.",
+      },
+      {
+        q: "Do the lines on the map show physical cable routes?",
+        a:
+          "No. A line means two exchanges share at least one member network: a logical relationship, not a wire. Physical routes appear separately as submarine cables, drawn from TeleGeography geometry. Where a connection and a cable happen to follow the same corridor the exchange page says so, but that is a geographic observation, not a claim about which fibre carries which traffic.",
+      },
+      {
+        q: "Why do the Hungarian traffic figures cover only part of the exchange?",
+        a:
+          "Because the public statistics page does. It reports roughly three quarters of ports, so the totals are a floor rather than a full picture. The charts state the coverage next to the graph rather than in a footnote, and no attempt is made to extrapolate the remainder.",
+      },
+      {
+        q: "How current is this?",
+        a:
+          "Traffic is sampled hourly and structural data once a day, both by scheduled jobs that commit their results to the repository. The footer shows when the last successful collection ran and warns when it has gone stale. Traffic history only exists forward from the day collection started — there is no archive of what came before.",
+      },
+      {
+        q: "My network or exchange is missing, or the details are wrong.",
+        a:
+          "Almost always the source is out of date rather than this site. Corrections made in PeeringDB show up here within a day, at the next collection run. If something is wrong in a way the source does not explain, the About & legal page has a correction and removal contact.",
+      },
+      {
+        q: "Can I reuse any of this?",
+        a:
+          "The code is open under MIT. The data files carry the terms of whoever published them, and those differ — the submarine cable file is CC BY-NC-SA 3.0, which rules out commercial use. The licence file spells out which file carries which terms. Read the original licence rather than relying on this summary.",
+      },
+    ],
   },
 
   legal: {

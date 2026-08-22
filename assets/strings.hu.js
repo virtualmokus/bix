@@ -1,7 +1,7 @@
 export default {
   siteName: 'BIX',
   siteTagline: 'Budapest Internet Exchange — független adatnézet',
-  tabs: { overview: 'Áttekintés', members: 'Tagok', map: 'Világtérkép', legal: 'A projektről' },
+  tabs: { overview: 'Áttekintés', members: 'Tagok', map: 'Világtérkép', faq: 'GYIK', legal: 'A projektről' },
   live: 'ÉLŐ',
   noData: 'Ehhez még nincs adat.',
   showMore: 'Mit jelent ez?',
@@ -324,6 +324,49 @@ export default {
       sharedCable: 'Egyetlen csomópont sem osztozik kábelen ezzel.',
       landings: 'Nincs partraszállási pont 150 km-en belül.',
     },
+  },
+
+  faq: {
+    eyebrow: "Gyakori kérdések",
+    title: "Mit mond ez az adat, és mit nem",
+    intro: "Ezeket a kérdéseket kapja a felület a leggyakrabban. A válaszok ott is szerepelnek, ahol számítanak — a diagramok mellett —, itt viszont egy helyen megtalálhatók és hivatkozhatók.",
+    items: [
+      {
+        q: "Honnan jönnek az adatok?",
+        a:
+          "Négy nyilvános forrásból: a PeeringDB adja a csomópontokat, a hálózatokat és a tagságokat; a bix.hu a hazai port- és forgalmi számokat; a TeleGeography a tengeralatti kábeleket és a partraszállásokat; a Natural Earth az országhatárokat. Ez az oldal nem állít elő saját adatot — minden szám másolat vagy számítás olyasmiből, ami máshol már nyilvános. A jogi oldal mindegyik forrást megnevezi a licencével együtt.",
+      },
+      {
+        q: "A csatlakozás éve azt mutatja, mikor lépett be egy hálózat?",
+        a:
+          "Nem, és a felület sehol nem is nevezi annak. A PeeringDB azt rögzíti, mikor jött létre a rekord a saját adatbázisában, ami rendszerint jóval a peering tényleges megkezdése után van — sokszor egyszerűen az a nap, amikor valaki végre regisztrált. Az erre épülő diagramok azt mutatják, mikor jelentek meg a rekordok, nem azt, mikor érkeztek a hálózatok, és ez oda is van írva a tengely fölé.",
+      },
+      {
+        q: "A térképen a vonalak fizikai kábelnyomvonalak?",
+        a:
+          "Nem. Egy vonal azt jelenti, hogy két csomópontnak van legalább egy közös tagja: logikai kapcsolat, nem vezeték. A fizikai útvonalak külön jelennek meg tengeralatti kábelként, a TeleGeography geometriája alapján. Ahol egy kapcsolat és egy kábel történetesen ugyanazt a folyosót követi, azt az adatlap kiírja — de ez földrajzi megfigyelés, nem állítás arról, hogy melyik szálon melyik forgalom megy.",
+      },
+      {
+        q: "A hazai forgalmi adat miért csak a csomópont egy részét fedi le?",
+        a:
+          "Mert a nyilvános statisztikai oldal is csak annyit fed le. A portok nagyjából háromnegyedéről közöl adatot, így az összegek alsó korlátot jelentenek, nem teljes képet. A lefedettség a diagram mellett szerepel, nem az apróbetűs részben, és a hiányzó részt nem próbáljuk becsléssel kiegészíteni.",
+      },
+      {
+        q: "Mennyire friss ez?",
+        a:
+          "A forgalomból óránként, a szerkezeti adatokból naponta egyszer készül mintavétel, mindkettőt ütemezett feladat gyűjti és menti a tárolóba. A lábléc mutatja, mikor futott le utoljára sikeres gyűjtés, és figyelmeztet, ha elavult. Forgalmi előzmény csak a gyűjtés indulásától létezik — az azt megelőző időszakról nincs archívum.",
+      },
+      {
+        q: "Hiányzik a hálózatom vagy a csomópontom, illetve rossz az adat.",
+        a:
+          "Szinte mindig a forrás elavult, nem ez az oldal. A PeeringDB-ben elvégzett javítás egy napon belül, a következő gyűjtéskor megjelenik itt is. Ha valami olyan módon hibás, amit a forrás nem magyaráz, a jogi oldalon van javítási és törlési elérhetőség.",
+      },
+      {
+        q: "Felhasználhatom bármelyik részét?",
+        a:
+          "A kód MIT licenc alatt nyílt. Az adatfájlokra annak a feltételei vonatkoznak, aki közzétette őket, és ezek eltérnek — a tengeralatti kábelek fájlja CC BY-NC-SA 3.0, ami kizárja a kereskedelmi felhasználást. A licencfájl tételesen leírja, melyik fájlra mi vonatkozik. Az eredeti licenc szövegét olvasd el, ne erre az összefoglalóra hagyatkozz.",
+      },
+    ],
   },
 
   legal: {
