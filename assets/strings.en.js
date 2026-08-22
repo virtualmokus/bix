@@ -236,8 +236,6 @@ export default {
       relatedTitle: 'Shares networks with',
       relatedHint: 'Exchanges whose members overlap with this one. Click to jump.',
       openPage: 'Open full dossier',
-      officialSite: 'Official site',
-      officialStats: 'Official statistics',
       cablesTitle: 'Submarine cables within reach',
       cablesHint:
         '{n} cables land within 150 km of this exchange. Turn on the cable layer to see them highlighted.',

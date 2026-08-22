@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { loadAll, staleness } from '../assets/data.js';
+import { loadAll, staleness, cacheBust } from '../assets/data.js';
 
 const CSV =
   'ts,networks,ports,peak_gbps,current_gbps,capacity_gbps\n' +
@@ -8,11 +8,12 @@ const CSV =
 
 function fakeFetch(map) {
   return async (url) => {
-    if (!(url in map)) throw new Error(`404 ${url}`);
+    const clean = String(url).split('?')[0];
+    if (!(clean in map)) throw new Error(`404 ${clean}`);
     return {
       ok: true,
-      text: async () => map[url],
-      json: async () => JSON.parse(map[url]),
+      text: async () => map[clean],
+      json: async () => JSON.parse(map[clean]),
     };
   };
 }
@@ -56,4 +57,10 @@ test('ismeretlen forrásra elavultat jelez, nem dob', () => {
   const result = staleness({}, 'nincs-ilyen', new Date());
   assert.equal(result.minutes, null);
   assert.equal(result.isStale, true);
+});
+
+test('a cache-törés ötperces ablakonként változik', () => {
+  const base = 1_700_000_000_000;
+  assert.equal(cacheBust(base), cacheBust(base + 60_000), 'egy percen belül ugyanaz');
+  assert.notEqual(cacheBust(base), cacheBust(base + 6 * 60_000), 'hat perc múlva más');
 });

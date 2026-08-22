@@ -9,18 +9,30 @@ const STALE_AFTER_MINUTES = {
   members: 48 * 60,
 };
 
+/**
+ * A GitHub Pages `max-age=600`-zal szolgálja ki a JSON-okat, így egy
+ * visszatérő látogató tíz perces adatot láthatna, miközben az „ÉLŐ" jelvény
+ * frissnek mutatja. Ötperces gyűjtőablakra kerekített bélyeggel a böngésző
+ * legfeljebb ennyit tart meg, de nem kér le mindent minden kattintásra.
+ */
+export function cacheBust(now = Date.now(), windowMs = 5 * 60 * 1000) {
+  return Math.floor(now / windowMs);
+}
+
 export async function loadAll(fetchFn, base = 'data') {
+  const v = cacheBust();
+  const at = (name) => `${base}/${name}?v=${v}`;
   const [csv, members, ports, meta, global, cables, borders] = await Promise.all([
-    fetchFn(`${base}/traffic.csv`).then((r) => r.text()),
-    fetchFn(`${base}/members.json`).then((r) => r.json()),
-    fetchFn(`${base}/ports.json`).then((r) => r.json()),
-    fetchFn(`${base}/meta.json`).then((r) => r.json()),
+    fetchFn(at('traffic.csv')).then((r) => r.text()),
+    fetchFn(at('members.json')).then((r) => r.json()),
+    fetchFn(at('ports.json')).then((r) => r.json()),
+    fetchFn(at('meta.json')).then((r) => r.json()),
     // A globális réteg opcionális: nélküle az oldal többi része él marad.
-    fetchFn(`${base}/global.json`).then((r) => r.json()).catch(() => null),
+    fetchFn(at('global.json')).then((r) => r.json()).catch(() => null),
     // A tengeralatti kábelréteg is opcionális — hiánya nem dönti el az oldalt.
-    fetchFn(`${base}/cables.json`).then((r) => r.json()).catch(() => null),
+    fetchFn(at('cables.json')).then((r) => r.json()).catch(() => null),
     // Országhatárok: statikus, ritkán változó geometria.
-    fetchFn(`${base}/borders.json`).then((r) => r.json()).catch(() => null),
+    fetchFn(at('borders.json')).then((r) => r.json()).catch(() => null),
   ]);
 
   return {

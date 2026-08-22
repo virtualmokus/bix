@@ -1,60 +1,56 @@
 # BIX Dashboard
 
-Független hobbiprojekt, ami a [Budapest Internet Exchange](https://www.bix.hu/)
-nyilvánosan közzétett adatait gyűjti, és olvasható formában mutatja meg.
+An independent hobby project that collects what the
+[Budapest Internet Exchange](https://www.bix.hu/) publishes openly, and presents
+it in a form you can actually read.
 
-*All information is publicly fetched from bix.hu.*
+**Live site:** https://virtualmokus.github.io/bix/ · available in English and
+Hungarian.
 
-**Live site:** https://virtualmokus.github.io/bix/
+**This is not an official site.** It is not operated by, endorsed by or
+affiliated with ISZT, the operator of BIX, or any listed member. The
+interpretation here is ours, and so are any mistakes. For authoritative
+information, [bix.hu](https://www.bix.hu/) is the reference.
 
-**Ez nem hivatalos oldal.** Nincs kapcsolatunk az ISZT-vel, a BIX üzemeltetőjével
-vagy bármelyik tagszervezettel. Az itt látható adatok értelmezése a miénk, a
-hibákért is mi felelünk — hivatalos információért a [bix.hu](https://www.bix.hu/)
-az irányadó.
+## What it shows
 
-## Mit tartalmaz
-
-| Adat | Forrás | Frissítés |
+| Data | Source | Refresh |
 |---|---|---|
-| Aggregát forgalom (aktuális, csúcs, kapacitás) | bix.hu | 15 perc |
-| Port-szintű szerkezet: tag, ASN, node, sávszélesség, peering policy | bix.hu | napi |
-| IPv6-cím, route-server jelölés, rekord-dátumok | [PeeringDB](https://www.peeringdb.com/ix/55) | napi |
+| Aggregate traffic (current, peak, capacity) | bix.hu | 15 min (in practice hourly — GitHub throttles cron) |
+| Port-level structure: member, ASN, PoP, bandwidth, peering policy | bix.hu | daily |
+| Network profiles, worldwide memberships, exchange locations | [PeeringDB](https://www.peeringdb.com/ix/55) | daily |
+| Submarine cable routes, landing points, owners | [TeleGeography](https://www.submarinecablemap.com/) | daily |
 
-Kizárólag **szervezeti szintű adatot** használunk: cégnév, autonóm rendszer
-száma, csatlakozási pont, sávszélesség, peering-irányelv. Természetes személyhez
-köthető adat — kapcsolattartó neve, e-mail-címe, telefonszáma — nem kerül
-a projektbe, akkor sem, ha nyilvánosan elérhető.
+Three views plus a per-exchange dossier: an overview of BIX itself, the full
+member table, and a world map of the 621 exchanges where BIX members also peer.
+Any exchange opens as its own page with everything known about it, downloadable
+as JSON.
 
-## Adatfájlok
+## What the data does *not* say
 
-Minden adat nyers formában is elérhető, gépi feldolgozásra:
+Three things that are easy to misread, and that the site labels wherever they
+affect a figure:
 
-- `data/traffic.csv` — forgalmi idősor, 2026 augusztusától gyűlik
-- `data/ports.json` — port-szintű pillanatkép
-- `data/peeringdb.json` — a PeeringDB-ből átvett mezők
-- `data/members.json` — ASN szerint összefésült nézet
-- `data/meta.json` — forrásonként az utolsó sikeres frissítés
+- **PeeringDB record dates are not join dates.** The oldest record is from 2010
+  while BIX has run since 1996. The field marks when the entry reached that
+  database.
+- **The public statistics are incomplete.** bix.hu lists 137 ports while its own
+  homepage reports 188 — roughly three quarters.
+- **The map's connection lines are logical, not physical.** They show that the
+  same networks are present at both exchanges. No public data says which fibre
+  carries the traffic. The submarine cable layer is the only physical
+  infrastructure on the map.
 
-## Amit az adatról tudni kell
+Traffic history only exists from the day collection started, because the
+operator publishes past figures as images rather than numbers.
 
-Három dolog, ami félreértésre ad okot, ha nem mondjuk ki:
+## Deliberately not collected
 
-**A PeeringDB rekord-dátuma nem csatlakozási dátum.** A legkorábbi érték 2010-es,
-miközben a BIX 1996 óta működik. A mező azt mutatja, mikor került be a rekord a
-PeeringDB-be. Ezért az oldal sehol nem nevezi „csatlakozásnak".
+Contact names, e-mail addresses and telephone numbers, even where they appear
+publicly at the source. Only organisation-level data is used: company names,
+ASNs, connection points, capacities, peering policies.
 
-**A publikus statisztika nem teljes.** A bix.hu statisztikaoldala 137 portot
-listáz, miközben a főoldal 188 portot jelent — a portok nagyjából 73%-a. Az
-oldal ezt láthatóan kiírja, nem tesz úgy, mintha a teljes képet mutatná.
-
-**Ütközés esetén a bix.hu az elsődleges.** A PeeringDB önbevallásos, akadnak
-benne pontatlan sávszélesség-értékek, ezért a sebesség-mezőjét nem használjuk.
-
-**Forgalmi idősor csak előre van.** A BIX a historikus forgalmat grafikonként
-teszi közzé, számadatként nem, ezért visszamenőleges adat nincs. A gyűjtés
-indulásának napjától épül az idősor.
-
-## Futtatás helyben
+## Running it locally
 
 ```bash
 npm ci
@@ -62,23 +58,24 @@ npm test
 node collect/traffic.js
 ```
 
-A weboldalhoz bármilyen statikus kiszolgáló megteszi a repó gyökeréből.
+Any static server will serve the site from the repository root. There is no
+build step.
 
-## Terhelés és etikett
+## How it collects
 
-15 percenként egyetlen oldalletöltés, azonosítható `User-Agent`-tel, ami erre a
-repóra mutat. A `robots.txt` tiltásait tiszteletben tartjuk. Ha az oldal
-üzemeltetőjeként bármi kifogásod van a gyűjtés ellen, nyiss egy issue-t —
-leállítjuk.
+One page request at most every fifteen minutes, with an identifying User-Agent
+pointing back at this repository. Robots directives are respected, no
+authentication is bypassed, and no non-public interface is touched. If you
+operate one of the sources and object to any of it, open an issue and it stops.
 
-## Licenc
+## Licence
 
-A **kód MIT** licenc alatt van. A `data/` alatti **gyűjtött adat nem** — minden
-fájl megtartja a saját forrásának feltételeit.
+The **code is MIT**. The **collected data under `data/` is not** — each file
+keeps the terms of its source.
 
-A `data/cables.json` **CC BY-NC-SA 3.0** (TeleGeography), és ez az oka annak,
-hogy a projekt nem kereskedelmi. Kereskedelmi felhasználáshoz ezt a fájlt, a
-`collect/cables.js` gyűjtőt és a térkép kábelrétegét el kell távolítani — a
-projekt többi része nem hordozza ezt a korlátozást.
+`data/cables.json` is **CC BY-NC-SA 3.0** (TeleGeography), which is why this
+project stays non-commercial. For a commercial build, remove that file, the
+`collect/cables.js` collector and the map's cable layer; the rest of the project
+does not carry the restriction.
 
-Részletek és forrásonkénti bontás: [LICENSE](LICENSE).
+See [LICENSE](LICENSE) for the source-by-source breakdown.

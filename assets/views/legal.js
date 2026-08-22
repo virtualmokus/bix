@@ -1,4 +1,4 @@
-import strings from '../strings.en.js';
+import strings from '../i18n.js';
 import { escapeHtml } from '../chart.js';
 
 const s = strings.legal;

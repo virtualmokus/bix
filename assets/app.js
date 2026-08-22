@@ -1,4 +1,4 @@
-import strings from './strings.en.js';
+import strings, { LOCALES, locale, setLocale } from './i18n.js';
 import { loadAll, staleness } from './data.js';
 import { formatRelative } from './format.js';
 import { parseHash } from './app-routing.js';
@@ -11,9 +11,23 @@ import * as exchange from './views/exchange.js';
 const VIEWS = ['overview', 'members', 'map', 'legal'];
 
 function applyStaticStrings() {
+  document.documentElement.lang = locale;
   document.querySelector('[data-str="siteTagline"]').textContent = strings.siteTagline;
   for (const btn of document.querySelectorAll('.tab')) {
     btn.textContent = strings.tabs[btn.dataset.view];
+  }
+  renderLanguageSwitch();
+}
+
+function renderLanguageSwitch() {
+  const host = document.getElementById('lang-switch');
+  if (!host) return;
+  host.innerHTML = LOCALES.map((l) =>
+    `<button type="button" class="lang-btn" data-lang="${l.code}"` +
+    ` aria-pressed="${l.code === locale}" title="${l.name}">${l.label}</button>`
+  ).join('');
+  for (const btn of host.querySelectorAll('.lang-btn')) {
+    btn.addEventListener('click', () => setLocale(btn.dataset.lang));
   }
 }
 

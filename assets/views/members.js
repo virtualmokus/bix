@@ -1,4 +1,4 @@
-import strings from '../strings.en.js';
+import strings from '../i18n.js';
 import { formatBandwidth, formatInt, formatPercent } from '../format.js';
 import { escapeHtml } from '../chart.js';
 import { memberBandwidth } from '../stats.js';
@@ -182,10 +182,10 @@ export function render(data) {
     `<p class="lede">${escapeHtml(s.lede)}</p>` +
     `<p class="note note--warning">${escapeHtml(warning)}</p>` +
     `<details class="explainer"><summary>${escapeHtml(strings.showMore)}</summary>` +
-    `<p><strong>ASN.</strong> ${escapeHtml(strings.glossary.asn)}</p>` +
-    `<p><strong>Peering policy.</strong> ${escapeHtml(strings.glossary.peering)}</p>` +
-    `<p><strong>Prefixes.</strong> ${escapeHtml(strings.glossary.prefixes)}</p>` +
-    `<p><strong>Route server (RS).</strong> ${escapeHtml(strings.glossary.routeServer)}</p>` +
+    `<p><strong>${escapeHtml(c.asn)}.</strong> ${escapeHtml(strings.glossary.asn)}</p>` +
+    `<p><strong>${escapeHtml(c.policy)}.</strong> ${escapeHtml(strings.glossary.peering)}</p>` +
+    `<p><strong>${escapeHtml(c.prefixes)}.</strong> ${escapeHtml(strings.glossary.prefixes)}</p>` +
+    `<p><strong>${escapeHtml(c.rs)}.</strong> ${escapeHtml(strings.glossary.routeServer)}</p>` +
     `</details>` +
     `</section>` +
 

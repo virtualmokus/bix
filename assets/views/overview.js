@@ -1,4 +1,4 @@
-import strings from '../strings.en.js';
+import strings from '../i18n.js';
 import icons from '../icons.js';
 import { formatDecimal, formatInt, formatPercent, formatBandwidth, formatRelative } from '../format.js';
 import { concurrent4kStreams, gigabytesPerSecond, utilizationPercent } from '../humanize.js';
