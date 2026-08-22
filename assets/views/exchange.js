@@ -242,9 +242,11 @@ export function render(data, ixId) {
         )) +
     `</section>` +
 
+    // Az adatlap táblái szándékosan egymás alatt vannak. Két tábla egymás
+    // mellett szűk hasábokat ad, amiben a hosszú csomópont- és városnevek
+    // szétcsúsztatják a sorokat.
     `<section class="section reveal">` +
-    `<div class="split-grid">` +
-    `<div><p class="label">${escapeHtml(s.sections.relatedIx)}</p>` +
+    `<p class="label">${escapeHtml(s.sections.relatedIx)}</p>` +
     `<p class="hint">${escapeHtml(s.relatedHint)}</p>` +
     table(
       [s.cols.exchange, s.cols.city, s.cols.sharedNetworks],
@@ -254,8 +256,11 @@ export function render(data, ixId) {
         `<span class="mono">${formatInt(r.shared_networks)}</span>`,
       ]),
       s.empty.related
-    ) + `</div>` +
-    `<div><p class="label">${escapeHtml(s.sections.sharedCable)}</p>` +
+    ) +
+    `</section>` +
+
+    `<section class="section reveal">` +
+    `<p class="label">${escapeHtml(s.sections.sharedCable)}</p>` +
     `<p class="hint">${escapeHtml(s.sharedCableHint)}</p>` +
     table(
       [s.cols.exchange, s.cols.city, s.cols.sharedCables],
@@ -265,8 +270,8 @@ export function render(data, ixId) {
         `<span class="mono">${formatInt(r.shared_cables)}</span>`,
       ]),
       s.empty.sharedCable
-    ) + `</div>` +
-    `</div></section>` +
+    ) +
+    `</section>` +
 
     (sub.landings_within_150km.length
       ? `<section class="section reveal">` +

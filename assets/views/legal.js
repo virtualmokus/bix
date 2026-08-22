@@ -15,7 +15,11 @@ export function render() {
         (section, i) =>
           `<article class="legal-section reveal" style="--index:${i}">` +
           `<h3>${escapeHtml(section.heading)}</h3>` +
-          `<p>${escapeHtml(section.body)}</p>` +
+          // Az üres sorral elválasztott részekből külön bekezdés lesz.
+          section.body
+            .split(/\n{2,}/)
+            .map((p) => `<p>${escapeHtml(p)}</p>`)
+            .join('') +
           `</article>`
       )
       .join('') +

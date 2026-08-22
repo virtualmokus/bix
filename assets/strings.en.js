@@ -359,7 +359,7 @@ export default {
       {
         heading: 'Personal data',
         body:
-          'Only organisation-level information is collected: company names, autonomous system numbers, connection points, capacities and peering policies. Contact names, e-mail addresses and telephone numbers are deliberately excluded, even where they appear publicly at the source. This site sets no cookies, runs no analytics, and does not track visitors. Map tiles are fetched from OpenStreetMap servers, which receive the visitor’s IP address as part of any ordinary web request.',
+          "Only organisation-level information is collected: company names, autonomous system numbers, connection points, capacities and peering policies. Contact names, e-mail addresses and telephone numbers are deliberately excluded, even where they appear publicly at the source.\n\nThis site sets no cookies and runs no analytics. Nothing you do here is recorded or transmitted anywhere. One item is stored in your browser: your language choice, under the key bix-lang in local storage. It exists only because you asked for that language, holds nothing that identifies you, never leaves your device, and disappears when you clear site data. Under the ePrivacy rules a preference the visitor set themselves does not require a consent banner, which is why there is none.\n\nFonts and the map library are served from this site rather than a content delivery network, so no third party learns that you visited. The one unavoidable exception is the map: its tiles come from OpenStreetMap servers, which receive your IP address as part of any ordinary web request. That happens only if you open the World map tab.",
       },
       {
         heading: 'Collection conduct',

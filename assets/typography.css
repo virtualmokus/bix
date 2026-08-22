@@ -141,3 +141,21 @@ body { font-size: 16px; line-height: 1.6; }
 @media (hover: hover) and (pointer: fine) { .lang-btn:not([aria-pressed="true"]):hover { background: var(--canvas); color: var(--text); } }
 
 .ctl--home select { max-width: 260px; }
+
+/* =========================================================================
+   Táblázat-tördelés
+   Az alapértelmezett nowrap miatt a hosszú érték kilógott a cellából és a
+   szomszéd oszlopra csúszott. Minden oszlop kap felső korlátot és
+   tördelési engedélyt; a rövid, numerikus oszlopok maradnak egysorosak.
+   ========================================================================= */
+.table--dense td { white-space: normal; overflow-wrap: anywhere; vertical-align: top; }
+.table--dense td.num, .table--dense td.c { white-space: nowrap; overflow-wrap: normal; }
+.table--dense th { white-space: normal; }
+
+/* Oszloponkénti szélességek — a tartalom jellegéhez igazítva. */
+.table--dense th:nth-child(4), .table--dense td:nth-child(4) { max-width: 130px; }
+.table--dense th:nth-child(7), .table--dense td:nth-child(7) { max-width: 120px; }
+
+/* Az adatlap tábláiban a csomópont- és városnevek is tördelhetnek. */
+.legal-body ~ * , .section > .table-scroll { max-width: 100%; }
+.table-scroll table td .link-btn { white-space: normal; text-align: left; overflow-wrap: anywhere; }
