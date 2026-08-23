@@ -3,3 +3,7 @@ node_modules/
 .agents/
 .claude/
 skills-lock.json
+
+# LinkedIn-poszterek — generált marketinganyag, nem az oldal része
+poster-*.html
+poster-*.png

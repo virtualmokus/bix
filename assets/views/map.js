@@ -167,7 +167,7 @@ export function render(data) {
     option('', s.allMembers, true) + memberOptions +
     `</select></label>` +
     `<label class="ctl ctl--check"><span>${escapeHtml(s.cableLabel)}</span>` +
-    `<label class="switch"><input type="checkbox" id="map-cables">` +
+    `<label class="switch"><input type="checkbox" id="map-cables" checked>` +
     `<span>${escapeHtml(s.cableToggle)}</span></label></label>` +
     `<button type="button" id="map-reset" class="btn btn--ghost">${escapeHtml(s.reset)}</button>` +
     `<button type="button" id="map-full" class="btn">${escapeHtml(s.fullscreen)}</button>` +
@@ -573,7 +573,8 @@ export function mount(root, data) {
   }
 
   root.querySelector('#map-reset').addEventListener('click', () => {
-    if (cablesToggle) cablesToggle.checked = false;
+    // A visszaállítás az alapállapotot adja vissza, az pedig a bekapcsolt réteg.
+    if (cablesToggle) cablesToggle.checked = true;
     minSel.value = '3';
     regionSel.value = '';
     memberSel.value = '';

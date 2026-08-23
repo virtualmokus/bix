@@ -1,5 +1,6 @@
 import strings from '../i18n.js';
 import { formatInt } from '../format.js';
+import { renderTable } from '../table.js';
 import { escapeHtml } from '../chart.js';
 import { relatedExchanges, sharedCableExchanges } from './map.js';
 
@@ -125,15 +126,23 @@ function dl(rows) {
   );
 }
 
-function table(headers, rows, emptyText) {
-  if (rows.length === 0) return `<p class="hint">${escapeHtml(emptyText)}</p>`;
-  return (
-    `<div class="table-scroll"><table class="table table--dense"><thead><tr>` +
-    headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('') +
-    `</tr></thead><tbody>` +
-    rows.map((cells) => `<tr>${cells.map((c) => `<td>${c}</td>`).join('')}</tr>`).join('') +
-    `</tbody></table></div>`
-  );
+let tableSeq = 0;
+
+/**
+ * Az adatlap tábláit a közös modul rajzolja, hogy a rendezés és a szűrés
+ * mindenhol ugyanúgy viselkedjen. Az oszlopok típusát itt adjuk meg, a
+ * számoszlopok cellái pedig a nyers értéket is viszik — formázott számot
+ * visszafejteni nyelvfüggő és megbízhatatlan lenne.
+ */
+function table(columns, rows, emptyText) {
+  return renderTable({
+    id: `dossier-t${++tableSeq}`,
+    columns: columns.map((c) => (typeof c === 'string' ? { label: c } : c)),
+    rows,
+    emptyText,
+    filterPlaceholder: s.tableFilter,
+    countLabel: s.tableCount,
+  });
 }
 
 export function render(data, ixId) {
@@ -205,14 +214,21 @@ export function render(data, ixId) {
     `<p class="label">${escapeHtml(s.sections.members)}</p>` +
     `<p class="hint">${escapeHtml(s.membersHint)}</p>` +
     table(
-      [s.cols.member, s.cols.asn, s.cols.type, s.cols.scope, s.cols.ix, s.cols.prefixes],
+      [
+        { label: s.cols.member },
+        { label: s.cols.asn, type: 'number' },
+        { label: s.cols.type },
+        { label: s.cols.scope },
+        { label: s.cols.ix, type: 'number' },
+        { label: s.cols.prefixes, type: 'number' },
+      ],
       dossier.bix_members.map((m) => [
         escapeHtml(m.name),
-        `<span class="mono">${m.asn}</span>`,
+        { html: `<span class="mono">${m.asn}</span>`, sort: m.asn },
         escapeHtml(m.type ?? '—'),
         escapeHtml(m.scope ?? '—'),
-        m.ix_count != null ? `<span class="mono">${formatInt(m.ix_count)}</span>` : '—',
-        m.prefixes4 != null ? `<span class="mono">${formatInt(m.prefixes4)}</span>` : '—',
+        m.ix_count != null ? { html: `<span class="mono">${formatInt(m.ix_count)}</span>`, sort: m.ix_count } : '—',
+        m.prefixes4 != null ? { html: `<span class="mono">${formatInt(m.prefixes4)}</span>`, sort: m.prefixes4 } : '—',
       ]),
       s.empty.members
     ) +
@@ -227,7 +243,14 @@ export function render(data, ixId) {
             .replace('{km}', formatInt(sub.nearest_landing_km ?? 0))
         )}</p>`
       : table(
-          [s.cols.cable, s.cols.owners, s.cols.builder, s.cols.length, s.cols.rfs, s.cols.lands],
+          [
+            { label: s.cols.cable },
+            { label: s.cols.owners },
+            { label: s.cols.builder },
+            { label: s.cols.length },
+            { label: s.cols.rfs },
+            { label: s.cols.lands },
+          ],
           sub.cables.map((c) => [
             c.url
               ? `<a href="${escapeHtml(c.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.name)}</a>`
@@ -249,11 +272,18 @@ export function render(data, ixId) {
     `<p class="label">${escapeHtml(s.sections.relatedIx)}</p>` +
     `<p class="hint">${escapeHtml(s.relatedHint)}</p>` +
     table(
-      [s.cols.exchange, s.cols.city, s.cols.sharedNetworks],
+      [
+        { label: s.cols.exchange },
+        { label: s.cols.city },
+        { label: s.cols.sharedNetworks, type: 'number' },
+      ],
       dossier.shares_networks_with.map((r) => [
-        `<button type="button" class="link-btn" data-open-ix="${r.id}">${escapeHtml(r.name)}</button>`,
+        {
+          html: `<button type="button" class="link-btn" data-open-ix="${r.id}">${escapeHtml(r.name)}</button>`,
+          text: r.name,
+        },
         escapeHtml(r.city ?? '—'),
-        `<span class="mono">${formatInt(r.shared_networks)}</span>`,
+        { html: `<span class="mono">${formatInt(r.shared_networks)}</span>`, sort: r.shared_networks },
       ]),
       s.empty.related
     ) +
@@ -263,11 +293,18 @@ export function render(data, ixId) {
     `<p class="label">${escapeHtml(s.sections.sharedCable)}</p>` +
     `<p class="hint">${escapeHtml(s.sharedCableHint)}</p>` +
     table(
-      [s.cols.exchange, s.cols.city, s.cols.sharedCables],
+      [
+        { label: s.cols.exchange },
+        { label: s.cols.city },
+        { label: s.cols.sharedCables, type: 'number' },
+      ],
       dossier.shares_cable_with.map((r) => [
-        `<button type="button" class="link-btn" data-open-ix="${r.id}">${escapeHtml(r.name)}</button>`,
+        {
+          html: `<button type="button" class="link-btn" data-open-ix="${r.id}">${escapeHtml(r.name)}</button>`,
+          text: r.name,
+        },
         escapeHtml(r.city ?? '—'),
-        `<span class="mono">${formatInt(r.shared_cables)}</span>`,
+        { html: `<span class="mono">${formatInt(r.shared_cables)}</span>`, sort: r.shared_cables },
       ]),
       s.empty.sharedCable
     ) +
@@ -277,11 +314,15 @@ export function render(data, ixId) {
       ? `<section class="section reveal">` +
         `<p class="label">${escapeHtml(s.sections.landings)}</p>` +
         table(
-          [s.cols.landing, s.cols.country, s.cols.distance],
+          [
+            { label: s.cols.landing },
+            { label: s.cols.country },
+            { label: s.cols.distance, type: 'number' },
+          ],
           sub.landings_within_150km.map((l) => [
             escapeHtml(l.name),
             escapeHtml(l.country ?? '—'),
-            `<span class="mono">${formatInt(l.km)} km</span>`,
+            { html: `<span class="mono">${formatInt(l.km)} km</span>`, sort: l.km },
           ]),
           s.empty.landings
         ) +

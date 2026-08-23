@@ -1,3 +1,4 @@
+import { compareValues } from '../table.js';
 import strings from '../i18n.js';
 import { formatBandwidth, formatInt, formatPercent } from '../format.js';
 import { escapeHtml } from '../chart.js';
@@ -60,24 +61,14 @@ export const SORT_KEYS = {
 
 export function sortMembers(members, column = 'bandwidth', direction = 'desc') {
   const key = SORT_KEYS[column] ?? SORT_KEYS.bandwidth;
-  const sign = direction === 'asc' ? 1 : -1;
 
   return [...members].sort((a, b) => {
     const va = key.get(a);
     const vb = key.get(b);
 
-    const emptyA = va === null || va === undefined || va === '';
-    const emptyB = vb === null || vb === undefined || vb === '';
-    if (emptyA && emptyB) return a.asn - b.asn;
-    if (emptyA) return 1; // a hiányzó érték mindig hátra
-    if (emptyB) return -1;
-
-    const cmp =
-      key.type === 'number'
-        ? Number(va) - Number(vb)
-        : String(va).localeCompare(String(vb), 'en');
-
-    return cmp * sign || a.asn - b.asn;
+    // Ugyanaz az összehasonlítás, mint az összes többi táblán: egy szabály,
+    // egy helyen. A döntetlent az ASN bontja, hogy a sorrend stabil legyen.
+    return compareValues(va, vb, key.type, direction) || a.asn - b.asn;
   });
 }
 

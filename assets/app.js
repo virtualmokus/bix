@@ -5,6 +5,7 @@ import { parseHash } from './app-routing.js';
 import * as overview from './views/overview.js';
 import * as members from './views/members.js';
 import * as mapView from './views/map.js';
+import { mountTables } from './table.js';
 import * as faq from './views/faq.js';
 import * as legal from './views/legal.js';
 import * as exchange from './views/exchange.js';
@@ -68,6 +69,9 @@ function boot({ views, data }) {
     const view = views[name] ?? views.overview;
     root.innerHTML = view.render(data, param);
     view.mount?.(root, data, param);
+    // Minden nézet minden táblája ugyanattól a modultól kapja a rendezést és
+    // a szűrést — a nézeteknek nem kell külön bekötniük.
+    mountTables(root);
     selectTab(name, param);
     revealOnScroll(root);
     window.scrollTo({ top: 0 });

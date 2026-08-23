@@ -308,6 +308,8 @@ export default {
       sharedCable: 'Közös fizikai kábel',
       landings: 'Partraszállások 150 km-en belül',
     },
+    tableFilter: 'Sorok szűrése…',
+    tableCount: '{t} sorból {n}',
     cols: {
       member: 'Hálózat', asn: 'ASN', type: 'Típus', scope: 'Hatókör',
       ix: 'Csomópont', prefixes: 'Prefix',

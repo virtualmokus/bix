@@ -114,3 +114,23 @@ test('ismeretlen vagy üres útvonalra az áttekintés jön', () => {
 test('azonosító nélküli ix útvonal nem nyit adatlapot', () => {
   assert.deepEqual(parseHash('#ix', VIEWS), { name: 'overview', param: null });
 });
+
+// Ha új tábla kerül az adatlapra, az is a közös modulon keresztül épüljön —
+// különben csendben lesz egy tábla, amit nem lehet rendezni vagy szűrni.
+test('az adatlap minden táblája rendezhető', () => {
+  const html = render(data, 26);
+  const tables = (html.match(/<table[^>]*>/g) ?? []);
+  assert.ok(tables.length > 0, 'legyen legalább egy tábla');
+  for (const tag of tables) {
+    assert.ok(tag.includes('data-sortable'), `rendezhetetlen tábla: ${tag}`);
+  }
+  // Szándékosan nem /<th[^>]*>/ — az a <thead>-et is megfogná.
+  const headers = (html.match(/<th[\s>]/g) ?? []).length;
+  const buttons = (html.match(/class="th-sort"/g) ?? []).length;
+  assert.equal(buttons, headers, 'minden oszlopfej rendezhető gomb legyen');
+});
+
+test('a számoszlopok nyers értéket visznek, nem formázott szöveget', () => {
+  const html = render(data, 26);
+  assert.ok(html.includes('data-value="'), 'legyen legalább egy pontos rendezési érték');
+});

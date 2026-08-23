@@ -308,6 +308,8 @@ export default {
       sharedCable: 'Shares a physical cable with',
       landings: 'Cable landings within 150 km',
     },
+    tableFilter: 'Filter rows…',
+    tableCount: '{n} of {t} rows',
     cols: {
       member: 'Network', asn: 'ASN', type: 'Type', scope: 'Scope',
       ix: 'IXPs', prefixes: 'Prefixes',
