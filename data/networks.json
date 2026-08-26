@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T05:08:19Z",
+  "fetched_at": "2026-08-26T05:07:51Z",
   "networks": [
     {
       "asn": 42,
@@ -433,14 +433,14 @@
       "prefixes4": 15000,
       "prefixes6": 10000,
       "ix_count": 176,
-      "fac_count": 137,
+      "fac_count": 136,
       "policy": "Selective"
     },
     {
       "asn": 15566,
       "name": "Infotechna",
       "aka": "ServerGalactic",
-      "website": "http://www.servergalactic.com",
+      "website": "http://www.infotechna.hu",
       "type": "Cable/DSL/ISP",
       "scope": "Global",
       "traffic": "20-50Gbps",
@@ -492,7 +492,7 @@
       "ratio": "Heavy Outbound",
       "prefixes4": 5000,
       "prefixes6": 1000,
-      "ix_count": 98,
+      "ix_count": 100,
       "fac_count": 67,
       "policy": "Open"
     },
@@ -1722,7 +1722,7 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 1000,
       "prefixes6": 1000,
-      "ix_count": 86,
+      "ix_count": 80,
       "fac_count": 73,
       "policy": "Selective"
     }
