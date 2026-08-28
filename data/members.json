@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-26T05:07:51Z",
+  "fetched_at": "2026-08-28T21:14:52Z",
   "members": [
     {
       "asn": 42,
@@ -54,13 +54,6 @@
           "bandwidth_mbps": 100000,
           "note": null,
           "graph_id": "e9b7c64657c49b3e7a66ae1125a5ee37"
-        },
-        {
-          "node": "T-Systems Cloud & Datacenter (Dataplex)",
-          "ipv4": "193.188.137.89",
-          "bandwidth_mbps": 100000,
-          "note": "Backup Link",
-          "graph_id": "84255228d4ce51b2ebf942adb2fab2f9"
         }
       ],
       "network": {
@@ -405,7 +398,7 @@
         "prefixes4": 40000,
         "prefixes6": 8000,
         "ix_count": 16,
-        "fac_count": 21,
+        "fac_count": 20,
         "policy": "Restrictive"
       }
     },
@@ -438,7 +431,7 @@
         "ratio": "Balanced",
         "prefixes4": 210000,
         "prefixes6": 180000,
-        "ix_count": 336,
+        "ix_count": 337,
         "fac_count": 343,
         "policy": "Open"
       }
@@ -807,7 +800,7 @@
         "prefixes4": 5000,
         "prefixes6": 500,
         "ix_count": 61,
-        "fac_count": 54,
+        "fac_count": 55,
         "policy": "Selective"
       }
     },
@@ -1031,7 +1024,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 80000,
         "prefixes6": 30000,
-        "ix_count": 357,
+        "ix_count": 358,
         "fac_count": 224,
         "policy": "Open"
       }
@@ -1353,7 +1346,7 @@
         "ratio": "Heavy Outbound",
         "prefixes4": 12000,
         "prefixes6": 5000,
-        "ix_count": 250,
+        "ix_count": 251,
         "fac_count": 224,
         "policy": "Open"
       }
