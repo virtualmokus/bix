@@ -227,6 +227,7 @@ export default {
     memberLabel: 'Member',
     allMembers: 'All members',
     reset: 'Reset',
+    wholeWorld: 'Whole world',
     fullscreen: 'Fullscreen',
     exitFullscreen: 'Exit fullscreen',
     close: 'Close',

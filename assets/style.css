@@ -314,6 +314,6 @@ body {
 .leaflet-container { font-family: var(--font-sans); font-size: 12px; }
 
 @media (max-width: 768px) {
-  .map-canvas { height: 380px; }
+  .map-canvas { height: clamp(320px, 58vh, 480px); }
   .map-legend { margin-left: 0; }
 }

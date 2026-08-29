@@ -225,6 +225,7 @@ export default {
     memberLabel: 'Tag',
     allMembers: 'Összes tag',
     reset: 'Alaphelyzet',
+    wholeWorld: 'Teljes világ',
     fullscreen: 'Teljes képernyő',
     exitFullscreen: 'Kilépés',
     close: 'Bezárás',

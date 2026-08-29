@@ -169,6 +169,7 @@ export function render(data) {
     `<label class="ctl ctl--check"><span>${escapeHtml(s.cableLabel)}</span>` +
     `<label class="switch"><input type="checkbox" id="map-cables" checked>` +
     `<span>${escapeHtml(s.cableToggle)}</span></label></label>` +
+    `<button type="button" id="map-world" class="btn btn--ghost">${escapeHtml(s.wholeWorld)}</button>` +
     `<button type="button" id="map-reset" class="btn btn--ghost">${escapeHtml(s.reset)}</button>` +
     `<button type="button" id="map-full" class="btn">${escapeHtml(s.fullscreen)}</button>` +
     `</div>` +
@@ -213,19 +214,47 @@ export function mount(root, data) {
   const regionSel = root.querySelector('#map-region');
   const memberSel = root.querySelector('#map-member');
 
+  // A Mercator-világ ±85°-ig négyzet alakú, de a sarkvidéken nincs adat, és a
+  // négyzetet egy széles böngészőablakba illesztve az oldalt marad üresen.
+  // A ±72°-os sáv minden csomópontot és partraszállást tartalmaz, és az
+  // arányai közel állnak egy szokásos ablakéhoz.
+  const WORLD_FIT = L.latLngBounds([-72, -180], [72, 180]);
+
   const map = L.map(container, {
     worldCopyJump: false,
     scrollWheelZoom: true,
+    // Törtnagyítás nélkül a világ csak egész lépésekben férne be, ami széles
+    // ablakon a felét levágná, keskenyen pedig nagy üres sávot hagyna.
+    // Szabad törtnagyítás: egész lépésekben a világ vagy kilógna a keretből,
+    // vagy jóval kisebb lenne nála. A +/- gomb továbbra is egészet lép.
+    zoomSnap: 0,
+    zoomDelta: 1,
     maxBounds: L.latLngBounds([-85, -180], [85, 180]),
-    maxBoundsViscosity: 1,
+    maxBoundsViscosity: 0.6,
   }).setView([47.5, 19.05], 4);
 
-  // A legkisebb nagyítás az, ahol a világ épp kitölti a keretet — így sem
-  // ismétlődés, sem üres sáv nem marad a térkép mellett.
+  /**
+   * A legkisebb nagyítás az, ahol a világ szélessége pontosan kitölti a
+   * keretet. Nem a teljes ±85°-os négyzetet illesztjük be: az Mercatorban
+   * négyzet alakú, és egy széles ablakban két üres oldalsávot hagyna. Így
+   * viszont a teljes hosszúsági kör egyszerre látszik, pontosan egyszer, és
+   * a keret is végig ki van használva.
+   *
+   * A csempe 256 képpont, a világ szélessége nagyításonként 256·2^z.
+   */
   function fitWorld() {
-    const zoom = map.getBoundsZoom(L.latLngBounds([-85, -180], [85, 180]), true);
+    const width = map.getSize().x;
+    if (!width) return; // a keretnek még nincs mérete
+    const zoom = Math.log2(width / 256);
     map.setMinZoom(zoom);
     if (map.getZoom() < zoom) map.setZoom(zoom);
+  }
+
+  /** Teljes világ egy lépésben. A 25. szélességi kör köré igazítva több
+   *  csomópont fér a képbe, mint az Egyenlítőre középre állítva. */
+  function showWholeWorld() {
+    fitWorld();
+    map.setView([25, 10], map.getMinZoom(), { animate: true });
   }
 
   // A nézet beillesztésekor a konténernek még nincs végleges mérete (rács,
@@ -566,6 +595,8 @@ export function mount(root, data) {
       (hidden > 0 ? ` · ${s.filterNote.replace('{n}', formatInt(hidden))}` : '');
   }
 
+  root.querySelector('#map-world')?.addEventListener('click', showWholeWorld);
+
   cablesToggle?.addEventListener('change', draw);
 
   for (const el of [minSel, regionSel, memberSel]) {
@@ -580,6 +611,7 @@ export function mount(root, data) {
     memberSel.value = '';
     clearSelection();
     map.setView([47.5, 19.05], 4);
+    fitWorld();
   });
 
   const fullBtn = root.querySelector('#map-full');

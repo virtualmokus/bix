@@ -150,7 +150,10 @@ body.has-fullscreen-map { overflow: hidden; }
 .map-layout.panel-open { grid-template-columns: 1fr 332px; }
 .map-shell.is-fullscreen .map-layout { flex: 1; min-height: 0; }
 
-.map-canvas { height: 600px; background: var(--canvas); }
+/* A térkép magassága az ablakhoz igazodik: alacsony laptopon nem lóg ki, nagy
+   monitoron nem pazarol el egy képernyőnyi helyet. A clamp alsó határa az,
+   ami alatt a vezérlők és a térkép már nem fér el egymás mellett. */
+.map-canvas { height: clamp(420px, 74vh, 1000px); background: var(--canvas); }
 .map-shell.is-fullscreen .map-canvas { height: 100%; }
 
 .map-panel {
@@ -231,7 +234,7 @@ body.has-fullscreen-map { overflow: hidden; }
 @media (max-width: 900px) {
   .map-layout, .map-layout.panel-open { grid-template-columns: 1fr; }
   .map-panel { border-left: none; border-top: 1px solid var(--border); max-height: 320px; }
-  .map-canvas { height: 420px; }
+  .map-canvas { height: clamp(340px, 62vh, 560px); }
   #map-reset { margin-left: 0; }
 }
 
@@ -282,4 +285,18 @@ body.has-fullscreen-map { overflow: hidden; }
 @media (max-width: 640px) {
   .faq-item > summary { font-size: 16px; gap: 10px; }
   .faq-item p { padding-left: 30px; font-size: 14px; }
+}
+
+/* ===== Teljes képernyős térkép: a helyet a térkép kapja =====
+   A fejléc díszítő része és a vezérlők bőséges térközei alacsony ablakban
+   annyit vesznek el, hogy a térképnek alig marad hely. Fullscreenben ezért
+   összehúzzuk őket — a navigáció megmarad, csak keskenyebb lesz. */
+body.has-fullscreen-map .site-header { padding-top: 8px; padding-bottom: 8px; }
+body.has-fullscreen-map .brand-tagline { display: none; }
+body.has-fullscreen-map .map-controls { padding-top: 10px; padding-bottom: 10px; row-gap: 8px; }
+
+@media (max-height: 760px) {
+  body.has-fullscreen-map .site-header { padding-top: 6px; padding-bottom: 6px; }
+  body.has-fullscreen-map .ctl > span,
+  body.has-fullscreen-map .ctl--check > span { font-size: 10px; }
 }
