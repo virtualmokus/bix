@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-01T03:28:28Z",
+  "fetched_at": "2026-09-02T03:27:02Z",
   "members": [
     {
       "asn": 42,
@@ -37,7 +37,7 @@
     },
     {
       "asn": 1955,
-      "name": "Pro-M/NIIF",
+      "name": "Pro-M (NIIF)",
       "website": "https://www.pro-m.hu",
       "policy": "Open/Free",
       "first_seen": "2020-11-19T08:07:47Z",
@@ -1841,7 +1841,7 @@
         }
       ],
       "network": {
-        "aka": "Facebook, Instagram, WhatsApp, Messenger, Workplace",
+        "aka": "Facebook, Instagram, WhatsApp, Messenger",
         "type": "Content",
         "scope": "Global",
         "traffic": "100+Tbps",
@@ -2619,8 +2619,8 @@
     },
     {
       "asn": 47169,
-      "name": "MVM NET",
-      "website": "http://www.mvmnet.hu",
+      "name": "Pro-M",
+      "website": "https://pro-m.hu/",
       "policy": "Open/Free",
       "first_seen": "2020-11-30T07:39:32Z",
       "is_rs_peer": true,

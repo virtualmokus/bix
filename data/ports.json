@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-01T03:28:26Z",
+  "fetched_at": "2026-09-02T03:27:00Z",
   "ports": [
     {
       "member": "23VNet",
@@ -585,28 +585,6 @@
       "graph_id": "8260dd72f9049ce36a891aba2a409e28"
     },
     {
-      "member": "MVM NET",
-      "website": "http://www.mvmnet.hu",
-      "asn": 47169,
-      "policy": "Open/Free",
-      "node": "VH",
-      "ipv4": "193.188.137.152",
-      "bandwidth_mbps": 100000,
-      "note": null,
-      "graph_id": "f559e106f2129a3098c5949b00b71490"
-    },
-    {
-      "member": "MVM NET",
-      "website": "http://www.mvmnet.hu",
-      "asn": 47169,
-      "policy": "Open/Free",
-      "node": "T-Systems Cloud & Datacenter (Dataplex)",
-      "ipv4": "193.188.137.164",
-      "bandwidth_mbps": 100000,
-      "note": null,
-      "graph_id": "ac6f107e3c7be83411e377ffac0d5726"
-    },
-    {
       "member": "Macronet",
       "website": "https://www.macronet.hu",
       "asn": 204745,
@@ -981,7 +959,29 @@
       "graph_id": "fd53c043621465552aa55814c23e3215"
     },
     {
-      "member": "Pro-M/NIIF",
+      "member": "Pro-M",
+      "website": "https://pro-m.hu/",
+      "asn": 47169,
+      "policy": "Open/Free",
+      "node": "VH",
+      "ipv4": "193.188.137.152",
+      "bandwidth_mbps": 100000,
+      "note": null,
+      "graph_id": "f559e106f2129a3098c5949b00b71490"
+    },
+    {
+      "member": "Pro-M",
+      "website": "https://pro-m.hu/",
+      "asn": 47169,
+      "policy": "Open/Free",
+      "node": "T-Systems Cloud & Datacenter (Dataplex)",
+      "ipv4": "193.188.137.164",
+      "bandwidth_mbps": 100000,
+      "note": null,
+      "graph_id": "ac6f107e3c7be83411e377ffac0d5726"
+    },
+    {
+      "member": "Pro-M (NIIF)",
       "website": "https://www.pro-m.hu",
       "asn": 1955,
       "policy": "Open/Free",

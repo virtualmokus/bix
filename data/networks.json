@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-01T03:28:28Z",
+  "fetched_at": "2026-09-02T03:27:02Z",
   "networks": [
     {
       "asn": 42,
@@ -784,7 +784,7 @@
     {
       "asn": 32934,
       "name": "Meta",
-      "aka": "Facebook, Instagram, WhatsApp, Messenger, Workplace",
+      "aka": "Facebook, Instagram, WhatsApp, Messenger",
       "website": "https://www.meta.com/",
       "type": "Content",
       "scope": "Global",
