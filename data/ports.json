@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-09T03:28:45Z",
+  "fetched_at": "2026-09-10T03:29:05Z",
   "ports": [
     {
       "member": "23VNet",
@@ -99,6 +99,17 @@
       "bandwidth_mbps": 200000,
       "note": null,
       "graph_id": "38b8ab7d08dd58058fdacc510f34a18e"
+    },
+    {
+      "member": "Alibaba Cloud CDN",
+      "website": "https://www.alibabacloud.com",
+      "asn": 24429,
+      "policy": "Open/Free",
+      "node": "T-Systems Cloud & Datacenter (Dataplex)",
+      "ipv4": "193.188.137.80",
+      "bandwidth_mbps": 20000,
+      "note": null,
+      "graph_id": "d027fc72035f7d745c3a800bd576f556"
     },
     {
       "member": "Alwyzon (Hohl IT e.U.)",

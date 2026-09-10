@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-09T03:28:48Z",
+  "fetched_at": "2026-09-10T03:29:08Z",
   "members": [
     {
       "asn": 42,
@@ -30,7 +30,7 @@
         "ratio": "Balanced",
         "prefixes4": 600,
         "prefixes6": 600,
-        "ix_count": 333,
+        "ix_count": 334,
         "fac_count": 56,
         "policy": "Open"
       }
@@ -229,7 +229,7 @@
         "ratio": "Balanced",
         "prefixes4": 1,
         "prefixes6": 1,
-        "ix_count": 323,
+        "ix_count": 324,
         "fac_count": 5,
         "policy": "Open"
       }
@@ -263,7 +263,7 @@
         "ratio": "Mostly Inbound",
         "prefixes4": 20000,
         "prefixes6": 2000,
-        "ix_count": 58,
+        "ix_count": 59,
         "fac_count": 141,
         "policy": "Restrictive"
       }
@@ -431,7 +431,7 @@
         "ratio": "Balanced",
         "prefixes4": 210000,
         "prefixes6": 180000,
-        "ix_count": 337,
+        "ix_count": 336,
         "fac_count": 343,
         "policy": "Open"
       }
@@ -1185,7 +1185,7 @@
         "ratio": "Heavy Outbound",
         "prefixes4": 5000,
         "prefixes6": 1000,
-        "ix_count": 101,
+        "ix_count": 105,
         "fac_count": 67,
         "policy": "Open"
       }
@@ -1448,6 +1448,40 @@
         "prefixes6": 200,
         "ix_count": 1,
         "fac_count": 2,
+        "policy": "Open"
+      }
+    },
+    {
+      "asn": 24429,
+      "name": "Alibaba Cloud CDN",
+      "website": "https://www.alibabacloud.com",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "T-Systems Cloud & Datacenter (Dataplex)",
+          "ipv4": "193.188.137.80",
+          "bandwidth_mbps": 20000,
+          "note": null,
+          "graph_id": "d027fc72035f7d745c3a800bd576f556"
+        }
+      ],
+      "network": {
+        "aka": "Taobao/Tmall/Alipay/Youku/Lazada/AliExpress/UCweb",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "20-50Tbps",
+        "ratio": "Heavy Outbound",
+        "prefixes4": 200,
+        "prefixes6": 0,
+        "ix_count": 54,
+        "fac_count": 36,
         "policy": "Open"
       }
     },

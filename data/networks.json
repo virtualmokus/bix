@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-09T03:28:47Z",
+  "fetched_at": "2026-09-10T03:29:07Z",
   "networks": [
     {
       "asn": 42,
@@ -12,7 +12,7 @@
       "ratio": "Balanced",
       "prefixes4": 600,
       "prefixes6": 600,
-      "ix_count": 333,
+      "ix_count": 334,
       "fac_count": 56,
       "policy": "Open"
     },
@@ -87,7 +87,7 @@
       "ratio": "Balanced",
       "prefixes4": 1,
       "prefixes6": 1,
-      "ix_count": 323,
+      "ix_count": 324,
       "fac_count": 5,
       "policy": "Open"
     },
@@ -102,7 +102,7 @@
       "ratio": "Mostly Inbound",
       "prefixes4": 20000,
       "prefixes6": 2000,
-      "ix_count": 58,
+      "ix_count": 59,
       "fac_count": 141,
       "policy": "Restrictive"
     },
@@ -177,7 +177,7 @@
       "ratio": "Balanced",
       "prefixes4": 210000,
       "prefixes6": 180000,
-      "ix_count": 337,
+      "ix_count": 336,
       "fac_count": 343,
       "policy": "Open"
     },
@@ -492,7 +492,7 @@
       "ratio": "Heavy Outbound",
       "prefixes4": 5000,
       "prefixes6": 1000,
-      "ix_count": 101,
+      "ix_count": 105,
       "fac_count": 67,
       "policy": "Open"
     },
@@ -614,6 +614,21 @@
       "prefixes6": 200,
       "ix_count": 1,
       "fac_count": 2,
+      "policy": "Open"
+    },
+    {
+      "asn": 24429,
+      "name": "Alibaba Cloud CDN",
+      "aka": "Taobao/Tmall/Alipay/Youku/Lazada/AliExpress/UCweb",
+      "website": "https://www.alibabacloud.com",
+      "type": "Content",
+      "scope": "Global",
+      "traffic": "20-50Tbps",
+      "ratio": "Heavy Outbound",
+      "prefixes4": 200,
+      "prefixes6": 0,
+      "ix_count": 54,
+      "fac_count": 36,
       "policy": "Open"
     },
     {
