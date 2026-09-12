@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-11T03:28:30Z",
+  "fetched_at": "2026-09-12T03:27:25Z",
   "members": [
     {
       "asn": 42,
@@ -431,7 +431,7 @@
         "ratio": "Balanced",
         "prefixes4": 210000,
         "prefixes6": 180000,
-        "ix_count": 336,
+        "ix_count": 335,
         "fac_count": 343,
         "policy": "Open"
       }
@@ -1916,7 +1916,7 @@
         "ratio": "Balanced",
         "prefixes4": 25000,
         "prefixes6": 7500,
-        "ix_count": 30,
+        "ix_count": 31,
         "fac_count": 83,
         "policy": "Selective"
       }
@@ -1926,9 +1926,9 @@
       "name": "DuoDecad",
       "website": "https://www.doclerholding.com/",
       "policy": "Open/Free",
-      "first_seen": "2018-01-31T13:23:08Z",
-      "is_rs_peer": true,
-      "ipv6": "2001:7f8:35::3:4655:1",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
       "sources": [
         "bix",
         "peeringdb"
@@ -1950,7 +1950,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 50,
         "prefixes6": 10,
-        "ix_count": 18,
+        "ix_count": 17,
         "fac_count": 19,
         "policy": "Open"
       }
@@ -2873,6 +2873,31 @@
         "prefixes6": 1,
         "ix_count": 1,
         "fac_count": 1,
+        "policy": "Open"
+      }
+    },
+    {
+      "asn": 50144,
+      "name": "UNIMATRIX-AS",
+      "website": "https://www.byborgenterprises.com/",
+      "policy": null,
+      "first_seen": "2018-01-31T13:23:08Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::5:144:1",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": [],
+      "network": {
+        "aka": "Docler Holding",
+        "type": "Content",
+        "scope": "Global",
+        "traffic": "100-200Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 65,
+        "prefixes6": 15,
+        "ix_count": 4,
+        "fac_count": 4,
         "policy": "Open"
       }
     },

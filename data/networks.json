@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-11T03:28:29Z",
+  "fetched_at": "2026-09-12T03:27:24Z",
   "networks": [
     {
       "asn": 42,
@@ -177,7 +177,7 @@
       "ratio": "Balanced",
       "prefixes4": 210000,
       "prefixes6": 180000,
-      "ix_count": 336,
+      "ix_count": 335,
       "fac_count": 343,
       "policy": "Open"
     },
@@ -822,7 +822,7 @@
       "ratio": "Balanced",
       "prefixes4": 25000,
       "prefixes6": 7500,
-      "ix_count": 30,
+      "ix_count": 31,
       "fac_count": 83,
       "policy": "Selective"
     },
@@ -837,7 +837,7 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 50,
       "prefixes6": 10,
-      "ix_count": 18,
+      "ix_count": 17,
       "fac_count": 19,
       "policy": "Open"
     },
@@ -1214,6 +1214,21 @@
       "prefixes6": 1,
       "ix_count": 1,
       "fac_count": 1,
+      "policy": "Open"
+    },
+    {
+      "asn": 50144,
+      "name": "UNIMATRIX-AS",
+      "aka": "Docler Holding",
+      "website": "https://www.byborgenterprises.com/",
+      "type": "Content",
+      "scope": "Global",
+      "traffic": "100-200Gbps",
+      "ratio": "Mostly Outbound",
+      "prefixes4": 65,
+      "prefixes6": 15,
+      "ix_count": 4,
+      "fac_count": 4,
       "policy": "Open"
     },
     {
