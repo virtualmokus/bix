@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-14T03:29:41Z",
+  "fetched_at": "2026-09-15T03:30:54Z",
   "members": [
     {
       "asn": 42,
@@ -30,7 +30,7 @@
         "ratio": "Balanced",
         "prefixes4": 600,
         "prefixes6": 600,
-        "ix_count": 334,
+        "ix_count": 333,
         "fac_count": 56,
         "policy": "Open"
       }
@@ -229,8 +229,33 @@
         "ratio": "Balanced",
         "prefixes4": 1,
         "prefixes6": 1,
-        "ix_count": 324,
+        "ix_count": 323,
         "fac_count": 5,
+        "policy": "Open"
+      }
+    },
+    {
+      "asn": 4849,
+      "name": "S3 Company",
+      "website": "https://www.s3c.bg/",
+      "policy": null,
+      "first_seen": "2023-01-30T10:41:20Z",
+      "is_rs_peer": true,
+      "ipv6": null,
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": [],
+      "network": {
+        "aka": "S3C",
+        "type": null,
+        "scope": "Europe",
+        "traffic": "5-10Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 5000,
+        "prefixes6": 500,
+        "ix_count": 10,
+        "fac_count": 22,
         "policy": "Open"
       }
     },
@@ -1011,7 +1036,7 @@
         {
           "node": "T-Systems Cloud & Datacenter (Dataplex)",
           "ipv4": "193.188.137.27",
-          "bandwidth_mbps": 100000,
+          "bandwidth_mbps": 200000,
           "note": null,
           "graph_id": "74f95dbe523e82021dbe2d9ace41a134"
         }
@@ -1024,7 +1049,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 80000,
         "prefixes6": 30000,
-        "ix_count": 357,
+        "ix_count": 356,
         "fac_count": 224,
         "policy": "Open"
       }
@@ -2588,9 +2613,9 @@
       "name": "S3 Company Ltd.",
       "website": "https://s3c.bg/",
       "policy": "Open/Free",
-      "first_seen": "2023-01-30T10:41:20Z",
-      "is_rs_peer": true,
-      "ipv6": "2001:7f8:35::4:4901:1",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
       "sources": [
         "bix",
         "peeringdb"
@@ -2612,8 +2637,8 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 5000,
         "prefixes6": 300,
-        "ix_count": 22,
-        "fac_count": 18,
+        "ix_count": 19,
+        "fac_count": 1,
         "policy": "Open"
       }
     },

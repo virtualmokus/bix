@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-14T03:29:41Z",
+  "fetched_at": "2026-09-15T03:30:53Z",
   "networks": [
     {
       "asn": 42,
@@ -12,7 +12,7 @@
       "ratio": "Balanced",
       "prefixes4": 600,
       "prefixes6": 600,
-      "ix_count": 334,
+      "ix_count": 333,
       "fac_count": 56,
       "policy": "Open"
     },
@@ -87,8 +87,23 @@
       "ratio": "Balanced",
       "prefixes4": 1,
       "prefixes6": 1,
-      "ix_count": 324,
+      "ix_count": 323,
       "fac_count": 5,
+      "policy": "Open"
+    },
+    {
+      "asn": 4849,
+      "name": "S3 Company",
+      "aka": "S3C",
+      "website": "https://www.s3c.bg/",
+      "type": null,
+      "scope": "Europe",
+      "traffic": "5-10Tbps",
+      "ratio": "Balanced",
+      "prefixes4": 5000,
+      "prefixes6": 500,
+      "ix_count": 10,
+      "fac_count": 22,
       "policy": "Open"
     },
     {
@@ -417,7 +432,7 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 80000,
       "prefixes6": 30000,
-      "ix_count": 357,
+      "ix_count": 356,
       "fac_count": 224,
       "policy": "Open"
     },
@@ -1107,8 +1122,8 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 5000,
       "prefixes6": 300,
-      "ix_count": 22,
-      "fac_count": 18,
+      "ix_count": 19,
+      "fac_count": 1,
       "policy": "Open"
     },
     {

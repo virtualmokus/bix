@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-14T03:29:40Z",
+  "fetched_at": "2026-09-15T03:30:51Z",
   "ports": [
     {
       "member": "23VNet",
@@ -239,7 +239,7 @@
       "policy": "Open/Free",
       "node": "T-Systems Cloud & Datacenter (Dataplex)",
       "ipv4": "193.188.137.27",
-      "bandwidth_mbps": 100000,
+      "bandwidth_mbps": 200000,
       "note": null,
       "graph_id": "74f95dbe523e82021dbe2d9ace41a134"
     },
