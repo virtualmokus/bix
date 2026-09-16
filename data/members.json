@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-15T03:30:54Z",
+  "fetched_at": "2026-09-16T03:28:23Z",
   "members": [
     {
       "asn": 42,
@@ -254,7 +254,7 @@
         "ratio": "Balanced",
         "prefixes4": 5000,
         "prefixes6": 500,
-        "ix_count": 10,
+        "ix_count": 13,
         "fac_count": 22,
         "policy": "Open"
       }
@@ -1075,7 +1075,7 @@
         "prefixes4": 15000,
         "prefixes6": 10000,
         "ix_count": 175,
-        "fac_count": 136,
+        "fac_count": 135,
         "policy": "Selective"
       }
     },
@@ -1907,7 +1907,7 @@
         "ratio": "Heavy Outbound",
         "prefixes4": 100,
         "prefixes6": 100,
-        "ix_count": 209,
+        "ix_count": 211,
         "fac_count": 138,
         "policy": "Selective"
       }
@@ -2637,7 +2637,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 5000,
         "prefixes6": 300,
-        "ix_count": 19,
+        "ix_count": 16,
         "fac_count": 1,
         "policy": "Open"
       }
@@ -3497,9 +3497,16 @@
       ],
       "ports": [
         {
+          "node": "VH",
+          "ipv4": "193.188.137.89",
+          "bandwidth_mbps": 10000,
+          "note": "4Gbps on 10G",
+          "graph_id": "ef9d6be10bb90d58b954492f586202a8"
+        },
+        {
           "node": "2Connect DC10",
           "ipv4": "193.188.137.92",
-          "bandwidth_mbps": 1000,
+          "bandwidth_mbps": 10000,
           "note": "1Gbps on 10G",
           "graph_id": "758279c2241771356cd0de861cb61647"
         }

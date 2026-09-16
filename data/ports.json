@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-15T03:30:51Z",
+  "fetched_at": "2026-09-16T03:28:21Z",
   "ports": [
     {
       "member": "23VNet",
@@ -699,9 +699,20 @@
       "website": null,
       "asn": 197889,
       "policy": "Open/Free",
+      "node": "VH",
+      "ipv4": "193.188.137.89",
+      "bandwidth_mbps": 10000,
+      "note": "4Gbps on 10G",
+      "graph_id": "ef9d6be10bb90d58b954492f586202a8"
+    },
+    {
+      "member": "Microsystem-Kecskemét",
+      "website": null,
+      "asn": 197889,
+      "policy": "Open/Free",
       "node": "2Connect DC10",
       "ipv4": "193.188.137.92",
-      "bandwidth_mbps": 1000,
+      "bandwidth_mbps": 10000,
       "note": "1Gbps on 10G",
       "graph_id": "758279c2241771356cd0de861cb61647"
     },
