@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-27T09:17:41Z",
+  "fetched_at": "2026-09-28T09:49:23Z",
   "members": [
     {
       "asn": 42,
@@ -654,8 +654,8 @@
         {
           "node": "2Connect DC10",
           "ipv4": "193.188.137.47",
-          "bandwidth_mbps": 100000,
-          "note": null,
+          "bandwidth_mbps": 200000,
+          "note": "Backup Link",
           "graph_id": "6f7eec9ebcd9b5258aeac9756765f2fb"
         },
         {
@@ -1210,7 +1210,7 @@
         "ratio": "Heavy Outbound",
         "prefixes4": 5000,
         "prefixes6": 1000,
-        "ix_count": 105,
+        "ix_count": 106,
         "fac_count": 67,
         "policy": "Open"
       }
@@ -1975,8 +1975,8 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 50,
         "prefixes6": 10,
-        "ix_count": 14,
-        "fac_count": 19,
+        "ix_count": 13,
+        "fac_count": 18,
         "policy": "Open"
       }
     },
@@ -2180,6 +2180,31 @@
         "prefixes4": 100,
         "prefixes6": 50,
         "ix_count": 5,
+        "fac_count": 1,
+        "policy": "Open"
+      }
+    },
+    {
+      "asn": 41075,
+      "name": "ATW Internet Kft.",
+      "website": "http://atw.hu",
+      "policy": null,
+      "first_seen": "2026-09-28T09:22:12Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::4:1075:2",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": [],
+      "network": {
+        "aka": null,
+        "type": "Content",
+        "scope": "Regional",
+        "traffic": "10-20Gbps",
+        "ratio": "Mostly Outbound",
+        "prefixes4": 100,
+        "prefixes6": 20,
+        "ix_count": 1,
         "fac_count": 1,
         "policy": "Open"
       }
@@ -2921,8 +2946,8 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 65,
         "prefixes6": 15,
-        "ix_count": 7,
-        "fac_count": 5,
+        "ix_count": 8,
+        "fac_count": 6,
         "policy": "Open"
       }
     },

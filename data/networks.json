@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-27T09:17:40Z",
+  "fetched_at": "2026-09-28T09:49:22Z",
   "networks": [
     {
       "asn": 42,
@@ -507,7 +507,7 @@
       "ratio": "Heavy Outbound",
       "prefixes4": 5000,
       "prefixes6": 1000,
-      "ix_count": 105,
+      "ix_count": 106,
       "fac_count": 67,
       "policy": "Open"
     },
@@ -852,8 +852,8 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 50,
       "prefixes6": 10,
-      "ix_count": 14,
-      "fac_count": 19,
+      "ix_count": 13,
+      "fac_count": 18,
       "policy": "Open"
     },
     {
@@ -943,6 +943,21 @@
       "prefixes4": 100,
       "prefixes6": 50,
       "ix_count": 5,
+      "fac_count": 1,
+      "policy": "Open"
+    },
+    {
+      "asn": 41075,
+      "name": "ATW Internet Kft.",
+      "aka": null,
+      "website": "http://atw.hu",
+      "type": "Content",
+      "scope": "Regional",
+      "traffic": "10-20Gbps",
+      "ratio": "Mostly Outbound",
+      "prefixes4": 100,
+      "prefixes6": 20,
+      "ix_count": 1,
       "fac_count": 1,
       "policy": "Open"
     },
@@ -1242,8 +1257,8 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 65,
       "prefixes6": 15,
-      "ix_count": 7,
-      "fac_count": 5,
+      "ix_count": 8,
+      "fac_count": 6,
       "policy": "Open"
     },
     {

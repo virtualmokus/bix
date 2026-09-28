@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-27T09:17:38Z",
+  "fetched_at": "2026-09-28T09:49:21Z",
   "ports": [
     {
       "member": "23VNet",
@@ -206,8 +206,8 @@
       "policy": "Open/Free",
       "node": "2Connect DC10",
       "ipv4": "193.188.137.47",
-      "bandwidth_mbps": 100000,
-      "note": null,
+      "bandwidth_mbps": 200000,
+      "note": "Backup Link",
       "graph_id": "6f7eec9ebcd9b5258aeac9756765f2fb"
     },
     {
