@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-28T09:49:21Z",
+  "fetched_at": "2026-09-29T09:51:55Z",
   "ports": [
     {
       "member": "23VNet",
@@ -77,6 +77,28 @@
       "bandwidth_mbps": 10000,
       "note": null,
       "graph_id": "4760beaf7c0a911e1d074f9eee88036f"
+    },
+    {
+      "member": "ATW Internet",
+      "website": "https://atw.hu/",
+      "asn": 41075,
+      "policy": "Open/Free",
+      "node": "VH",
+      "ipv4": "193.188.137.110",
+      "bandwidth_mbps": 100000,
+      "note": "Backup Link",
+      "graph_id": "14c8116176530cd044a497012fa287d1"
+    },
+    {
+      "member": "ATW Internet",
+      "website": "https://atw.hu/",
+      "asn": 41075,
+      "policy": "Open/Free",
+      "node": "VH",
+      "ipv4": "193.188.137.63",
+      "bandwidth_mbps": 100000,
+      "note": null,
+      "graph_id": "239d39cce1577ab02c7d44606796a30b"
     },
     {
       "member": "ActivCom",
