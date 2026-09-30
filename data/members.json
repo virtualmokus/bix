@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-29T09:51:57Z",
+  "fetched_at": "2026-09-30T09:44:12Z",
   "members": [
     {
       "asn": 42,
@@ -1837,13 +1837,13 @@
         "aka": "Steam",
         "type": "Content",
         "scope": "Global",
-        "traffic": "20-50Tbps",
+        "traffic": "50-100Tbps",
         "ratio": "Mostly Outbound",
         "prefixes4": 100,
         "prefixes6": 50,
         "ix_count": 82,
         "fac_count": 34,
-        "policy": "Open"
+        "policy": "Selective"
       }
     },
     {
@@ -1975,7 +1975,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 50,
         "prefixes6": 10,
-        "ix_count": 12,
+        "ix_count": 10,
         "fac_count": 17,
         "policy": "Open"
       }
@@ -2962,8 +2962,8 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 65,
         "prefixes6": 15,
-        "ix_count": 9,
-        "fac_count": 7,
+        "ix_count": 11,
+        "fac_count": 8,
         "policy": "Open"
       }
     },
