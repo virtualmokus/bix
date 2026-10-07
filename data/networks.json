@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-06T10:21:07Z",
+  "fetched_at": "2026-10-07T10:18:00Z",
   "networks": [
     {
       "asn": 42,
@@ -193,7 +193,7 @@
       "prefixes4": 210000,
       "prefixes6": 180000,
       "ix_count": 335,
-      "fac_count": 342,
+      "fac_count": 343,
       "policy": "Open"
     },
     {
@@ -447,7 +447,7 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 15000,
       "prefixes6": 10000,
-      "ix_count": 175,
+      "ix_count": 170,
       "fac_count": 135,
       "policy": "Selective"
     },
@@ -822,7 +822,7 @@
       "ratio": "Heavy Outbound",
       "prefixes4": 100,
       "prefixes6": 100,
-      "ix_count": 211,
+      "ix_count": 212,
       "fac_count": 138,
       "policy": "Selective"
     },
@@ -852,8 +852,8 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 50,
       "prefixes6": 10,
-      "ix_count": 6,
-      "fac_count": 15,
+      "ix_count": 5,
+      "fac_count": 14,
       "policy": "Open"
     },
     {
@@ -1025,7 +1025,7 @@
       "asn": 42473,
       "name": "Anexia",
       "aka": "Anexia World Wide Cloud",
-      "website": "http://www.anexia-it.com",
+      "website": "http://www.anexia.com",
       "type": "Content",
       "scope": "Global",
       "traffic": null,
@@ -1257,8 +1257,8 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 65,
       "prefixes6": 15,
-      "ix_count": 15,
-      "fac_count": 10,
+      "ix_count": 16,
+      "fac_count": 11,
       "policy": "Open"
     },
     {
