@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-07T10:18:01Z",
+  "fetched_at": "2026-10-08T10:37:26Z",
   "members": [
     {
       "asn": 42,
@@ -1074,7 +1074,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 15000,
         "prefixes6": 10000,
-        "ix_count": 170,
+        "ix_count": 168,
         "fac_count": 135,
         "policy": "Selective"
       }
@@ -1866,7 +1866,7 @@
         "ratio": "Mostly Inbound",
         "prefixes4": 15000,
         "prefixes6": 1000,
-        "ix_count": 64,
+        "ix_count": 66,
         "fac_count": 0,
         "policy": "Selective"
       }
@@ -2404,7 +2404,7 @@
         "ratio": "Balanced",
         "prefixes4": 1000,
         "prefixes6": 500,
-        "ix_count": 58,
+        "ix_count": 57,
         "fac_count": 90,
         "policy": "Selective"
       }
@@ -3071,7 +3071,7 @@
         "ratio": "Heavy Outbound",
         "prefixes4": 1000,
         "prefixes6": 1000,
-        "ix_count": 151,
+        "ix_count": 152,
         "fac_count": 110,
         "policy": "Selective"
       }
@@ -3138,7 +3138,7 @@
         "traffic": "300-500Gbps",
         "ratio": "Balanced",
         "prefixes4": 5000,
-        "prefixes6": 500,
+        "prefixes6": 1000,
         "ix_count": 30,
         "fac_count": 25,
         "policy": "Open"
