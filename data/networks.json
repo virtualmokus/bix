@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-08T10:37:26Z",
+  "fetched_at": "2026-10-09T10:36:25Z",
   "networks": [
     {
       "asn": 42,
@@ -580,8 +580,8 @@
       "scope": "Global",
       "traffic": "100+Tbps",
       "ratio": "Heavy Outbound",
-      "prefixes4": 12000,
-      "prefixes6": 5000,
+      "prefixes4": 24000,
+      "prefixes6": 6000,
       "ix_count": 251,
       "fac_count": 224,
       "policy": "Open"
@@ -1302,7 +1302,7 @@
       "ratio": "Heavy Outbound",
       "prefixes4": 1000,
       "prefixes6": 1000,
-      "ix_count": 152,
+      "ix_count": 151,
       "fac_count": 110,
       "policy": "Selective"
     },
