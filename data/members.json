@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-14T08:45:09Z",
+  "fetched_at": "2026-10-15T08:20:08Z",
   "members": [
     {
       "asn": 42,
@@ -456,7 +456,7 @@
         "ratio": "Balanced",
         "prefixes4": 210000,
         "prefixes6": 180000,
-        "ix_count": 335,
+        "ix_count": 334,
         "fac_count": 343,
         "policy": "Open"
       }
@@ -3813,6 +3813,40 @@
         "ix_count": 1,
         "fac_count": 2,
         "policy": "Open"
+      }
+    },
+    {
+      "asn": 207142,
+      "name": "HMX",
+      "website": "https://hmx.hu",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix",
+        "peeringdb"
+      ],
+      "ports": [
+        {
+          "node": "2Connect DC10",
+          "ipv4": "193.188.137.85",
+          "bandwidth_mbps": 10000,
+          "note": "1Gbs on 10G",
+          "graph_id": "c2d99cd866ecb551c3c5ea0a7aaf2b86"
+        }
+      ],
+      "network": {
+        "aka": null,
+        "type": null,
+        "scope": "Not Disclosed",
+        "traffic": null,
+        "ratio": "Not Disclosed",
+        "prefixes4": null,
+        "prefixes6": null,
+        "ix_count": 0,
+        "fac_count": 1,
+        "policy": null
       }
     },
     {

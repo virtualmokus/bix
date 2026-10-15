@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-14T08:45:08Z",
+  "fetched_at": "2026-10-15T08:20:07Z",
   "networks": [
     {
       "asn": 42,
@@ -192,7 +192,7 @@
       "ratio": "Balanced",
       "prefixes4": 210000,
       "prefixes6": 180000,
-      "ix_count": 335,
+      "ix_count": 334,
       "fac_count": 343,
       "policy": "Open"
     },
@@ -1575,6 +1575,21 @@
       "ix_count": 1,
       "fac_count": 2,
       "policy": "Open"
+    },
+    {
+      "asn": 207142,
+      "name": "HMX",
+      "aka": null,
+      "website": "https://hmx.hu",
+      "type": null,
+      "scope": "Not Disclosed",
+      "traffic": null,
+      "ratio": "Not Disclosed",
+      "prefixes4": null,
+      "prefixes6": null,
+      "ix_count": 0,
+      "fac_count": 1,
+      "policy": null
     },
     {
       "asn": 207349,

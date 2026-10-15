@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-14T08:45:06Z",
+  "fetched_at": "2026-10-15T08:20:05Z",
   "ports": [
     {
       "member": "23VNet",
@@ -418,6 +418,17 @@
       "bandwidth_mbps": 100000,
       "note": "40Gbps on 100G",
       "graph_id": "f6613b954cceadac28ddf9373cf46f46"
+    },
+    {
+      "member": "HMX",
+      "website": null,
+      "asn": 207142,
+      "policy": "Open/Free",
+      "node": "2Connect DC10",
+      "ipv4": "193.188.137.85",
+      "bandwidth_mbps": 10000,
+      "note": "1Gbs on 10G",
+      "graph_id": "c2d99cd866ecb551c3c5ea0a7aaf2b86"
     },
     {
       "member": "HostingBazis",
