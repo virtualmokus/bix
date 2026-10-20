@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-19T08:55:25Z",
+  "fetched_at": "2026-10-20T08:34:49Z",
   "networks": [
     {
       "asn": 42,
@@ -447,7 +447,7 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 15000,
       "prefixes6": 10000,
-      "ix_count": 163,
+      "ix_count": 160,
       "fac_count": 135,
       "policy": "Selective"
     },
@@ -754,15 +754,15 @@
     {
       "asn": 31042,
       "name": "Serbia BroadBand",
-      "aka": "SBB",
-      "website": "https://sbb.rs",
+      "aka": "Yettel",
+      "website": "https://yettel.rs",
       "type": "NSP",
       "scope": "Europe",
       "traffic": null,
       "ratio": "Balanced",
       "prefixes4": 5000,
       "prefixes6": 500,
-      "ix_count": 1,
+      "ix_count": 2,
       "fac_count": 0,
       "policy": "Open"
     },

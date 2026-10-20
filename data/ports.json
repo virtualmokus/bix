@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-19T08:55:23Z",
+  "fetched_at": "2026-10-20T08:34:48Z",
   "ports": [
     {
       "member": "23VNet",
@@ -1529,6 +1529,17 @@
       "bandwidth_mbps": 1000,
       "note": "BIX VIP",
       "graph_id": "846039c3eea791581e93114826fae549"
+    },
+    {
+      "member": "i-Telecom Hungary",
+      "website": "https://www.i-telecom.hu/",
+      "asn": 218624,
+      "policy": "Open/Free",
+      "node": "VH",
+      "ipv4": "193.188.137.111",
+      "bandwidth_mbps": 100000,
+      "note": "1Gbs on 10G",
+      "graph_id": "3616e9be00cc67130f1e491012fe93cf"
     },
     {
       "member": "i3D.net",

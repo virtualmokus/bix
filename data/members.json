@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-19T08:55:26Z",
+  "fetched_at": "2026-10-20T08:34:50Z",
   "members": [
     {
       "asn": 42,
@@ -1074,7 +1074,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 15000,
         "prefixes6": 10000,
-        "ix_count": 163,
+        "ix_count": 160,
         "fac_count": 135,
         "policy": "Selective"
       }
@@ -1775,14 +1775,14 @@
         }
       ],
       "network": {
-        "aka": "SBB",
+        "aka": "Yettel",
         "type": "NSP",
         "scope": "Europe",
         "traffic": null,
         "ratio": "Balanced",
         "prefixes4": 5000,
         "prefixes6": 500,
-        "ix_count": 1,
+        "ix_count": 2,
         "fac_count": 0,
         "policy": "Open"
       }
@@ -4251,6 +4251,28 @@
         "fac_count": 1,
         "policy": "Open"
       }
+    },
+    {
+      "asn": 218624,
+      "name": "i-Telecom Hungary",
+      "website": "https://www.i-telecom.hu/",
+      "policy": "Open/Free",
+      "first_seen": null,
+      "is_rs_peer": false,
+      "ipv6": null,
+      "sources": [
+        "bix"
+      ],
+      "ports": [
+        {
+          "node": "VH",
+          "ipv4": "193.188.137.111",
+          "bandwidth_mbps": 100000,
+          "note": "1Gbs on 10G",
+          "graph_id": "3616e9be00cc67130f1e491012fe93cf"
+        }
+      ],
+      "network": null
     },
     {
       "asn": 328126,
