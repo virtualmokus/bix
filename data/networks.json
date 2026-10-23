@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-22T08:38:36Z",
+  "fetched_at": "2026-10-23T08:34:38Z",
   "networks": [
     {
       "asn": 42,
@@ -822,7 +822,7 @@
       "ratio": "Heavy Outbound",
       "prefixes4": 100,
       "prefixes6": 100,
-      "ix_count": 213,
+      "ix_count": 214,
       "fac_count": 139,
       "policy": "Selective"
     },
