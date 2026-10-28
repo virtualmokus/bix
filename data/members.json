@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-27T09:02:09Z",
+  "fetched_at": "2026-10-28T09:41:53Z",
   "members": [
     {
       "asn": 42,
@@ -1430,7 +1430,7 @@
         "ratio": "Balanced",
         "prefixes4": 40000,
         "prefixes6": 10000,
-        "ix_count": 18,
+        "ix_count": 20,
         "fac_count": 15,
         "policy": "Selective"
       }
@@ -2740,7 +2740,7 @@
         {
           "node": "T-Systems Cloud & Datacenter (Dataplex)",
           "ipv4": "193.188.137.164",
-          "bandwidth_mbps": 100000,
+          "bandwidth_mbps": 200000,
           "note": null,
           "graph_id": "ac6f107e3c7be83411e377ffac0d5726"
         }
