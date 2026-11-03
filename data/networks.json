@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-02T11:12:23Z",
+  "fetched_at": "2026-11-03T10:55:21Z",
   "networks": [
     {
       "asn": 42,
@@ -1769,21 +1769,6 @@
       "prefixes6": 0,
       "ix_count": 1,
       "fac_count": 1,
-      "policy": "Open"
-    },
-    {
-      "asn": 328126,
-      "name": "Orange CDN",
-      "aka": "Orange CDN",
-      "website": "https://internationalcarriers.orange.com/en/offers/media-delivery-boost-2.html",
-      "type": "Content",
-      "scope": "Not Disclosed",
-      "traffic": null,
-      "ratio": "Heavy Outbound",
-      "prefixes4": 50,
-      "prefixes6": 0,
-      "ix_count": 3,
-      "fac_count": 0,
       "policy": "Open"
     },
     {
