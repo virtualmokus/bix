@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-03T10:55:21Z",
+  "fetched_at": "2026-11-05T10:58:10Z",
   "networks": [
     {
       "asn": 42,
@@ -222,7 +222,7 @@
       "ratio": "Balanced",
       "prefixes4": 25000,
       "prefixes6": 3000,
-      "ix_count": 54,
+      "ix_count": 55,
       "fac_count": 200,
       "policy": "Selective"
     },
@@ -334,7 +334,7 @@
     {
       "asn": 9009,
       "name": "M247 Global",
-      "aka": "Globalaxs Communications - OHTele - Axamba - WebTapestry - SOInternet",
+      "aka": "M247 Europe - Globalaxs Communications - OHTele - Axamba - WebTapestry - SOInternet",
       "website": "http://www.m247global.com",
       "type": "NSP",
       "scope": "Global",
@@ -807,7 +807,7 @@
       "ratio": "Mostly Inbound",
       "prefixes4": 15000,
       "prefixes6": 1000,
-      "ix_count": 66,
+      "ix_count": 67,
       "fac_count": 0,
       "policy": "Selective"
     },
@@ -823,7 +823,7 @@
       "prefixes4": 100,
       "prefixes6": 100,
       "ix_count": 214,
-      "fac_count": 139,
+      "fac_count": 140,
       "policy": "Selective"
     },
     {

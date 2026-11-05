@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-03T10:55:21Z",
+  "fetched_at": "2026-11-05T10:58:10Z",
   "members": [
     {
       "asn": 42,
@@ -531,7 +531,7 @@
         "ratio": "Balanced",
         "prefixes4": 25000,
         "prefixes6": 3000,
-        "ix_count": 54,
+        "ix_count": 55,
         "fac_count": 200,
         "policy": "Selective"
       }
@@ -817,7 +817,7 @@
         }
       ],
       "network": {
-        "aka": "Globalaxs Communications - OHTele - Axamba - WebTapestry - SOInternet",
+        "aka": "M247 Europe - Globalaxs Communications - OHTele - Axamba - WebTapestry - SOInternet",
         "type": "NSP",
         "scope": "Global",
         "traffic": "5-10Tbps",
@@ -1866,7 +1866,7 @@
         "ratio": "Mostly Inbound",
         "prefixes4": 15000,
         "prefixes6": 1000,
-        "ix_count": 66,
+        "ix_count": 67,
         "fac_count": 0,
         "policy": "Selective"
       }
@@ -1908,7 +1908,7 @@
         "prefixes4": 100,
         "prefixes6": 100,
         "ix_count": 214,
-        "fac_count": 139,
+        "fac_count": 140,
         "policy": "Selective"
       }
     },
@@ -2733,7 +2733,7 @@
         {
           "node": "VH",
           "ipv4": "193.188.137.152",
-          "bandwidth_mbps": 100000,
+          "bandwidth_mbps": 200000,
           "note": null,
           "graph_id": "f559e106f2129a3098c5949b00b71490"
         },
