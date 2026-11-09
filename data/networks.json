@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-08T10:25:49Z",
+  "fetched_at": "2026-11-09T11:35:48Z",
   "networks": [
     {
       "asn": 42,
@@ -583,7 +583,7 @@
       "prefixes4": 20000,
       "prefixes6": 6000,
       "ix_count": 251,
-      "fac_count": 225,
+      "fac_count": 226,
       "policy": "Open"
     },
     {
