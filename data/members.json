@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T11:35:48Z",
+  "fetched_at": "2026-11-10T11:15:08Z",
   "members": [
     {
       "asn": 42,
@@ -254,7 +254,7 @@
         "ratio": "Balanced",
         "prefixes4": 5000,
         "prefixes6": 500,
-        "ix_count": 19,
+        "ix_count": 20,
         "fac_count": 22,
         "policy": "Open"
       }
@@ -283,7 +283,7 @@
       "network": {
         "aka": "British Telecom",
         "type": "NSP",
-        "scope": "Europe",
+        "scope": "Global",
         "traffic": "1-5Tbps",
         "ratio": "Mostly Inbound",
         "prefixes4": 20000,
@@ -1074,7 +1074,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 15000,
         "prefixes6": 10000,
-        "ix_count": 161,
+        "ix_count": 160,
         "fac_count": 135,
         "policy": "Selective"
       }
@@ -1716,40 +1716,6 @@
         "prefixes6": 0,
         "ix_count": 1,
         "fac_count": 1,
-        "policy": "Open"
-      }
-    },
-    {
-      "asn": 30836,
-      "name": "23VNet",
-      "website": "http://hostit.hu/",
-      "policy": "Open/Free",
-      "first_seen": null,
-      "is_rs_peer": false,
-      "ipv6": null,
-      "sources": [
-        "bix",
-        "peeringdb"
-      ],
-      "ports": [
-        {
-          "node": "VH",
-          "ipv4": "193.188.137.63",
-          "bandwidth_mbps": 1000,
-          "note": "1 Gbps on 10G",
-          "graph_id": "3ebf42ab0b26c6a0d562210d4a61292a"
-        }
-      ],
-      "network": {
-        "aka": null,
-        "type": null,
-        "scope": "Not Disclosed",
-        "traffic": null,
-        "ratio": "Not Disclosed",
-        "prefixes4": 0,
-        "prefixes6": 0,
-        "ix_count": 0,
-        "fac_count": 0,
         "policy": "Open"
       }
     },
@@ -2623,7 +2589,7 @@
         "prefixes4": 100000,
         "prefixes6": 100000,
         "ix_count": 7,
-        "fac_count": 23,
+        "fac_count": 27,
         "policy": "Open"
       }
     },
@@ -2678,7 +2644,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 5000,
         "prefixes6": 300,
-        "ix_count": 14,
+        "ix_count": 13,
         "fac_count": 1,
         "policy": "Open"
       }

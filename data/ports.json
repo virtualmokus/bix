@@ -1,17 +1,6 @@
 {
-  "fetched_at": "2026-11-09T11:35:47Z",
+  "fetched_at": "2026-11-10T11:15:05Z",
   "ports": [
-    {
-      "member": "23VNet",
-      "website": "http://hostit.hu/",
-      "asn": 30836,
-      "policy": "Open/Free",
-      "node": "VH",
-      "ipv4": "193.188.137.63",
-      "bandwidth_mbps": 1000,
-      "note": "1 Gbps on 10G",
-      "graph_id": "3ebf42ab0b26c6a0d562210d4a61292a"
-    },
     {
       "member": "3C Telecom",
       "website": "http://www.3ctelecom.hu",

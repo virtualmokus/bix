@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-09T11:35:48Z",
+  "fetched_at": "2026-11-10T11:15:07Z",
   "networks": [
     {
       "asn": 42,
@@ -102,7 +102,7 @@
       "ratio": "Balanced",
       "prefixes4": 5000,
       "prefixes6": 500,
-      "ix_count": 19,
+      "ix_count": 20,
       "fac_count": 22,
       "policy": "Open"
     },
@@ -112,7 +112,7 @@
       "aka": "British Telecom",
       "website": "http://www.bt.net",
       "type": "NSP",
-      "scope": "Europe",
+      "scope": "Global",
       "traffic": "1-5Tbps",
       "ratio": "Mostly Inbound",
       "prefixes4": 20000,
@@ -447,7 +447,7 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 15000,
       "prefixes6": 10000,
-      "ix_count": 161,
+      "ix_count": 160,
       "fac_count": 135,
       "policy": "Selective"
     },
@@ -734,21 +734,6 @@
       "prefixes6": 0,
       "ix_count": 1,
       "fac_count": 1,
-      "policy": "Open"
-    },
-    {
-      "asn": 30836,
-      "name": "NET23VNet",
-      "aka": null,
-      "website": null,
-      "type": null,
-      "scope": "Not Disclosed",
-      "traffic": null,
-      "ratio": "Not Disclosed",
-      "prefixes4": 0,
-      "prefixes6": 0,
-      "ix_count": 0,
-      "fac_count": 0,
       "policy": "Open"
     },
     {
@@ -1123,7 +1108,7 @@
       "prefixes4": 100000,
       "prefixes6": 100000,
       "ix_count": 7,
-      "fac_count": 23,
+      "fac_count": 27,
       "policy": "Open"
     },
     {
@@ -1137,7 +1122,7 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 5000,
       "prefixes6": 300,
-      "ix_count": 14,
+      "ix_count": 13,
       "fac_count": 1,
       "policy": "Open"
     },
