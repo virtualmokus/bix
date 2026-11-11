@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-10T11:15:07Z",
+  "fetched_at": "2026-11-11T11:00:07Z",
   "networks": [
     {
       "asn": 42,
@@ -208,7 +208,7 @@
       "prefixes4": 2000,
       "prefixes6": 500,
       "ix_count": 207,
-      "fac_count": 167,
+      "fac_count": 166,
       "policy": "Selective"
     },
     {
@@ -343,7 +343,7 @@
       "prefixes4": 5000,
       "prefixes6": 500,
       "ix_count": 61,
-      "fac_count": 55,
+      "fac_count": 56,
       "policy": "Selective"
     },
     {
@@ -433,7 +433,7 @@
       "prefixes4": 80000,
       "prefixes6": 30000,
       "ix_count": 358,
-      "fac_count": 224,
+      "fac_count": 223,
       "policy": "Open"
     },
     {
@@ -582,7 +582,7 @@
       "ratio": "Heavy Outbound",
       "prefixes4": 20000,
       "prefixes6": 6000,
-      "ix_count": 251,
+      "ix_count": 252,
       "fac_count": 226,
       "policy": "Open"
     },
@@ -643,7 +643,7 @@
       "prefixes4": 200,
       "prefixes6": 0,
       "ix_count": 54,
-      "fac_count": 36,
+      "fac_count": 37,
       "policy": "Open"
     },
     {
