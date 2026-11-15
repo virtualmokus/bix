@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-14T10:28:47Z",
+  "fetched_at": "2026-11-15T10:56:47Z",
   "members": [
     {
       "asn": 42,
@@ -3083,7 +3083,7 @@
       "policy": "Open/Free",
       "first_seen": "2024-12-19T11:51:57Z",
       "is_rs_peer": true,
-      "ipv6": null,
+      "ipv6": "2001:7f8:35::5:7344:1",
       "sources": [
         "bix",
         "peeringdb"
