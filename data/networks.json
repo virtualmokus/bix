@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-15T10:56:47Z",
+  "fetched_at": "2026-11-16T11:23:10Z",
   "networks": [
     {
       "asn": 42,
@@ -343,7 +343,7 @@
       "prefixes4": 5000,
       "prefixes6": 500,
       "ix_count": 61,
-      "fac_count": 56,
+      "fac_count": 57,
       "policy": "Selective"
     },
     {
@@ -432,7 +432,7 @@
       "ratio": "Mostly Outbound",
       "prefixes4": 80000,
       "prefixes6": 30000,
-      "ix_count": 358,
+      "ix_count": 357,
       "fac_count": 223,
       "policy": "Open"
     },
@@ -807,7 +807,7 @@
       "ratio": "Heavy Outbound",
       "prefixes4": 100,
       "prefixes6": 100,
-      "ix_count": 214,
+      "ix_count": 215,
       "fac_count": 142,
       "policy": "Selective"
     },
