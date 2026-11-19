@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-18T11:45:09Z",
+  "fetched_at": "2026-11-19T11:42:33Z",
   "members": [
     {
       "asn": 42,
@@ -532,7 +532,7 @@
         "prefixes4": 25000,
         "prefixes6": 3000,
         "ix_count": 56,
-        "fac_count": 200,
+        "fac_count": 201,
         "policy": "Selective"
       }
     },
@@ -1505,7 +1505,7 @@
         "ratio": "Heavy Outbound",
         "prefixes4": 200,
         "prefixes6": 0,
-        "ix_count": 54,
+        "ix_count": 55,
         "fac_count": 37,
         "policy": "Open"
       }
@@ -2929,7 +2929,7 @@
         "prefixes4": 65,
         "prefixes6": 15,
         "ix_count": 17,
-        "fac_count": 12,
+        "fac_count": 14,
         "policy": "Open"
       }
     },
@@ -4045,6 +4045,31 @@
       }
     },
     {
+      "asn": 212513,
+      "name": "OSNET TELEKOM",
+      "website": "https://osnet.net",
+      "policy": null,
+      "first_seen": "2026-11-18T13:12:29Z",
+      "is_rs_peer": true,
+      "ipv6": "2001:7f8:35::7274:3",
+      "sources": [
+        "peeringdb"
+      ],
+      "ports": [],
+      "network": {
+        "aka": "AS208806",
+        "type": "Network Services",
+        "scope": "Europe",
+        "traffic": "1-5Tbps",
+        "ratio": "Balanced",
+        "prefixes4": 300,
+        "prefixes6": 300,
+        "ix_count": 5,
+        "fac_count": 24,
+        "policy": "Open"
+      }
+    },
+    {
       "asn": 212707,
       "name": "KeviWLAN",
       "website": "https://www.keviwlan.hu/",
@@ -4269,7 +4294,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 1000,
         "prefixes6": 1000,
-        "ix_count": 80,
+        "ix_count": 82,
         "fac_count": 77,
         "policy": "Selective"
       }
