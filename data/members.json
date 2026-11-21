@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-20T11:42:48Z",
+  "fetched_at": "2026-11-21T11:05:27Z",
   "members": [
     {
       "asn": 42,
@@ -1807,7 +1807,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 100,
         "prefixes6": 50,
-        "ix_count": 82,
+        "ix_count": 83,
         "fac_count": 35,
         "policy": "Selective"
       }
@@ -1941,7 +1941,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 50,
         "prefixes6": 10,
-        "ix_count": 4,
+        "ix_count": 3,
         "fac_count": 14,
         "policy": "Open"
       }
@@ -2928,7 +2928,7 @@
         "ratio": "Mostly Outbound",
         "prefixes4": 65,
         "prefixes6": 15,
-        "ix_count": 17,
+        "ix_count": 18,
         "fac_count": 14,
         "policy": "Open"
       }
