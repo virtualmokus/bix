@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-24T13:45:48Z",
+  "fetched_at": "2026-11-25T12:58:38Z",
   "networks": [
     {
       "asn": 42,
@@ -343,7 +343,7 @@
       "prefixes4": 5000,
       "prefixes6": 500,
       "ix_count": 61,
-      "fac_count": 57,
+      "fac_count": 58,
       "policy": "Selective"
     },
     {
@@ -642,7 +642,7 @@
       "ratio": "Heavy Outbound",
       "prefixes4": 200,
       "prefixes6": 0,
-      "ix_count": 55,
+      "ix_count": 54,
       "fac_count": 37,
       "policy": "Open"
     },
@@ -1233,7 +1233,7 @@
     },
     {
       "asn": 50144,
-      "name": "UNIMATRIX-AS",
+      "name": "Unimatrix IT Solutions",
       "aka": "Docler Holding",
       "website": "https://www.byborgenterprises.com/",
       "type": "Content",
@@ -1737,7 +1737,7 @@
       "ratio": "Mostly Inbound",
       "prefixes4": 2,
       "prefixes6": 0,
-      "ix_count": 2,
+      "ix_count": 1,
       "fac_count": 2,
       "policy": "Open"
     },
